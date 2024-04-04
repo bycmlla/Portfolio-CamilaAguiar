@@ -1,0 +1,61 @@
+.talk-me-container {
+  background: rgb(202, 202, 202);
+  background: linear-gradient(
+    90deg,
+    rgb(228, 228, 228) 28%,
+    rgb(252, 252, 252) 83%
+  );
+  display: flex;
+  font-size: 35px;
+  color: rgb(0, 0, 0);
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: flex-end;
+  padding-top: 110px;
+  padding-right: 60px;
+  padding-bottom: 40px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+}
+.email-icon {
+  font-size: 30px;
+}
+
+.email-text {
+  font-size: 14px;
+  margin: 0;
+}
+.contact h6 {
+  font-family: Arial;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.contact a {
+  color: black;
+  display: flex;
+  align-items: center;
+}
+.click-here h6 {
+  font-family: Arial;
+  font-size: 20px;
+  margin-bottom: 15px;
+  margin-left: 40px;
+}
+.click-here ul {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.click-here ul li {
+  display: flex;
+  font-size: 25px;
+}
+.click-here ul li a {
+  text-decoration: none;
+  color: black;
+}
