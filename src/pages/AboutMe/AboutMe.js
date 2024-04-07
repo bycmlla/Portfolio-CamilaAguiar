@@ -1,10 +1,10 @@
 import React from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import { MdEmail } from "react-icons/md";
-import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
+import { FaLinkedin, FaWhatsapp, FaGithubSquare } from "react-icons/fa";
 import Curriculum from "../../assets/images/curriculumpng.png";
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 import "./AboutMe.css";
 
 const AboutMe = () => {
@@ -15,8 +15,8 @@ const AboutMe = () => {
         <div className="icons-container-custom">
           <ul>
             <li>
-              <a href="mailto:by.cmlla0107@gmail.com">
-                <MdEmail />
+              <a href="https://github.com/bycmlla">
+                <FaGithubSquare />
               </a>
             </li>
             <li>
@@ -34,8 +34,8 @@ const AboutMe = () => {
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/by_cmlla/">
-                <RiInstagramFill />
+              <a href="mailto:by.cmlla0107@gmail.com">
+                <MdEmail />
               </a>
             </li>
           </ul>
@@ -68,6 +68,7 @@ const AboutMe = () => {
           </Link>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

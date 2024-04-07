@@ -3,13 +3,15 @@ import NavBar from "../../components/NavBar/NavBar";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
+import Footer from "../../components/Footer/Footer";
+import { Link } from "react-router-dom";
 import "./Contact.css";
 
 const Contact = () => {
   useEffect(() => {
-    console.log("estou sendo execultado!")
-  })
-  useState(1 )
+    console.log("estou sendo execultado!");
+  });
+  useState(1);
 
   return (
     <div>
@@ -52,9 +54,32 @@ const Contact = () => {
           </ul>
         </div>
       </div>
-      <div>
-
+      <div className="input-email-container">
+        <div className="input-email">
+          <input type="text" className="input-subject" placeholder="Assunto" />
+          <textarea
+            placeholder="Descrição"
+            id=""
+            rows="15"
+            className="textarea"
+          ></textarea>
+          <button type="submit" className="button-send">
+            send
+          </button>
+        </div>
       </div>
+      <div className="text-talk-container">
+        <div className="text-talk">
+          <p>
+            Oh, you don't want to talk with me? <br />
+            Damn, alright, just take a quick look at my projects then.
+          </p>
+          <Link to="/projects">
+            <button>See my projects</button>
+          </Link>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 };

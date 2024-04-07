@@ -3,9 +3,10 @@ import { TypeWriter } from "../../components/TypeWriter/TypeWriter";
 import NavBar from "../../components/NavBar/NavBar";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import { MdEmail } from "react-icons/md";
-import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
+import { FaLinkedin, FaWhatsapp, FaGithubSquare } from "react-icons/fa";
 import ImageWhitePage from "../../assets/images/camilawhitepage.png";
+import Footer from "../../components/Footer/Footer";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
@@ -30,12 +31,16 @@ const Home = () => {
         <div className="icons-container">
           <ul>
             <li>
-              <a href="mailto:by.cmlla0107@gmail.com">
-                <MdEmail />
+              <a href="https://github.com/bycmlla">
+                <FaGithubSquare />
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/camila-de-aguiar-ti1808/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.linkedin.com/in/camila-de-aguiar-ti1808/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaLinkedin />
               </a>
             </li>
@@ -45,19 +50,22 @@ const Home = () => {
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/by_cmlla/">
-                <RiInstagramFill />
+              <a href="mailto:by.cmlla0107@gmail.com">
+                <MdEmail />
               </a>
             </li>
           </ul>
         </div>
       </div>
       <div className="button-container">
-        <button>See my projects</button>
+        <Link to="/projects">
+          <button>See my projects</button>
+        </Link>
       </div>
       <div className="image-container">
         <img src={ImageWhitePage} alt="" className="centered-image" />
       </div>
+      <Footer />
     </div>
   );
 };

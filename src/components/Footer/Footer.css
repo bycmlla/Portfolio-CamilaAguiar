@@ -1,0 +1,11 @@
+.footer-container {
+    background-color: #1A1A1A;
+    color: white;
+    font-size: 10px;
+    font-family: arial;
+    padding: 10px 0; /* Adicione um espaçamento interno para melhorar a aparência */
+    text-align: center; /* Alinhe o texto ao centro */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }

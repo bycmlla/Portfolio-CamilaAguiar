@@ -16,7 +16,7 @@ const NavBar = () => {
           <MdDarkMode className="dark-mode-icon" size={24} />
         </li>
         <li>
-          <Link to="">My Projects</Link>
+          <Link to="/projects">My Projects</Link>
         </li>
         <li>
           <Link to="/about">About me</Link>
