@@ -1,0 +1,10 @@
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    margin-top: 20px; /* Margem no topo */
+    margin-left: 20px; /* Margem no topo */
+}
+.card-roomrover{
+      margin-bottom: 20px; /* Margem no topo */
+
+  }

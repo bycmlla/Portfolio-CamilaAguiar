@@ -5,7 +5,7 @@ import { MdDarkMode } from "react-icons/md";
 
 const NavBar = () => {
   return (
-    <nav className="navbar">
+    <nav className="my-navbar">
       <div className="navbar-brand">
         <a href="/" className="logo">
           <img src={Logo} alt="" />
