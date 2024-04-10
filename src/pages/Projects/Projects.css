@@ -1,10 +1,16 @@
 .projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
-    margin-top: 20px; /* Margem no topo */
-    margin-left: 20px; /* Margem no topo */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  margin-top: 20px;
+  margin-left: 40px;
 }
-.card-roomrover{
-      margin-bottom: 20px; /* Margem no topo */
-
-  }
+.card-roomrover {
+  margin-bottom: 20px;
+}
+.button-see {
+  background-color: black;
+  border: none;
+}
+.text-projects {
+  margin: 40px 60px;
+}

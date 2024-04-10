@@ -1,19 +1,44 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./NavBar.css";
-import Logo from "../../assets/icons/CamilaCarvalho.png";
+import LogoDark from "../../assets/icons/CamilaCarvalho.png";
+import LogoLight from "../../assets/icons/Camila Carvalho-white.png";
+import { useState, useEffect } from "react";
 import { MdDarkMode } from "react-icons/md";
 
-const NavBar = () => {
+const NavBar = ({ toggleDarkMode, isDarkMode }) => {
+  const [isActive, setIsActive] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsActive(true);
+  }, [location.pathname]);
+
+  const handleToggleDarkMode = () => {
+    toggleDarkMode();
+  };
+
   return (
-    <nav className="my-navbar">
+    <nav
+      className={`my-navbar ${isActive ? "active" : ""} ${
+        isDarkMode ? "dark-mode" : ""
+      }`}
+    >
       <div className="navbar-brand">
         <a href="/" className="logo">
-          <img src={Logo} alt="" />
+          <img
+            src={isDarkMode ? LogoLight : LogoDark}
+            alt="Logo"
+            aria-hidden="true"
+          />
         </a>
       </div>
       <ul className="nav-links">
         <li>
-          <MdDarkMode className="dark-mode-icon" size={24} />
+          <MdDarkMode
+            className="dark-mode-icon"
+            onClick={handleToggleDarkMode}
+            size={24}
+          />
         </li>
         <li>
           <Link to="/projects">My Projects</Link>

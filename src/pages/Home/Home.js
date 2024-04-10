@@ -1,22 +1,43 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { TypeWriter } from "../../components/TypeWriter/TypeWriter";
 import NavBar from "../../components/NavBar/NavBar";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin, FaWhatsapp, FaGithubSquare } from "react-icons/fa";
 import ImageWhitePage from "../../assets/images/camilawhitepage.png";
+import ImageBlackPage from "../../assets/images/camilablackpage.png";
 import Footer from "../../components/Footer/Footer";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
+  const [isActive, setIsActive] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("darkMode") === "true"
+  );
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsActive(true);
+  }, [location.pathname]);
+
+  const toggleDarkModeHome = () => {
+    const newDarkModeState = !isDarkMode;
+    setIsDarkMode(newDarkModeState);
+    localStorage.setItem("darkMode", newDarkModeState.toString());
+  };
+
   return (
-    <div className="home-container">
-      <NavBar />
+    <div className={`home-container ${isDarkMode ? "dark-mode-home" : ""}`}>
+      <NavBar toggleDarkMode={toggleDarkModeHome} isDarkMode={isDarkMode} />
       <div className="gray-background"></div>
       <div className="text-and-image-container">
         <div className="text-container">
-          <TypeWriter text="Hello, i'm Camila" />
+          <TypeWriter
+            textColor={isDarkMode ? "white" : "black"}
+            text="Hello, i'm Camila"
+          />
           <p>
             Full-stack Developer and <br />
             Computer Vision. <br /> <br />
@@ -62,8 +83,12 @@ const Home = () => {
           <button>See my projects</button>
         </Link>
       </div>
-      <div className="image-container">
-        <img src={ImageWhitePage} alt="" className="centered-image" />
+      <div className={`image-container ${isActive ? "active" : ""}`}>
+        <img
+          src={isDarkMode ? ImageBlackPage : ImageWhitePage}
+          alt=""
+          className="centered-image"
+        />
       </div>
       <Footer />
     </div>

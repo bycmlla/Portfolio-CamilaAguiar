@@ -10,17 +10,22 @@ const Projects = () => {
   return (
     <div>
       <NavBar />
-      <h1>teste</h1>
+      <div className="text-projects">
+        <h2>My Projects</h2>
+        <p>Here are my projects. All of them were done by me.</p>
+      </div>
       <div className="projects-container">
-      <Card className="card-roomrover" style={{ width: "19rem" }}>
+        <Card className="card-roomrover" style={{ width: "19rem" }}>
           <Card.Img variant="top" src={Roomrover} />
           <Card.Body>
             <Card.Title>RoomRover</Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              RoomRover is a hotel room reservation website that I built using
+              Angular and NodeJS, along with its design in Figma.
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Button className="button-see" variant="primary">
+              See
+            </Button>
           </Card.Body>
         </Card>
       </div>

@@ -2,7 +2,10 @@
 .home-container {
   display: flex;
   flex-direction: column;
+  background-color: #ffffff;
+  z-index: -1;
 }
+
 .text-and-image-container {
   display: flex;
   text-align: justify;
@@ -20,7 +23,7 @@
   width: 50%;
   height: 100vh;
   background-color: #e5e3e3;
-  z-index: -1;
+  z-index: 0;
 }
 
 .content-container {
@@ -68,8 +71,10 @@
 }
 
 .image-container {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out, top 1s ease-in-out;
   position: absolute;
-  top: 10%;
+  top: 15%;
   right: 0;
   bottom: 0;
   display: flex;
@@ -78,9 +83,39 @@
   margin-right: 50px;
 }
 
+.image-container.active {
+  opacity: 1;
+  top: 10%;
+}
+
 .centered-image {
   width: 80%;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+}
+
+.dark-mode-home {
+  background-color: #141414;
+}
+.dark-mode-home .gray-background {
+  background-color: #6464643b;
+}
+
+.dark-mode-home .text-and-image-container {
+  color: white;
+}
+.dark-mode-home .typewriter {
+  color: white;
+}
+.dark-mode-home .icons-container ul li a {
+  color: #ffffff;
+}
+.dark-mode-home .button-container button {
+  background-color: #141414;
+  color: #ffffff;
+  border: 1px solid rgb(255, 255, 255);
+}
+.dark-mode-home .button-container button:hover {
+  background-color: #ebebeb;
 }
