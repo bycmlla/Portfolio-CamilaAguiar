@@ -8,14 +8,27 @@ import { Link } from "react-router-dom";
 import "./Contact.css";
 
 const Contact = () => {
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("darkMode") === "true"
+  );
+
   useEffect(() => {
-    console.log("estou sendo execultado!");
-  });
-  useState(1);
+    setIsDarkMode(localStorage.getItem("darkMode") === "true");
+  }, []);
+
+  const toggleDarkMode = () => {
+    const newDarkModeState = !isDarkMode;
+    setIsDarkMode(newDarkModeState);
+    localStorage.setItem("darkMode", newDarkModeState.toString());
+  };
 
   return (
-    <div>
-      <NavBar />
+    <div
+      className={`div-container-contact ${
+        isDarkMode ? "dark-mode-contact" : ""
+      }`}
+    >
+      <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
       <div className="talk-me-container">
         <p>Talk with me!</p>
       </div>

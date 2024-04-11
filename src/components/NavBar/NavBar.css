@@ -19,36 +19,29 @@
   display: flex;
   align-items: center;
 }
-
 .my-navbar .logo {
   margin-right: 10px;
 }
-
 .my-navbar .logo img {
   width: 80px;
 }
-
 .my-navbar .dark-mode-icon {
   cursor: pointer;
 }
-
 .my-navbar .nav-links {
   list-style: none;
   display: flex;
   gap: 40px;
 }
-
 .my-navbar .nav-links li a {
   text-decoration: none;
   color: #333;
   font-size: 13px;
   cursor: pointer;
 }
-
-.my-navbar .nav-links li a:hover {
+.my-navbar.my-navbar .nav-links li a:hover {
   color: #ff0000;
 }
-
 .dark-mode {
   background-color: #000000;
   color: #ffffff;
@@ -58,5 +51,5 @@
 }
 
 .dark-mode .dark-mode-icon:hover {
-  color: #cccccc;
+  color: #ff0000;
 }

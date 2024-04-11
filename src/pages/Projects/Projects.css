@@ -1,4 +1,4 @@
-.projects-container {
+.projects-content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
   margin-top: 20px;
@@ -8,9 +8,18 @@
   margin-bottom: 20px;
 }
 .button-see {
-  background-color: black;
   border: none;
+  background-color: black;
+  color: white;
 }
 .text-projects {
   margin: 40px 60px;
+}
+
+.dark-mode-projects{
+  background-color: #141414;
+}
+
+.dark-mode-projects .text-projects{
+  color: white;
 }

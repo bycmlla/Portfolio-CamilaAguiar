@@ -1,3 +1,8 @@
+.div-container-contact {
+  font-family: Arial;
+  text-align: justify;
+}
+
 .talk-me-container {
   background: rgb(202, 202, 202);
   background: linear-gradient(
@@ -19,7 +24,9 @@
   display: flex;
   flex-direction: row;
   margin-left: 50px;
+  margin-top: 30px;
 }
+
 .email-icon {
   font-size: 30px;
 }
@@ -28,6 +35,7 @@
   font-size: 14px;
   margin: 0;
 }
+
 .contact h6 {
   font-family: Arial;
   font-size: 20px;
@@ -39,12 +47,14 @@
   display: flex;
   align-items: center;
 }
+
 .click-here h6 {
   font-family: Arial;
   font-size: 20px;
   margin-bottom: 15px;
   margin-left: 40px;
 }
+
 .click-here ul {
   display: flex;
   flex-direction: row;
@@ -55,6 +65,7 @@
   display: flex;
   font-size: 25px;
 }
+
 .click-here ul li a {
   text-decoration: none;
   color: black;
@@ -84,6 +95,7 @@
   width: 41%;
   padding: 5px;
 }
+
 .textarea {
   width: 42%;
   height: 40%;
@@ -103,9 +115,10 @@
   cursor: pointer;
 }
 
-.button-send:hover{
+.button-send:hover {
   background-color: rgb(245, 245, 245);
 }
+
 .text-talk-container {
   display: flex;
   justify-content: center;
@@ -129,6 +142,55 @@
   padding: 5px 40px 5px 40px;
   cursor: pointer;
 }
-.text-talk button:hover{
+
+.text-talk button:hover {
   background-color: rgb(245, 245, 245);
+}
+
+.dark-mode-contact {
+  background-color: #141414;
+}
+
+.dark-mode-contact .talk-me-container {
+  color: white;
+}
+
+.dark-mode-contact .contact-container .contact h6,
+.dark-mode-contact .click-here h6 {
+  color: white;
+}
+.dark-mode-contact .contact-container .contact a,
+.dark-mode-contact .click-here ul li a {
+  color: white;
+}
+
+.dark-mode-contact .input-email-container {
+  border: solid 1px rgba(252, 252, 252, 0.406);
+}
+
+.dark-mode-contact .text-talk-container .text-talk {
+  color: white;
+}
+
+.dark-mode-contact .input-email-container .input-email input,
+.dark-mode-contact .input-email-container .input-email textarea,
+.dark-mode-contact .input-email-container .input-email .button-send,
+.dark-mode-contact .text-talk-container .text-talk button {
+  color: white;
+  background-color: #141414;
+  border: solid 1px white;
+}
+
+.dark-mode-contact .talk-me-container {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 40%,
+    rgba(66, 66, 66, 1) 83%
+  );
+}
+
+.dark-mode-contact .input-email-container .input-email .button-send:hover,
+.dark-mode-contact .text-talk button:hover {
+  background-color: #1f1f1f;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -7,14 +7,30 @@ import Roomrover from "../../assets/images/roomrover.png";
 import "./Projects.css";
 
 const Projects = () => {
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("darkMode") === "true"
+  );
+
+  useEffect(() => {
+    setIsDarkMode(localStorage.getItem("darkMode") === "true");
+  }, []);
+
+  const toggleDarkMode = () => {
+    const newDarkModeState = !isDarkMode;
+    setIsDarkMode(newDarkModeState);
+    localStorage.setItem("darkMode", newDarkModeState.toString());
+  };
+
   return (
-    <div>
-      <NavBar />
+    <div
+      className={`projects-container ${isDarkMode ? "dark-mode-projects" : ""}`}
+    >
+      <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
       <div className="text-projects">
         <h2>My Projects</h2>
         <p>Here are my projects. All of them were done by me.</p>
       </div>
-      <div className="projects-container">
+      <div className="projects-content">
         <Card className="card-roomrover" style={{ width: "19rem" }}>
           <Card.Img variant="top" src={Roomrover} />
           <Card.Body>

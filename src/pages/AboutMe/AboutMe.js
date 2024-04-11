@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin, FaWhatsapp, FaGithubSquare } from "react-icons/fa";
@@ -8,9 +8,23 @@ import Footer from "../../components/Footer/Footer";
 import "./AboutMe.css";
 
 const AboutMe = () => {
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("darkMode") === "true"
+  );
+
+  useEffect(() => {
+    setIsDarkMode(localStorage.getItem("darkMode") === "true");
+  }, []);
+
+  const toggleDarkMode = () => {
+    const newDarkModeState = !isDarkMode;
+    setIsDarkMode(newDarkModeState);
+    localStorage.setItem("darkMode", newDarkModeState.toString());
+  };
+
   return (
-    <div className="about-me-container">
-      <NavBar />
+    <div className={`about-me-container ${isDarkMode ? "dark-mode-about" : ""}`}>
+      <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode}  />
       <div className="about-me-section">
         <div className="icons-container-custom">
           <ul>

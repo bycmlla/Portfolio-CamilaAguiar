@@ -9,15 +9,6 @@
   margin-top: 20px;
 }
 
-.about-me-content {
-  max-width: 800px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 50px;
-}
-
 .icons-container-custom {
   display: flex;
   flex-direction: column;
@@ -38,6 +29,15 @@
 .icons-container-custom ul li a {
   text-decoration: none;
   color: rgb(0, 0, 0);
+}
+
+.about-me-content {
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .curriculum-container {
@@ -61,6 +61,16 @@
   padding: 10px 20px 10px 20px;
   cursor: pointer;
 }
-.button-home button:hover{
+.button-home button:hover {
   background-color: rgb(237, 237, 237);
+}
+
+.dark-mode-about {
+  background-color: #141414;
+}
+.dark-mode-about .icons-container-custom ul li a {
+  color: white;
+}
+.dark-mode-about .about-me-content {
+  color: white;
 }
