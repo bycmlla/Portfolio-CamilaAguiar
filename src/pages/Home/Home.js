@@ -27,6 +27,9 @@ const Home = () => {
     setIsDarkMode(newDarkModeState);
     localStorage.setItem("darkMode", newDarkModeState.toString());
   };
+  const handleClick = () => {
+    window.open("https://github.com/bycmlla", "_blank");
+  };
 
   return (
     <div className={`home-container ${isDarkMode ? "dark-mode-home" : ""}`}>
@@ -88,6 +91,7 @@ const Home = () => {
           src={isDarkMode ? ImageBlackPage : ImageWhitePage}
           alt=""
           className="centered-image"
+          onClick={handleClick}
         />
       </div>
       <Footer />

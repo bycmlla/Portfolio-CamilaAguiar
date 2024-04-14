@@ -5,6 +5,8 @@ import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
+import VideoBlack from "../../assets/videos/video01.mp4";
+import VideoWhite from "../../assets/videos/videowhite.mp4";
 import "./Contact.css";
 
 const Contact = () => {
@@ -29,9 +31,23 @@ const Contact = () => {
       }`}
     >
       <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
-      <div className="talk-me-container">
-        <p>Talk with me!</p>
+      <div className="talk-me-container video-background">
+        <div className="video-overlay">
+          <p>Talk with me!</p>
+        </div>
+        <video
+          key={isDarkMode ? "dark" : "light"}
+          className="video"
+          autoPlay
+          loop
+          muted
+          preload="auto"
+        >
+          <source src={isDarkMode ? VideoBlack : VideoWhite} type="video/mp4" />
+          Seu navegador não suporta vídeos em HTML5.
+        </video>
       </div>
+
       <div className="contact-container">
         <div className="contact">
           <h6>Contacts</h6>
