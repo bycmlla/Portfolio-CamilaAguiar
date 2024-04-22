@@ -8,7 +8,8 @@ import { FaLinkedin, FaWhatsapp, FaGithubSquare } from "react-icons/fa";
 import ImageWhitePage from "../../assets/images/camilawhitepage.png";
 import ImageBlackPage from "../../assets/images/camilablackpage.png";
 import Footer from "../../components/Footer/Footer";
-import { Link, useLocation } from "react-router-dom";
+import Skills from "../../components/Skills/Skills";
+import { useLocation } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
@@ -34,7 +35,6 @@ const Home = () => {
   return (
     <div className={`home-container ${isDarkMode ? "dark-mode-home" : ""}`}>
       <NavBar toggleDarkMode={toggleDarkModeHome} isDarkMode={isDarkMode} />
-      <div className="gray-background"></div>
       <div className="text-and-image-container">
         <div className="text-container">
           <TypeWriter
@@ -81,11 +81,6 @@ const Home = () => {
           </ul>
         </div>
       </div>
-      <div className="button-container">
-        <Link to="/projects">
-          <button>See my projects</button>
-        </Link>
-      </div>
       <div className={`image-container ${isActive ? "active" : ""}`}>
         <img
           src={isDarkMode ? ImageBlackPage : ImageWhitePage}
@@ -93,6 +88,13 @@ const Home = () => {
           className="centered-image"
           onClick={handleClick}
         />
+      </div>
+      <div>
+      <Skills/>
+      </div>
+      <div className="text-projects">
+        <h2>My Projects</h2>
+        <p>Here are my projects. All of them were done by me.</p>
       </div>
       <Footer />
     </div>

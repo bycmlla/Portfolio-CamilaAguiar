@@ -21,7 +21,7 @@
 }
 
 .icons-container-custom ul li {
-  font-size: 25px;
+  font-size: 30px;
   margin-bottom: 10px;
   cursor: pointer;
 }
@@ -30,7 +30,9 @@
   text-decoration: none;
   color: rgb(0, 0, 0);
 }
-
+.icons-container-custom ul li:hover{
+  transform: scale(1.2); 
+}
 .about-me-content {
   max-width: 800px;
   margin: auto;
