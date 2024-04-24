@@ -1,0 +1,51 @@
+.line {
+  display: inline-block;
+  width: 20%;
+  height: 0.5px;
+  background-color: black;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.ul-front-one,
+.ul-front-two,
+.ul-back-end {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.ul-front-two {
+  margin-left: 5%;
+}
+
+.ul-front-one li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ul-front-two li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ul-back-end li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ul-front-one li span {
+  font-size: 12px;
+}
+.ul-front-two li span {
+  font-size: 12px;
+}
+.ul-back-end li span {
+  font-size: 12px;
+}
+.icon-size {
+  width: 30px;
+  height: 30px;
+}
