@@ -62,6 +62,8 @@
   align-items: center;
   justify-content: center;
   margin-right: 5%;
+  display: flex;
+  flex-direction: column;
 }
 
 .image-container.active {
@@ -75,6 +77,8 @@
   max-height: 100%;
   object-fit: contain;
   transition: width 0.3s ease;
+  margin-top: 80%;
+  margin-bottom: 30px;
 }
 .centered-image:hover {
   width: 90%;

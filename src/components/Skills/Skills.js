@@ -19,58 +19,60 @@ import { SiOpencv, SiPostgresql, SiPowerbi, SiMysql } from "react-icons/si";
 const Skills = () => {
   return (
     <div>
-      <div className="front-end-container">
-        <h6>
-          Front End Skills <span className="line"></span>
-        </h6>
-        <div className="front-line-one">
-          <ul className="ul-front-one">
-            <li>
-              <span>React JS</span>
-              <RiReactjsFill className="icon-size" />
-            </li>
-            <li>
-              <span>JavaScript</span>
-              <IoLogoJavascript className="icon-size" />
-            </li>
-            <li>
-              <span>Angular</span>
-              <FaAngular className="icon-size" />
-            </li>
-            <li>
-              <span>TypeScript</span>
-              <TbBrandTypescript className="icon-size" />
-            </li>
-            <li>
-              <span>Bootstrap</span>
-              <FaBootstrap className="icon-size" />
-            </li>
-          </ul>
-        </div>
-        <div className="front-line-two">
-          <ul className="ul-front-two">
-            <li>
-              <span>HTML5</span>
-              <FaHtml5 className="icon-size" />
-            </li>
-            <li>
-              <span>CSS3</span>
-              <IoLogoCss3 className="icon-size" />
-            </li>
-            <li>
-              <span>SASS</span>
-              <FaSass className="icon-size" />
-            </li>
-            <li>
-              <span>Figma</span>
-              <FaFigma className="icon-size" />
-            </li>
-          </ul>
+      <div className="skills-principal-container">
+        <div className="front-end-container">
+          <p className="skills-heading">
+            Front End Skills <span className="line"></span>
+          </p>
+          <div className="front-line-one">
+            <ul className="ul-front-one">
+              <li>
+                <span>React JS</span>
+                <RiReactjsFill className="icon-size" />
+              </li>
+              <li>
+                <span>JavaScript</span>
+                <IoLogoJavascript className="icon-size" />
+              </li>
+              <li>
+                <span>Angular</span>
+                <FaAngular className="icon-size" />
+              </li>
+              <li>
+                <span>TypeScript</span>
+                <TbBrandTypescript className="icon-size" />
+              </li>
+              <li>
+                <span>Bootstrap</span>
+                <FaBootstrap className="icon-size" />
+              </li>
+            </ul>
+          </div>
+          <div className="front-line-two">
+            <ul className="ul-front-two">
+              <li>
+                <span>HTML5</span>
+                <FaHtml5 className="icon-size" />
+              </li>
+              <li>
+                <span>CSS3</span>
+                <IoLogoCss3 className="icon-size" />
+              </li>
+              <li>
+                <span>SASS</span>
+                <FaSass className="icon-size" />
+              </li>
+              <li>
+                <span>Figma</span>
+                <FaFigma className="icon-size" />
+              </li>
+            </ul>
+          </div>
         </div>
         <div className="back-end-container">
-          <h6>
+          <p className="skills-heading">
             Back End Skills <span className="line"></span>
-          </h6>
+          </p>
           <ul className="ul-back-end">
             <li>
               <span>Node JS</span>
@@ -91,21 +93,21 @@ const Skills = () => {
           </ul>
         </div>
         <div className="data-container">
-          <h6>
+          <p className="skills-heading">
             Data Analytics <span className="line"></span>
-          </h6>
+          </p>
           <ul className="ul-back-end">
             <li>
               <span>PostGreSQL</span>
-              <SiPostgresql className="icon-size" />
+              <SiPostgresql className="icon-size-data" />
             </li>
             <li>
               <span>Data Analytics</span>
-              <FaDatabase className="icon-size" />
+              <FaDatabase className="icon-size-data" />
             </li>
             <li>
               <span>Power BI</span>
-              <SiPowerbi className="icon-size" />
+              <SiPowerbi className="icon-size-data" />
             </li>
             <li>
               <span>MySQL</span>

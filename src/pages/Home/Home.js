@@ -88,9 +88,9 @@ const Home = () => {
           className="centered-image"
           onClick={handleClick}
         />
-      </div>
-      <div>
-      <Skills/>
+        <div className="skills-content">
+          <Skills />
+        </div>
       </div>
       <div className="text-projects">
         <h2>My Projects</h2>
