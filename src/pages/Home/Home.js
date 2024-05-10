@@ -1,15 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { TypeWriter } from "../../components/TypeWriter/TypeWriter";
-import NavBar from "../../components/NavBar/NavBar";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin, FaWhatsapp, FaGithubSquare } from "react-icons/fa";
 import ImageWhitePage from "../../assets/images/camilawhitepage.png";
 import ImageBlackPage from "../../assets/images/camilablackpage.png";
 import Footer from "../../components/Footer/Footer";
+import NavBar from "../../components/NavBar/NavBar";
 import Skills from "../../components/Skills/Skills";
 import { useLocation } from "react-router-dom";
+import ScrollReveal from "scrollreveal";
 import "./Home.css";
 
 const Home = () => {
@@ -21,6 +22,15 @@ const Home = () => {
 
   useEffect(() => {
     setIsActive(true);
+
+    ScrollReveal().reveal(".reveal", {
+      origin: "left",
+      distance: "20px",
+      duration: 1000,
+      delay: 200,
+      easing: "cubic-bezier(0.5, 0, 0, 1)",
+      reset: true,
+    });
   }, [location.pathname]);
 
   const toggleDarkModeHome = () => {
@@ -34,9 +44,13 @@ const Home = () => {
 
   return (
     <div className={`home-container ${isDarkMode ? "dark-mode-home" : ""}`}>
-      <NavBar toggleDarkMode={toggleDarkModeHome} isDarkMode={isDarkMode} />
+      <NavBar
+        className="reveal"
+        toggleDarkMode={toggleDarkModeHome}
+        isDarkMode={isDarkMode}
+      />
       <div className="text-and-image-container">
-        <div className="text-container">
+        <div className="text-container reveal">
           <TypeWriter
             textColor={isDarkMode ? "white" : "black"}
             text="Hello, i'm Camila"
@@ -85,10 +99,10 @@ const Home = () => {
         <img
           src={isDarkMode ? ImageBlackPage : ImageWhitePage}
           alt=""
-          className="centered-image"
+          className=""
           onClick={handleClick}
         />
-        <div className="skills-content">
+        <div>
           <Skills />
         </div>
       </div>

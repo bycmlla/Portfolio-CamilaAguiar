@@ -27,6 +27,7 @@ export const ImageSlider = () => {
 
   return (
     <div className="image">
+    
       <img src={images[currentIndex]} alt="" />
     </div>
   );

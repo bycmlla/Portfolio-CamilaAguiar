@@ -6,6 +6,7 @@ import Curriculum from "../../assets/images/curriculumpng.png";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import "./AboutMe.css";
+import Skills from "../../components/Skills/Skills";
 
 const AboutMe = () => {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -73,7 +74,10 @@ const AboutMe = () => {
             Cami
           </p>
         </div>
-      </div>
+        </div>
+        <div className="skills-about">
+        <Skills/>
+        </div>
       <div className="curriculum-container">
         <img src={Curriculum} alt="" />
         <div className="button-home">
