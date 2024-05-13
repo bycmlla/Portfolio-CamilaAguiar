@@ -63,3 +63,21 @@
 .data-container .ul-back-end{
     margin-left: 35px;
 }
+
+.dark-mode-skills .skills-heading{
+  color: white;
+}
+
+.dark-mode-skills .line{
+  background-color: white;
+}
+
+.dark-mode-skills .ul-front-one {
+  color: white;
+}
+.dark-mode-skills .ul-front-two{
+  color: white;
+}
+.dark-mode-skills .ul-back-end {
+  color: white;
+}

@@ -6,6 +6,7 @@ import Curriculum from "../../assets/images/curriculumpng.png";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import "./AboutMe.css";
+import ScrollReveal from "scrollreveal";
 import Skills from "../../components/Skills/Skills";
 
 const AboutMe = () => {
@@ -22,6 +23,16 @@ const AboutMe = () => {
     setIsDarkMode(newDarkModeState);
     localStorage.setItem("darkMode", newDarkModeState.toString());
   };
+
+  
+  ScrollReveal().reveal(".reveal-right", {
+    origin: "right",
+    distance: "20px",
+    duration: 2000,
+    delay: 200,
+    easing: "cubic-bezier(0.5, 0, 0, 1)",
+    reset: true,
+  });
 
   return (
     <div className={`about-me-container ${isDarkMode ? "dark-mode-about" : ""}`}>

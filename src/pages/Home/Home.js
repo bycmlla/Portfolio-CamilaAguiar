@@ -26,12 +26,22 @@ const Home = () => {
     ScrollReveal().reveal(".reveal", {
       origin: "left",
       distance: "20px",
-      duration: 1000,
+      duration: 1300,
       delay: 200,
       easing: "cubic-bezier(0.5, 0, 0, 1)",
       reset: true,
     });
   }, [location.pathname]);
+
+  
+  ScrollReveal().reveal(".reveal-right", {
+    origin: "right",
+    distance: "20px",
+    duration: 2000,
+    delay: 200,
+    easing: "cubic-bezier(0.5, 0, 0, 1)",
+    reset: true,
+  });
 
   const toggleDarkModeHome = () => {
     const newDarkModeState = !isDarkMode;
@@ -49,7 +59,8 @@ const Home = () => {
         toggleDarkMode={toggleDarkModeHome}
         isDarkMode={isDarkMode}
       />
-      <div className="text-and-image-container">
+
+      <section className="text-and-image-container">
         <div className="text-container reveal">
           <TypeWriter
             textColor={isDarkMode ? "white" : "black"}
@@ -63,8 +74,9 @@ const Home = () => {
             to assistive <br /> technology.
           </p>
         </div>
-      </div>
-      <div className="content-container">
+      </section>
+
+      <section className="content-container">
         <ImageSlider />
         <div className="icons-container">
           <ul>
@@ -94,22 +106,43 @@ const Home = () => {
             </li>
           </ul>
         </div>
-      </div>
-      <div className={`image-container ${isActive ? "active" : ""}`}>
+      </section>
+
+      <section className={`image-container ${isActive ? "active" : ""}`}>
         <img
           src={isDarkMode ? ImageBlackPage : ImageWhitePage}
           alt=""
-          className=""
+          className="reveal-right"
           onClick={handleClick}
         />
         <div>
           <Skills />
         </div>
-      </div>
-      <div className="text-projects">
+      </section>
+
+      <section className="text-projects">
         <h2>My Projects</h2>
         <p>Here are my projects. All of them were done by me.</p>
-      </div>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+        <p>Here are my projects. All of them were done by me.</p>
+      </section>
       <Footer />
     </div>
   );

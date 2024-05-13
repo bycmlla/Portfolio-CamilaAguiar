@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../../components/NavBar/NavBar";
-import { MdEmail } from "react-icons/md";
 import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
+import { FaGithubSquare } from "react-icons/fa";
 import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import VideoBlack from "../../assets/videos/video01.mp4";
@@ -31,7 +30,8 @@ const Contact = () => {
       }`}
     >
       <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
-      <div className="talk-me-container video-background">
+
+      <section className="talk-me-container video-background">
         <div className="video-overlay">
           <p>Talk with me!</p>
         </div>
@@ -46,13 +46,12 @@ const Contact = () => {
           <source src={isDarkMode ? VideoBlack : VideoWhite} type="video/mp4" />
           Seu navegador não suporta vídeos em HTML5.
         </video>
-      </div>
+      </section>
 
-      <div className="contact-container">
+      <section className="contact-container">
         <div className="contact">
           <h6>Contacts</h6>
           <a href="mailto:by.cmlla0107@gmail.com">
-            <MdEmail className="email-icon" />
             <p className="email-text">
               <a href="mailto:by.cmlla0107@gmail.com">by.cmlla0107@gmail.com</a>
             </p>
@@ -62,8 +61,8 @@ const Contact = () => {
           <h6>Click here</h6>
           <ul>
             <li>
-              <a href="https://www.instagram.com/by_cmlla/">
-                <RiInstagramFill />
+              <a href="https://github.com/bycmlla">
+                <FaGithubSquare />
               </a>
             </li>
             <li>
@@ -82,22 +81,31 @@ const Contact = () => {
             </li>
           </ul>
         </div>
-      </div>
-      <div className="input-email-container">
+      </section>
+
+      <section className="input-email-container">
         <div className="input-email">
+          <p className="title-email">Envie sua mensagem</p>
+          <input type="text" className="input-subject" placeholder="Seu nome" />
+          <input
+            type="email"
+            className="input-subject"
+            placeholder="Seu e-mail"
+          />
           <input type="text" className="input-subject" placeholder="Assunto" />
           <textarea
             placeholder="Descrição"
             id=""
-            rows="15"
+            rows="10"
             className="textarea"
           ></textarea>
           <button type="submit" className="button-send">
             send
           </button>
         </div>
-      </div>
-      <div className="text-talk-container">
+      </section>
+
+      <section className="text-talk-container">
         <div className="text-talk">
           <p>
             Oh, you don't want to talk with me? <br />
@@ -107,7 +115,8 @@ const Contact = () => {
             <button>See my projects</button>
           </Link>
         </div>
-      </div>
+      </section>
+
       <Footer />
     </div>
   );
