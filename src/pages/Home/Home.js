@@ -33,7 +33,6 @@ const Home = () => {
     });
   }, [location.pathname]);
 
-  
   ScrollReveal().reveal(".reveal-right", {
     origin: "right",
     distance: "20px",
@@ -122,26 +121,15 @@ const Home = () => {
 
       <section className="text-projects">
         <h2>My Projects</h2>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
-        <p>Here are my projects. All of them were done by me.</p>
+        <h4>Power BI Dashboards</h4>
+        <iframe
+          title="aula-curso"
+          width="570"
+          height="373.5"
+          src="https://app.powerbi.com/view?r=eyJrIjoiNDg4NWU3ZjgtYjdiOS00MThiLTlkMTktZjllNWU2NGZhYzQwIiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9"
+          frameborder="0"
+          allowFullScreen="true"
+        ></iframe>
       </section>
       <Footer />
     </div>
