@@ -85,31 +85,30 @@ const Contact = () => {
 
       <section className="input-email-container">
         <div className="input-email">
-          <p className="title-email">Envie sua mensagem</p>
+          <p className="title-email">Send me a message</p>
           <div className="teste">
             <div className="teste1">
               <input
                 type="text"
                 className="input-subject"
-                placeholder="Seu nome"
+                placeholder="your name"
               />
               <input
                 type="email"
                 className="input-subject"
-                placeholder="Seu e-mail"
+                placeholder="your e-mail"
               />
               <input
                 type="text"
                 className="input-subject"
-                placeholder="Assunto"
+                placeholder="subject"
               />
             </div>
-              <textarea
-                placeholder="Descrição"
-                id=""
-                rows="10"
-                className="textarea"
-              ></textarea>
+            <textarea
+              placeholder="description"
+              rows="10"
+              className="textarea"
+            ></textarea>
           </div>
           <button type="submit" className="button-send">
             send
