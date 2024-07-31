@@ -6,12 +6,52 @@ import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import VideoBlack from "../../assets/videos/video01.mp4";
 import VideoWhite from "../../assets/videos/videowhite.mp4";
+import axios from "axios";
 import "./Contact.css";
 
 const Contact = () => {
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
   );
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    description: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post("http://localhost:4000/enviarEmail", {
+        destinatario: "by.cmlla0107@gmail.com",
+        assunto: formData.subject,
+        corpo: `Nome: ${formData.name}\nEmail: ${formData.email}\n\n${formData.description}`,
+      })
+      .then((response) => {
+        alert(response.data); // Alerta com a resposta do servidor
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          description: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Erro:", error);
+        alert("Erro ao enviar o email.");
+      });
+  };
 
   useEffect(() => {
     setIsDarkMode(localStorage.getItem("darkMode") === "true");
@@ -51,10 +91,8 @@ const Contact = () => {
       <section className="contact-container">
         <div className="contact">
           <h6>Contacts</h6>
-          <a href="mailto:by.cmlla0107@gmail.com">
-            <p className="email-text">
-              <a href="mailto:by.cmlla0107@gmail.com">by.cmlla0107@gmail.com</a>
-            </p>
+          <a href="mailto:by.cmlla0107@gmail.com" className="email-text">
+            by.cmlla0107@gmail.com
           </a>
         </div>
         <div className="click-here">
@@ -86,33 +124,49 @@ const Contact = () => {
       <section className="input-email-container">
         <div className="input-email">
           <p className="title-email">Send me a message</p>
-          <div className="teste">
+          <form className="teste" onSubmit={handleSubmit}>
             <div className="teste1">
               <input
                 type="text"
                 className="input-subject"
+                name="name"
                 placeholder="your name"
+                value={formData.name}
+                onChange={handleChange}
+                required
               />
               <input
                 type="email"
                 className="input-subject"
+                name="email"
                 placeholder="your e-mail"
+                value={formData.email}
+                onChange={handleChange}
+                required
               />
               <input
                 type="text"
                 className="input-subject"
+                name="subject"
                 placeholder="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
               />
             </div>
             <textarea
               placeholder="description"
+              name="description"
               rows="10"
               className="textarea"
+              value={formData.description}
+              onChange={handleChange}
+              required
             ></textarea>
-          </div>
-          <button type="submit" className="button-send">
-            send
-          </button>
+            <button type="submit" className="button-send">
+              send
+            </button>
+          </form>
         </div>
       </section>
 
