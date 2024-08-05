@@ -10,25 +10,31 @@ const PORT = process.env.PORT || 4000;
 server.use(cors());
 server.use(bodyParser.json());
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+require('dotenv').config();
+console.log("EMAIL_USER:", process.env.EMAIL_USER);
+console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
+
 
 server.post("/enviarEmail", (req, res) => {
+  let transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: 'camilacarvalhoagui@gmail.com',
+      pass: 'bqww xkra tllp bsss',
+    },
+  });
+
   const { name, email, subject, description } = req.body;
 
   const mailOptions = {
     from: email,
-    to: process.env.EMAIL_USER,
+    to: 'camilacarvalhoagui@gmail.com',
     subject: subject,
-    text: `Nome: ${name}\nEmail: ${email}\n\n${description}`,
+    text: `Nome: ${name} Email: ${email} \n${description}`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
+    console.log(mailOptions)
     if (error) {
       console.log(error);
       res.status(500).send("Erro ao enviar o email.");

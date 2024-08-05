@@ -27,6 +27,7 @@ const Contact = () => {
       ...prevState,
       [name]: value,
     }));
+    console.log(value)
   };
 
   const handleSubmit = (e) => {
@@ -40,7 +41,7 @@ const Contact = () => {
         description: formData.description,
       })
       .then((response) => {
-        alert(response.data); // Alerta com a resposta do servidor
+        alert(response.data);
         setFormData({
           name: "",
           email: "",
