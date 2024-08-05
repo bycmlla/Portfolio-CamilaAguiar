@@ -31,12 +31,13 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     axios
       .post("http://localhost:4000/enviarEmail", {
-        destinatario: "by.cmlla0107@gmail.com",
-        assunto: formData.subject,
-        corpo: `Nome: ${formData.name}\nEmail: ${formData.email}\n\n${formData.description}`,
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        description: formData.description,
       })
       .then((response) => {
         alert(response.data); // Alerta com a resposta do servidor
@@ -52,6 +53,7 @@ const Contact = () => {
         alert("Erro ao enviar o email.");
       });
   };
+  
 
   useEffect(() => {
     setIsDarkMode(localStorage.getItem("darkMode") === "true");
@@ -163,9 +165,11 @@ const Contact = () => {
               onChange={handleChange}
               required
             ></textarea>
-            <button type="submit" className="button-send">
-              send
-            </button>
+            <div>
+              <button type="submit" className="button-send">
+                send
+              </button>
+            </div>
           </form>
         </div>
       </section>

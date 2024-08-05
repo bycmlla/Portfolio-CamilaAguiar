@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 require('dotenv').config();
 
-
 const server = express();
 const PORT = process.env.PORT || 4000;
 
@@ -19,15 +18,14 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-
 server.post("/enviarEmail", (req, res) => {
-  const { destinatario, assunto, corpo } = req.body;
+  const { name, email, subject, description } = req.body;
 
   const mailOptions = {
-    from: "by.cmlla0107@gmail.com",
-    to: destinatario,
-    subject: assunto,
-    text: corpo,
+    from: email,
+    to: process.env.EMAIL_USER,
+    subject: subject,
+    text: `Nome: ${name}\nEmail: ${email}\n\n${description}`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
