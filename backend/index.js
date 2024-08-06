@@ -11,16 +11,13 @@ server.use(cors());
 server.use(bodyParser.json());
 
 require('dotenv').config();
-console.log("EMAIL_USER:", process.env.EMAIL_USER);
-console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
-
 
 server.post("/enviarEmail", (req, res) => {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: 'camilacarvalhoagui@gmail.com',
-      pass: 'bqww xkra tllp bsss',
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
