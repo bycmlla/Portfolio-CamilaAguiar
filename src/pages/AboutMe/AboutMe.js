@@ -2,7 +2,8 @@ import React, {useState, useEffect} from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin, FaWhatsapp, FaGithubSquare } from "react-icons/fa";
-import Curriculum from "../../assets/images/curriculumpng.png";
+import Curriculum from "../../assets/images/curriculumpng.jpg";
+import Curriculum2 from "../../assets/images/curriculumpng2.jpg";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import "./AboutMe.css";
@@ -91,6 +92,7 @@ const AboutMe = () => {
         </div>
       <div className="curriculum-container">
         <img src={Curriculum} alt="" />
+        <img src={Curriculum2} alt="" />
         <div className="button-home">
           <Link to="/">
             <button>Home</button>

@@ -31,3 +31,10 @@
 .dark-mode-projects .text-projects {
   color: white;
 }
+.card-projects img {
+  transition: opacity 0.7s ease;
+}
+
+.card-projects img.hovered {
+  opacity: 0;
+}
