@@ -14,7 +14,6 @@ import {
   FaDatabase,
 } from "react-icons/fa";
 import { TbBrandTypescript } from "react-icons/tb";
-import ScrollReveal from "scrollreveal";
 import { SiOpencv, SiPostgresql, SiPowerbi, SiMysql } from "react-icons/si";
 
 const Skills = () => {
@@ -26,20 +25,11 @@ const Skills = () => {
     setIsDarkMode(localStorage.getItem("darkMode") === "true");
   }, []);
 
-  ScrollReveal().reveal(".reveal-right", {
-    origin: "right",
-    distance: "20px",
-    duration: 2000,
-    delay: 200,
-    easing: "cubic-bezier(0.5, 0, 0, 1)",
-    reset: true,
-  });
-
   return (
     <div
       className={`div-container-skills ${isDarkMode ? "dark-mode-skills" : ""}`}
     >
-      <div className="reveal-right">
+      <div>
         <div className="skills-principal-container">
           <div className="front-end-container">
             <p className="skills-heading">

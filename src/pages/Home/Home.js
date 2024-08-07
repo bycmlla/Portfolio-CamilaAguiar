@@ -1,16 +1,30 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { TypeWriter } from "../../components/TypeWriter/TypeWriter";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 import { MdEmail } from "react-icons/md";
-import { FaLinkedin, FaWhatsapp, FaGithubSquare } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaWhatsapp,
+  FaGithubSquare,
+  FaPython,
+} from "react-icons/fa";
+import { SiPowerbi } from "react-icons/si";
+import ScrollReveal from "scrollreveal";
+
 import ImageWhitePage from "../../assets/images/camilawhitepage.png";
 import ImageBlackPage from "../../assets/images/camilablackpage.png";
+import DashBoard from "../../assets/images/imagedash.jpeg";
+import DashBoard2 from "../../assets/images/dash-2.png";
+import DashBoard3 from "../../assets/images/dash2.jpeg";
+import DashBoard4 from "../../assets/images/dashhh.png";
+import PythonCode from "../../assets/images/pythoncode.jpeg";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 import Skills from "../../components/Skills/Skills";
-import { useLocation } from "react-router-dom";
-import ScrollReveal from "scrollreveal";
+
 import "./Home.css";
 
 const Home = () => {
@@ -19,6 +33,44 @@ const Home = () => {
     localStorage.getItem("darkMode") === "true"
   );
   const location = useLocation();
+  const [hoveredCard, setHoveredCard] = useState(null);
+
+  const projects = [
+    {
+      id: 1,
+      title: "Dashboards Power BI",
+      text: "Aqui eu apresento os meus dashboards em Power BI. Todos projetos feitos e publicados por mim.",
+      images: [DashBoard, DashBoard3],
+      link: "/About",
+    },
+    {
+      id: 2,
+      title: "Tutoriais Power BI",
+      text: "Aqui eu apresento tutoriais e passo a passos sobre a ferramenta Power BI.",
+      images: [DashBoard2, DashBoard4],
+    },
+  ];
+
+  const projectPython = [
+    {
+      id: 3,
+      title: "Projetos Python",
+      text: "Apresentação de projetos e tutoriais utilizando Python. Automações, integração com outras ferramentas, utilização para IA e etc.",
+      images: [
+        "https://w0.peakpx.com/wallpaper/266/297/HD-wallpaper-python-logo-python-code-computer-programming-logo.jpg",
+        "https://img3.wallspic.com/crops/0/9/2/3/6/163290/163290-python_logo-python-icon-programming_language-logo-3840x2160.png",
+      ],
+    },
+    {
+      id: 10,
+      title: "Projetos com OpenCV",
+      text: "Aqui mostro projetos com a utilização da biblioteca OpenCV que envolvem classificação de imagens, reconhecimento facial e etc.",
+      images: [
+        "https://media.licdn.com/dms/image/D4D12AQH0D7Zswrrvbg/article-cover_image-shrink_720_1280/0/1690953627107?e=2147483647&v=beta&t=gH6caJ2163WSmxeiGgox8dqQu-D_soffaLWgmmcWscs",
+        "https://iotdesignshop.com/wp-content/uploads/2022/12/487px-OpenCV_Logo_with_text-2.png",
+      ],
+    },
+  ];
 
   useEffect(() => {
     setIsActive(true);
@@ -31,26 +83,34 @@ const Home = () => {
       easing: "cubic-bezier(0.5, 0, 0, 1)",
       reset: true,
     });
-  }, [location.pathname]);
 
-  ScrollReveal().reveal(".reveal-right", {
-    origin: "right",
-    distance: "20px",
-    duration: 2000,
-    delay: 200,
-    easing: "cubic-bezier(0.5, 0, 0, 1)",
-    reset: true,
-  });
+    ScrollReveal().reveal(".reveal-right", {
+      origin: "right",
+      distance: "20px",
+      duration: 2000,
+      delay: 200,
+      easing: "cubic-bezier(0.5, 0, 0, 1)",
+      reset: true,
+    });
+  }, [location.pathname]);
 
   const toggleDarkModeHome = () => {
     const newDarkModeState = !isDarkMode;
     setIsDarkMode(newDarkModeState);
     localStorage.setItem("darkMode", newDarkModeState.toString());
   };
+
   const handleClick = () => {
     window.open("https://github.com/bycmlla", "_blank");
   };
 
+  const handleMouseEnter = (cardIndex) => {
+    setHoveredCard(cardIndex);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredCard(null);
+  };
   return (
     <div className={`home-container ${isDarkMode ? "dark-mode-home" : ""}`}>
       <NavBar
@@ -111,7 +171,6 @@ const Home = () => {
         <img
           src={isDarkMode ? ImageBlackPage : ImageWhitePage}
           alt=""
-          className="reveal-right"
           onClick={handleClick}
         />
         <div>
@@ -121,16 +180,135 @@ const Home = () => {
 
       <section className="text-projects">
         <h2>My Projects</h2>
-        <h4>Power BI Dashboards</h4>
-        <iframe
-          title="aula-curso"
-          width="570"
-          height="373.5"
-          src="https://app.powerbi.com/view?r=eyJrIjoiNDg4NWU3ZjgtYjdiOS00MThiLTlkMTktZjllNWU2NGZhYzQwIiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9"
-          frameborder="0"
-          allowFullScreen="true"
-        ></iframe>
+        <h4>
+          {" "}
+          <SiPowerbi className="icon-size-data" /> Power BI Dashboards
+        </h4>
+        <div className="dashboard-projects">
+          <div>
+            <iframe
+              title="aula-curso"
+              width="625"
+              height="380"
+              src="https://app.powerbi.com/view?r=eyJrIjoiNDg4NWU3ZjgtYjdiOS00MThiLTlkMTktZjllNWU2NGZhYzQwIiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9"
+              allowFullScreen="true"
+            ></iframe>
+
+            <div className="projects-content-home">
+              {projects.map((project) => (
+                <Card
+                  key={project.id}
+                  className="card-projects"
+                  style={{ width: "19rem" }}
+                  onMouseEnter={() => handleMouseEnter(project.id)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <div style={{ position: "relative" }}>
+                    <Card.Img
+                      variant="top"
+                      src={project.images[0]}
+                      style={{ opacity: hoveredCard === project.id ? 0 : 1 }}
+                    />
+                    <Card.Img
+                      variant="top"
+                      src={project.images[1]}
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        opacity: hoveredCard === project.id ? 1 : 0,
+                        transition: "opacity 0.7s ease",
+                      }}
+                    />
+                  </div>
+                  <Card.Body>
+                    <Card.Title>{project.title}</Card.Title>
+                    <Card.Text>{project.text}</Card.Text>
+                    <Link to={project.link}>
+                      <Button className="button-see" variant="primary">
+                        See
+                      </Button>
+                    </Link>
+                  </Card.Body>
+                </Card>
+              ))}
+            </div>
+          </div>
+          <div className="text-description reveal-right">
+            <p>
+              Transformando dados em insights significativos. Através do Power
+              BI, consigo criar dashboards interativos que auxiliam na tomada de
+              decisões estratégicas. Nesta seção, você encontrará alguns dos
+              meus projetos mais recentes e tutoriais que criei para
+              compartilhar meu conhecimento e ajudar outros profissionais a
+              aproveitar ao máximo essa poderosa ferramenta de BI.
+            </p>
+          </div>
+        </div>
+        <hr class="hr hr-blurry" />
+
+        <h4>
+          {" "}
+          <FaPython className="icon-size-python" /> Python Projects
+        </h4>
+
+        <div className="dashboard-projects">
+          <div>
+            <img src={PythonCode} alt="Python Code" width="625" height="380" />
+            <div className="projects-content-home">
+              {projectPython.map((project) => (
+                <Card
+                  key={project.id}
+                  className="card-projects"
+                  style={{ width: "19rem" }}
+                  onMouseEnter={() => handleMouseEnter(project.id)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <div style={{ position: "relative" }}>
+                    <Card.Img
+                      variant="top"
+                      src={project.images[0]}
+                      style={{ opacity: hoveredCard === project.id ? 0 : 1 }}
+                    />
+                    <Card.Img
+                      variant="top"
+                      src={project.images[1]}
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        opacity: hoveredCard === project.id ? 1 : 0,
+                        transition: "opacity 0.7s ease",
+                      }}
+                    />
+                  </div>
+                  <Card.Body>
+                    <Card.Title>{project.title}</Card.Title>
+                    <Card.Text>{project.text}</Card.Text>
+                    {project.link && (
+                      <Link to={project.link}>
+                        <Button className="button-see" variant="primary">
+                          See
+                        </Button>
+                      </Link>
+                    )}
+                  </Card.Body>
+                </Card>
+              ))}
+            </div>
+          </div>
+          <div className="text-description reveal-right">
+            <p>
+              Explorando o mundo da automação e inteligência artificial com
+              Python. Aqui, compartilho projetos e tutoriais que abrangem desde
+              a automação de tarefas até a criação de modelos de aprendizado de
+              máquina. Mergulhe nesta seção para descobrir como Python pode
+              simplificar processos e abrir novas possibilidades.
+            </p>
+          </div>
+        </div>
       </section>
+
       <Footer />
     </div>
   );
