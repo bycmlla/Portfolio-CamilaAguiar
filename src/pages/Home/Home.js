@@ -12,6 +12,7 @@ import {
   FaPython,
   FaJava,
 } from "react-icons/fa";
+import { RiReactjsFill } from "react-icons/ri";
 import { SiPowerbi } from "react-icons/si";
 import ScrollReveal from "scrollreveal";
 
@@ -21,8 +22,9 @@ import DashBoard from "../../assets/images/imagedash.jpeg";
 import DashBoard2 from "../../assets/images/dash-2.png";
 import DashBoard3 from "../../assets/images/dash2.jpeg";
 import DashBoard4 from "../../assets/images/dashhh.png";
-import PythonCode from "../../assets/images/pythoncode.jpeg";
+import PythonCode from "../../assets/images/python.png";
 import JavaCode from "../../assets/images/javaa.png";
+import ReactCode from "../../assets/images/reactjs.png";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 import Skills from "../../components/Skills/Skills";
@@ -98,26 +100,43 @@ const Home = () => {
     },
   ];
 
+  const projectsReact = [
+    {
+      id: 5,
+      title: "Projetos React JS",
+      text: "Aqui apresento os meus projetos realizados utilizando o framework React JS, que alias é o que estou utilizando aqui neste site :)!",
+      images: [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCcBfYByw_dZJa4wY12L8-CpMOCiiaHEjUxg&s",
+        "https://miro.medium.com/v2/resize:fit:1400/1*x0d41ns8PTQZz4a3VbMrBg.png",
+      ],
+      link: "/",
+    },
+    {
+      id: 6,
+      title: "Backend com NodeJS",
+      text: "Explore minhas soluções de backend desenvolvidas com Node.js. Encontre detalhes sobre os projetos que criei, destacando a arquitetura e as funcionalidades de cada um.",
+      images: [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtChA5REy88fmUBnnvxFo8iROkTrEzYfsXeQ&s",
+        "https://polidog.jp/images/covers/nodejs-logo.png",
+      ],
+      link: "/",
+    },
+  ];
+
   useEffect(() => {
     setIsActive(true);
 
-    ScrollReveal().reveal(".reveal", {
-      origin: "left",
+    const sr = ScrollReveal({
       distance: "20px",
       duration: 1300,
-      delay: 200,
       easing: "cubic-bezier(0.5, 0, 0, 1)",
       reset: true,
     });
 
-    ScrollReveal().reveal(".reveal-right", {
-      origin: "right",
-      distance: "20px",
-      duration: 2000,
-      delay: 200,
-      easing: "cubic-bezier(0.5, 0, 0, 1)",
-      reset: true,
-    });
+    sr.reveal(".reveal", { origin: "left", delay: 200 });
+    sr.reveal(".reveal-right", { origin: "right", delay: 200 });
+
+    return () => sr.destroy();
   }, [location.pathname]);
 
   const toggleDarkModeHome = () => {
@@ -398,7 +417,76 @@ const Home = () => {
             </p>
           </div>
         </div>
+        <hr class="hr hr-blurry" />
+
+        <h4>
+          {" "}
+          <RiReactjsFill className="icon-size-python" /> Projetos React JS
+        </h4>
+        <div className="dashboard-projects">
+          <div>
+            <img src={ReactCode} alt="Code react js" width="625" height="380" />
+            <div className="projects-content-home">
+              {projectsReact.map((project) => (
+                <Card
+                  key={project.id}
+                  className="card-projects"
+                  style={{ width: "19rem" }}
+                  onMouseEnter={() => handleMouseEnter(project.id)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <div style={{ position: "relative" }}>
+                    <Card.Img
+                      variant="top"
+                      src={project.images[0]}
+                      style={{ opacity: hoveredCard === project.id ? 0 : 1 }}
+                    />
+                    <Card.Img
+                      variant="top"
+                      src={project.images[1]}
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        opacity: hoveredCard === project.id ? 1 : 0,
+                        transition: "opacity 0.7s ease",
+                      }}
+                    />
+                  </div>
+                  <Card.Body>
+                    <Card.Title>{project.title}</Card.Title>
+                    <Card.Text>{project.text}</Card.Text>
+                    {project.link && (
+                      <Link to={project.link}>
+                        <Button className="button-see" variant="primary">
+                          See
+                        </Button>
+                      </Link>
+                    )}
+                  </Card.Body>
+                </Card>
+              ))}
+            </div>
+          </div>
+          <div className="text-description reveal-right">
+            <p>
+              Mergulhe no universo do desenvolvimento web com React JS e Node
+              JS. Nesta seção, apresento projetos e tutoriais que demonstram
+              minha expertise na criação de aplicações CRUD, desenvolvimento de
+              websites dinâmicos e integração eficiente entre frontend e
+              servidor. Descubra como essas tecnologias podem ser utilizadas
+              para criar soluções modernas e interativas que atendem a diversas
+              necessidades.
+            </p>
+          </div>
+        </div>
+        <hr class="hr hr-blurry" />
       </section>
+      <Link to="/">
+        <Button className="button-see" variant="primary">
+          Navegar até os projetos
+        </Button>
+      </Link>
       <Footer />
     </div>
   );

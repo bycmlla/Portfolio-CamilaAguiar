@@ -122,6 +122,7 @@
   flex: 1; 
 }
 .text-description p{
+  color: #141414;
   text-align: justify;
   font-size: 20px;
   margin: 0;
@@ -150,5 +151,9 @@
 }
 
 .dark-mode-home .text-projects {
+  color: white;
+}
+
+.dark-mode-home .text-description p{
   color: white;
 }

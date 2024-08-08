@@ -92,6 +92,7 @@ const Projects = () => {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa-5LhP_Q8i_JBK8mMzn-ApcwLPH5UhTF76A&s",
         "https://w3.cdn.cl9.cloud/wp-content/uploads/2020/03/quais-as-diferencas-entre-as-versoes-do-sql-server-p10dnfny4wpoh5oxcvtewb4ezm48eemcycsg2jvhl4.jpg",
       ],
+      link: "/sqlpage"
     },
     {
       id: 8,

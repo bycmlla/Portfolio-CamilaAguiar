@@ -1,0 +1,12 @@
+.SQLPage {
+    text-align: justify;
+    margin: 0 auto;
+    max-width: 800px;
+}
+.dark-mode-sql {
+    background-color: #141414;
+}
+
+.dark-mode-sql .SQLPage {
+    color: white;
+}
