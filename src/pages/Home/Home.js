@@ -10,6 +10,7 @@ import {
   FaWhatsapp,
   FaGithubSquare,
   FaPython,
+  FaJava,
 } from "react-icons/fa";
 import { SiPowerbi } from "react-icons/si";
 import ScrollReveal from "scrollreveal";
@@ -21,6 +22,7 @@ import DashBoard2 from "../../assets/images/dash-2.png";
 import DashBoard3 from "../../assets/images/dash2.jpeg";
 import DashBoard4 from "../../assets/images/dashhh.png";
 import PythonCode from "../../assets/images/pythoncode.jpeg";
+import JavaCode from "../../assets/images/javaa.png";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 import Skills from "../../components/Skills/Skills";
@@ -57,9 +59,10 @@ const Home = () => {
       title: "Projetos Python",
       text: "Apresentação de projetos e tutoriais utilizando Python. Automações, integração com outras ferramentas, utilização para IA e etc.",
       images: [
-        "https://w0.peakpx.com/wallpaper/266/297/HD-wallpaper-python-logo-python-code-computer-programming-logo.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZqZkpMyiN2uSuT7GAf6JSkJ44YsZqoQHdw&s",
         "https://img3.wallspic.com/crops/0/9/2/3/6/163290/163290-python_logo-python-icon-programming_language-logo-3840x2160.png",
       ],
+      link: "/link-do-projeto-python",
     },
     {
       id: 10,
@@ -69,6 +72,29 @@ const Home = () => {
         "https://media.licdn.com/dms/image/D4D12AQH0D7Zswrrvbg/article-cover_image-shrink_720_1280/0/1690953627107?e=2147483647&v=beta&t=gH6caJ2163WSmxeiGgox8dqQu-D_soffaLWgmmcWscs",
         "https://iotdesignshop.com/wp-content/uploads/2022/12/487px-OpenCV_Logo_with_text-2.png",
       ],
+      link: "/link-do-projeto-python",
+    },
+  ];
+  const projectJava = [
+    {
+      id: 8,
+      title: "Projetos Java",
+      text: "Explore os projetos desenvolvidos por mim em Java, incluindo integrações com web services SOAP, criação e implementação de classes, e outras soluções robustas.",
+      images: [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_CNWjYF4Oz87WfKqNTsvorNxQc4tdLSfvYQ&s",
+        "https://logolook.net/wp-content/uploads/2022/11/Java-Logo-1996.png",
+      ],
+      link: "/link-do-projeto-java-1",
+    },
+    {
+      id: 7,
+      title: "Banco de Dados com MySQL e SQL",
+      text: "Nesta seção, você encontrará tutoriais e guias práticos sobre o uso de bancos de dados, abrangendo tanto MySQL quanto SQL.",
+      images: [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa-5LhP_Q8i_JBK8mMzn-ApcwLPH5UhTF76A&s",
+        "https://w3.cdn.cl9.cloud/wp-content/uploads/2020/03/quais-as-diferencas-entre-as-versoes-do-sql-server-p10dnfny4wpoh5oxcvtewb4ezm48eemcycsg2jvhl4.jpg",
+      ],
+      link: "/link-do-projeto-java-2",
     },
   ];
 
@@ -307,8 +333,72 @@ const Home = () => {
             </p>
           </div>
         </div>
-      </section>
+        <hr class="hr hr-blurry" />
 
+        <h4>
+          {" "}
+          <FaJava className="icon-size-python" /> Projetos Java
+        </h4>
+
+        <div className="dashboard-projects">
+          <div>
+            <img src={JavaCode} alt="Java Code" width="625" height="380" />
+            <div className="projects-content-home">
+              {projectJava.map((project) => (
+                <Card
+                  key={project.id}
+                  className="card-projects"
+                  style={{ width: "19rem" }}
+                  onMouseEnter={() => handleMouseEnter(project.id)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <div style={{ position: "relative" }}>
+                    <Card.Img
+                      variant="top"
+                      src={project.images[0]}
+                      style={{ opacity: hoveredCard === project.id ? 0 : 1 }}
+                    />
+                    <Card.Img
+                      variant="top"
+                      src={project.images[1]}
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        opacity: hoveredCard === project.id ? 1 : 0,
+                        transition: "opacity 0.7s ease",
+                      }}
+                    />
+                  </div>
+                  <Card.Body>
+                    <Card.Title>{project.title}</Card.Title>
+                    <Card.Text>{project.text}</Card.Text>
+                    {project.link && (
+                      <Link to={project.link}>
+                        <Button className="button-see" variant="primary">
+                          See
+                        </Button>
+                      </Link>
+                    )}
+                  </Card.Body>
+                </Card>
+              ))}
+            </div>
+          </div>
+          <div className="text-description reveal-right">
+            <p>
+              Explorando o universo da programação Java e SQL, compartilho aqui
+              meus projetos e tutoriais que abrangem desde a integração com web
+              services SOAP até a conexão com bancos de dados SQL. Nesta seção,
+              você encontrará exemplos práticos de como utilizo Java para
+              construir aplicações robustas e eficientes, bem como técnicas
+              avançadas de manipulação e consulta de dados em SQL. Mergulhe e
+              descubra como essas tecnologias podem ser aplicadas para resolver
+              problemas complexos e otimizar processos empresariais.
+            </p>
+          </div>
+        </div>
+      </section>
       <Footer />
     </div>
   );
