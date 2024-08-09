@@ -366,7 +366,7 @@ const SQLPage = () => {
           </code>
         </pre>
 
-        <h4>Views Indexadas</h4>
+        <h4 id="views-indexadas">Views Indexadas</h4>
         <p>
           Embora as views normais não armazenem dados fisicamente, uma view
           indexada armazena os dados da consulta resultante, permitindo um
@@ -380,6 +380,219 @@ const SQLPage = () => {
             c.Nome; CREATE UNIQUE CLUSTERED INDEX idx_VendasPorCliente ON
             vwVendasPorCliente (ClienteID);
           </code>
+        </pre>
+
+        <h4 id="views-particao">Views de Partição</h4>
+        <p>
+          Estas views são usadas para unir dados de várias tabelas de partição,
+          permitindo que você trate dados de tabelas separadas como uma única
+          tabela lógica. Elas são úteis para gerenciar grandes volumes de dados
+          divididos em várias tabelas.
+        </p>
+        <pre>
+          <code>
+            {`CREATE VIEW vwVendasParticionadas
+AS
+SELECT * FROM Vendas2019
+UNION ALL
+SELECT * FROM Vendas2020
+UNION ALL
+SELECT * FROM Vendas2021;`}
+          </code>
+        </pre>
+        <p>
+          Agora, você pode consultar a view <code>vwVendasParticionadas</code>{" "}
+          como se fosse uma única tabela.
+        </p>
+        <pre>
+          <code>
+            {`SELECT * FROM vwVendasParticionadas
+WHERE DataVenda >= '2020-01-01' AND DataVenda <= '2020-12-31';`}
+          </code>
+        </pre>
+
+        <h4 id="views-sistema">Views do Sistema</h4>
+        <p>
+          Estas são views internas fornecidas pelo SQL Server que contêm
+          informações sobre o banco de dados e o servidor. Elas são úteis para
+          administração e monitoramento.
+        </p>
+        <pre>
+          <code>{`SELECT * FROM sys.objects WHERE type = 'V';`}</code>
+        </pre>
+
+        <h4 id="views-atualizacao">Views de Atualização</h4>
+        <p>
+          Embora as views sejam tipicamente usadas para consulta, você pode
+          criar views que permitem operações de atualização (INSERT, UPDATE,
+          DELETE) se certas condições forem atendidas.
+        </p>
+        <pre>
+          <code>
+            {`CREATE VIEW vwAtualizacaoClientes
+AS
+SELECT ClienteID, Nome, Email
+FROM Clientes
+WHERE Status = 'Ativo'
+WITH CHECK OPTION;`}
+          </code>
+        </pre>
+        <p>
+          Quando você usa <code>WITH CHECK OPTION</code> ao criar uma view, o
+          SQL Server impõe que qualquer <code>INSERT</code> ou{" "}
+          <code>UPDATE</code> realizado através dessa view deve resultar em uma
+          linha que ainda satisfaça a condição da view.
+        </p>
+        <pre>
+          <code>
+            {`UPDATE vwClientesAtivosAtualizavel
+SET Email = 'novoemail@exemplo.com'
+WHERE ClienteID = 1;`}
+          </code>
+        </pre>
+        <p>
+          Se o cliente com <code>ClienteID = 1</code> tiver{" "}
+          <code>Status = 'Ativo'</code>, seu endereço de e-mail será atualizado.
+          Se o cliente não for ativo, a atualização não será permitida por causa
+          da cláusula <code>WITH CHECK OPTION</code>.
+        </p>
+
+        <h4 id="views-encapsuladas">Views Encapsuladas</h4>
+        <p>
+          Estas são views que referenciam outras views. Isso pode ajudar na
+          organização e modularidade, mas pode afetar o desempenho se não forem
+          gerenciadas adequadamente.
+        </p>
+        <pre>
+          <code>
+            {`CREATE VIEW vwClientesDetalhes AS
+SELECT c.ClienteID, c.Nome, c.Email, v.TotalVendas
+FROM vwClientesAtivos c
+JOIN vwVendasPorCliente v ON c.ClienteID = v.ClienteID;`}
+          </code>
+        </pre>
+
+        <h2 id="joins">Joins</h2>
+
+        <h3 id="o-que-sao-joins">O que são os Joins?</h3>
+        <p>
+          No SQL, os <code>JOINs</code> são utilizados para combinar dados de
+          duas ou mais tabelas com base em uma relação entre elas. Essas
+          operações permitem que você associe registros de diferentes tabelas
+          com base em colunas comuns, criando conjuntos de resultados mais
+          completos e relevantes para suas consultas.
+        </p>
+
+        <h3 id="tipos-joins">Tipos de Joins</h3>
+
+        <h4 id="inner-join">Inner Join</h4>
+        <p>
+          O <code>INNER JOIN</code> retorna registros que têm valores
+          correspondentes em ambas as tabelas. Ele combina linhas de duas
+          tabelas se a condição de junção especificada for verdadeira.
+        </p>
+        <pre>
+          <code>
+            {`SELECT *
+FROM TabelaA
+INNER JOIN TabelaB ON TabelaA.ID = TabelaB.ID;`}
+          </code>
+        </pre>
+
+        <h4 id="left-join">Left Join (Left Outer Join)</h4>
+        <p>
+          O <code>LEFT JOIN</code> retorna todos os registros da tabela da
+          esquerda (tabela A), e os registros correspondentes da tabela da
+          direita (tabela B). Se não houver correspondência, os valores NULL são
+          retornados para as colunas da tabela da direita.
+        </p>
+        <pre>
+          <code>
+            {`SELECT C.NOMECARGO [CARGO], F.NOMEFUNCIONARIO AS [FUNCIONÁRIO], F.SALARIOFUNCIONARIO AS [SALÁRIO]
+FROM CARGO AS C
+LEFT JOIN FUNCIONARIO AS F ON C.IDCARGO = F.IDCARGO;`}
+          </code>
+        </pre>
+
+        <h4 id="right-join">Right Join (Right Outer Join)</h4>
+        <p>
+          O <code>RIGHT JOIN</code> é o oposto do <code>LEFT JOIN</code>. Ele
+          retorna todos os registros da tabela da direita (tabela B), e os
+          registros correspondentes da tabela da esquerda (tabela A). Se não
+          houver correspondência, os valores NULL são retornados para as colunas
+          da tabela da esquerda.
+        </p>
+
+        <h4 id="full-join">Full Join</h4>
+        <p>
+          O <code>FULL JOIN</code> retorna registros quando há uma
+          correspondência em uma das tabelas. Ele retorna todos os registros de
+          ambas as tabelas, combinando as linhas quando há uma correspondência e
+          adicionando NULL onde não há correspondência.
+        </p>
+
+        <h4 id="cross-join">Cross Join</h4>
+        <p>
+          O <code>CROSS JOIN</code> retorna o produto cartesiano de duas
+          tabelas. Isso significa que combina cada linha da primeira tabela com
+          cada linha da segunda tabela, resultando em um número de linhas igual
+          ao produto dos números de linhas nas tabelas.
+        </p>
+
+        <h2 id="case-when">Case When</h2>
+
+        <h3>O que é e como funciona o Case When?</h3>
+        <p>
+          O <code>CASE WHEN</code> no SQL é uma função condicional que permite
+          definir regras específicas para operações em uma tabela de dados.
+          Assim, usamos quando uma condição específica é verdadeira. O{" "}
+          <code>CASE WHEN</code> está composto por três partes: a cláusula{" "}
+          <code>CASE</code>, a cláusula <code>WHEN</code> e a cláusula{" "}
+          <code>THEN</code>.
+        </p>
+        <pre>
+          <code>
+            {`CASE condição
+WHEN valores_condicionais
+THEN ações
+ELSE ação_padrão
+END;`}
+          </code>
+        </pre>
+        <p>Exemplo:</p>
+        <pre>
+          <code>
+            {`CASE
+    WHEN condição1 THEN valor1
+    WHEN condição2 THEN valor2
+    ELSE valorPadrão
+END;`}
+          </code>
+        </pre>
+
+        <h2 id="criacao-instancia">Criação de Instância</h2>
+
+        <h3>Pare e exclua a instância existente</h3>
+        <pre>
+          <code>
+            {`sqllocaldb stop "MinhaInstanciaAntiga"
+sqllocaldb delete "MinhaInstanciaAntiga";`}
+          </code>
+        </pre>
+
+        <h3>Crie uma nova instância</h3>
+        <pre>
+          <code>{`sqllocaldb create "MinhaNovaInstancia";`}</code>
+        </pre>
+
+        <h3>Inicie a nova instância</h3>
+        <pre>
+          <code>{`sqllocaldb start "MinhaNovaInstancia";`}</code>
+        </pre>
+
+        <h3>Verifique as informações da nova instância</h3>
+        <pre>
+          <code>{`sqllocaldb info "MinhaNovaInstancia";`}</code>
         </pre>
 
         <h2>Referências</h2>
