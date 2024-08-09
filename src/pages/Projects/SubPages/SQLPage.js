@@ -386,374 +386,378 @@ const SQLPage = () => {
           </div>
           <hr class="hr hr-blurry" />
         </section>
+        <section>
+          <h2 id="views">Views</h2>
 
-        <h2 id="views">Views</h2>
+          <h4 id="o-que-e-view">O que é uma view (exibição)?</h4>
+          <p>
+            Uma view é uma consulta SQL armazenada que cria uma tabela virtual.
+            Ela não armazena dados, apenas a definição da consulta.
+          </p>
+          <p>
+            São usadas principalmente para leitura e consulta de dados. Não
+            armazenam dados, apenas as definições das consultas. Não aceitam
+            parâmetros.
+          </p>
 
-        <h4 id="o-que-e-view">O que é uma view (exibição)?</h4>
-        <p>
-          Uma view é uma consulta SQL armazenada que cria uma tabela virtual.
-          Ela não armazena dados, apenas a definição da consulta.
-        </p>
-        <p>
-          São usadas principalmente para leitura e consulta de dados. Não
-          armazenam dados, apenas as definições das consultas. Não aceitam
-          parâmetros.
-        </p>
+          <div className="code-container">
+            <button className="copy-button" onClick={copyToClipboard}>
+              Copy
+            </button>
+            <pre className="code-block" ref={codeRef}>
+              <code>
+                CREATE VIEW ClientesAtivos AS SELECT <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ClienteID, <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Nome, <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Email <br />
+                FROM
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Clientes <br />
+                WHERE Status = 'Ativo';
+              </code>
+            </pre>
+            {showNotification && (
+              <div className="notification">
+                Código copiado para a área de transferência!
+              </div>
+            )}
+          </div>
 
-        <div className="code-container">
-          <button className="copy-button" onClick={copyToClipboard}>
-            Copy
-          </button>
-          <pre className="code-block" ref={codeRef}>
-            <code>
-              CREATE VIEW ClientesAtivos AS SELECT <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;ClienteID, <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;Nome, <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;Email <br />
-              FROM
-              <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;Clientes <br />
-              WHERE Status = 'Ativo';
-            </code>
-          </pre>
-          {showNotification && (
-            <div className="notification">
-              Código copiado para a área de transferência!
-            </div>
-          )}
-        </div>
+          <h4 id="tipos-views">Tipos de Views</h4>
 
-        <h4 id="tipos-views">Tipos de Views</h4>
+          <h5 id="views-simples">Views Simples</h5>
+          <p>
+            São as views mais básicas, geralmente baseadas em apenas uma tabela.
+            Não contém funções complexas.
+          </p>
 
-        <h5 id="views-simples">Views Simples</h5>
-        <p>
-          São as views mais básicas, geralmente baseadas em apenas uma tabela.
-          Não contém funções complexas.
-        </p>
+          <div className="code-container">
+            <button className="copy-button" onClick={copyToClipboard}>
+              Copy
+            </button>
+            <pre className="code-block" ref={codeRef}>
+              <code>
+                CREATE VIEW ClientesAtivos AS SELECT <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;ClienteID, <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Nome, <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Email <br />
+                FROM
+                <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Clientes <br />
+                WHERE Status = 'Ativo';
+              </code>
+            </pre>
+            {showNotification && (
+              <div className="notification">
+                Código copiado para a área de transferência!
+              </div>
+            )}
+          </div>
 
-        <div className="code-container">
-          <button className="copy-button" onClick={copyToClipboard}>
-            Copy
-          </button>
-          <pre className="code-block" ref={codeRef}>
-            <code>
-              CREATE VIEW ClientesAtivos AS SELECT <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;ClienteID, <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;Nome, <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;Email <br />
-              FROM
-              <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;Clientes <br />
-              WHERE Status = 'Ativo';
-            </code>
-          </pre>
-          {showNotification && (
-            <div className="notification">
-              Código copiado para a área de transferência!
-            </div>
-          )}
-        </div>
+          <h5 id="views-complexas">Views Complexas</h5>
+          <p>
+            Estas views podem incluir várias tabelas, junções, subconsultas e
+            funções agregadas. Elas são usadas para consultas mais avançadas.
+          </p>
 
-        <h5 id="views-complexas">Views Complexas</h5>
-        <p>
-          Estas views podem incluir várias tabelas, junções, subconsultas e
-          funções agregadas. Elas são usadas para consultas mais avançadas.
-        </p>
+          <div className="code-container">
+            <button className="copy-button" onClick={copyToClipboard}>
+              Copy
+            </button>
+            <pre className="code-block" ref={codeRef}>
+              <code>
+                CREATE VIEW vwVendasPorCliente AS <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;SELECT c.ClienteID, c.Nome, <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;SUM(v.Valor) AS TotalVendas <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;FROM Clientes c <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;JOIN Vendas v ON c.ClienteID =
+                v.ClienteID <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;GROUP BY c.ClienteID, c.Nome;
+              </code>
+            </pre>
+            {showNotification && (
+              <div className="notification">
+                Código copiado para a área de transferência!
+              </div>
+            )}
+          </div>
 
-        <div className="code-container">
-          <button className="copy-button" onClick={copyToClipboard}>
-            Copy
-          </button>
-          <pre className="code-block" ref={codeRef}>
-            <code>
-              CREATE VIEW vwVendasPorCliente AS <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;SELECT c.ClienteID, c.Nome, <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;SUM(v.Valor) AS TotalVendas <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;FROM Clientes c <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;JOIN Vendas v ON c.ClienteID = v.ClienteID{" "}
-              <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;GROUP BY c.ClienteID, c.Nome;
-            </code>
-          </pre>
-          {showNotification && (
-            <div className="notification">
-              Código copiado para a área de transferência!
-            </div>
-          )}
-        </div>
+          <h5 id="views-indexadas">Views Indexadas</h5>
+          <p>
+            Embora as views normais não armazenem dados fisicamente, uma view
+            indexada armazena os dados da consulta resultante, permitindo um
+            acesso mais rápido. Isso ocorre quando um índice é criado na view.
+          </p>
 
-        <h5 id="views-indexadas">Views Indexadas</h5>
-        <p>
-          Embora as views normais não armazenem dados fisicamente, uma view
-          indexada armazena os dados da consulta resultante, permitindo um
-          acesso mais rápido. Isso ocorre quando um índice é criado na view.
-        </p>
+          <div className="code-container">
+            <button className="copy-button" onClick={copyToClipboard}>
+              Copy
+            </button>
+            <pre className="code-block" ref={codeRef}>
+              <code>
+                CREATE VIEW vwVendasPorCliente WITH SCHEMABINDING AS <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;SELECT c.ClienteID, c.Nome, <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;SUM(v.Valor) AS TotalVendas <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;FROM dbo.Clientes c <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;JOIN dbo.Vendas v ON c.ClienteID =
+                v.ClienteID <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;GROUP BY c.ClienteID, c.Nome; <br />
+                <br />
+                CREATE UNIQUE CLUSTERED INDEX idx_VendasPorCliente ON <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;vwVendasPorCliente (ClienteID);
+              </code>
+            </pre>
+            {showNotification && (
+              <div className="notification">
+                Código copiado para a área de transferência!
+              </div>
+            )}
+          </div>
 
-        <div className="code-container">
-          <button className="copy-button" onClick={copyToClipboard}>
-            Copy
-          </button>
-          <pre className="code-block" ref={codeRef}>
-            <code>
-              CREATE VIEW vwVendasPorCliente WITH SCHEMABINDING AS <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;SELECT c.ClienteID, c.Nome, <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;SUM(v.Valor) AS TotalVendas <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;FROM dbo.Clientes c <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;JOIN dbo.Vendas v ON c.ClienteID =
-              v.ClienteID <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;GROUP BY c.ClienteID, c.Nome; <br />
-              <br />
-              CREATE UNIQUE CLUSTERED INDEX idx_VendasPorCliente ON <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;vwVendasPorCliente (ClienteID);
-            </code>
-          </pre>
-          {showNotification && (
-            <div className="notification">
-              Código copiado para a área de transferência!
-            </div>
-          )}
-        </div>
+          <h5 id="views-particao">Views de Partição</h5>
+          <p>
+            Estas views são usadas para unir dados de várias tabelas de
+            partição, permitindo que você trate dados de tabelas separadas como
+            uma única tabela lógica. Elas são úteis para gerenciar grandes
+            volumes de dados divididos em várias tabelas.
+          </p>
 
-        <h5 id="views-particao">Views de Partição</h5>
-        <p>
-          Estas views são usadas para unir dados de várias tabelas de partição,
-          permitindo que você trate dados de tabelas separadas como uma única
-          tabela lógica. Elas são úteis para gerenciar grandes volumes de dados
-          divididos em várias tabelas.
-        </p>
+          <div className="code-container">
+            <button className="copy-button" onClick={copyToClipboard}>
+              Copy
+            </button>
+            <pre className="code-block" ref={codeRef}>
+              <code>
+                CREATE VIEW vwVendasParticionadas AS <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;SELECT * FROM Vendas2019 <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;UNION ALL <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;SELECT * FROM Vendas2020 <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;UNION ALL <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;SELECT * FROM Vendas2021;
+              </code>
+            </pre>
+            {showNotification && (
+              <div className="notification">
+                Código copiado para a área de transferência!
+              </div>
+            )}
+          </div>
 
-        <div className="code-container">
-          <button className="copy-button" onClick={copyToClipboard}>
-            Copy
-          </button>
-          <pre className="code-block" ref={codeRef}>
-            <code>
-              CREATE VIEW vwVendasParticionadas AS <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;SELECT * FROM Vendas2019 <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;UNION ALL <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;SELECT * FROM Vendas2020 <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;UNION ALL <br />
-              &nbsp;&nbsp;&nbsp;&nbsp;SELECT * FROM Vendas2021;
-            </code>
-          </pre>
-          {showNotification && (
-            <div className="notification">
-              Código copiado para a área de transferência!
-            </div>
-          )}
-        </div>
+          <p>
+            Agora, você pode consultar a view <code>vwVendasParticionadas</code>{" "}
+            como se fosse uma única tabela.
+          </p>
 
-        <p>
-          Agora, você pode consultar a view <code>vwVendasParticionadas</code>{" "}
-          como se fosse uma única tabela.
-        </p>
+          <div className="code-container">
+            <button className="copy-button" onClick={copyToClipboard}>
+              Copy
+            </button>
+            <pre className="code-block" ref={codeRef}>
+              <code>
+                SELECT * FROM vwVendasParticionadas <br />
+                WHERE DataVenda (maior que)= '2020-01-01' <br />
+                AND DataVenda (menor que)= '2020-12-31';
+              </code>
+            </pre>
+            {showNotification && (
+              <div className="notification">
+                Código copiado para a área de transferência!
+              </div>
+            )}
+          </div>
 
-        <div className="code-container">
-          <button className="copy-button" onClick={copyToClipboard}>
-            Copy
-          </button>
-          <pre className="code-block" ref={codeRef}>
-            <code>
-              SELECT * FROM vwVendasParticionadas <br />
-              WHERE DataVenda (maior que)= '2020-01-01' <br />
-              AND DataVenda (menor que)= '2020-12-31';
-            </code>
-          </pre>
-          {showNotification && (
-            <div className="notification">
-              Código copiado para a área de transferência!
-            </div>
-          )}
-        </div>
+          <h5 id="views-sistema">Views do Sistema</h5>
+          <p>
+            Estas são views internas fornecidas pelo SQL Server que contêm
+            informações sobre o banco de dados e o servidor. Elas são úteis para
+            administração e monitoramento.
+          </p>
+          <div className="code-container">
+            <button className="copy-button" onClick={copyToClipboard}>
+              Copy
+            </button>
+            <pre className="code-block" ref={codeRef}>
+              <code>SELECT * FROM sys.objects WHERE type = 'V';</code>
+            </pre>
+            {showNotification && (
+              <div className="notification">
+                Código copiado para a área de transferência!
+              </div>
+            )}
+          </div>
 
-        <h5 id="views-sistema">Views do Sistema</h5>
-        <p>
-          Estas são views internas fornecidas pelo SQL Server que contêm
-          informações sobre o banco de dados e o servidor. Elas são úteis para
-          administração e monitoramento.
-        </p>
-        <div className="code-container">
-          <button className="copy-button" onClick={copyToClipboard}>
-            Copy
-          </button>
-          <pre className="code-block" ref={codeRef}>
-            <code>SELECT * FROM sys.objects WHERE type = 'V';</code>
-          </pre>
-          {showNotification && (
-            <div className="notification">
-              Código copiado para a área de transferência!
-            </div>
-          )}
-        </div>
+          <h5 id="views-atualizacao">Views de Atualização</h5>
+          <p>
+            Embora as views sejam tipicamente usadas para consulta, você pode
+            criar views que permitem operações de atualização (INSERT, UPDATE,
+            DELETE) se certas condições forem atendidas.
+          </p>
+          <div className="code-container">
+            <button className="copy-button" onClick={copyToClipboard}>
+              Copy
+            </button>
+            <pre className="code-block" ref={codeRef}>
+              <code>
+                CREATE VIEW vwAtualizacaoClientes <br />
+                AS <br />
+                SELECT ClienteID, Nome, Email <br />
+                FROM Clientes <br />
+                WHERE Status = 'Ativo' <br />
+                WITH CHECK OPTION;
+              </code>
+            </pre>
+            {showNotification && (
+              <div className="notification">
+                Código copiado para a área de transferência!
+              </div>
+            )}
+          </div>
+          <div class="line-container">
+            <div class="vertical-line"></div>
+            <p class="text-content">
+              Quando você usa <code>WITH CHECK OPTION</code> ao criar uma view,
+              o SQL Server impõe que qualquer <code>INSERT</code> ou{" "}
+              <code>UPDATE</code> realizado através dessa view deve resultar em
+              uma linha que ainda satisfaça a condição da view.
+            </p>
+          </div>
+          <div className="code-container">
+            <button className="copy-button" onClick={copyToClipboard}>
+              Copy
+            </button>
+            <pre className="code-block" ref={codeRef}>
+              <code>
+                UPDATE vwClientesAtivosAtualizavel <br />
+                SET Email = 'novoemail@exemplo.com' <br />
+                WHERE ClienteID = 1;
+              </code>
+            </pre>
+            {showNotification && (
+              <div className="notification">
+                Código copiado para a área de transferência!
+              </div>
+            )}
+          </div>
+          <p>
+            Se o cliente com <code>ClienteID = 1</code> tiver{" "}
+            <code>Status = 'Ativo'</code>, seu endereço de e-mail será
+            atualizado. Se o cliente não for ativo, a atualização não será
+            permitida por causa da cláusula <code>WITH CHECK OPTION</code>.
+          </p>
 
-        <h5 id="views-atualizacao">Views de Atualização</h5>
-        <p>
-          Embora as views sejam tipicamente usadas para consulta, você pode
-          criar views que permitem operações de atualização (INSERT, UPDATE,
-          DELETE) se certas condições forem atendidas.
-        </p>
-        <div className="code-container">
-          <button className="copy-button" onClick={copyToClipboard}>
-            Copy
-          </button>
-          <pre className="code-block" ref={codeRef}>
-            <code>
-              CREATE VIEW vwAtualizacaoClientes <br />
-              AS <br />
-              SELECT ClienteID, Nome, Email <br />
-              FROM Clientes <br />
-              WHERE Status = 'Ativo' <br />
-              WITH CHECK OPTION;
-            </code>
-          </pre>
-          {showNotification && (
-            <div className="notification">
-              Código copiado para a área de transferência!
-            </div>
-          )}
-        </div>
-        <p>
-          <i>
-            Quando você usa <code>WITH CHECK OPTION</code> ao criar uma view, o
-            SQL Server impõe que qualquer <code>INSERT</code> ou{" "}
-            <code>UPDATE</code> realizado através dessa view deve resultar em
-            uma linha que ainda satisfaça a condição da view.
-          </i>
-        </p>
-        <div className="code-container">
-          <button className="copy-button" onClick={copyToClipboard}>
-            Copy
-          </button>
-          <pre className="code-block" ref={codeRef}>
-            <code>
-              UPDATE vwClientesAtivosAtualizavel <br />
-              SET Email = 'novoemail@exemplo.com' <br />
-              WHERE ClienteID = 1;
-            </code>
-          </pre>
-          {showNotification && (
-            <div className="notification">
-              Código copiado para a área de transferência!
-            </div>
-          )}
-        </div>
-        <p>
-          Se o cliente com <code>ClienteID = 1</code> tiver{" "}
-          <code>Status = 'Ativo'</code>, seu endereço de e-mail será atualizado.
-          Se o cliente não for ativo, a atualização não será permitida por causa
-          da cláusula <code>WITH CHECK OPTION</code>.
-        </p>
+          <h5 id="views-encapsuladas">Views Encapsuladas</h5>
+          <p>
+            Estas são views que referenciam outras views. Isso pode ajudar na
+            organização e modularidade, mas pode afetar o desempenho se não
+            forem gerenciadas adequadamente.
+          </p>
+          <div className="code-container">
+            <button className="copy-button" onClick={copyToClipboard}>
+              Copy
+            </button>
+            <pre className="code-block" ref={codeRef}>
+              <code>
+                CREATE VIEW vwClientesDetalhes AS <br />
+                SELECT c.ClienteID, c.Nome, c.Email, v.TotalVendas <br />
+                FROM vwClientesAtivos c <br />
+                JOIN vwVendasPorCliente v ON c.ClienteID = v.ClienteID;
+              </code>
+            </pre>
+            {showNotification && (
+              <div className="notification">
+                Código copiado para a área de transferência!
+              </div>
+            )}
+          </div>
+        </section>
+        <section>
+          <hr class="hr hr-blurry" />
+          <h2 id="joins">Joins</h2>
 
-        <h5 id="views-encapsuladas">Views Encapsuladas</h5>
-        <p>
-          Estas são views que referenciam outras views. Isso pode ajudar na
-          organização e modularidade, mas pode afetar o desempenho se não forem
-          gerenciadas adequadamente.
-        </p>
-        <div className="code-container">
-          <button className="copy-button" onClick={copyToClipboard}>
-            Copy
-          </button>
-          <pre className="code-block" ref={codeRef}>
-            <code>
-              CREATE VIEW vwClientesDetalhes AS <br />
-              SELECT c.ClienteID, c.Nome, c.Email, v.TotalVendas <br />
-              FROM vwClientesAtivos c <br />
-              JOIN vwVendasPorCliente v ON c.ClienteID = v.ClienteID;
-            </code>
-          </pre>
-          {showNotification && (
-            <div className="notification">
-              Código copiado para a área de transferência!
-            </div>
-          )}
-        </div>
+          <h4 id="o-que-sao-joins">O que são os Joins?</h4>
+          <p>
+            No SQL, os <code>JOINs</code> são utilizados para combinar dados de
+            duas ou mais tabelas com base em uma relação entre elas. Essas
+            operações permitem que você associe registros de diferentes tabelas
+            com base em colunas comuns, criando conjuntos de resultados mais
+            completos e relevantes para suas consultas.
+          </p>
 
-        <h2 id="joins">Joins</h2>
+          <h4 id="tipos-joins">Tipos de Joins</h4>
 
-        <h4 id="o-que-sao-joins">O que são os Joins?</h4>
-        <p>
-          No SQL, os <code>JOINs</code> são utilizados para combinar dados de
-          duas ou mais tabelas com base em uma relação entre elas. Essas
-          operações permitem que você associe registros de diferentes tabelas
-          com base em colunas comuns, criando conjuntos de resultados mais
-          completos e relevantes para suas consultas.
-        </p>
+          <h5 id="inner-join">Inner Join</h5>
+          <p>
+            O <code>INNER JOIN</code> retorna registros que têm valores
+            correspondentes em ambas as tabelas. Ele combina linhas de duas
+            tabelas se a condição de junção especificada for verdadeira.
+          </p>
+          <div className="code-container">
+            <button className="copy-button" onClick={copyToClipboard}>
+              Copy
+            </button>
+            <pre className="code-block" ref={codeRef}>
+              <code>
+                SELECT * <br />
+                FROM TabelaA <br />
+                INNER JOIN TabelaB ON TabelaA.ID = TabelaB.ID;
+              </code>
+            </pre>
+            {showNotification && (
+              <div className="notification">
+                Código copiado para a área de transferência!
+              </div>
+            )}
+          </div>
+          <h5 id="left-join">Left Join (Left Outer Join)</h5>
+          <p>
+            O <code>LEFT JOIN</code> retorna todos os registros da tabela da
+            esquerda (tabela A), e os registros correspondentes da tabela da
+            direita (tabela B). Se não houver correspondência, os valores NULL
+            são retornados para as colunas da tabela da direita.
+          </p>
+          <div className="code-container">
+            <button className="copy-button" onClick={copyToClipboard}>
+              Copy
+            </button>
+            <pre className="code-block" ref={codeRef}>
+              <code>
+                SELECT C.NOMECARGO [CARGO], F.NOMEFUNCIONARIO AS [FUNCIONÁRIO],
+                F.SALARIOFUNCIONARIO AS [SALÁRIO] <br />
+                FROM CARGO AS C <br />
+                LEFT JOIN FUNCIONARIO AS F ON C.IDCARGO = F.IDCARGO;
+              </code>
+            </pre>
+            {showNotification && (
+              <div className="notification">
+                Código copiado para a área de transferência!
+              </div>
+            )}
+          </div>
+          <h5 id="right-join">Right Join (Right Outer Join)</h5>
+          <p>
+            O <code>RIGHT JOIN</code> é o oposto do <code>LEFT JOIN</code>. Ele
+            retorna todos os registros da tabela da direita (tabela B), e os
+            registros correspondentes da tabela da esquerda (tabela A). Se não
+            houver correspondência, os valores NULL são retornados para as
+            colunas da tabela da esquerda.
+          </p>
 
-        <h4 id="tipos-joins">Tipos de Joins</h4>
+          <h5 id="full-join">Full Join</h5>
+          <p>
+            O <code>FULL JOIN</code> retorna registros quando há uma
+            correspondência em uma das tabelas. Ele retorna todos os registros
+            de ambas as tabelas, combinando as linhas quando há uma
+            correspondência e adicionando NULL onde não há correspondência.
+          </p>
 
-        <h5 id="inner-join">Inner Join</h5>
-        <p>
-          O <code>INNER JOIN</code> retorna registros que têm valores
-          correspondentes em ambas as tabelas. Ele combina linhas de duas
-          tabelas se a condição de junção especificada for verdadeira.
-        </p>
-        <div className="code-container">
-          <button className="copy-button" onClick={copyToClipboard}>
-            Copy
-          </button>
-          <pre className="code-block" ref={codeRef}>
-            <code>
-              SELECT * <br />
-              FROM TabelaA <br />
-              INNER JOIN TabelaB ON TabelaA.ID = TabelaB.ID;
-            </code>
-          </pre>
-          {showNotification && (
-            <div className="notification">
-              Código copiado para a área de transferência!
-            </div>
-          )}
-        </div>
-        <h5 id="left-join">Left Join (Left Outer Join)</h5>
-        <p>
-          O <code>LEFT JOIN</code> retorna todos os registros da tabela da
-          esquerda (tabela A), e os registros correspondentes da tabela da
-          direita (tabela B). Se não houver correspondência, os valores NULL são
-          retornados para as colunas da tabela da direita.
-        </p>
-        <div className="code-container">
-          <button className="copy-button" onClick={copyToClipboard}>
-            Copy
-          </button>
-          <pre className="code-block" ref={codeRef}>
-            <code>
-              SELECT C.NOMECARGO [CARGO], F.NOMEFUNCIONARIO AS [FUNCIONÁRIO],
-              F.SALARIOFUNCIONARIO AS [SALÁRIO] <br />
-              FROM CARGO AS C <br />
-              LEFT JOIN FUNCIONARIO AS F ON C.IDCARGO = F.IDCARGO;
-            </code>
-          </pre>
-          {showNotification && (
-            <div className="notification">
-              Código copiado para a área de transferência!
-            </div>
-          )}
-        </div>
-        <h5 id="right-join">Right Join (Right Outer Join)</h5>
-        <p>
-          O <code>RIGHT JOIN</code> é o oposto do <code>LEFT JOIN</code>. Ele
-          retorna todos os registros da tabela da direita (tabela B), e os
-          registros correspondentes da tabela da esquerda (tabela A). Se não
-          houver correspondência, os valores NULL são retornados para as colunas
-          da tabela da esquerda.
-        </p>
-
-        <h5 id="full-join">Full Join</h5>
-        <p>
-          O <code>FULL JOIN</code> retorna registros quando há uma
-          correspondência em uma das tabelas. Ele retorna todos os registros de
-          ambas as tabelas, combinando as linhas quando há uma correspondência e
-          adicionando NULL onde não há correspondência.
-        </p>
-
-        <h5 id="cross-join">Cross Join</h5>
-        <p>
-          O <code>CROSS JOIN</code> retorna o produto cartesiano de duas
-          tabelas. Isso significa que combina cada linha da primeira tabela com
-          cada linha da segunda tabela, resultando em um número de linhas igual
-          ao produto dos números de linhas nas tabelas.
-        </p>
+          <h5 id="cross-join">Cross Join</h5>
+          <p>
+            O <code>CROSS JOIN</code> retorna o produto cartesiano de duas
+            tabelas. Isso significa que combina cada linha da primeira tabela
+            com cada linha da segunda tabela, resultando em um número de linhas
+            igual ao produto dos números de linhas nas tabelas.
+          </p>
+        </section>
 
         <h2 id="case-when">Case When</h2>
 
@@ -803,7 +807,7 @@ const SQLPage = () => {
         <pre>
           <code>
             {`sqllocaldb stop "MinhaInstanciaAntiga"
-              sqllocaldb delete "MinhaInstanciaAntiga";`}
+sqllocaldb delete "MinhaInstanciaAntiga";`}
           </code>
         </pre>
 

@@ -4,55 +4,55 @@
     max-width: 800px;
 }
 
-#mysql-sql-server{
+#mysql-sql-server {
     margin: 5% 0 2.5%;
 }
 
-.licenciamento-custo{
-    margin: 2.5% 0 5%
+.licenciamento-custo {
+    margin: 2.5% 0 5%;
 }
 
-#indices-sql{
+#indices-sql {
     margin: 5% 0 2.5%;
 }
 
-.indices-sql{
-    margin: 2.5% 0 5%
+.indices-sql {
+    margin: 2.5% 0 5%;
 }
 .code-container {
     position: relative;
     display: block;
-    width: 100%; 
+    width: 100%;
     box-sizing: border-box;
 }
-  
-  .copy-button {
+
+.copy-button {
     position: absolute;
     right: 10px;
     top: 10px;
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: white;
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
-  }
-  
-  .copy-button:hover {
+}
+
+.copy-button:hover {
     background-color: #45a049;
-  }
-  
-  .code-block {
+}
+
+.code-block {
     background-color: #2d2d2d;
     color: #f8f8f2;
     padding: 50px 20px 50px 30px;
     border-radius: 8px;
-    font-family: 'Fira Code', monospace;
+    font-family: "Fira Code", monospace;
     line-height: 1.5;
-    overflow-x: auto; 
+    overflow-x: auto;
     white-space: pre;
-    width: 100%; 
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -69,8 +69,32 @@
     font-size: 14px;
     z-index: 1000;
     opacity: 0.9;
-  }
-  
+}
+
+#views{
+    margin: 5% 0 2.5%;
+}
+#joins{
+    margin: 5% 0 2.5%;
+}
+
+.line-container {
+    display: flex; /* Para alinhar a linha e o texto lado a lado */
+    align-items: flex-start; /* Para alinhar o texto ao topo da linha */
+    margin: 20px 0; /* Adiciona um espaço em cima e embaixo */
+}
+
+.vertical-line {
+    width: 2px; /* Espessura da linha */
+    height: 3.3em; /* Ajuste a altura para um valor fixo ou use uma porcentagem */
+    background-color: #ffffff; /* Cor da linha */
+    margin-right: 10px; /* Espaço entre a linha e o texto */
+}
+
+.text-content {
+    font-style: italic; /* Mantém o texto em itálico */
+}
+
 .dark-mode-sql {
     background-color: #141414;
 }
