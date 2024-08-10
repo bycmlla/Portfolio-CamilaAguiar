@@ -3,17 +3,82 @@
     margin: 0 auto;
     max-width: 800px;
 }
+.image-sql{
+    margin-bottom: 3rem;
+}
+.custom-nav {
+    font-family: Arial, sans-serif;
+    background: rgba(255, 255, 255, 0.201); 
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.325); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+}
 
-#mysql-sql-server {
+.nav-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #f6f6f6;
+    font-weight: bold;
+}
+
+.nav-list,
+.sub-list,
+.sub-sub-list {
+    list-style-type: none;
+    padding-left: 1rem;
+}
+
+.nav-list > li {
+    margin-bottom: 0.5rem;
+}
+
+.nav-link,
+.sub-link,
+.sub-sub-link {
+    color: #ececec;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.nav-link:hover,
+.sub-link:hover,
+.sub-sub-link:hover {
+    text-decoration: underline;
+    color: #0788e4;
+}
+
+.sub-list {
+    margin-top: 0.5rem;
+}
+
+.sub-sub-list {
+    margin-top: 0.3rem;
+}
+
+.sub-list li,
+.sub-sub-list li {
+    margin-bottom: 0.3rem;
+}
+
+.sub-sub-link {
+    font-size: 0.9rem;
+}
+
+#case-when,
+#criacao-instancia,
+#joins,
+#views,
+#indices-sql,
+#mysql-sql-server,
+#referencias {
     margin: 5% 0 2.5%;
 }
 
 .licenciamento-custo {
     margin: 2.5% 0 5%;
-}
-
-#indices-sql {
-    margin: 5% 0 2.5%;
 }
 
 .indices-sql {
@@ -70,14 +135,6 @@
     z-index: 1000;
     opacity: 0.9;
 }
-
-#views{
-    margin: 5% 0 2.5%;
-}
-#joins{
-    margin: 5% 0 2.5%;
-}
-
 .line-container {
     display: flex; /* Para alinhar a linha e o texto lado a lado */
     align-items: flex-start; /* Para alinhar o texto ao topo da linha */
