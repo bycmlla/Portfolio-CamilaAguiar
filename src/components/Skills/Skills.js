@@ -21,9 +21,11 @@ const Skills = () => {
     localStorage.getItem("darkMode") === "true"
   );
 
-  useEffect(() => {
-    setIsDarkMode(localStorage.getItem("darkMode") === "true");
-  }, []);
+useEffect(() => {
+  const currentDarkMode = localStorage.getItem("darkMode") === "true";
+  setIsDarkMode(currentDarkMode);
+}, [isDarkMode]);
+
 
   return (
     <div

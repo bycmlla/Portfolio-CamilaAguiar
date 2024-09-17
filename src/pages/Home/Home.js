@@ -18,10 +18,10 @@ import ScrollReveal from "scrollreveal";
 
 import ImageWhitePage from "../../assets/images/camilawhitepage.png";
 import ImageBlackPage from "../../assets/images/camilablackpage.png";
-import DashBoard from "../../assets/images/imagedash.jpeg";
-import DashBoard2 from "../../assets/images/dash-2.png";
-import DashBoard3 from "../../assets/images/dash2.jpeg";
-import DashBoard4 from "../../assets/images/dashhh.png";
+import DashBoard from "../../assets/images/dashboard 1.jpeg";
+import DashBoard2 from "../../assets/images/dashboard 2.jpeg";
+import DashBoard3 from "../../assets/images/dashboard 3.png";
+import DashBoard4 from "../../assets/images/dashboard 4.png";
 import PythonCode from "../../assets/images/python.png";
 import JavaCode from "../../assets/images/javaa.png";
 import ReactCode from "../../assets/images/reactjs.png";
@@ -44,14 +44,14 @@ const Home = () => {
       id: 1,
       title: "Dashboards Power BI",
       text: "Aqui eu apresento os meus dashboards em Power BI. Todos projetos feitos e publicados por mim.",
-      images: [DashBoard, DashBoard3],
-      link: "/About",
+      images: [DashBoard, DashBoard2],
+      link: "/Dashboards",
     },
     {
       id: 2,
       title: "Tutoriais Power BI",
       text: "Aqui eu apresento tutoriais e passo a passos sobre a ferramenta Power BI.",
-      images: [DashBoard2, DashBoard4],
+      images: [DashBoard3, DashBoard4],
     },
   ];
 
@@ -96,7 +96,7 @@ const Home = () => {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa-5LhP_Q8i_JBK8mMzn-ApcwLPH5UhTF76A&s",
         "https://w3.cdn.cl9.cloud/wp-content/uploads/2020/03/quais-as-diferencas-entre-as-versoes-do-sql-server-p10dnfny4wpoh5oxcvtewb4ezm48eemcycsg2jvhl4.jpg",
       ],
-      link: "/link-do-projeto-java-2",
+      link: "/sqlpage",
     },
   ];
 
@@ -143,6 +143,9 @@ const Home = () => {
     const newDarkModeState = !isDarkMode;
     setIsDarkMode(newDarkModeState);
     localStorage.setItem("darkMode", newDarkModeState.toString());
+
+    window.location.reload();
+    
   };
 
   const handleClick = () => {

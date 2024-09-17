@@ -4,10 +4,10 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import DashBoard from "../../assets/images/imagedash.jpeg";
-import DashBoard2 from "../../assets/images/dash-2.png";
-import DashBoard3 from "../../assets/images/dash2.jpeg";
-import DashBoard4 from "../../assets/images/dashhh.png";
+import DashBoard from "../../assets/images/dashboard 1.jpeg";
+import DashBoard2 from "../../assets/images/dashboard 2.jpeg";
+import DashBoard3 from "../../assets/images/dashboard 3.png";
+import DashBoard4 from "../../assets/images/dashboard 4.png";
 import "./Projects.css";
 
 const Projects = () => {
@@ -39,14 +39,14 @@ const Projects = () => {
       id: 1,
       title: "Dashboards Power BI",
       text: "Aqui eu apresento os meus dashboards em Power BI. Todos projetos feitos e publicados por mim.",
-      images: [DashBoard, DashBoard3],
-      link: "/About",
+      images: [DashBoard, DashBoard2],
+      link: "/Dashboards",
     },
     {
       id: 2,
       title: "Tutoriais Power BI",
       text: "Aqui eu apresento tutoriais e passo a passos sobre a ferramenta Power BI.",
-      images: [DashBoard2, DashBoard4],
+      images: [DashBoard3, DashBoard4],
     },
     {
       id: 3,

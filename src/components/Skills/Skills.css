@@ -10,7 +10,10 @@
   background-color: black;
   margin-left: 10px;
 }
-
+.div-container-skills .icon-size,
+.div-container-skills .icon-size-data {
+  color: black; /* Cor para o modo claro */
+}
 .ul-front-one,
 .ul-front-two,
 .ul-back-end {
@@ -79,5 +82,9 @@
   color: white;
 }
 .dark-mode-skills .ul-back-end {
+  color: white;
+}
+.dark-mode-skills .icon-size,
+.dark-mode-skills .icon-size-data {
   color: white;
 }
