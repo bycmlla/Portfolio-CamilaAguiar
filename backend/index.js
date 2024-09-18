@@ -5,11 +5,10 @@ const cors = require("cors");
 require('dotenv').config();
 
 const server = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT;
 
 server.use(cors());
 server.use(bodyParser.json());
-
 require('dotenv').config();
 
 server.post("/enviarEmail", (req, res) => {

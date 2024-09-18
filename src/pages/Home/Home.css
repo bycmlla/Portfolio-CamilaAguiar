@@ -157,3 +157,56 @@
 .dark-mode-home .text-description p{
   color: white;
 }
+
+@media (max-width: 768px) {
+  .image-container {
+    position: relative;
+    z-index: 0; /* Garanta que ele não fique acima de outros elementos */
+    width: 100%; /* Ajuste a largura para ocupar o espaço adequadamente */
+    top: auto; /* Remove o posicionamento fixo no mobile */
+    bottom: auto;
+  }
+
+  .image-container img {
+    width: 50%; /* Ajusta a largura da imagem para o modo mobile */
+    margin-top: 20px; /* Adicione uma margem para espaçamento */
+  }
+}
+@media screen and (max-width: 768px) {
+  .content-container {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start; /* Garante que os ícones e a imagem estejam alinhados pelo topo */
+    width: 100%;
+  }
+  
+  .image {
+    flex: 1; /* Faz com que o ImageSlider ocupe o espaço restante */
+  }
+
+  .icons-container {
+    flex: 0 0 50px; /* Define uma largura fixa para o container dos ícones */
+    margin-left: 10px; /* Move levemente os ícones para a esquerda */
+  }
+
+  .icons-container ul li {
+    font-size: 25px;
+    margin-left: 0; /* Remove a margem negativa */
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .icons-container ul li {
+    font-size: 28px; /* Ajusta o tamanho dos ícones no modo desktop */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-projects img {
+    width: 100%; /* Ajusta a imagem para ocupar 100% da largura no modo mobile */
+  }
+  .dashboard-projects iframe{
+    width: 450px;
+    height: 300px;
+  }
+}

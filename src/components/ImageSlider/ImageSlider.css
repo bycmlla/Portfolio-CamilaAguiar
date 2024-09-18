@@ -9,10 +9,14 @@
   border-radius: 5px;
   cursor: pointer;
 }
-
 @media screen and (max-width: 768px) {
   .image {
-    width: 100%;
+    text-align: left; /* Alinha a imagem à esquerda no modo mobile */
+    padding-left: 20px; /* Opcional: um pequeno espaço à esquerda */
+  }
+
+  .image img {
+    max-width: 60%; /* Reduz o tamanho da imagem no modo mobile */
   }
 }
 
