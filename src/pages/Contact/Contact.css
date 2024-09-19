@@ -166,7 +166,6 @@
   background-color: rgb(245, 245, 245);
 }
 
-
 .text-talk-container {
   display: flex;
   justify-content: center;
@@ -239,4 +238,23 @@
 .dark-mode-contact .input-email-container .input-email .button-send:hover,
 .dark-mode-contact .text-talk button:hover {
   background-color: #1f1f1f;
+}
+
+@media (max-width: 768px) {
+  .video{
+    height: 0px;
+  }
+
+  .teste{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .teste textarea {
+    margin-left: 0;
+    width: 100%;
+  }
+
 }

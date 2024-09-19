@@ -64,6 +64,8 @@ const Contact = () => {
     const newDarkModeState = !isDarkMode;
     setIsDarkMode(newDarkModeState);
     localStorage.setItem("darkMode", newDarkModeState.toString());
+
+    window.location.reload();
   };
 
   return (

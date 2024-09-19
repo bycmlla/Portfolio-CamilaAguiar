@@ -145,7 +145,6 @@ const Home = () => {
     localStorage.setItem("darkMode", newDarkModeState.toString());
 
     window.location.reload();
-    
   };
 
   const handleClick = () => {
@@ -302,7 +301,13 @@ const Home = () => {
 
         <div className="dashboard-projects">
           <div>
-            <img src={PythonCode} alt="Python Code" width="625" height="380" />
+            <img
+              src={PythonCode}
+              alt="Python Code"
+              width="625"
+              height="380"
+              className="image-project"
+            />
             <div className="projects-content-home">
               {projectPython.map((project) => (
                 <Card
@@ -364,7 +369,13 @@ const Home = () => {
 
         <div className="dashboard-projects">
           <div>
-            <img src={JavaCode} alt="Java Code" width="625" height="380" />
+            <img
+              src={JavaCode}
+              alt="Java Code"
+              width="625"
+              height="380"
+              className="image-project"
+            />
             <div className="projects-content-home">
               {projectJava.map((project) => (
                 <Card
@@ -420,6 +431,7 @@ const Home = () => {
             </p>
           </div>
         </div>
+
         <hr class="hr hr-blurry" />
 
         <h4>
@@ -428,7 +440,13 @@ const Home = () => {
         </h4>
         <div className="dashboard-projects">
           <div>
-            <img src={ReactCode} alt="Code react js" width="625" height="380" />
+            <img
+              src={ReactCode}
+              alt="Code react js"
+              width="625"
+              height="380"
+              className="image-project"
+            />
             <div className="projects-content-home">
               {projectsReact.map((project) => (
                 <Card
@@ -485,11 +503,21 @@ const Home = () => {
         </div>
         <hr class="hr hr-blurry" />
       </section>
-      <Link to="/">
-        <Button className="button-see" variant="primary">
-          Navegar até os projetos
+      <Link to="/projects">
+        <Button
+          className="button-nav"
+          style={{
+            backgroundColor: "black",
+            color: "white",
+            border: "none",
+            marginBottom: "30px",
+            marginLeft: "30px",
+          }}
+        >
+          Veja todos os projetos
         </Button>
       </Link>
+
       <Footer />
     </div>
   );

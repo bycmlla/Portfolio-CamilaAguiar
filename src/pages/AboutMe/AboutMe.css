@@ -81,3 +81,14 @@
 .dark-mode-about .about-me-content {
   color: white;
 }
+@media (max-width: 768px) {
+  .about-me-content{
+    font-size: 13px;
+    margin: 40px 40px;
+  }
+
+  .curriculum-container img{
+    width: 100%;
+
+  }
+}

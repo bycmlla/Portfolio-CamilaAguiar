@@ -38,3 +38,12 @@
 .card-projects img.hovered {
   opacity: 0;
 }
+
+@media (max-width: 768px) {
+  .projects-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
+}

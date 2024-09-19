@@ -44,8 +44,8 @@
   color: rgb(0, 0, 0);
 }
 
-.icons-container ul li:hover{
-  transform: scale(1.2); 
+.icons-container ul li:hover {
+  transform: scale(1.2);
 }
 
 .button-container button:hover {
@@ -54,7 +54,9 @@
 
 .image-container {
   opacity: 0;
-  transition: opacity 1.5s ease-in-out, top 1s ease-in-out;
+  transition:
+    opacity 1.5s ease-in-out,
+    top 1s ease-in-out;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -84,7 +86,7 @@
   width: 90%;
   cursor: pointer;
 }
-.frontend-images img{
+.frontend-images img {
   margin-right: 20px;
 }
 .projects-content-home {
@@ -97,12 +99,6 @@
   margin-bottom: 20px;
 }
 
-.button-see {
-  border: none;
-  background-color: black;
-  color: white;
-}
-
 .text-projects {
   margin: 80px 20px;
 }
@@ -110,18 +106,18 @@
 .text-projects h2 {
   margin-bottom: 20px;
 }
-.dashboard-projects{
+.dashboard-projects {
   display: flex;
   flex-direction: row;
 }
 
-.text-description{
+.text-description {
   margin-top: 20%;
   margin-left: 13%;
   max-width: 500px;
-  flex: 1; 
+  flex: 1;
 }
-.text-description p{
+.text-description p {
   color: #141414;
   text-align: justify;
   font-size: 20px;
@@ -154,59 +150,92 @@
   color: white;
 }
 
-.dark-mode-home .text-description p{
+.dark-mode-home .text-description p {
   color: white;
 }
 
 @media (max-width: 768px) {
   .image-container {
     position: relative;
-    z-index: 0; /* Garanta que ele não fique acima de outros elementos */
-    width: 100%; /* Ajuste a largura para ocupar o espaço adequadamente */
-    top: auto; /* Remove o posicionamento fixo no mobile */
+    z-index: 0;
+    width: 100%;
+    top: auto;
     bottom: auto;
   }
 
   .image-container img {
-    width: 50%; /* Ajusta a largura da imagem para o modo mobile */
-    margin-top: 20px; /* Adicione uma margem para espaçamento */
+    width: 50%;
+    margin-top: 20px;
   }
 }
 @media screen and (max-width: 768px) {
   .content-container {
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-start; /* Garante que os ícones e a imagem estejam alinhados pelo topo */
+    align-items: flex-start;
     width: 100%;
   }
-  
+
   .image {
-    flex: 1; /* Faz com que o ImageSlider ocupe o espaço restante */
+    flex: 1;
+  }
+  .text-and-image-container {
+    margin-left: 30px;
   }
 
   .icons-container {
-    flex: 0 0 50px; /* Define uma largura fixa para o container dos ícones */
-    margin-left: 10px; /* Move levemente os ícones para a esquerda */
+    flex: 0 0 50px;
   }
 
   .icons-container ul li {
     font-size: 25px;
-    margin-left: 0; /* Remove a margem negativa */
+    margin-left: -180px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .icons-container ul li {
-    font-size: 28px; /* Ajusta o tamanho dos ícones no modo desktop */
+    font-size: 28px;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .dashboard-projects img {
-    width: 100%; /* Ajusta a imagem para ocupar 100% da largura no modo mobile */
+@media (max-width: 768px) {
+  .dashboard-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
-  .dashboard-projects iframe{
-    width: 450px;
+  .dashboard-projects img {
+    width: 425px;
+    height: 280px;
+  }
+  iframe {
+    width: 425px;
     height: 300px;
+    max-width: 100%;
+  }
+
+  .card-projects {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .projects-content-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .text-description p {
+    font-size: 13px;
+    margin-top: -90px;
+    margin-left: -40px;
+  }
+  .card-projects img {
+    width: 100%;
+    height: auto;
   }
 }

@@ -32,6 +32,8 @@ const Projects = () => {
     const newDarkModeState = !isDarkMode;
     setIsDarkMode(newDarkModeState);
     localStorage.setItem("darkMode", newDarkModeState.toString());
+
+    window.location.reload();
   };
 
   const projects = [
