@@ -1,0 +1,25 @@
+.container-dashboards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
+    min-height: 100vh; 
+  }
+  
+  .card {
+    flex: 1 1 calc(33.333% - 10px);
+    box-sizing: border-box;
+    border: none;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 10px;
+}
+
+.card-img-top {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    padding: 0;
+  }
+  
