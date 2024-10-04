@@ -1,25 +1,31 @@
 .container-dashboards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    align-items: center;
-    min-height: 100vh; 
-  }
-  
-  .card {
-    flex: 1 1 calc(33.333% - 10px);
-    box-sizing: border-box;
-    border: none;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  align-items: center;
+  min-height: 100vh; 
+  margin: 0 15% 0 15%;
+}
+
+.card {
+  flex: 1 1 calc(25% - 10px); 
+  box-sizing: border-box;
+  border: none;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin: 5px; 
 }
 
 .card-img-top {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 0;
-    padding: 0;
-  }
-  
+  width: 100%;
+  height: auto; 
+  object-fit: cover;
+  border-radius: 0;
+  padding: 0;
+  animation: fade-in 3s;
+}
+
+.card-img-top:hover{
+  transform: scale(1.1);
+}
