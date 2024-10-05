@@ -29,3 +29,11 @@
 .card-img-top:hover{
   transform: scale(1.1);
 }
+
+.dark-mode-dashboards {
+  background-color: #141414;
+}
+
+.dark-mode-dashboards .card-item{
+  background-color: #141414;
+}

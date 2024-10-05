@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Dashboards.css";
-import { motion } from "framer-motion";
-import DashboardVendas from "../../../../assets/images/dashboard 1.jpeg";
-import DashboardClientes from "../../../../assets/images/dashboard 3.png";
-import DashboardJornada from "../../../../assets/images/dashboard 5.png";
-import DashboardSquidGame from "../../../../assets/images/squidgame.png";
-import DashboardAlertas from "../../../../assets/images/alertas.png";
-import DashboardJornada2 from "../../../../assets/images/jornada.png";
+import NavBar from "../../../../components/NavBar/NavBar";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import DashboardVendas from "../../../../assets/images/dashboards/dashboard 1 background.png";
+import DashboardClientes from "../../../../assets/images/dashboards/dashboard 4 background.png";
+import DashboardJornada from "../../../../assets/images/dashboards/dashboard 5 background.png";
+import DashboardSquidGame from "../../../../assets/images/dashboards/squidgame background.png";
+import DashboardAlertas from "../../../../assets/images/dashboards/alertas background.png";
+import DashboardJornada2 from "../../../../assets/images/dashboards/jornada background.png";
 import { Card, Col, Row } from "react-bootstrap";
 
 export const Dashboards = () => {
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("darkMode") === "true"
+  );
+
+  useEffect(() => {
+    setIsDarkMode(localStorage.getItem("darkMode") === "true");
+  }, []);
+  // alternar darkmode
+  const toggleDarkMode = () => {
+    const newDarkModeState = !isDarkMode;
+    setIsDarkMode(newDarkModeState);
+    localStorage.setItem("darkMode", newDarkModeState.toString());
+  };
+  
   const images = [
     {
       id: 1,
@@ -47,29 +62,38 @@ export const Dashboards = () => {
       path: DashboardJornada2,
       alt: "Dashboard de Jornada",
       link: "http://github.com",
-    },
+    }
   ];
 
+  const CardItem = React.memo(({ image }) => (
+    <Col md={4} className="mb-4">
+      <Card className="card-item">
+        <Link to={image.link}>
+          <motion.img
+            className="card-img-top"
+            src={image.path}
+            alt={image.alt}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+          />
+        </Link>
+      </Card>
+    </Col>
+  ));
+  
+
   return (
-    <motion.div className="container-dashboards">
-      <Row>
-        {images.map((image) => (
-          <Col key={image.id} md={4} className="mb-4">
-            <Card>
-              <Link to={image.link}>
-                <motion.img
-                  className="card-img-top"
-                  src={image.path}
-                  alt={image.alt}
-                  initial={{ opacity: 0, scale: 0.5 }} 
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1 }}
-                />
-              </Link>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-    </motion.div>
+    <div className={`dashboard-container ${isDarkMode ? "dark-mode-dashboards" : ""}`}>
+      <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <motion.div className="container-dashboards">
+        <Row>
+          {images.map(image => (
+            <CardItem key={image.id} image={image} />
+          ))}
+        </Row>
+      </motion.div>
+    </div>
   );
+  
 };

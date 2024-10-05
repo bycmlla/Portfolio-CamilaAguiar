@@ -18,10 +18,10 @@ import ScrollReveal from "scrollreveal";
 
 import ImageWhitePage from "../../assets/images/camilawhitepage.png";
 import ImageBlackPage from "../../assets/images/camilablackpage.png";
-import DashBoard from "../../assets/images/dashboard 1.jpeg";
-import DashBoard2 from "../../assets/images/dashboard 2.jpeg";
-import DashBoard3 from "../../assets/images/dashboard 3.png";
-import DashBoard4 from "../../assets/images/dashboard 4.png";
+import DashBoard from "../../assets/images/dashboards/dashboard 1.jpeg";
+import DashBoard2 from "../../assets/images/dashboards/dashboard 2.jpeg";
+import DashBoard3 from "../../assets/images/dashboards/dashboard 3.png";
+import DashBoard4 from "../../assets/images/dashboards/dashboard 4.png";
 import PythonCode from "../../assets/images/python.png";
 import JavaCode from "../../assets/images/javaa.png";
 import ReactCode from "../../assets/images/reactjs.png";

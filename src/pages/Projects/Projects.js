@@ -4,10 +4,10 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import DashBoard from "../../assets/images/dashboard 1.jpeg";
-import DashBoard2 from "../../assets/images/dashboard 2.jpeg";
-import DashBoard3 from "../../assets/images/dashboard 3.png";
-import DashBoard4 from "../../assets/images/dashboard 4.png";
+import DashBoard from "../../assets/images/dashboards/dashboard 1.jpeg";
+import DashBoard2 from "../../assets/images/dashboards/dashboard 2.jpeg";
+import DashBoard3 from "../../assets/images/dashboards/dashboard 3.png";
+import DashBoard4 from "../../assets/images/dashboards/dashboard 4.png";
 import "./Projects.css";
 
 const Projects = () => {

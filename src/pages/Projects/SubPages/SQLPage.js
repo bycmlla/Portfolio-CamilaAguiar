@@ -1,4 +1,4 @@
-import SQLImage from "../../../assets/images/sql-illustration.png";
+import SQLImage from "../../../assets/images/logos/sql-illustration.png";
 import { useRef, useState } from "react";
 import NavBar from "../../../components/NavBar/NavBar";
 import "./SQLPage.css";
