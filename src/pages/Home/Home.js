@@ -173,11 +173,10 @@ const Home = () => {
             text="Hello, i'm Camila"
           />
           <p>
-            Full-stack Developer and <br />
-            Computer Vision. <br /> <br />
-            Full-stack developer, applying knowledge in <br /> React JS, Node
-            JS, TypeScript, and Computer <br /> Vision in Python. Contributing
-            to assistive <br /> technology.
+            Desenvolvedora Full-Stack e<br />
+            Analista de Dados. <br /> <br />
+            Aplicando meus conhecimentos e<br />sempre aprendendo mais. <br/>
+            ReactJS, NodeJS, Angular + Spring Boot,<br /> Power BI e +.
           </p>
         </div>
       </section>

@@ -6,6 +6,7 @@ import Contact from "../pages/Contact/Contact";
 import Projects from "../pages/Projects/Projects";
 import SQLPage from "../pages/Projects/SubPages/SQLPage";
 import { Dashboards } from "../pages/Projects/SubPages/Dashboards/Dashboards";
+import DashboardPage from "../pages/Projects/SubPages/Dashboards/DashboardsSubPages/DashboardPage";
 
 const RoutesComponent = () => {
   return (
@@ -16,7 +17,8 @@ const RoutesComponent = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/sqlpage" element={<SQLPage />} />
-        <Route path="/dashboards" element={<Dashboards />}/>
+        <Route path="/dashboards" element={<Dashboards />} />
+        <Route path="/dashboard/:id" element={<DashboardPage />} />
       </Routes>
     </BrowserRouter>
   );

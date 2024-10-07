@@ -136,20 +136,20 @@
     opacity: 0.9;
 }
 .line-container {
-    display: flex; /* Para alinhar a linha e o texto lado a lado */
-    align-items: flex-start; /* Para alinhar o texto ao topo da linha */
-    margin: 20px 0; /* Adiciona um espaço em cima e embaixo */
+    display: flex;
+    align-items: flex-start; 
+    margin: 20px 0; 
 }
 
 .vertical-line {
-    width: 2px; /* Espessura da linha */
-    height: 3.3em; /* Ajuste a altura para um valor fixo ou use uma porcentagem */
-    background-color: #ffffff; /* Cor da linha */
-    margin-right: 10px; /* Espaço entre a linha e o texto */
+    width: 2px; 
+    height: 3.3em; 
+    background-color: #ffffff;
+    margin-right: 10px;
 }
 
 .text-content {
-    font-style: italic; /* Mantém o texto em itálico */
+    font-style: italic; 
 }
 
 .dark-mode-sql {

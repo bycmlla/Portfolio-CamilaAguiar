@@ -53,13 +53,13 @@ const NavBar = ({ toggleDarkMode, isDarkMode }) => {
           />
         </li>
         <li>
-          <Link to="/projects">My Projects</Link>
+          <Link to="/projects">Meus Projetos</Link>
         </li>
         <li>
-          <Link to="/about">About me</Link>
+          <Link to="/about">Sobre Mim</Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact">Contato</Link>
         </li>
       </ul>
     </nav>

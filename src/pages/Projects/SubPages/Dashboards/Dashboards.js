@@ -10,6 +10,7 @@ import DashboardSquidGame from "../../../../assets/images/dashboards/squidgame b
 import DashboardAlertas from "../../../../assets/images/dashboards/alertas background.png";
 import DashboardJornada2 from "../../../../assets/images/dashboards/jornada background.png";
 import { Card, Col, Row } from "react-bootstrap";
+import Footer from "../../../../components/Footer/Footer";
 
 export const Dashboards = () => {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -25,13 +26,13 @@ export const Dashboards = () => {
     setIsDarkMode(newDarkModeState);
     localStorage.setItem("darkMode", newDarkModeState.toString());
   };
-  
+
   const images = [
     {
       id: 1,
       path: DashboardVendas,
       alt: "Dashboard de Vendas",
-      link: "https://app.powerbi.com/view?r=eyJrIjoiNDg4NWU3ZjgtYjdiOS00MThiLTlkMTktZjllNWU2NGZhYzQwIiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9",
+      link: "/Dashboard1",
     },
     {
       id: 2,
@@ -62,15 +63,15 @@ export const Dashboards = () => {
       path: DashboardJornada2,
       alt: "Dashboard de Jornada",
       link: "http://github.com",
-    }
+    },
   ];
 
   const CardItem = React.memo(({ image }) => (
     <Col md={4} className="mb-4">
       <Card className="card-item">
-        <Link to={image.link}>
+        <Link to={`/dashboard/${image.id}`}>
           <motion.img
-            className="card-img-top"
+            className="card-img-top-dash"
             src={image.path}
             alt={image.alt}
             initial={{ opacity: 0, scale: 0.5 }}
@@ -81,19 +82,22 @@ export const Dashboards = () => {
       </Card>
     </Col>
   ));
-  
 
   return (
-    <div className={`dashboard-container ${isDarkMode ? "dark-mode-dashboards" : ""}`}>
+    <div
+      className={`dashboard-container ${
+        isDarkMode ? "dark-mode-dashboards" : ""
+      }`}
+    >
       <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
       <motion.div className="container-dashboards">
         <Row>
-          {images.map(image => (
+          {images.map((image) => (
             <CardItem key={image.id} image={image} />
           ))}
         </Row>
       </motion.div>
+      <Footer/>
     </div>
   );
-  
 };

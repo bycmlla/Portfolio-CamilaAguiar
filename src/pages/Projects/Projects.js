@@ -94,7 +94,7 @@ const Projects = () => {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa-5LhP_Q8i_JBK8mMzn-ApcwLPH5UhTF76A&s",
         "https://w3.cdn.cl9.cloud/wp-content/uploads/2020/03/quais-as-diferencas-entre-as-versoes-do-sql-server-p10dnfny4wpoh5oxcvtewb4ezm48eemcycsg2jvhl4.jpg",
       ],
-      link: "/sqlpage"
+      link: "/sqlpage",
     },
     {
       id: 8,
@@ -131,8 +131,8 @@ const Projects = () => {
     >
       <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
       <div className="text-projects">
-        <h2>My Projects</h2>
-        <p>Here are my projects. All of them were done by me.</p>
+        <h2>Meus Projetos</h2>
+        <p>Aqui apresento os meus projetos. Tudo aqui foi feito por mim.</p>
       </div>
       <div className="projects-content">
         {projects.map((project) => (
@@ -156,6 +156,8 @@ const Projects = () => {
                   position: "absolute",
                   top: 0,
                   left: 0,
+                  width: "100%",
+                  height: "100%",
                   opacity: hoveredCard === project.id ? 1 : 0,
                   transition: "opacity 0.7s ease",
                 }}

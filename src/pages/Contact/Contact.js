@@ -95,13 +95,13 @@ const Contact = () => {
 
       <section className="contact-container">
         <div className="contact">
-          <h6>Contacts</h6>
+          <h6>Contato</h6>
           <a href="mailto:by.cmlla0107@gmail.com" className="email-text">
             by.cmlla0107@gmail.com
           </a>
         </div>
         <div className="click-here">
-          <h6>Click here</h6>
+          <h6>Clique aqui</h6>
           <ul>
             <li>
               <a href="https://github.com/bycmlla">
@@ -135,7 +135,7 @@ const Contact = () => {
                 type="text"
                 className="input-subject"
                 name="name"
-                placeholder="your name"
+                placeholder="Seu nome"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -144,7 +144,7 @@ const Contact = () => {
                 type="email"
                 className="input-subject"
                 name="email"
-                placeholder="your e-mail"
+                placeholder="Seu e-mail"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -153,14 +153,14 @@ const Contact = () => {
                 type="text"
                 className="input-subject"
                 name="subject"
-                placeholder="subject"
+                placeholder="Assunto"
                 value={formData.subject}
                 onChange={handleChange}
                 required
               />
             </div>
             <textarea
-              placeholder="description"
+              placeholder="Descrição"
               name="description"
               rows="10"
               className="textarea"
@@ -170,7 +170,7 @@ const Contact = () => {
             ></textarea>
             <div>
               <button type="submit" className="button-send">
-                send
+                enviar
               </button>
             </div>
           </form>
@@ -184,7 +184,7 @@ const Contact = () => {
             Damn, alright, just take a quick look at my projects then.
           </p>
           <Link to="/projects">
-            <button>See my projects</button>
+            <button>veja meus projetos</button>
           </Link>
         </div>
       </section>
