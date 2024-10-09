@@ -1,14 +1,14 @@
 import React, { useState, useRef } from "react";
-import NavBar from "../../../../components/NavBar/NavBar";
-import Disparidade from "../../../../assets/images/python/disparity.jpeg";
-import Rosa from "../../../../assets/images/python/image.png";
-import Imx from "../../../../assets/images/python/image 1.png";
-import JetsonNano from "../../../../assets/images/python/image 2.png";
-import OpencvImage from "../../../../assets/images/python/image 4.png";
-import ExempleDisparity from "../../../../assets/images/python/image 3.png";
+import NavBar from "../../../../../components/NavBar/NavBar";
+import Disparidade from "../../../../../assets/images/python/disparity.jpeg";
+import Rosa from "../../../../../assets/images/python/image.png";
+import Imx from "../../../../../assets/images/python/image 1.png";
+import JetsonNano from "../../../../../assets/images/python/image 2.png";
+import OpencvImage from "../../../../../assets/images/python/image 4.png";
+import ExempleDisparity from "../../../../../assets/images/python/image 3.png";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import "./ROSA.css";
-import Footer from "../../../../components/Footer/Footer";
+import Footer from "../../../../../components/Footer/Footer";
 
 const ROSA = () => {
   const [isCodeVisible, setIsCodeVisible] = useState(false);

@@ -1,0 +1,16 @@
+.projects-container-python {
+    min-height: 100vh;
+    margin: 0;
+}
+
+.projects-content-python {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    margin-top: 20px;
+    margin-left: 60px;
+    gap: 0.5%;
+}
+
+.card-projects-python {
+    margin-bottom: 20px;
+}
