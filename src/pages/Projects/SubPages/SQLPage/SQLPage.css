@@ -2,6 +2,7 @@
     text-align: justify;
     margin: 0 auto;
     max-width: 800px;
+    color: black;
 }
 .image-sql{
     margin-bottom: 3rem;
@@ -27,6 +28,7 @@
 .nav-list,
 .sub-list,
 .sub-sub-list {
+    color: black;
     list-style-type: none;
     padding-left: 1rem;
 }
@@ -156,6 +158,10 @@
     background-color: #141414;
 }
 
-.dark-mode-sql .SQLPage {
-    color: white;
+.dark-mode-sql .SQLPage,
+.dark-mode-sql .nav-link,
+.dark-mode-sql .sub-link,
+.dark-mode-sql .sub-sub-link,
+.dark-mode-sql .nav-title {
+    color: white; 
 }

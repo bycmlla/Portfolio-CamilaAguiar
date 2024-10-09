@@ -1,3 +1,46 @@
+.rosa-page {
+    text-align: justify;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
 .image-opencv{
     margin-bottom: 3rem;
+}
+
+.custom-nav-rosa{
+    font-family: Arial, sans-serif;
+    background: rgba(255, 255, 255, 0.201); 
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.325); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.241); 
+}
+.nav-title-rosa{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: black;
+    font-weight: bold;
+}
+.img-rosa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+.dark-mode-rosa {
+    background-color: #141414;
+}
+
+.dark-mode-rosa .rosa-page,
+.dark-mode-rosa .nav-link,
+.dark-mode-rosa .sub-link,
+.dark-mode-rosa .sub-sub-link,
+.dark-mode-rosa .nav-title {
+    color: white; 
 }

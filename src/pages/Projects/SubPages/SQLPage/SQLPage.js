@@ -2,6 +2,7 @@ import SQLImage from "../../../../assets/images/logos/sql-illustration.png";
 import { useRef, useState } from "react";
 import NavBar from "../../../../components/NavBar/NavBar";
 import "./SQLPage.css";
+import Footer from "../../../../components/Footer/Footer";
 
 const SQLPage = () => {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -903,6 +904,7 @@ sqllocaldb delete "MinhaInstanciaAntiga";`}
           </p>
         </section>
       </div>
+      <Footer></Footer>
     </div>
   );
 };
