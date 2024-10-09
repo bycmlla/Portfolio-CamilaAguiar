@@ -58,6 +58,7 @@ const Projects = () => {
         "https://w0.peakpx.com/wallpaper/266/297/HD-wallpaper-python-logo-python-code-computer-programming-logo.jpg",
         "https://img3.wallspic.com/crops/0/9/2/3/6/163290/163290-python_logo-python-icon-programming_language-logo-3840x2160.png",
       ],
+      link: "/rosa"
     },
     {
       id: 4,
