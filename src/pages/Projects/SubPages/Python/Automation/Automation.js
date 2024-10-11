@@ -5,7 +5,8 @@ import PythonBlack from "../../../../../assets/images/python/python black.png";
 import Diretorio from "../../../../../assets/images/python/diretorio.png";
 import CMD from "../../../../../assets/images/python/cmd.png";
 import NavBar from "../../../../../components/NavBar/NavBar";
-
+import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const Automation = () => {
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
@@ -38,12 +39,18 @@ const Automation = () => {
       className={`automation-container ${isDarkMode ? "dark-mode-sql" : ""}`}
     >
       <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <div>
+        <Link to={"/python"} className="back-icon-auth">
+          <FaArrowLeft />
+        </Link>
+      </div>
       <img
         className="image-opencv"
         src={isDarkMode ? Python : PythonBlack}
         alt="Logo da linguagem Python"
         width="100%"
       />
+      
       <div className="rosa-page">
         <p>
           <strong>IMPORTANTE</strong>: Esse procedimento que será ensinado tem
@@ -83,7 +90,7 @@ const Automation = () => {
         </p>
         <a
           href="https://googlechromelabs.github.io/chrome-for-testing/"
-          style={{ textDecoration: "none", fontWeight: "bold", color: "black" }}
+          style={{ textDecoration: "none", fontWeight: "bold", color: "blue" }}
         >
           Chrome for Testing availability
         </a>
@@ -97,6 +104,7 @@ const Automation = () => {
           Clique duas vezes no executável para instalar. Após ver a mensagem de
           confirmação, siga para a próxima etapa.
         </p>
+        <img src={CMD} alt="" className="img-rosa" />
         <h5>Terceiro passo:</h5>
         <p>Instale o Selenium utilizando o comando:</p>
         <div className="code-container">
@@ -112,7 +120,9 @@ const Automation = () => {
             </div>
           )}
         </div>
-        <h5>Hora de codar...</h5>
+        <h4>
+          <code>Hora de codar...</code>
+        </h4>
         <p>
           Os imports que você precisará estarão listados abaixo. Irei pular uma
           explicação detalhada de cada um pois isso ficará muito extenso.
@@ -138,6 +148,163 @@ import logging
             </div>
           )}
         </div>
+        <p>
+          Estas importações são necessárias para configurar e usar o Selenium
+          WebDriver para interagir com o WhatsApp Web.
+        </p>
+        <div className="code-container">
+          <button className="copy-button" onClick={copyToClipboard}>
+            Copy
+          </button>
+          <pre className="code-block" ref={codeRef}>
+            <code>{`chrome_options = Options()
+chrome_options.add_argument("user-data-dir=C:/Caminho_para_seu_usuário/Users/")
+chrome_options.add_argument("profile-directory=Camila de Carvalho")
+service = Service("C:/Caminho_para_o_webdriver/chromedriver-win64/chromedriver.exe")driver = webdriver.Chrome(service=service, options=chrome_options)
+`}</code>
+          </pre>
+          {showNotification && (
+            <div className="notification">
+              Código copiado para a área de transferência!
+            </div>
+          )}
+        </div>
+        <p>
+          Estas linhas configuram o WebDriver para usar o perfil do usuário
+          existente do Chrome, onde as informações de login do WhatsApp Web já
+          estão armazenadas, evitando assim a necessidade de login toda vez.
+        </p>
+        <div className="code-container">
+          <button className="copy-button" onClick={copyToClipboard}>
+            Copy
+          </button>
+          <pre className="code-block" ref={codeRef}>
+            <code>{`try:
+    logging.info("Opening WhatsApp Web")
+    driver.get("https://web.whatsapp.com/")
+    time.sleep(15)
+`}</code>
+          </pre>
+          {showNotification && (
+            <div className="notification">
+              Código copiado para a área de transferência!
+            </div>
+          )}
+        </div>
+        <ul>
+          <li>
+            <code>driver.get(...)</code>: Abre o WhatsApp Web.
+          </li>
+          <li>
+            <code>time.sleep(15)</code>: Aguarda 15 segundos para que a página
+            carregue.
+          </li>
+        </ul>
+        <div className="code-container">
+          <button className="copy-button" onClick={copyToClipboard}>
+            Copy
+          </button>
+          <pre className="code-block" ref={codeRef}>
+            <code>{`logging.info("Searching for the desired chat")
+chat_name = "Nome Contato"
+search_box = WebDriverWait(driver, 30).until(
+    EC.presence_of_element_located((By.XPATH, '//div[@role="textbox" and @data-tab="3"]'))
+)
+search_box.send_keys(chat_name)
+search_box.send_keys(Keys.RETURN)
+time.sleep(2)
+
+`}</code>
+          </pre>
+          {showNotification && (
+            <div className="notification">
+              Código copiado para a área de transferência!
+            </div>
+          )}
+        </div>
+        <p>
+          Digita o nome do chat desejado na caixa de pesquisa. Pressiona a tecla
+          Enter para selecionar o chat.
+        </p>
+        <div className="code-container">
+          <button className="copy-button" onClick={copyToClipboard}>
+            Copy
+          </button>
+          <pre className="code-block" ref={codeRef}>
+            <code>{`logging.info("Attaching the image")
+attach_button = WebDriverWait(driver, 60).until(
+    EC.element_to_be_clickable((By.XPATH, '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/div/div/span'))
+)
+attach_button.click()
+time.sleep(2)
+
+`}</code>
+          </pre>
+          {showNotification && (
+            <div className="notification">
+              Código copiado para a área de transferência!
+            </div>
+          )}
+        </div>
+        <p>
+          Clica no botão de anexo para abrir a opção de envio de arquivos.
+          Insere o caminho da imagem no campo de input de arquivo para anexar a
+          imagem ao chat.
+        </p>
+        <div className="code-container">
+          <button className="copy-button" onClick={copyToClipboard}>
+            Copy
+          </button>
+          <pre className="code-block" ref={codeRef}>
+            <code>{`logging.info("Sending the image")
+send_button = WebDriverWait(driver, 30).until(
+    EC.element_to_be_clickable((By.XPATH, '//span[@data-icon="send"]'))
+)
+send_button.click()
+logging.info("Image sent successfully!")
+time.sleep(5)
+driver.quit()
+`}</code>
+          </pre>
+          {showNotification && (
+            <div className="notification">
+              Código copiado para a área de transferência!
+            </div>
+          )}
+        </div>
+        <p>
+          Clica no botão de envio para mandar a imagem no chat. Fecha o
+          WebDriver após o envio da imagem.
+        </p>
+        <div className="code-container">
+          <button className="copy-button" onClick={copyToClipboard}>
+            Copy
+          </button>
+          <pre className="code-block" ref={codeRef}>
+            <code>{`except Exception as e:
+    logging.error(f"An error has occurred: {e}")
+    driver.quit()
+`}</code>
+          </pre>
+          {showNotification && (
+            <div className="notification">
+              Código copiado para a área de transferência!
+            </div>
+          )}
+        </div>
+        <p>
+          Captura qualquer exceção que ocorra durante o processo e registra uma
+          mensagem de erro no log.
+        </p>
+        <p>Esta função, quando chamada, realiza os seguintes passos:</p>
+        <ol>
+          <li>Configura e inicializa o WebDriver.</li>
+          <li>Abre o WhatsApp Web e aguarda o carregamento completo.</li>
+          <li>Pesquisa pelo chat desejado.</li>
+          <li>Anexa a imagem ao chat.</li>
+          <li>Envia a imagem.</li>
+          <li>Fecha o WebDriver.</li>
+        </ol>
       </div>
     </div>
   );

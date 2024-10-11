@@ -10,6 +10,7 @@ import PythonProjects from "../pages/Projects/SubPages/Python/PythonProjects";
 import { Dashboards } from "../pages/Projects/SubPages/Dashboards/Dashboards";
 import DashboardPage from "../pages/Projects/SubPages/Dashboards/DashboardsSubPages/DashboardPage";
 import Automation from "../pages/Projects/SubPages/Python/Automation/Automation";
+import Refresh from "../pages/Projects/SubPages/Python/Refresh/Refresh";
 
 const RoutesComponent = () => {
   return (
@@ -25,6 +26,7 @@ const RoutesComponent = () => {
         <Route path="/rosa" element={<ROSA />} />
         <Route path="/python" element={<PythonProjects/>}/>
         <Route path="/automation" element={<Automation/>}/>
+        <Route path="/refresh" element={<Refresh/>}/>
       </Routes>
     </BrowserRouter>
   );

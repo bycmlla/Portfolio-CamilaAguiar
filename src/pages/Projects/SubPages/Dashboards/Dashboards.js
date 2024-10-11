@@ -10,6 +10,7 @@ import DashboardSquidGame from "../../../../assets/images/dashboards/squidgame b
 import DashboardAlertas from "../../../../assets/images/dashboards/alertas background.png";
 import DashboardJornada2 from "../../../../assets/images/dashboards/jornada background.png";
 import { Card, Col, Row } from "react-bootstrap";
+import { FaArrowLeft } from "react-icons/fa";
 import Footer from "../../../../components/Footer/Footer";
 
 export const Dashboards = () => {
@@ -90,6 +91,11 @@ export const Dashboards = () => {
       }`}
     >
       <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <div>
+        <Link to={"/projects"} className="back-icon">
+          <FaArrowLeft />
+        </Link>
+      </div>
       <motion.div className="container-dashboards">
         <Row>
           {images.map((image) => (

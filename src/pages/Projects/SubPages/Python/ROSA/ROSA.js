@@ -7,6 +7,8 @@ import JetsonNano from "../../../../../assets/images/python/image 2.png";
 import OpencvImage from "../../../../../assets/images/python/image 4.png";
 import ExempleDisparity from "../../../../../assets/images/python/image 3.png";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
+import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import "./ROSA.css";
 import Footer from "../../../../../components/Footer/Footer";
 
@@ -41,6 +43,11 @@ const ROSA = () => {
   return (
     <div className={`rosapage-container ${isDarkMode ? "dark-mode-rosa" : ""}`}>
       <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <div>
+        <Link to={"/python"} className="back-icon" style={{color: 'white'}}>
+          <FaArrowLeft />
+        </Link>
+      </div>
       <img
         className="image-opencv"
         src={Disparidade}

@@ -1,8 +1,10 @@
-import SQLImage from "../../../../assets/images/logos/sql-illustration.png";
 import { useRef, useState } from "react";
-import NavBar from "../../../../components/NavBar/NavBar";
+import { Link } from "react-router-dom";
 import "./SQLPage.css";
+import NavBar from "../../../../components/NavBar/NavBar";
 import Footer from "../../../../components/Footer/Footer";
+import SQLImage from "../../../../assets/images/logos/sql-illustration.png";
+import { FaArrowLeft } from "react-icons/fa";
 
 const SQLPage = () => {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -28,6 +30,11 @@ const SQLPage = () => {
   return (
     <div className={`SQLPage-container ${isDarkMode ? "dark-mode-sql" : ""}`}>
       <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <div>
+        <Link to={"/python"} className="back-icon" style={{color: 'white'}}>
+          <FaArrowLeft />
+        </Link>
+      </div>
       <img
         className="image-sql"
         src={SQLImage}

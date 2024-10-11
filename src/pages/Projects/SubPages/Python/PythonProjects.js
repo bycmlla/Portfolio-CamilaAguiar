@@ -3,9 +3,11 @@ import NavBar from "../../../../components/NavBar/NavBar";
 import "./PythonProjects.css";
 import Disparity from "../../../../assets/images/python/depthmaps.png";
 import Selenium from "../../../../assets/images/python/selenium.png";
+import PBI from "../../../../assets/images/python/pbi.png"
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 
 const PythonProjects = () => {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -31,11 +33,11 @@ const PythonProjects = () => {
     },
     {
       id: 3,
-      title: "Automação de Mensagens Whatsapp",
-      image: [Selenium],
+      title: "Atualização do Power BI via API",
+      image: [PBI],
       description:
-        "Como enviar mensagens de maneira automática utilizando o Python.",
-      link: "",
+        "Como atualizar seus dashboards do Power BI utilizando Python e a API do Power BI.",
+      link: "/refresh",
     },
   ];
   useEffect(() => {
@@ -56,6 +58,11 @@ const PythonProjects = () => {
       }`}
     >
       <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <div>
+        <Link to={"/projects"} className="back-icon" style={{ color: isDarkMode ? 'white' : 'black' }}>
+          <FaArrowLeft />
+        </Link>
+      </div>
       <div className="projects-content-python">
         {projectsPython.map((project) => (
           <Card
@@ -74,7 +81,7 @@ const PythonProjects = () => {
               <Card.Title>{project.title}</Card.Title>
               <Card.Text>{project.description}</Card.Text>
               <Link to={project.link}>
-                <Button variant="primary">Ver</Button>
+                <Button variant="primary" className="button-projects">Ver</Button>
               </Link>
             </Card.Body>
           </Card>
