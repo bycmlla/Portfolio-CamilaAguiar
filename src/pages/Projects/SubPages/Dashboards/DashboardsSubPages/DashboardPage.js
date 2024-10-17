@@ -43,14 +43,14 @@ const DashboardPage = () => {
         "https://app.powerbi.com/view?r=eyJrIjoiNjA5ZDRhMGEtOTBlZC00MTIwLWEzYmEtZDA5NjE0MDdjODA1IiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9",
     },
     5: {
-      title: "Dashboard: Contagem de Alertas de Motoristas",
+      title: "Dashboard: Análise de Avaliações do iPhone",
       iframeUrl:
-        "https://app.powerbi.com/view?r=eyJrIjoiYzI1MTZjNDYtNzFjMS00ODdhLTgwMGEtYTIzNDVjMGU5NDUwIiwidCI6ImU4YTlhNjA0LWIyYzItNDgzNy1hMDhkLTI1ZGRmNTBlMGU3OCJ9",
+        "https://app.powerbi.com/view?r=eyJrIjoiMmI4YTg0ZTQtMGJiZi00ZTFjLTgxMGItM2U5NjZjYmQ5NWM4IiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9",
     },
     6: {
-      title: "Dashboard: Jornada e Hora Extra de Motoristas",
+      title: "Dashboard: Uso de Dispositivos Móveis",
       iframeUrl:
-        "https://app.powerbi.com/view?r=eyJrIjoiN2VmODQwNjktZjQwMi00NmQ0LTg2MzctMjc2MWEyOThlYTU2IiwidCI6ImU4YTlhNjA0LWIyYzItNDgzNy1hMDhkLTI1ZGRmNTBlMGU3OCJ9&pageName=45ff78b5000ca0816904",
+        "https://app.powerbi.com/view?r=eyJrIjoiMGEyNDY2ODItOGNlMS00N2I3LTg3MWUtMWY0MTgwNzYxMzdmIiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9",
     },
   };
 

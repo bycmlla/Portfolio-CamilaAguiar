@@ -7,8 +7,8 @@ import DashboardVendas from "../../../../assets/images/dashboards/dashboard 1 ba
 import DashboardClientes from "../../../../assets/images/dashboards/dashboard 4 background.png";
 import DashboardJornada from "../../../../assets/images/dashboards/dashboard 5 background.png";
 import DashboardSquidGame from "../../../../assets/images/dashboards/squidgame background.png";
-import DashboardAlertas from "../../../../assets/images/dashboards/alertas background.png";
-import DashboardJornada2 from "../../../../assets/images/dashboards/jornada background.png";
+import DashboardIphone from "../../../../assets/images/dashboards/dashboard 7 background.png";
+import DashboardUso from "../../../../assets/images/dashboards/dashboard 8 background.png";
 import { Card, Col, Row } from "react-bootstrap";
 import { FaArrowLeft } from "react-icons/fa";
 import Footer from "../../../../components/Footer/Footer";
@@ -50,20 +50,20 @@ export const Dashboards = () => {
     {
       id: 4,
       path: DashboardSquidGame,
-      alt: "Dashboard de Round 6",
+      alt: "Análise de Comentários Sobre Round 6",
       link: "https://app.powerbi.com/view?r=eyJrIjoiNjA5ZDRhMGEtOTBlZC00MTIwLWEzYmEtZDA5NjE0MDdjODA1IiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9",
     },
     {
       id: 5,
-      path: DashboardAlertas,
-      alt: "Dashboard de Alertas",
-      link: "https://app.powerbi.com/view?r=eyJrIjoiYzI1MTZjNDYtNzFjMS00ODdhLTgwMGEtYTIzNDVjMGU5NDUwIiwidCI6ImU4YTlhNjA0LWIyYzItNDgzNy1hMDhkLTI1ZGRmNTBlMGU3OCJ9",
+      path: DashboardIphone,
+      alt: "Análise de Avaliações do iPhone",
+      link: "https://app.powerbi.com/view?r=eyJrIjoiMmI4YTg0ZTQtMGJiZi00ZTFjLTgxMGItM2U5NjZjYmQ5NWM4IiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9",
     },
     {
       id: 6,
-      path: DashboardJornada2,
-      alt: "Dashboard de Jornada",
-      link: "http://github.com",
+      path: DashboardUso,
+      alt: "Uso de Dispositivos Móveis",
+      link: "https://app.powerbi.com/view?r=eyJrIjoiMGEyNDY2ODItOGNlMS00N2I3LTg3MWUtMWY0MTgwNzYxMzdmIiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9",
     },
   ];
 
