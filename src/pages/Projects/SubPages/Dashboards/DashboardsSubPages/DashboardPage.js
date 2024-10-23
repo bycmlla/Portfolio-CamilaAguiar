@@ -52,6 +52,21 @@ const DashboardPage = () => {
       iframeUrl:
         "https://app.powerbi.com/view?r=eyJrIjoiMGEyNDY2ODItOGNlMS00N2I3LTg3MWUtMWY0MTgwNzYxMzdmIiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9",
     },
+    7: {
+      title: "Dashboard: Análise Global Sobre Covid-19 em 2021",
+      iframeUrl:
+        "https://app.powerbi.com/view?r=eyJrIjoiNzdkNzdkZjctYzMwNS00OWUxLTlmNDItYWZiYTY1MGExY2Y3IiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9",
+    },
+    8: {
+      title: "Dashboard: World Top Companies: Key Financial Analysis",
+      iframeUrl:
+        "https://app.powerbi.com/view?r=eyJrIjoiN2MyYTUzYzYtYTM4Zi00OWE1LTk5NWItMmIwNjc5ZWU3MDVmIiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9",
+    },
+    9: {
+      title: "Dashboard: Análise Sobre Catálogo da Netlix",
+      iframeUrl:
+        "https://app.powerbi.com/view?r=eyJrIjoiYmQ4MDYwYjctNzcxOS00OTExLTgxMzMtYjAxZDUzNGRkZGY1IiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9&pageName=497ce4e306802030ca6a",
+    },
   };
 
   const selectedDashboard = dashboards[id];
