@@ -1,12 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Automation.css";
+
+import NavBar from "../../../../../components/NavBar/NavBar";
+import Footer from "../../../../../components/Footer/Footer";
+import { FaArrowLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 import Python from "../../../../../assets/images/python/python.png";
 import PythonBlack from "../../../../../assets/images/python/python black.png";
 import Diretorio from "../../../../../assets/images/python/diretorio.png";
 import CMD from "../../../../../assets/images/python/cmd.png";
-import NavBar from "../../../../../components/NavBar/NavBar";
-import { FaArrowLeft } from "react-icons/fa";
-import { Link } from "react-router-dom";
+
+
 const Automation = () => {
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
@@ -40,7 +45,7 @@ const Automation = () => {
     >
       <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
       <div>
-        <Link to={"/python"} className="back-icon-auth">
+        <Link to={"/python"} className="back-icon-automation">
           <FaArrowLeft />
         </Link>
       </div>
@@ -306,6 +311,7 @@ driver.quit()
           <li>Fecha o WebDriver.</li>
         </ol>
       </div>
+      <Footer/>
     </div>
   );
 };

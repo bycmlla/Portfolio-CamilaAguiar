@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
-import NavBar from "../../../../components/NavBar/NavBar";
 import "./PythonProjects.css";
-import Disparity from "../../../../assets/images/python/depthmaps.png";
-import Selenium from "../../../../assets/images/python/selenium.png";
-import PBI from "../../../../assets/images/python/pbi.png"
+
+import NavBar from "../../../../components/NavBar/NavBar";
+
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+
+import Disparity from "../../../../assets/images/python/depthmaps.png";
+import Selenium from "../../../../assets/images/python/selenium.png";
+import PBI from "../../../../assets/images/python/pbi.png";
 
 const PythonProjects = () => {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -40,6 +44,7 @@ const PythonProjects = () => {
       link: "/refresh",
     },
   ];
+
   useEffect(() => {
     setIsDarkMode(localStorage.getItem("darkMode") === "true");
   }, []);
@@ -59,7 +64,11 @@ const PythonProjects = () => {
     >
       <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
       <div>
-        <Link to={"/projects"} className="back-icon" style={{ color: isDarkMode ? 'white' : 'black' }}>
+        <Link
+          to={"/projects"}
+          className="back-icon"
+          style={{ color: isDarkMode ? "white" : "black" }}
+        >
           <FaArrowLeft />
         </Link>
       </div>
@@ -81,7 +90,9 @@ const PythonProjects = () => {
               <Card.Title>{project.title}</Card.Title>
               <Card.Text>{project.description}</Card.Text>
               <Link to={project.link}>
-                <Button variant="primary" className="button-projects">Ver</Button>
+                <Button variant="primary" className="button-projects">
+                  Ver
+                </Button>
               </Link>
             </Card.Body>
           </Card>

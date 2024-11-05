@@ -1,13 +1,12 @@
 .projects-container-python {
     min-height: 100vh;
-    margin: 0;
 }
 
 .projects-content-python {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     margin-top: 20px;
-    margin-left: 60px;
+    margin-left: 100px;
     gap: 0.5%;
 }
 .button-projects{

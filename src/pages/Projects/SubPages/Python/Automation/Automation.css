@@ -1,11 +1,20 @@
+.back-icon-automation {
+    cursor: pointer;
+    position: absolute;
+    top: 70px; 
+    left: 30px; 
+    color: rgb(255, 255, 255);
+    font-size: 24px; 
+}
+
 .dark-mode-sql .rosa-page{
     color: white;
 }
 
-.back-icon-auth{
-    color: white;
+.dark-mode-sql .back-icon-auth{
+    color: black;
 }
 
-.dark-mode-sql .back-icon-auth{
+.dark-mode-sql .back-icon-automation {
     color: black;
 }

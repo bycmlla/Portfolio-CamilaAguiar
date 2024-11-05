@@ -22,8 +22,6 @@ import DashboardMonitoramento from "../../../../assets/images/dashboards/dashboa
 import DashboardProAge from "../../../../assets/images/dashboards/dashboard 13 background.png"
 import DashboardIBGE from "../../../../assets/images/dashboards/dashboard 14 background.png"
 import DashboardNvidia from "../../../../assets/images/dashboards/dashboard 15 background.png"
-import { link, path } from "framer-motion/client";
-
 
 export const Dashboards = () => {
   const [isDarkMode, setIsDarkMode] = useState(

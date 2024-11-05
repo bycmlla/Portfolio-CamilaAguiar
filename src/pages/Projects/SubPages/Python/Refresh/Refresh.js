@@ -1,12 +1,16 @@
 import { useState, useRef } from "react";
+import "./Refresh.css";
+
 import { FaArrowLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
+
 import NavBar from "../../../../../components/NavBar/NavBar";
-import PbiPyBlack from "../../../../../assets/images/python/pbi black.png"
-import PbiPyWhite from "../../../../../assets/images/python/pbi white.png"
+
+import PbiPyBlack from "../../../../../assets/images/python/pbi black.png";
+import PbiPyWhite from "../../../../../assets/images/python/pbi white.png";
+
 
 const Refresh = () => {
-
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
   );
@@ -30,17 +34,19 @@ const Refresh = () => {
   };
 
   return (
-    <div className={`rosapage-container ${isDarkMode ? "dark-mode-rosa" : ""}`}>
+    <div className={`refresh-container ${isDarkMode ? "dark-mode-refresh" : ""}`}>
       <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
       <div>
-        <Link to={"/python"} className="back-icon" style={{color: 'white'}}>
+        <Link to={"/python"} className="back-icon" style={{ color: "white" }}>
           <FaArrowLeft />
         </Link>
       </div>
-      <img src={isDarkMode ? PbiPyWhite : PbiPyBlack} alt="Logo do Python e do Power BI" width="100%"/>
-      <div className="rosa-page">
-        
-      </div>
+      <img
+        src={isDarkMode ? PbiPyWhite : PbiPyBlack}
+        alt="Logo do Python e do Power BI"
+        width="100%"
+      />
+      <div className="rosa-page"></div>
     </div>
   );
 };
