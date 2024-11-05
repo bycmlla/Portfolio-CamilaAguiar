@@ -67,6 +67,27 @@ const DashboardPage = () => {
       iframeUrl:
         "https://app.powerbi.com/view?r=eyJrIjoiYmQ4MDYwYjctNzcxOS00OTExLTgxMzMtYjAxZDUzNGRkZGY1IiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9&pageName=497ce4e306802030ca6a",
     },
+    10: {
+      title: "Dashboard: Análise das Ações da NVidia",
+      iframeUrl:
+        "https://app.powerbi.com/view?r=eyJrIjoiN2QzNDFmMmEtY2VhZi00NzcxLWI0MGYtYjkzNzRiZDM3NmU1IiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9",
+    },
+    11: {
+      title: "Dashboard: Monitoramento de Churn e Acompanhamento de Clientes",
+      iframeUrl:
+        "https://app.powerbi.com/view?r=eyJrIjoiMzZiMGRmYTctNjE5OS00OTFmLWI4YTktNzNjMWE5Yjc2MjM4IiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9&pageName=10402655dadeb565b5b9",
+    },
+    12: {
+      title:
+        "Dashboard: Análise de Desenvolvimento - Empresa Fictícia ProVantage Solutions",
+      iframeUrl:
+        "https://app.powerbi.com/view?r=eyJrIjoiZjMwMmNlNDAtZTAxOC00NjQxLWIxMGItNWFiODNlYTZkZGE0IiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9&pageName=0262dd75e14362398e2b",
+    },
+    13: {
+      title: "Dashboard: Principais Indicadores do IBGE",
+      iframeUrl:
+        "https://app.powerbi.com/view?r=eyJrIjoiOTZlNzRiY2UtZWJjNS00MTliLThmYWUtODg1NDRmNzZmNzE1IiwidCI6IjJhYTE4ODc1LTgwMjktNDkzZi1iMWEzLTE1M2FlNzllMjc4MCJ9",
+    },
   };
 
   const selectedDashboard = dashboards[id];
