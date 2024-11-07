@@ -77,7 +77,7 @@ const PythonProjects = () => {
           <Card
             key={project.id}
             className="card-projects-python"
-            style={{ width: "18rem" }}
+            style={{ width: "17rem" }}
           >
             <div style={{ position: "relative" }}>
               <Card.Img

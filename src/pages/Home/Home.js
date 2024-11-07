@@ -66,16 +66,6 @@ const Home = () => {
       ],
       link: "/link-do-projeto-python",
     },
-    {
-      id: 10,
-      title: "Projetos com OpenCV",
-      text: "Aqui mostro projetos com a utilização da biblioteca OpenCV que envolvem classificação de imagens, reconhecimento facial e etc.",
-      images: [
-        "https://media.licdn.com/dms/image/D4D12AQH0D7Zswrrvbg/article-cover_image-shrink_720_1280/0/1690953627107?e=2147483647&v=beta&t=gH6caJ2163WSmxeiGgox8dqQu-D_soffaLWgmmcWscs",
-        "https://iotdesignshop.com/wp-content/uploads/2022/12/487px-OpenCV_Logo_with_text-2.png",
-      ],
-      link: "/link-do-projeto-python",
-    },
   ];
   const projectJava = [
     {
