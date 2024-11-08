@@ -1,0 +1,17 @@
+.refresh-page-2{
+    text-align: justify;
+    margin: 0 auto;
+    max-width: 800px;
+    margin-top: 50px;
+}
+
+.dark-mode-refreshparttwo {
+    background-color: #141414;
+}
+.dark-mode-refreshparttwo .refresh-page-2{
+    color: white;
+}
+
+.dark-mode-refreshparttwo .back-icon-refresh{
+    color: rgb(0, 0, 0);
+}

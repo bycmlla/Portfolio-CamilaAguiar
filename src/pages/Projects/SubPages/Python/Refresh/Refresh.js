@@ -364,7 +364,7 @@ scopes = ['https://analysis.windows.net/powerbi/api/.default']
           <button className="copy-button" onClick={copyToClipboard}>
             Copy
           </button>
-          <pre className="code-block" ref={codeRef}>
+          <pre className="code-block" ref={codeRef}>                                               
             <code>
               {`
 import requests
@@ -394,7 +394,7 @@ print(response)
         <p>
           A execução deste bloco de código me dará uma concessão inválida. Para
           resolver este problema, vamos voltar ao Microsoft Azure, e buscar por
-          Azure Active Directory > propriedades.
+          Azure Active Directory - propriedades.
           <br />
           <br />A razão pela qual estamos recebendo o erro é porque a Microsoft
           Addres, por padrão, tem várias camadas de segurança e configurações

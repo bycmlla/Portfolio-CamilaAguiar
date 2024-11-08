@@ -11,6 +11,7 @@ import { Dashboards } from "../pages/Projects/SubPages/Dashboards/Dashboards";
 import DashboardPage from "../pages/Projects/SubPages/Dashboards/DashboardsSubPages/DashboardPage";
 import Automation from "../pages/Projects/SubPages/Python/Automation/Automation";
 import Refresh from "../pages/Projects/SubPages/Python/Refresh/Refresh";
+import { RefreshPartTwo } from "../pages/Projects/SubPages/Python/RefreshPartTwo/RefreshPartTwo";
 
 const RoutesComponent = () => {
   return (
@@ -27,6 +28,7 @@ const RoutesComponent = () => {
         <Route path="/python" element={<PythonProjects/>}/>
         <Route path="/automation" element={<Automation/>}/>
         <Route path="/refresh" element={<Refresh/>}/>
+        <Route path="/refresh2" element={<RefreshPartTwo/>}/>
       </Routes>
     </BrowserRouter>
   );

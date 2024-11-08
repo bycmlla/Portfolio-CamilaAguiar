@@ -12,6 +12,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import Disparity from "../../../../assets/images/python/depthmaps.png";
 import Selenium from "../../../../assets/images/python/selenium.png";
 import PBI from "../../../../assets/images/python/pbi.png";
+import PowerBi from "../../../../assets/images/python/power-BI.png"
 
 const PythonProjects = () => {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -37,11 +38,19 @@ const PythonProjects = () => {
     },
     {
       id: 3,
-      title: "Atualização do Power BI via API",
+      title: "Conexão da API do Power BI",
       image: [PBI],
       description:
-        "Como atualizar seus dashboards do Power BI utilizando Python e a API do Power BI.",
+        "Conectando-se a API do Power BI com Python.",
       link: "/refresh",
+    },
+    {
+      id: 4,
+      title: "Atualização de Datasets Via API Power BI",
+      image: [PowerBi],
+      description:
+        "Atualizando datasets automaticamente do Power BI via API com Python.",
+      link: "/refresh2",
     },
   ];
 
