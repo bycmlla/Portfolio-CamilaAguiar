@@ -12,6 +12,9 @@ import DashboardPage from "../pages/Projects/SubPages/Dashboards/DashboardsSubPa
 import Automation from "../pages/Projects/SubPages/Python/Automation/Automation";
 import Refresh from "../pages/Projects/SubPages/Python/Refresh/Refresh";
 import { RefreshPartTwo } from "../pages/Projects/SubPages/Python/RefreshPartTwo/RefreshPartTwo";
+import Tutorial from "../pages/Projects/SubPages/Dashboards/Tutorial/Tutorial";
+import { RoomRover } from "../pages/Projects/SubPages/Angular/RoomRover/RoomRover";
+import Angular from "../pages/Projects/SubPages/Angular/Angular"
 
 const RoutesComponent = () => {
   return (
@@ -29,6 +32,9 @@ const RoutesComponent = () => {
         <Route path="/automation" element={<Automation/>}/>
         <Route path="/refresh" element={<Refresh/>}/>
         <Route path="/refresh2" element={<RefreshPartTwo/>}/>
+        <Route path="/tutorialpbi" element={<Tutorial/>}/>
+        <Route path="/roomrover" element={<RoomRover/>}/>
+        <Route path="/angular" element={<Angular/>}/>
       </Routes>
     </BrowserRouter>
   );

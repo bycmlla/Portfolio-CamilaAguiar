@@ -31,7 +31,7 @@ const SQLPage = () => {
     <div className={`SQLPage-container ${isDarkMode ? "dark-mode-sql" : ""}`}>
       <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
       <div>
-        <Link to={"/python"} className="back-icon" style={{color: 'white'}}>
+        <Link to={"/projects"} className="back-icon" style={{color: 'white'}}>
           <FaArrowLeft />
         </Link>
       </div>

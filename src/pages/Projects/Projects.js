@@ -46,8 +46,8 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Tutoriais Power BI",
-      text: "Aqui eu apresento tutoriais e passo a passos sobre a ferramenta Power BI.",
+      title: "Transmitindo Conhecimentos - Power BI",
+      text: "Aprenda alguns assuntos sobre a ferramenta Power BI.",
       images: [DashBoard3, DashBoard4],
     },
     {
@@ -68,6 +68,7 @@ const Projects = () => {
         "https://storage.googleapis.com/medium-feed.appspot.com/images%2F9353691196%2F0d870cf02afb1-Angular-para-negocios.png",
         "https://www.ryadel.com/wp-content/uploads/2017/10/angular-logo.jpg",
       ],
+      link: "/angular"
     },
     {
       id: 5,
