@@ -5,6 +5,7 @@ import { Card, Col, Row } from "react-bootstrap";
 import "./Dashboards.css";
 
 import { FaArrowLeft } from "react-icons/fa";
+import { SiPowerbi } from "react-icons/si";
 
 import NavBar from "../../../../components/NavBar/NavBar";
 import Footer from "../../../../components/Footer/Footer";
@@ -15,13 +16,13 @@ import DashboardJornada from "../../../../assets/images/dashboards/dashboard 5 b
 import DashboardSquidGame from "../../../../assets/images/dashboards/dashboard 12 background.png";
 import DashboardIphone from "../../../../assets/images/dashboards/dashboard 7 background.png";
 import DashboardUso from "../../../../assets/images/dashboards/dashboard 8 background.png";
-import DashboardCovid from "../../../../assets/images/dashboards/dashboard 9 background.png"
-import DashboardEmpresas from "../../../../assets/images/dashboards/dashboard 10 background.png"
-import DashboardNetflix from "../../../../assets/images/dashboards/dashboard 11 background.png"
-import DashboardMonitoramento from "../../../../assets/images/dashboards/dashboard 6 background.png"
-import DashboardProAge from "../../../../assets/images/dashboards/dashboard 13 background.png"
-import DashboardIBGE from "../../../../assets/images/dashboards/dashboard 14 background.png"
-import DashboardNvidia from "../../../../assets/images/dashboards/dashboard 15 background.png"
+import DashboardCovid from "../../../../assets/images/dashboards/dashboard 9 background.png";
+import DashboardEmpresas from "../../../../assets/images/dashboards/dashboard 10 background.png";
+import DashboardNetflix from "../../../../assets/images/dashboards/dashboard 11 background.png";
+import DashboardMonitoramento from "../../../../assets/images/dashboards/dashboard 6 background.png";
+import DashboardProAge from "../../../../assets/images/dashboards/dashboard 13 background.png";
+import DashboardIBGE from "../../../../assets/images/dashboards/dashboard 14 background.png";
+import DashboardNvidia from "../../../../assets/images/dashboards/dashboard 15 background.png";
 
 export const Dashboards = () => {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -44,10 +45,7 @@ export const Dashboards = () => {
       path: DashboardIphone,
       alt: "Análise de Avaliações do iPhone",
     },
-    {id: 10,
-      path: DashboardNvidia,
-      alt: "Análise de Ações da NVidia",
-    },
+    { id: 10, path: DashboardNvidia, alt: "Análise de Ações da NVidia" },
     {
       id: 9,
       path: DashboardNetflix,
@@ -89,7 +87,7 @@ export const Dashboards = () => {
       alt: "Análise Global Sobre Covid-19 em 2021",
     },
     {
-      id: 11, 
+      id: 11,
       path: DashboardMonitoramento,
       alt: "Monitoramento de Churn e Acompanhamento de Clientes",
     },
@@ -104,7 +102,7 @@ export const Dashboards = () => {
       alt: "Análise de Comentários Sobre Round 6",
     },
   ];
-  
+
   const CardItem = React.memo(({ image }) => (
     <Col md={4} className="mb-4">
       <Card className="card-item">
@@ -129,6 +127,13 @@ export const Dashboards = () => {
       }`}
     >
       <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <p className="text-ini">
+        O <span>Power BI</span> é uma ferramenta de análise de dados e visualização da
+        Microsoft que oferece uma interface intuitiva para transformar dados em
+        informações acionáveis.
+        <br/><br/>
+       <span><SiPowerbi /> Clique nos gráficos e veja alguns dos meus dasboards! <SiPowerbi /></span>
+      </p>
       <div>
         <Link to={"/projects"} className="back-icon">
           <FaArrowLeft />
@@ -141,7 +146,11 @@ export const Dashboards = () => {
           ))}
         </Row>
       </motion.div>
-      <Footer/>
+      <p className="text-ini">
+          Os dados utilizados acima são ficticios ou retirados de sites públicos, apenas para fins de visualização.
+        <br/><br/>
+      </p>
+      <Footer />
     </div>
   );
 };
