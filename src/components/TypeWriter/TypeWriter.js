@@ -16,11 +16,18 @@ export const TypeWriter = ({ textColor, text }) => {
     return () => clearTimeout(timer);
   }, [text, writeScreen]);
 
+  const formattedText = displayText.split("\n").map((line, index) => (
+    <React.Fragment key={index}>
+      {line}
+      <br />
+    </React.Fragment>
+  ));
+
   return (
     <div>
-      <div className="write-machine" style={{ color: textColor }}>{displayText}</div>
+      <div className="write-machine" style={{ color: textColor }}>
+        {formattedText}
+      </div>
     </div>
   );
 };
-
-export default TypeWriter;

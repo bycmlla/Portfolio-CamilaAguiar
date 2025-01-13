@@ -160,13 +160,12 @@ const Home = () => {
         <div className="text-container reveal">
           <TypeWriter
             textColor={isDarkMode ? "white" : "black"}
-            text="Hello, i'm Camila"
+            text="Olá, eu sou Camila Carvalho"
           />
           <p>
             Desenvolvedora Full-Stack e<br />
             Analista de Dados. <br /> <br />
             Aplicando meus conhecimentos e<br />sempre aprendendo mais. <br/>
-            ReactJS, NodeJS, Angular + Spring Boot,<br /> Power BI e +.
           </p>
         </div>
       </section>

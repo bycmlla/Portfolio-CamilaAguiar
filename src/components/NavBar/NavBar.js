@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import "./NavBar.css";
 import LogoDark from "../../assets/icons/CamilaCarvalho.png";
-import LogoLight from "../../assets/icons/Camila Carvalho-white.png";
+import LogoLight from "../../assets/icons/CamilaCarvalho-white.png";
 import { useState, useEffect } from "react";
 import { MdDarkMode } from "react-icons/md";
 import ScrollReveal from "scrollreveal";
@@ -53,7 +53,7 @@ const NavBar = ({ toggleDarkMode, isDarkMode }) => {
           />
         </li>
         <li>
-          <Link to="/projects">Meus Projetos</Link>
+          <Link to="/projects">Projetos</Link>
         </li>
         <li>
           <Link to="/about">Sobre Mim</Link>
