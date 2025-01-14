@@ -9,18 +9,20 @@
 .text-and-image-container {
   display: flex;
   text-align: justify;
-  width: 80%;
-  margin-left: 4%;
+  margin: 50px 0 100px 100px;
   font-family: "Istok Web", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
 }
+
+.text-container p{
+  color: grey;
+}
 .content-container {
   display: flex;
   align-items: center;
-  width: 80%;
-  margin-top: 15px;
+  margin: 110px 50px 0 0;
 }
 
 .icons-container {
@@ -55,40 +57,36 @@
 .image-container {
   opacity: 0;
   transition:
-    opacity 1.5s ease-in-out,
-    top 1s ease-in-out;
+  opacity 1.5s ease-in-out,
+  top 1s ease-in-out;
   position: absolute;
   right: 0;
   bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 5%;
-  display: flex;
   flex-direction: column;
+  padding-bottom: 5%; 
 }
 
 .image-container.active {
   opacity: 1;
-  top: 10%;
 }
 
 .image-container img {
-  width: 85%;
+  width: 65%;
   max-width: 100%;
-  max-height: 100%;
+  max-height: calc(100vh - 20%); 
   object-fit: contain;
-  transition: width 0.3s ease;
-  margin-top: 80%;
-  margin-bottom: 30px;
+  transition: transform 0.3s ease, width 0.3s ease;
+  margin-bottom: auto; 
 }
-.centered-image:hover {
-  width: 90%;
+
+.image-container img:hover {
+  transform: scale(1.02);
   cursor: pointer;
 }
-.frontend-images img {
-  margin-right: 20px;
-}
+
 .projects-content-home {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
@@ -164,32 +162,53 @@
   }
 
   .image-container img {
-    width: 50%;
+    width: 65%;
     margin-top: 20px;
   }
 }
 @media screen and (max-width: 768px) {
   .content-container {
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
     width: 100%;
   }
-
-  .image {
-    flex: 1;
+  .content-container {
+    display: flex;
+    margin: 10px 0 0 0;
   }
+
   .text-and-image-container {
-    margin-left: 30px;
+    margin-left: 0;
+    width: 100%; 
+    text-align: center; 
   }
 
   .icons-container {
-    flex: 0 0 50px;
+    flex: none;
+    width: auto; 
+  }
+
+  .icons-container ul {
+    display: flex; 
+    flex-direction: column;
+    gap: 10px; 
+    justify-content: center; 
+    padding: 0;
+    margin: 0 0 0 20px;
   }
 
   .icons-container ul li {
-    font-size: 25px;
-    margin-left: -180px;
+    font-size: 35px;
+    margin-left: 0; 
+  }
+
+  .text-container {
+    margin: 0px 10%;
+  }
+  .text-container p{
+    text-align: start
+    ;
   }
 }
 
@@ -212,8 +231,6 @@
     height: 280px;
   }
   iframe {
-    width: 425px;
-    height: 300px;
     max-width: 100%;
   }
 
@@ -231,10 +248,51 @@
   }
   .text-description p {
     font-size: 13px;
-    margin-top: -90px;
+    margin-top: -70px;
     margin-left: -40px;
   }
   .card-projects img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  
+  body {
+    font-size: 16px;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .text-container {
+    margin: 10px 0;
+    padding: 0 20px;
+    text-align: center; 
+  }
+
+  .image-container img {
+    width: 100%; 
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .icons-container ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .icons-container ul li {
+    font-size: 25px;
+  }
+
+  .dashboard-projects img,
+  iframe {
     width: 100%;
     height: auto;
   }

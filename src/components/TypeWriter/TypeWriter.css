@@ -1,10 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 
 .write-machine {
-    font-size: 45px;
-    font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
-    color: #000000;
-    display: inline-flex;
-    margin: 100px 0 10px 0px;
+  font-size: 45px;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  color: #000000;
+  display: inline-block;
+  margin: 100px 0 10px 0;
+  min-height: 60px;
+  white-space: pre-line;
+}
+
+@media screen and (max-width: 768px) {
+  .write-machine {
+    font-size: 40px;
+    text-align: start;
+    margin: 50px 0 10px 0;
+    min-height: 50px;
   }
+}

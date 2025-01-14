@@ -25,7 +25,10 @@ export const TypeWriter = ({ textColor, text }) => {
 
   return (
     <div>
-      <div className="write-machine" style={{ color: textColor }}>
+      <div
+        className="write-machine"
+        style={{ color: textColor, minHeight: "60px" }}
+      >
         {formattedText}
       </div>
     </div>

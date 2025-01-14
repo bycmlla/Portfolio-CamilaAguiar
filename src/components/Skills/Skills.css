@@ -1,8 +1,9 @@
 .skills-heading {
-    display: inline-flex;
-    align-items: center;
-  }
-    
+  display: inline-flex;
+  align-items: center;
+  font-size: 20px;
+}
+
 .line {
   display: inline-block;
   width: 300px;
@@ -12,7 +13,7 @@
 }
 .div-container-skills .icon-size,
 .div-container-skills .icon-size-data {
-  color: black; /* Cor para o modo claro */
+  color: black;
 }
 .ul-front-one,
 .ul-front-two,
@@ -45,40 +46,36 @@
   align-items: center;
 }
 
-.ul-front-one li span {
-  font-size: 12px;
-}
-.ul-front-two li span {
-  font-size: 12px;
-}
+.ul-front-one li span,
+.ul-front-two li span,
 .ul-back-end li span {
-  font-size: 12px;
+  font-size: 18px;
 }
 
 .icon-size {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 .icon-size-data {
-    width: 25px;
-    height: 25px;
+  width: 45px;
+  height: 45px;
 }
-.data-container .ul-back-end{
-    margin-left: 35px;
+.data-container .ul-back-end {
+  margin-left: 35px;
 }
 
-.dark-mode-skills .skills-heading{
+.dark-mode-skills .skills-heading {
   color: white;
 }
 
-.dark-mode-skills .line{
+.dark-mode-skills .line {
   background-color: white;
 }
 
 .dark-mode-skills .ul-front-one {
   color: white;
 }
-.dark-mode-skills .ul-front-two{
+.dark-mode-skills .ul-front-two {
   color: white;
 }
 .dark-mode-skills .ul-back-end {

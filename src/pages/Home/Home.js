@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { TypeWriter } from "../../components/TypeWriter/TypeWriter";
-import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { MdEmail } from "react-icons/md";
@@ -118,8 +117,8 @@ const Home = () => {
 
     const sr = ScrollReveal({
       distance: "20px",
-      duration: 1300,
-      easing: "cubic-bezier(0.5, 0, 0, 1)",
+      duration: 1200,
+      easing: "cubic-bezier(0.1, 0, 0, 1)",
       reset: true,
     });
 
@@ -157,6 +156,36 @@ const Home = () => {
       />
 
       <section className="text-and-image-container">
+        <div className="content-container">
+          <div className="icons-container">
+            <ul>
+              <li>
+                <a href="https://github.com/bycmlla">
+                  <FaGithubSquare />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/camila-de-aguiar-ti1808/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedin />
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/5533998759437">
+                  <FaWhatsapp />
+                </a>
+              </li>
+              <li>
+                <a href="mailto:by.cmlla0107@gmail.com">
+                  <MdEmail />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
         <div className="text-container reveal">
           <TypeWriter
             textColor={isDarkMode ? "white" : "black"}
@@ -165,40 +194,9 @@ const Home = () => {
           <p>
             Desenvolvedora Full-Stack e<br />
             Analista de Dados. <br /> <br />
-            Aplicando meus conhecimentos e<br />sempre aprendendo mais. <br/>
+            Aplicando meus conhecimentos e<br />
+            sempre aprendendo mais. <br />
           </p>
-        </div>
-      </section>
-
-      <section className="content-container">
-        <ImageSlider />
-        <div className="icons-container">
-          <ul>
-            <li>
-              <a href="https://github.com/bycmlla">
-                <FaGithubSquare />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/camila-de-aguiar-ti1808/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedin />
-              </a>
-            </li>
-            <li>
-              <a href="https://wa.me/5533998759437">
-                <FaWhatsapp />
-              </a>
-            </li>
-            <li>
-              <a href="mailto:by.cmlla0107@gmail.com">
-                <MdEmail />
-              </a>
-            </li>
-          </ul>
         </div>
       </section>
 
@@ -208,6 +206,9 @@ const Home = () => {
           alt=""
           onClick={handleClick}
         />
+      </section>
+      <section className="text-projects">
+        <h2>Habilidades</h2>
         <div>
           <Skills />
         </div>
