@@ -297,3 +297,18 @@
     height: auto;
   }
 }
+
+/* Para dispositivos pequenos (mobile) */
+@media (max-width: 480px) {
+  /* Estilos para telas até 480px */
+}
+
+/* Para tablets */
+@media (max-width: 768px) {
+  /* Estilos para telas até 768px */
+}
+
+/* Para desktops */
+@media (min-width: 1025px) {
+  /* Estilos para telas maiores */
+}
