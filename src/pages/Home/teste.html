@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuvem Esmaecida</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ffccff, #d6b3ff); /* Fundo do céu */
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .cloud-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .cloud {
+            position: absolute;
+            top: -200px; /* Começa fora da tela */
+            left: 0;
+            width: 100%; /* A nuvem pega a tela inteira */
+            height: 300px;
+            background: radial-gradient(circle at 30% 50%, #fff 40%, rgba(255, 255, 255, 0) 80%), 
+                        radial-gradient(circle at 70% 60%, #fff 30%, rgba(255, 255, 255, 0) 70%);
+            filter: blur(20px); /* Deixa as bordas esmaecidas */
+            animation: descend 2s infinite linear; /* Movimento mais rápido */
+        }
+
+        @keyframes descend {
+            0% {
+                transform: translateY(-200px); /* Começa acima */
+            }
+            100% {
+                transform: translateY(100vh); /* Desce até o fim */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cloud-container">
+        <div class="cloud"></div>
+    </div>
+</body>
+</html>

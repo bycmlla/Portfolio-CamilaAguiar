@@ -35,7 +35,7 @@ useEffect(() => {
         <div className="skills-principal-container">
           <div className="front-end-container">
             <p className="skills-heading">
-              Front End Skills <span className="line"></span>
+            Front End, Back End e Análise de Dados <span className="line"></span>
             </p>
             <div className="front-line-one">
               <ul className="ul-front-one">
@@ -44,8 +44,8 @@ useEffect(() => {
                   <RiReactjsFill className="icon-size" />
                 </li>
                 <li>
-                  <span>JavaScript</span>
-                  <IoLogoJavascript className="icon-size" />
+                  <span style={{fontSize: 15}}>JavaScript</span>
+                  <IoLogoJavascript className="icon-size" style={{width: 36}} />
                 </li>
                 <li>
                   <span>Angular</span>
@@ -59,10 +59,6 @@ useEffect(() => {
                   <span>Bootstrap</span>
                   <FaBootstrap className="icon-size" />
                 </li>
-              </ul>
-            </div>
-            <div className="front-line-two">
-              <ul className="ul-front-two">
                 <li>
                   <span>HTML5</span>
                   <FaHtml5 className="icon-size" />
@@ -79,14 +75,6 @@ useEffect(() => {
                   <span>Figma</span>
                   <FaFigma className="icon-size" />
                 </li>
-              </ul>
-            </div>
-          </div>
-          <div className="back-end-container">
-            <p className="skills-heading">
-              Back End Skills <span className="line"></span>
-            </p>
-            <ul className="ul-back-end">
               <li>
                 <span>Node JS</span>
                 <FaNode className="icon-size" />
@@ -103,20 +91,13 @@ useEffect(() => {
                 <span>OpenCV</span>
                 <SiOpencv className="icon-size" />
               </li>
-            </ul>
-          </div>
-          <div className="data-container">
-            <p className="skills-heading">
-              Data Analytics <span className="line"></span>
-            </p>
-            <ul className="ul-back-end">
               <li>
                 <span>PostGreSQL</span>
                 <SiPostgresql className="icon-size-data" />
               </li>
               <li>
                 <span>Data Analytics</span>
-                <FaDatabase className="icon-size-data" />
+                <FaDatabase className="icon-size-data"/>
               </li>
               <li>
                 <span>Power BI</span>
@@ -126,7 +107,8 @@ useEffect(() => {
                 <span>MySQL</span>
                 <SiMysql className="icon-size" />
               </li>
-            </ul>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
