@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import {useLocation } from "react-router-dom";
+import ScrollReveal from "scrollreveal";
 import "./Skills.css";
 import { RiReactjsFill } from "react-icons/ri";
 import { IoLogoJavascript, IoLogoCss3 } from "react-icons/io5";
@@ -17,15 +19,37 @@ import { TbBrandTypescript } from "react-icons/tb";
 import { SiOpencv, SiPostgresql, SiPowerbi, SiMysql } from "react-icons/si";
 
 const Skills = () => {
+  
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
   );
+  const location = useLocation();
 
 useEffect(() => {
   const currentDarkMode = localStorage.getItem("darkMode") === "true";
   setIsDarkMode(currentDarkMode);
-}, [isDarkMode]);
+}, [isDarkMode])
 
+
+useEffect(() => {
+  const sr = ScrollReveal({
+    distance: "80px",
+    duration: 600,
+    easing: "ease-out",
+    reset: true,
+    viewFactor: 0.3,
+  });
+
+
+  sr.reveal(".reveal", { 
+    origin: "left", 
+    opacity: 0,  // Garante que fique visível depois do efeito
+    scale: 1,    // Remove qualquer redução no tamanho
+    delay: 100 
+  });
+
+  return () => sr.destroy();
+}, [location.pathname]);
 
   return (
     <div
@@ -33,11 +57,12 @@ useEffect(() => {
     >
       <div>
         <div className="skills-principal-container">
-          <div className="front-end-container">
+          <div className="reveal">
+            <h2 className="reveal">Habilidades</h2>
             <p className="skills-heading">
             Front End, Back End e Análise de Dados <span className="line"></span>
             </p>
-            <div className="front-line-one">
+            <div className="front-line-one reveal">
               <ul className="ul-front-one">
                 <li>
                   <span>React JS</span>

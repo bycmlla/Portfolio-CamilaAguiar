@@ -14,9 +14,8 @@ import {
 import { RiReactjsFill } from "react-icons/ri";
 import { SiPowerbi } from "react-icons/si";
 import ScrollReveal from "scrollreveal";
-
-import ImageWhitePage from "../../assets/images/camilawhitepage.png";
-import ImageBlackPage from "../../assets/images/camilablackpage.png";
+import ImageBlackPage from "../../assets/images/camilawhitepage.png";
+import ImageWhitePage from "../../assets/images/camilablackpage.png";
 import DashBoard from "../../assets/images/dashboards/dashboard 1.jpeg";
 import DashBoard2 from "../../assets/images/dashboards/dashboard 2.jpeg";
 import DashBoard3 from "../../assets/images/dashboards/dashboard 3.png";
@@ -116,15 +115,21 @@ const Home = () => {
     setIsActive(true);
 
     const sr = ScrollReveal({
-      distance: "20px",
-      duration: 1200,
-      easing: "cubic-bezier(0.1, 0, 0, 1)",
+      distance: "80px",
+      duration: 600,
+      easing: "ease-out",
       reset: true,
+      viewFactor: 0.3,
     });
-
-    sr.reveal(".reveal", { origin: "left", delay: 200 });
-    sr.reveal(".reveal-right", { origin: "right", delay: 200 });
-
+  
+  
+    sr.reveal(".reveal", { 
+      origin: "left", 
+      opacity: 0,  
+      scale: 1,    
+      delay: 100 
+    });
+  
     return () => sr.destroy();
   }, [location.pathname]);
 
@@ -155,7 +160,7 @@ const Home = () => {
         isDarkMode={isDarkMode}
       />
 
-      <section className="text-and-image-container">
+      <section className="text-and-image-container reveal">
         <div className="content-container">
           <div className="icons-container">
             <ul>
@@ -186,7 +191,7 @@ const Home = () => {
             </ul>
           </div>
         </div>
-        <div className="text-container reveal">
+        <div className="text-container">
           <TypeWriter
             textColor={isDarkMode ? "white" : "black"}
             text="Olá, eu sou Camila Carvalho"
@@ -199,16 +204,17 @@ const Home = () => {
           </p>
         </div>
       </section>
-
+      
       <section className={`image-container ${isActive ? "active" : ""}`}>
         <img
           src={isDarkMode ? ImageBlackPage : ImageWhitePage}
           alt=""
           onClick={handleClick}
+          className="reveal"
         />
       </section>
+      
       <section className="text-projects">
-        <h2>Habilidades</h2>
         <div>
           <Skills />
         </div>

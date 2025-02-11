@@ -37,13 +37,18 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: solid 2px #9D1EE5;
+  border: solid 3px #9D1EE5;
   width: 100px;
   height: 100px;
   border-radius: 50%;
   text-align: center;
   background-color: #212121; 
   color: #9D1EE5; 
+}
+
+.ul-front-one li:hover{
+  transform: scale(1.1);
+  transition: 0.2s;
 }
 
 .ul-front-one li span {
