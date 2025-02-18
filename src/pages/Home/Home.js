@@ -26,6 +26,7 @@ import ReactCode from "../../assets/images/reactjs.png";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 import Skills from "../../components/Skills/Skills";
+import Carousel from "../../components/Carousel/Carousel";
 
 import "./Home.css";
 
@@ -497,6 +498,9 @@ const Home = () => {
           </div>
         </div>
         <hr class="hr hr-blurry" />
+      </section>
+      <section>
+        <Carousel/>
       </section>
       <Link to="/projects">
         <Button
