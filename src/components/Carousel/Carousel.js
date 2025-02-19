@@ -35,7 +35,7 @@ const Carousel = () => {
         const newPosition = prev - width / (totalImages / numImagesPerSlide);
         return newPosition <= -width ? 0 : newPosition;
       });
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [width]);
