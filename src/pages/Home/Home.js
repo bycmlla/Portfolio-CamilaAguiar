@@ -499,10 +499,10 @@ const Home = () => {
         </div>
         <hr class="hr hr-blurry" />
       </section>
-      <section>
+      <div>
         <Carousel/>
-      </section>
-      <Link to="/projects">
+      </div>
+      {/* <Link to="/projects">
         <Button
           className="button-nav"
           style={{
@@ -515,7 +515,7 @@ const Home = () => {
         >
           Veja todos os projetos
         </Button>
-      </Link>
+      </Link> */}
 
       <Footer />
     </div>
