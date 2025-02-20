@@ -6,18 +6,20 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 50%;
+    overflow: hidden;
 }
 
 .carousel {
     position: relative;
     cursor: pointer;
-    overflow: hidden;
 }
 
 .inner {
     display: flex;
     gap: 40px;
     position: relative;
+    padding: 60px 0;
+    transition: transform 0.3s ease-in-out;
 }
 
 .item {
@@ -29,20 +31,18 @@
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease-in-out;
-    border-bottom: 3px solid #9D1EE5;
+    border-bottom: 3px solid #9d1ee5;
 }
 
-
 .item:hover {
-    transform:scale(1.2) !important;
-    z-index: 10 !important; 
+    transform: scale(1.2) !important;
+    z-index: 10 !important;
 }
 .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 
 .overlay {
     position: absolute;
@@ -78,4 +78,27 @@
 
 .item:hover .text-overlay {
     opacity: 0;
+}
+
+.indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px; /* Ajuste a posição conforme necessário */
+    width: 100%;
+}
+
+
+.indicator {
+    width: 100px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #333;
 }
