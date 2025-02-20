@@ -7,11 +7,17 @@
     align-items: center;
     margin-bottom: 50%;
     overflow: hidden;
+    position: relative;
 }
 
 .carousel {
     position: relative;
     cursor: pointer;
+}
+
+#projects-title-carousel{
+    padding-bottom: 20px;
+    border-bottom: 2px solid #9d1ee5;
 }
 
 .inner {
@@ -85,14 +91,15 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 20px; /* Ajuste a posição conforme necessário */
+    top: 100;
+
+    bottom: 20px;
     width: 100%;
 }
 
-
 .indicator {
-    width: 100px;
-    height: 10px;
+    width: 6px;
+    height: 6px;
     margin: 0 5px;
     border-radius: 50%;
     background-color: #ccc;

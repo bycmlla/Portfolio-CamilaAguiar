@@ -84,8 +84,8 @@
 }
 
 .dark-mode-skills .ul-front-one li {
-  background: rgba(255, 255, 255, 0.1); /* Fundo transparente no modo escuro */
-  color: white; /* Cor dos ícones e labels no modo escuro */
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
 }
 
 .dark-mode-skills .icon-size,

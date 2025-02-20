@@ -36,14 +36,13 @@ const Carousel = () => {
           duration: 1,
           ease: "linear",
           onComplete: () => {
-            // Lógica para o loop infinito
             if (x.get() <= -loopLimit) {
-              x.set(0); // Reseta a posição para o início
+              x.set(0);
             }
           },
         });
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-      }, 3000);
+      }, 5000);
     };
 
     const stopAutoScroll = () => clearInterval(intervalId);
@@ -51,7 +50,7 @@ const Carousel = () => {
     startAutoScroll();
 
     return () => stopAutoScroll();
-  }, [x, imageWidth, loopLimit]); // Dependências importantes
+  }, [x, imageWidth, loopLimit]);
 
   const handleIndicatorClick = (index) => {
     setCurrentIndex(index);
@@ -59,33 +58,38 @@ const Carousel = () => {
   };
 
   return (
-    <div className="carousel-body">
-      <motion.div
-        ref={carousel}
-        className="carousel"
-        style={{ x }}
-        drag="x"
-        dragConstraints={{ left: -loopLimit, right: 0 }}
-      >
-        <motion.div className="inner" style={{ display: "flex" }}>
-          {infiniteImages.map((img, index) => (
-            <motion.div className="item" key={index}>
-              <img src={img.src} alt={`carousel-img-${index}`} />
-              <div className="overlay"></div>
-              <div className="text-overlay">{img.text}</div>
-            </motion.div>
-          ))}
+    <div className="reveal">
+      <div className="carousel-title">
+          <h2 className="reveal" id="projects-title-carousel">Projetos</h2>
+        </div>
+      <div className="carousel-body">
+        <motion.div
+          ref={carousel}
+          className="carousel"
+          style={{ x }}
+          drag="x"
+          dragConstraints={{ left: -loopLimit, right: 0 }}
+        >
+          <motion.div className="inner" style={{ display: "flex" }}>
+            {infiniteImages.map((img, index) => (
+              <motion.div className="item" key={index}>
+                <img src={img.src} alt={`carousel-img-${index}`} />
+                <div className="overlay"></div>
+                <div className="text-overlay">{img.text}</div>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
-      </motion.div>
 
-      <div className="indicators">
-        {images.map((_, index) => (
-          <div
-            key={index}
-            className={`indicator ${currentIndex === index ? "active" : ""}`}
-            onClick={() => handleIndicatorClick(index)}
-          ></div>
-        ))}
+        <div className="indicators">
+          {images.map((_, index) => (
+            <div
+              key={index}
+              className={`indicator ${currentIndex === index ? "active" : ""}`}
+              onClick={() => handleIndicatorClick(index)}
+            ></div>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -40,11 +40,10 @@ useEffect(() => {
     viewFactor: 0.3,
   });
 
-
-  sr.reveal(".reveal", { 
-    origin: "left", 
-    opacity: 0,  // Garante que fique visível depois do efeito
-    scale: 1,    // Remove qualquer redução no tamanho
+  sr.reveal(".reveal", {
+    origin: "left",
+    opacity: 0,
+    scale: 1,
     delay: 100 
   });
 

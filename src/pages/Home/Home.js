@@ -122,15 +122,14 @@ const Home = () => {
       reset: true,
       viewFactor: 0.3,
     });
-  
-  
-    sr.reveal(".reveal", { 
-      origin: "left", 
-      opacity: 0,  
-      scale: 1,    
-      delay: 100 
+
+    sr.reveal(".reveal", {
+      origin: "left",
+      opacity: 0,
+      scale: 1,
+      delay: 100,
     });
-  
+
     return () => sr.destroy();
   }, [location.pathname]);
 
@@ -205,7 +204,7 @@ const Home = () => {
           </p>
         </div>
       </section>
-      
+
       <section className={`image-container ${isActive ? "active" : ""}`}>
         <img
           src={isDarkMode ? ImageBlackPage : ImageWhitePage}
@@ -214,7 +213,7 @@ const Home = () => {
           className="reveal"
         />
       </section>
-      
+
       <section className="text-projects">
         <div>
           <Skills />
@@ -499,24 +498,9 @@ const Home = () => {
         </div>
         <hr class="hr hr-blurry" />
       </section>
-      <div>
-        <Carousel/>
-      </div>
-      {/* <Link to="/projects">
-        <Button
-          className="button-nav"
-          style={{
-            backgroundColor: "black",
-            color: "white",
-            border: "none",
-            marginBottom: "30px",
-            marginLeft: "30px",
-          }}
-        >
-          Veja todos os projetos
-        </Button>
-      </Link> */}
-
+      <section className="text-projects">
+        <Carousel />
+      </section>
       <Footer />
     </div>
   );
