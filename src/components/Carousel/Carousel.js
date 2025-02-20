@@ -22,8 +22,6 @@ const Carousel = () => {
   const carousel = useRef();
   const x = useMotionValue(0);
   const imageWidth = 450;
-  const visibleImages = 3;
-  const totalImages = infiniteImages.length;
   const loopLimit = imageWidth * images.length;
   const [currentIndex, setCurrentIndex] = useState(0);
 

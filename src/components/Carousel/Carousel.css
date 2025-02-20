@@ -1,6 +1,6 @@
 .carousel-body {
     width: 100%;
-    max-width: 1400px;
+    max-width: 90vw;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -15,9 +15,16 @@
     cursor: pointer;
 }
 
-#projects-title-carousel{
+#projects-title-carousel {
     padding-bottom: 20px;
-    border-bottom: 2px solid #9d1ee5;
+    border-bottom: 3px solid transparent;
+    width: 30%;
+    background-image: linear-gradient(90deg, rgba(147,0,230,1) 0%, rgba(157,30,229,1) 35%, rgba(231,188,255,1) 100%);
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: 100% 3px; 
+    background-position: bottom; 
+    background-repeat: no-repeat;
 }
 
 .inner {
@@ -92,14 +99,13 @@
     align-items: center;
     position: absolute;
     top: 100;
-
     bottom: 20px;
     width: 100%;
 }
 
 .indicator {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     margin: 0 5px;
     border-radius: 50%;
     background-color: #ccc;
@@ -107,5 +113,5 @@
 }
 
 .indicator.active {
-    background-color: #333;
+    background-color: #4d4d4d;
 }
