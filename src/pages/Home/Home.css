@@ -2,155 +2,215 @@
 
 /* Estilos globais */
 body {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .home-container {
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-    z-index: -1;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  z-index: -1;
 }
 
 /* Seção de apresentação (text-and-image-container) */
 .text-and-image-container {
-    display: flex;
-    text-align: justify;
-    margin: 50px 0 100px 100px;
-    font-family: "Istok Web", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 20px;
+  display: flex;
+  text-align: justify;
+  margin: 50px 0 100px 100px;
+  font-family: "Istok Web", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
 }
 
 .content-container {
-    display: flex;
-    align-items: center;
-    margin: 110px 50px 0 0;
+  display: flex;
+  margin: 110px 50px 0 0;
 }
 
+.text-container {
+  width: 600px;
+}
 .text-container p {
-    color: grey;
+  color: grey;
 }
 
 .icons-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .icons-container ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .icons-container ul li {
-    font-size: 30px;
-    margin-bottom: 15px;
-    cursor: pointer;
+  font-size: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .icons-container ul li a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
+  text-decoration: none;
+  color: rgb(0, 0, 0);
 }
 
 .icons-container ul li:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 /* Seção de Imagem Principal (image-container)*/
 .image-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out, top 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
 }
 
 .image-container.active {
-    opacity: 1;
-    transform: translateX(0);
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .image-container img {
-    width: 70%;
-    max-width: 100%;
-    max-height: calc(100vh - 20%);
-    object-fit: contain;
-    transition: transform 0.3s ease, width 0.3s ease;
-    margin-bottom: auto;
+  width: 600px;
+  max-width: 100%;
+  max-height: calc(100vh - 20%);
+  object-fit: contain;
+  margin-bottom: auto;
+  margin-left: 200px;
 }
 
 .image-container img:hover {
-    transform: scale(1.02);
-    cursor: pointer;
+  transform: scale(1.1) !important;
+  cursor: pointer;
 }
 
 /* Seção Sobre Mim (about-me-home) */
-.about-me-home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 80px auto 0 auto;
-    width: 50%;
-    text-align: center;
+
+.line-bout {
+  display: inline-block;
+  width: 100px;
+  height: 3px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(147, 0, 230, 1) 0%,
+    rgba(157, 30, 229, 1) 35%,
+    rgba(231, 188, 255, 1) 100%
+  );
+  margin-bottom: 30px;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: width 1s ease-in-out;
 }
 
-.about-me-home h2 { 
+.line-bout.expand {
+  width: 300px;
+}
+
+.about-me-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 80px auto 80px auto;
+  width: 50%;
+  text-align: center;
+}
+
+.about-me-home h2 {
   font-weight: bold;
   font-family: "Open Sans", sans-serif;
   padding-bottom: 20px;
 }
 
 .about-me-home p {
-    color: grey;
-    font-size: 20px;
-    line-height: 35px;
+  color: grey;
+  font-size: 20px;
+  line-height: 35px;
 }
 
-/* Seção de Projetos (text-projects) */
-.text-projects {
-    margin: 80px 60px;
+/* Sobre mim */
+.contact-container-home h2,
+.contact-container-home span{
+  margin-left: 70px;
+}
+.inner-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
 }
 
-.text-projects h2 {
-    margin-bottom: 20px;
+.line-cont{
+  display: inline-block;
+  width: 30%;
+  height: 3px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(147, 0, 230, 1) 0%,
+    rgba(157, 30, 229, 1) 35%,
+    rgba(231, 188, 255, 1) 100%
+  );
+  margin-bottom: 30px;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: width 1s ease-in-out;
 }
 
-/* Projetos Power BI (e outras seções de projetos) */
-.dashboard-projects {
-    display: flex;
-    flex-direction: row;
+.inner-contact ul {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  list-style-type: none;
 }
 
-.projects-content-home {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
-    margin-top: 20px;
+.inner-contact ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.card-projects {
-    margin-bottom: 20px;
+.inner-contact ul li a {
+  color: #9d1ee5;
+  background-color: #202020;
+  font-size: 30px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+  padding: 10px 25px 20px 25px;
 }
 
-.text-description {
-    margin-top: 20%;
-    margin-left: 13%;
-    max-width: 500px;
-    flex: 1;
+.inner-contact ul li a:hover {
+  background-image: linear-gradient(
+    90deg,
+    rgba(147, 0, 230, 1) 0%,
+    rgba(157, 30, 229, 1) 35%,
+    rgba(231, 188, 255, 1) 100%
+  );
+  color: white;
 }
 
-.text-description p {
-    color: #141414;
-    text-align: justify;
-    font-size: 20px;
-    margin: 0;
+.inner-contact ul li p {
+  font-size: 15px;
+  color: black;
+  width: 200px;
+  text-align: center;
+}
+
+.talk-to-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px auto;
 }
 
 /* Dark Mode */
 .dark-mode-home {
-    background-color: #13131F;
+  background-color: #13131f;
 }
 
 .dark-mode-home .text-and-image-container,
@@ -160,18 +220,23 @@ body {
 .dark-mode-home .skills-heading,
 .dark-mode-home .reveal,
 .dark-mode-home .icons-container ul li a,
-.dark-mode-home .about-me-home{
-    color: white;
+.dark-mode-home .about-me-home,
+.dark-mode-home .inner-contact ul li h5 {
+  color: white;
+}
+
+.dark-mode-home .inner-contact ul li p {
+  color: grey;
 }
 
 .dark-mode-home .button-container button {
-    background-color: #141414;
-    color: #ffffff;
-    border: 1px solid rgb(255, 255, 255);
+  background-color: #141414;
+  color: #ffffff;
+  border: 1px solid rgb(255, 255, 255);
 }
 
 .dark-mode-home .button-container button:hover {
-    background-color: #ebebeb;
+  background-color: #ebebeb;
 }
 /* Media Queries */
 @media (max-width: 768px) {
@@ -191,9 +256,9 @@ body {
 
 @media screen and (max-width: 768px) {
   .content-container {
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
   }
 
@@ -204,36 +269,35 @@ body {
 
   .text-and-image-container {
     margin-left: 0;
-    width: 100%; 
-    text-align: center; 
+    width: 100%;
+    text-align: center;
   }
 
   .icons-container {
     flex: none;
-    width: auto; 
+    width: auto;
   }
 
   .icons-container ul {
-    display: flex; 
+    display: flex;
     flex-direction: column;
-    gap: 10px; 
-    justify-content: center; 
+    gap: 10px;
+    justify-content: center;
     padding: 0;
     margin: 0 0 0 20px;
   }
 
   .icons-container ul li {
     font-size: 35px;
-    margin-left: 0; 
+    margin-left: 0;
   }
 
   .text-container {
     margin: 0px 10%;
   }
 
-  .text-container p{
-    text-align: start
-    ;
+  .text-container p {
+    text-align: start;
   }
 }
 
@@ -279,7 +343,7 @@ body {
     margin-top: -70px;
     margin-left: -40px;
   }
-  
+
   .card-projects img {
     width: 100%;
     height: auto;
@@ -287,7 +351,6 @@ body {
 }
 
 @media screen and (max-width: 430px) {
-  
   body {
     font-size: 16px;
   }
@@ -300,11 +363,11 @@ body {
   .text-container {
     margin: 10px 0;
     padding: 0 20px;
-    text-align: center; 
+    text-align: center;
   }
 
   .image-container img {
-    width: 100%; 
+    width: 100%;
     height: auto;
     margin-top: 20px;
   }

@@ -6,13 +6,18 @@
 
 .line {
   display: inline-block;
-  width: 1100px;
+  width: 65%;
   height: 3px;
   background-image: linear-gradient(90deg, rgba(147,0,230,1) 0%, rgba(157,30,229,1) 35%, rgba(231,188,255,1) 100%);
   margin-left: 10px;
   background-size: 100% 100%;
   background-position: center; 
   background-repeat: no-repeat;
+  transition: width 1s ease-in-out;
+}
+
+.line.expand {
+  width: 1100px;
 }
 
 .div-container-skills .icon-size,
@@ -50,8 +55,8 @@
 }
 
 .ul-front-one li:hover{
-  transform: scale(1.1);
-  transition: 0.2s;
+  transform: scale(1.5);
+  transition: 0.3s;
 }
 
 .ul-front-one li span {

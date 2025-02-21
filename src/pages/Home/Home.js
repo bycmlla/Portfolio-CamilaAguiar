@@ -3,7 +3,15 @@ import { Link, useLocation } from "react-router-dom";
 import { TypeWriter } from "../../components/TypeWriter/TypeWriter";
 import Button from "react-bootstrap/Button";
 import { MdEmail } from "react-icons/md";
-import { FaLinkedin, FaWhatsapp, FaGithubSquare } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaWhatsapp,
+  FaGithubSquare,
+  FaGithubAlt,
+} from "react-icons/fa";
+import { FiLinkedin } from "react-icons/fi";
+import { PiWhatsappLogoFill } from "react-icons/pi";
+import { BiLogoGmail } from "react-icons/bi";
 import ScrollReveal from "scrollreveal";
 import ImageBlackPage from "../../assets/images/camilawhitepage.png";
 import ImageWhitePage from "../../assets/images/camilablackpage.png";
@@ -20,9 +28,11 @@ const Home = () => {
     localStorage.getItem("darkMode") === "true"
   );
   const location = useLocation();
+  const [expand, setExpand] = useState(false);
 
   useEffect(() => {
     setIsActive(true);
+    setExpand(true);
 
     const sr = ScrollReveal({
       distance: "80px",
@@ -36,7 +46,7 @@ const Home = () => {
       origin: "left",
       opacity: 0,
       scale: 1,
-      delay: 100,
+      delay: 100
     });
 
     return () => sr.destroy();
@@ -78,7 +88,7 @@ const Home = () => {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/in/camila-de-aguiar-ti1808/"
+                  href="www.linkedin.com/in/camilaaguiarr"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -130,8 +140,10 @@ const Home = () => {
           />
         </div>
       </section>
+
       <section aria-label="Sobre mim" className="about-me-home reveal">
         <h2>Sobre mim</h2>
+        <span className={`line-bout ${expand ? "expand" : ""}`}></span>
         <p>
           Sou Analista de Dados e desenvolvedora full-stack, apaixonada por
           tecnologia e inovação. Tenho experiência em front-end, back-end e
@@ -154,7 +166,68 @@ const Home = () => {
       >
         <Carousel />
       </section>
+      <section className="contact-container-home">
+        <h2 className="reveal">
+          Contatos
+        </h2>
+        <span className={`line-cont ${expand ? "expand" : ""}`}></span>
 
+        <div className="inner-contact">
+          <ul>
+            <li>
+              <a
+                href="https://github.com/bycmlla"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithubAlt />
+              </a>
+              <h5>Github</h5>
+              <p>@bycmlla</p>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/camilaaguiarr/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FiLinkedin />
+              </a>
+              <h5>LinkedIn</h5>
+              <p>@camilacarvalho</p>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/5533998759437"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <PiWhatsappLogoFill />
+              </a>
+              <h5>Whatsapp</h5>
+              <p>(33) 9 9875-9437</p>
+            </li>
+            <li>
+              <a
+                href="mailto:by.cmlla0107@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <BiLogoGmail />
+              </a>
+              <h5>E-mail</h5>
+              <p>camilacarvalhoagui@gmail.com</p>
+            </li>
+          </ul>
+        </div>
+
+        <div className="talk-to-me">
+          <h2>Fale comigo!</h2>
+          <Link to="/contact">
+            <Button>Entre em contato</Button>
+          </Link>
+        </div>
+      </section>
       <Footer />
     </div>
   );

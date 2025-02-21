@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import ScrollReveal from "scrollreveal";
 import "./Skills.css";
 import { RiReactjsFill } from "react-icons/ri";
@@ -19,36 +19,37 @@ import { TbBrandTypescript } from "react-icons/tb";
 import { SiOpencv, SiPostgresql, SiPowerbi, SiMysql } from "react-icons/si";
 
 const Skills = () => {
-  
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
   );
   const location = useLocation();
+  const [expand, setExpand] = useState(false);
 
-useEffect(() => {
-  const currentDarkMode = localStorage.getItem("darkMode") === "true";
-  setIsDarkMode(currentDarkMode);
-}, [isDarkMode])
+  useEffect(() => {
+    const currentDarkMode = localStorage.getItem("darkMode") === "true";
+    setIsDarkMode(currentDarkMode);
+  }, [isDarkMode]);
 
+  useEffect(() => {
+    setExpand(true);
 
-useEffect(() => {
-  const sr = ScrollReveal({
-    distance: "80px",
-    duration: 600,
-    easing: "ease-out",
-    reset: true,
-    viewFactor: 0.3,
-  });
+    const sr = ScrollReveal({
+      distance: "80px",
+      duration: 600,
+      easing: "ease-out",
+      reset: true,
+      viewFactor: 0.3,
+    });
 
-  sr.reveal(".reveal", {
-    origin: "left",
-    opacity: 0,
-    scale: 1,
-    delay: 100 
-  });
+    sr.reveal(".reveal", {
+      origin: "left",
+      opacity: 0,
+      scale: 1,
+      delay: 100,
+    });
 
-  return () => sr.destroy();
-}, [location.pathname]);
+    return () => sr.destroy();
+  }, [location.pathname]);
 
   return (
     <div
@@ -59,7 +60,8 @@ useEffect(() => {
           <div className="reveal">
             <h2 className="reveal">Habilidades</h2>
             <p className="skills-heading">
-            Front End, Back End e Análise de Dados <span className="line"></span>
+              Front End, Back End e Análise de Dados{" "}
+              <span className={`line ${expand ? "expand" : ""}`}></span>
             </p>
             <div className="front-line-one reveal">
               <ul className="ul-front-one">
@@ -68,8 +70,11 @@ useEffect(() => {
                   <RiReactjsFill className="icon-size" />
                 </li>
                 <li>
-                  <span style={{fontSize: 15}}>JavaScript</span>
-                  <IoLogoJavascript className="icon-size" style={{width: 36}} />
+                  <span style={{ fontSize: 15 }}>JavaScript</span>
+                  <IoLogoJavascript
+                    className="icon-size"
+                    style={{ width: 36 }}
+                  />
                 </li>
                 <li>
                   <span>Angular</span>
@@ -99,38 +104,38 @@ useEffect(() => {
                   <span>Figma</span>
                   <FaFigma className="icon-size" />
                 </li>
-              <li>
-                <span>Node JS</span>
-                <FaNode className="icon-size" />
-              </li>
-              <li>
-                <span>Java</span>
-                <FaJava className="icon-size" />
-              </li>
-              <li>
-                <span>Python</span>
-                <FaPython className="icon-size" />
-              </li>
-              <li>
-                <span>OpenCV</span>
-                <SiOpencv className="icon-size" />
-              </li>
-              <li>
-                <span>PostGreSQL</span>
-                <SiPostgresql className="icon-size-data" />
-              </li>
-              <li>
-                <span>Data Analytics</span>
-                <FaDatabase className="icon-size-data"/>
-              </li>
-              <li>
-                <span>Power BI</span>
-                <SiPowerbi className="icon-size-data" />
-              </li>
-              <li>
-                <span>MySQL</span>
-                <SiMysql className="icon-size" />
-              </li>
+                <li>
+                  <span>Node JS</span>
+                  <FaNode className="icon-size" />
+                </li>
+                <li>
+                  <span>Java</span>
+                  <FaJava className="icon-size" />
+                </li>
+                <li>
+                  <span>Python</span>
+                  <FaPython className="icon-size" />
+                </li>
+                <li>
+                  <span>OpenCV</span>
+                  <SiOpencv className="icon-size" />
+                </li>
+                <li>
+                  <span>PostGreSQL</span>
+                  <SiPostgresql className="icon-size-data" />
+                </li>
+                <li>
+                  <span>Data Analytics</span>
+                  <FaDatabase className="icon-size-data" />
+                </li>
+                <li>
+                  <span>Power BI</span>
+                  <SiPowerbi className="icon-size-data" />
+                </li>
+                <li>
+                  <span>MySQL</span>
+                  <SiMysql className="icon-size" />
+                </li>
               </ul>
             </div>
           </div>

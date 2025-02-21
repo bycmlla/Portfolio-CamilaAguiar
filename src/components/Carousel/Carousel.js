@@ -6,6 +6,8 @@ import Orion from "../../assets/images/projects/carousel images/orion.png";
 import RoomRover from "../../assets/images/projects/carousel images/RoomRover.png";
 import WeatherUp from "../../assets/images/projects/carousel images/weatherup.png";
 import Agrovet from "../../assets/images/projects/carousel images/agrovet.png";
+import { Link } from "react-router-dom";
+import { GiButterfly } from "react-icons/gi";
 import "./Carousel.css";
 
 const images = [
@@ -57,9 +59,15 @@ const Carousel = () => {
 
   return (
     <div className="reveal">
-      <div className="carousel-title">
-          <h2 className="reveal" id="projects-title-carousel">Projetos</h2>
-        </div>
+      <h2 className="reveal">Projetos</h2>
+      <div class="projects-description">
+        <span class="text-with-link">
+          Para mais, a borboleta te levará:{" "}
+          <Link to="/projects"><GiButterfly className="butterfly-icon"/></Link>
+        </span>
+        <span class="line-car"></span>
+      </div>
+
       <div className="carousel-body">
         <motion.div
           ref={carousel}
