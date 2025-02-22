@@ -19,8 +19,9 @@ import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 import Skills from "../../components/Skills/Skills";
 import Carousel from "../../components/Carousel/Carousel";
-
 import "./Home.css";
+import SectionTitle from "../../components/SectionTitle/SectionTitle";
+import butterfly from "../../assets/images/butterfly.png"
 
 const Home = () => {
   const [isActive, setIsActive] = useState(false);
@@ -46,7 +47,7 @@ const Home = () => {
       origin: "left",
       opacity: 0,
       scale: 1,
-      delay: 100
+      delay: 100,
     });
 
     return () => sr.destroy();
@@ -154,24 +155,28 @@ const Home = () => {
           desenhar no tempo livre.
         </p>
       </section>
+      <img src={butterfly} alt="Butterfly" className="background-image" />
 
       <section aria-label="Habilidades profissionais" className="text-projects">
         <div>
           <Skills />
         </div>
       </section>
+
       <section
         aria-label="Carrossel de apresentação de projetos"
         className="text-projects"
       >
         <Carousel />
       </section>
-      <section className="contact-container-home">
-        <h2 className="reveal">
-          Contatos
-        </h2>
-        <span className={`line-cont ${expand ? "expand" : ""}`}></span>
 
+      <section className="contact-container-home">
+        <SectionTitle
+          data={{
+            title: "Contatos",
+            text: "Fale comigo usando os contatos abaixo ou mande um e-mail.",
+          }}
+        />
         <div className="inner-contact">
           <ul>
             <li>
@@ -222,12 +227,13 @@ const Home = () => {
         </div>
 
         <div className="talk-to-me">
-          <h2>Fale comigo!</h2>
+          <h2>Ou mande um e-mail pra mim por aqui mesmo!!</h2>
           <Link to="/contact">
             <Button>Entre em contato</Button>
           </Link>
         </div>
       </section>
+
       <Footer />
     </div>
   );

@@ -17,13 +17,13 @@ import {
 } from "react-icons/fa";
 import { TbBrandTypescript } from "react-icons/tb";
 import { SiOpencv, SiPostgresql, SiPowerbi, SiMysql } from "react-icons/si";
+import SectionTitle from "../SectionTitle/SectionTitle";
 
 const Skills = () => {
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
   );
   const location = useLocation();
-  const [expand, setExpand] = useState(false);
 
   useEffect(() => {
     const currentDarkMode = localStorage.getItem("darkMode") === "true";
@@ -31,8 +31,6 @@ const Skills = () => {
   }, [isDarkMode]);
 
   useEffect(() => {
-    setExpand(true);
-
     const sr = ScrollReveal({
       distance: "80px",
       duration: 600,
@@ -58,11 +56,12 @@ const Skills = () => {
       <div>
         <div className="skills-principal-container">
           <div className="reveal">
-            <h2 className="reveal">Habilidades</h2>
-            <p className="skills-heading">
-              Front End, Back End e Análise de Dados{" "}
-              <span className={`line ${expand ? "expand" : ""}`}></span>
-            </p>
+            <SectionTitle
+              data={{
+                title: "Habilidades",
+                text: "Front End, Back End e Análise de Dados",
+              }}
+            />
             <div className="front-line-one reveal">
               <ul className="ul-front-one">
                 <li>

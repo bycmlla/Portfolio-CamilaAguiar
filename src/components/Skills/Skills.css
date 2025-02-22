@@ -1,32 +1,18 @@
+/* Skills.css */
+
 .skills-heading {
   display: inline-flex;
   align-items: center;
   font-size: 20px;
 }
 
-.line {
-  display: inline-block;
-  width: 65%;
-  height: 3px;
-  background-image: linear-gradient(90deg, rgba(147,0,230,1) 0%, rgba(157,30,229,1) 35%, rgba(231,188,255,1) 100%);
-  margin-left: 10px;
-  background-size: 100% 100%;
-  background-position: center; 
-  background-repeat: no-repeat;
-  transition: width 1s ease-in-out;
-}
-
-.line.expand {
-  width: 1100px;
-}
-
 .div-container-skills .icon-size,
 .div-container-skills .icon-size-data {
-  color: #9D1EE5;
+  color: #9d1ee5;
 }
 
-.front-line-one{
-  margin-top: 30px;
+.front-line-one {
+  margin-top: 80px;
 }
 
 .ul-front-one {
@@ -34,7 +20,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 50px; 
+  gap: 50px;
   padding: 0;
   margin: 0 auto;
   max-width: 1000px;
@@ -45,16 +31,16 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: solid 3px #9D1EE5;
+  border: solid 3px #9d1ee5;
   width: 100px;
   height: 100px;
   border-radius: 50%;
   text-align: center;
-  background-color: #212121; 
-  color: #9D1EE5; 
+  background-color: #212121;
+  color: #9d1ee5;
 }
 
-.ul-front-one li:hover{
+.ul-front-one li:hover {
   transform: scale(1.5);
   transition: 0.3s;
 }
