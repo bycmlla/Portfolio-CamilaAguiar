@@ -14,11 +14,11 @@ body {
 
 .background-image {
   position: absolute;
-  top: 40vh; /* Ajuste a posição vertical */
-  left: 10vw; /* Ajuste a posição horizontal */
-  width: 600px; /* Largura da imagem */
-  height: auto; /* Altura automática */
-  opacity: 0.1; /* Opacidade da imagem */
+  top: 50vh; 
+  left: 8vw;
+  width: 650px;
+  height: auto; 
+  opacity: 0.1; 
   z-index: -1;
 }
 /* Seção de apresentação (text-and-image-container) */
@@ -124,7 +124,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 80px auto 80px auto;
+  margin: 40px auto 80px auto;
   width: 50%;
   text-align: center;
 }
@@ -197,7 +197,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 40px;
   margin: 0 auto 20px auto;
+}
+
+.talk-to-me h2{
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: black;
+}
+
+.talk-to-me Button {
+  background-color: #9d1ee5;
+  border: none; 
+  color: white;
+  cursor: pointer;
 }
 
 /* Dark Mode */
@@ -213,7 +229,8 @@ body {
 .dark-mode-home .reveal,
 .dark-mode-home .icons-container ul li a,
 .dark-mode-home .about-me-home,
-.dark-mode-home .inner-contact ul li h5 {
+.dark-mode-home .inner-contact ul li h5,
+.dark-mode-home .talk-to-me h2 {
   color: white;
 }
 

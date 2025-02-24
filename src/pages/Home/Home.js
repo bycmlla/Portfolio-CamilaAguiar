@@ -21,7 +21,7 @@ import Skills from "../../components/Skills/Skills";
 import Carousel from "../../components/Carousel/Carousel";
 import "./Home.css";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
-import butterfly from "../../assets/images/butterfly.png"
+import butterfly from "../../assets/images/butterfly.png";
 
 const Home = () => {
   const [isActive, setIsActive] = useState(false);
@@ -227,9 +227,12 @@ const Home = () => {
         </div>
 
         <div className="talk-to-me">
-          <h2>Ou mande um e-mail pra mim por aqui mesmo!!</h2>
+          <h2>Ou me envie um e-mail por aqui mesmo!</h2>
           <Link to="/contact">
-            <Button>Entre em contato</Button>
+            <Button>Enviar e-mail</Button>
+          </Link>
+          <Link to="/contact">
+            <Button>Ir para Contato</Button>
           </Link>
         </div>
       </section>
