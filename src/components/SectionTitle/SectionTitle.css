@@ -15,12 +15,7 @@
 
 .line-section {
     height: 3px;
-    background-image: linear-gradient(
-        90deg,
-        rgba(147, 0, 230, 1) 0%,
-        rgba(157, 30, 229, 1) 35%,
-        rgba(231, 188, 255, 1) 100%
-    );
+    background-image: linear-gradient(90deg, rgba(64, 1, 145, 1) 0%, rgba(151, 71, 255, 1) 100%);
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -30,4 +25,9 @@
 
 .dark-mode-section-title .resume-section-title {
     color: white;
+}
+
+.dark-mode-section-title .line-section {
+    background-image: linear-gradient(90deg, rgba(151, 71, 255, 1) 0%, rgba(201, 159, 255, 1) 100%);
+    ;
 }

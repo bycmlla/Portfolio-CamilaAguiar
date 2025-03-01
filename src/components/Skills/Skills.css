@@ -8,7 +8,7 @@
 
 .div-container-skills .icon-size,
 .div-container-skills .icon-size-data {
-  color: #9d1ee5;
+  color: #9747FF;
 }
 
 .front-line-one {
@@ -31,13 +31,13 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: solid 3px #9d1ee5;
+  border: solid 3px #9747FF;
   width: 100px;
   height: 100px;
   border-radius: 50%;
   text-align: center;
   background-color: #212121;
-  color: #9d1ee5;
+  color: #9747FF;
 }
 
 .ul-front-one li:hover {

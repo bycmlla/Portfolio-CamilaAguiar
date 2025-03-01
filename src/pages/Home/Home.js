@@ -36,7 +36,7 @@ const Home = () => {
     setExpand(true);
 
     const sr = ScrollReveal({
-      distance: "80px",
+      distance: "80px", 
       duration: 600,
       easing: "ease-out",
       reset: true,
@@ -84,7 +84,9 @@ const Home = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaGithubSquare />
+                  <button type="button">
+                    <FaGithubSquare />
+                  </button>
                 </a>
               </li>
               <li>
@@ -93,7 +95,9 @@ const Home = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaLinkedin />
+                  <button type="button">
+                    <FaLinkedin />
+                  </button>
                 </a>
               </li>
               <li>
@@ -102,7 +106,9 @@ const Home = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaWhatsapp />
+                  <button type="button">
+                    <FaWhatsapp />
+                  </button>
                 </a>
               </li>
               <li>
@@ -111,7 +117,9 @@ const Home = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <MdEmail />
+                  <button type="button">
+                    <MdEmail />
+                  </button>
                 </a>
               </li>
             </ul>
@@ -184,8 +192,11 @@ const Home = () => {
                 href="https://github.com/bycmlla"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => console.log('Link do GitHub clicado!')}
               >
-                <FaGithubAlt />
+                <button type="button">
+                  <FaGithubAlt />
+                </button>
               </a>
               <h5>Github</h5>
               <p>@bycmlla</p>
@@ -196,7 +207,10 @@ const Home = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FiLinkedin />
+                <button type="button">
+
+                  <FiLinkedin />
+                </button>
               </a>
               <h5>LinkedIn</h5>
               <p>@camilacarvalho</p>
@@ -207,7 +221,9 @@ const Home = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <PiWhatsappLogoFill />
+                <button type="button">
+                  <PiWhatsappLogoFill />
+                </button>
               </a>
               <h5>Whatsapp</h5>
               <p>(33) 9 9875-9437</p>
@@ -218,7 +234,9 @@ const Home = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BiLogoGmail />
+                <button type="button">
+                  <BiLogoGmail />
+                </button>
               </a>
               <h5>E-mail</h5>
               <p>camilacarvalhoagui@gmail.com</p>
@@ -229,11 +247,10 @@ const Home = () => {
         <div className="talk-to-me">
           <h2>Ou me envie um e-mail por aqui mesmo!</h2>
           <Link to="/contact">
-            <Button>Enviar e-mail</Button>
-            <button onClick={() => console.log('Botão clicado!')}>Clique aqui</button>
+            <Button type="button">Enviar e-mail</Button>
           </Link>
           <Link to="/contact">
-            <Button>Ir para Contato</Button>
+            <Button type="button">Ir para Contato</Button>
           </Link>
         </div>
       </section>
