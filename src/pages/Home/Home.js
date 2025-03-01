@@ -23,20 +23,51 @@ import "./Home.css";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import butterfly from "../../assets/images/butterfly.png";
 
+/**você não está entendendo. eu quero que se eu clicar na bolinha de cor roxa, eu possa setar no meu css que a cor que eu quero para meus elementos será roxa.
+
+
+
+
+
+.dark-mode-home .cor-roxa button{ (cliquei na bolinha roxa e está no modo escuro, então a classe a ser utilizada será cor-roxa para dark mode)
+
+background-color: roxo;
+
+}
+
+
+
+.dark-mode-home .cor-rosa button{ (cliquei na bolinha rosa e está no modo escuro, então a classe a ser utilizada será cor-rosa para dark mode)
+
+background-color: rosa;
+
+}
+
+
+
+.cor rosa .button {
+
+background-color: rosa; (apenas vai mudar pro tom de rosa que eu escolher ai.)
+
+}
+
+
+
+igual como está sendo feito com o meu dark mode, onde eu escolho as cores para o meu modo escuro, mas eu quero escolher também baseado na cor que eu clicar na minha navbar. */
 const Home = () => {
   const [isActive, setIsActive] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
   );
-  const location = useLocation();
   const [expand, setExpand] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     setIsActive(true);
     setExpand(true);
 
     const sr = ScrollReveal({
-      distance: "80px", 
+      distance: "80px",
       duration: 600,
       easing: "ease-out",
       reset: true,
