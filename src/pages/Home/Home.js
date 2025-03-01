@@ -230,6 +230,7 @@ const Home = () => {
           <h2>Ou me envie um e-mail por aqui mesmo!</h2>
           <Link to="/contact">
             <Button>Enviar e-mail</Button>
+            <button onClick={() => console.log('Botão clicado!')}>Clique aqui</button>
           </Link>
           <Link to="/contact">
             <Button>Ir para Contato</Button>

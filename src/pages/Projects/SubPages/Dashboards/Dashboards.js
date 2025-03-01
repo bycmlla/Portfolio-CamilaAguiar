@@ -5,7 +5,6 @@ import { Card, Col, Row } from "react-bootstrap";
 import "./Dashboards.css";
 
 import { FaArrowLeft } from "react-icons/fa";
-import { SiPowerbi } from "react-icons/si";
 
 import NavBar from "../../../../components/NavBar/NavBar";
 import Footer from "../../../../components/Footer/Footer";
@@ -132,7 +131,7 @@ export const Dashboards = () => {
         Microsoft que oferece uma interface intuitiva para transformar dados em
         informações acionáveis.
         <br/><br/>
-       <span><SiPowerbi /> Clique nos gráficos e veja alguns dos meus dasboards! <SiPowerbi /></span>
+       <span> Clique nos gráficos e veja alguns dos meus dasboards! </span>
       </p>
       <div>
         <Link to={"/projects"} className="back-icon">

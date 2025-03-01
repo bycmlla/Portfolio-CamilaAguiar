@@ -16,7 +16,7 @@ import {
   FaDatabase,
 } from "react-icons/fa";
 import { TbBrandTypescript } from "react-icons/tb";
-import { SiOpencv, SiPostgresql, SiPowerbi, SiMysql } from "react-icons/si";
+import { SiOpencv, SiPostgresql, SiMysql } from "react-icons/si";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
 const Skills = () => {
@@ -129,7 +129,6 @@ const Skills = () => {
                 </li>
                 <li>
                   <span>Power BI</span>
-                  <SiPowerbi className="icon-size-data" />
                 </li>
                 <li>
                   <span>MySQL</span>

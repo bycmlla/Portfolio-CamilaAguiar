@@ -83,7 +83,7 @@ body {
 }
 
 .image-container img {
-  width: 600px;
+  width: 500px;
   max-width: 100%;
   max-height: calc(100vh - 20%);
   object-fit: contain;
