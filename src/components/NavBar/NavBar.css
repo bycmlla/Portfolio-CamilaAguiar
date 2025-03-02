@@ -11,16 +11,7 @@
   border-bottom: #9D1EE5 1px solid;
   z-index: 1;
 }
-:root {
-  --primary-color: #9747FF;
-  --gradient-light: linear-gradient(135deg, #C084FC, #9747FF);
-  --gradient-dark: linear-gradient(135deg, #6B21A8, #3B0764);
-}
 
-.dark-mode {
-  --gradient-light: linear-gradient(135deg, #8B5CF6, #581C87);
-  --gradient-dark: linear-gradient(135deg, #4C1D95, #1E1B4B);
-}
 .color-button {
   width: 20px;
   height: 20px;
@@ -33,9 +24,11 @@
 .color-button:hover {
   transform: scale(1.2);
 }
+
 .my-navbar.active {
   opacity: 1;
 }
+
 .my-navbar {
   display: flex;
   align-items: center;

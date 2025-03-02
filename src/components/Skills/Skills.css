@@ -6,7 +6,10 @@
   font-size: 20px;
 }
 
-.div-container-skills .icon-size,
+.div-container-skills .icon-size{
+  color: #9747FF;
+}
+
 .div-container-skills .icon-size-data {
   color: #9747FF;
 }
@@ -77,9 +80,12 @@
   color: white;
 }
 
-.dark-mode-skills .icon-size,
-.dark-mode-skills .icon-size-data {
+.dark-mode-skills .icon-size {
   color: white;
+}
+
+.dark-mode-skills .icon-size-data{
+ color: white;
 }
 
 @media screen and (max-width: 768px) {

@@ -23,9 +23,6 @@
     flex-grow: 1;
 }
 
-.dark-mode-section-title .resume-section-title {
-    color: white;
-}
 
 .dark-mode-section-title .line-section {
     background-image: linear-gradient(90deg, rgba(151, 71, 255, 1) 0%, rgba(201, 159, 255, 1) 100%);

@@ -25,7 +25,9 @@ import Skills from "../../components/Skills/Skills";
 import Carousel from "../../components/Carousel/Carousel";
 import "./Home.css";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
-import butterfly from "../../assets/images/butterfly.png";
+import Butterfly from "../../assets/images/butterfly.png";
+import PinkButterfly from "../../assets/images/pinkbutterfly.png"
+import BlueButterfly from "../../assets/images/bluebutterfly.png"
 
 const imageMap = {
   "#9747FF": {
@@ -42,15 +44,25 @@ const imageMap = {
   },
 };
 
+const backgroundMap = {
+  "#9747FF": Butterfly, 
+  "#F10091": PinkButterfly,
+  "#2291A4": BlueButterfly,
+};
+
 const Home = () => {
   const [isActive, setIsActive] = useState(false);
+
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
   );
+
   const [expand, setExpand] = useState(false);
+
   const [selectedColor, setSelectedColor] = useState(
     localStorage.getItem("selectedColor") || "9747FF"
   );
+
   const getImageSource = () => {
     const colorImages = imageMap[selectedColor];
     if (colorImages) {
@@ -58,6 +70,11 @@ const Home = () => {
     }
     return isDarkMode ? ImageBlackPage : ImageWhitePage;
   };
+  
+  const getBackgroundImage = () => {
+    return backgroundMap[selectedColor] || Butterfly;
+  }
+
   const location = useLocation();
 
   useEffect(() => {
@@ -96,7 +113,7 @@ const Home = () => {
     <div
       className={`home-container ${
         isDarkMode ? "dark-mode-home" : ""
-      } ${selectedColor}`}
+      } color-${selectedColor.replace("#", "")}`}
     >
       <NavBar
         className="reveal"
@@ -198,7 +215,7 @@ const Home = () => {
           desenhar no tempo livre.
         </p>
       </section>
-      <img src={butterfly} alt="Butterfly" className="background-image" />
+      <img src={getBackgroundImage()} alt="Butterfly" className="background-image" />
 
       <section aria-label="Habilidades profissionais" className="text-projects">
         <div>

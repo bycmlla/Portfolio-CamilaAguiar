@@ -107,13 +107,19 @@ body {
   display: inline-block;
   width: 100px;
   height: 3px;
-  background-image: linear-gradient(90deg, rgba(64, 1, 145, 1) 0%, rgba(151, 71, 255, 1) 100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(64, 1, 145, 1) 0%,
+    rgba(151, 71, 255, 1) 100%
+  );
   margin-bottom: 30px;
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   transition: width 1s ease-in-out;
 }
+
+/*Blue*/
 
 .line-bout.expand {
   width: 300px;
@@ -178,10 +184,12 @@ body {
 }
 
 .inner-contact ul li a button:hover {
-  background-image: linear-gradient(90deg,
-      rgba(147, 0, 230, 1) 0%,
-      rgba(157, 30, 229, 1) 35%,
-      rgba(231, 188, 255, 1) 100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(147, 0, 230, 1) 0%,
+    rgba(157, 30, 229, 1) 35%,
+    rgba(231, 188, 255, 1) 100%
+  );
   border: none;
   color: white;
 }
@@ -210,10 +218,158 @@ body {
 }
 
 .talk-to-me Button {
-  background-image: linear-gradient(90deg, rgba(64, 1, 145, 1) 0%, rgba(151, 71, 255, 1) 100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(64, 1, 145, 1) 0%,
+    rgba(151, 71, 255, 1) 100%
+  );
   border: none;
   color: white;
   cursor: pointer;
+}
+
+/*Blue Styles*/
+.home-container.color-2291A4 .line-bout {
+  background-image: linear-gradient(
+    90deg,
+    rgba(0, 70, 96, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.home-container.color-2291A4 .ul-front-one li {
+  border: solid 3px #2291a4;
+  background-color: #141414dc;
+}
+
+.home-container.color-2291A4 .div-container-skills .icon-size,
+.home-container.color-2291A4 .div-container-skills .icon-size-data {
+  color: #2291a4;
+}
+
+.home-container.color-2291A4 .ul-front-one li span {
+  color: #2291a4;
+}
+
+.home-container.color-2291A4 .line-section {
+  background-image: linear-gradient(
+    90deg,
+    rgba(0, 70, 96, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.home-container.color-2291A4 .butterfly-icon {
+  color: #2291a4;
+}
+
+.home-container.color-2291A4 .butterfly-icon:hover {
+  color: #97efff;
+}
+
+.home-container.color-2291A4 .my-navbar {
+  border-bottom: 1px solid #2291a4;
+}
+
+.home-container.color-2291A4 .footer-container {
+  border-top: 1px solid #2291a4;
+}
+
+.home-container.color-2291A4 .item {
+  border-bottom: 3px solid #2291a4;
+}
+
+.home-container.color-2291A4 .inner-contact ul li a button {
+  color: #2291a4;
+}
+
+.home-container.color-2291A4 .inner-contact ul li a button:hover {
+  background-image: linear-gradient(
+    90deg,
+    rgba(5, 99, 127, 1) 0%,
+    rgba(100, 212, 255, 1) 100%
+  );
+  color: white;
+}
+
+.home-container.color-2291A4 .talk-to-me Button {
+  background-image: linear-gradient(
+    90deg,
+    rgba(0, 70, 96, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+/*Pink Styles ---------------------------*/
+.home-container.color-F10091 .line-bout {
+  background-image: linear-gradient(
+    90deg,
+    rgba(88, 0, 53, 1) 0%,
+    rgba(241, 0, 145, 1) 100%
+  );
+}
+
+.home-container.color-F10091 .ul-front-one li {
+  border: solid 3px #f10091;
+  background-color: #212121;
+}
+
+.home-container.color-F10091 .div-container-skills .icon-size,
+.home-container.color-F10091 .div-container-skills .icon-size-data {
+  color: #f10091;
+}
+
+.home-container.color-F10091 .ul-front-one li span {
+  color: #f10091;
+}
+
+.home-container.color-F10091 .line-section {
+  background-image: linear-gradient(
+    90deg,
+    rgba(88, 0, 53, 1) 0%,
+    rgba(241, 0, 145, 1) 100%
+  );
+}
+
+.home-container.color-F10091 .butterfly-icon {
+  color: #f10091;
+}
+
+.home-container.color-F10091 .butterfly-icon:hover {
+  color: #f10091;
+}
+
+.home-container.color-F10091 .my-navbar {
+  border-bottom: 1px solid #f10091;
+}
+
+.home-container.color-F10091 .footer-container {
+  border-top: 1px solid #f10091;
+}
+
+.home-container.color-F10091 .item {
+  border-bottom: 3px solid #f10091;
+}
+
+.home-container.color-F10091 .inner-contact ul li a button {
+  color: #f10091;
+}
+
+.home-container.color-F10091 .inner-contact ul li a button:hover {
+  background-image: linear-gradient(
+    90deg,
+    rgba(88, 0, 53, 1) 0%,
+    rgba(241, 0, 145, 1) 100%
+  );
+  color: white;
+}
+
+.home-container.color-F10091 .talk-to-me Button {
+  background-image: linear-gradient(
+    90deg,
+    rgba(88, 0, 53, 1) 0%,
+    rgba(241, 0, 145, 1) 100%
+  );
 }
 
 /* Dark Mode */
@@ -230,13 +386,18 @@ body {
 .dark-mode-home .icons-container ul li a button,
 .dark-mode-home .about-me-home,
 .dark-mode-home .inner-contact ul li h5,
-.dark-mode-home .talk-to-me h2 {
+.dark-mode-home .talk-to-me h2,
+.dark-mode-home .resume-section-title {
   color: white;
 }
 
 .dark-mode-home .talk-to-me Button,
 .dark-mode-home .line-bout {
-  background-image: linear-gradient(90deg, rgba(151, 71, 255, 1) 0%, rgba(201, 159, 255, 1) 100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(151, 71, 255, 1) 0%,
+    rgba(201, 159, 255, 1) 100%
+  );
 }
 
 .dark-mode-home .inner-contact ul li p {
@@ -251,6 +412,55 @@ body {
 
 .dark-mode-home .button-container button:hover {
   background-color: #ebebeb;
+}
+
+/*Dark mode Blue*/
+.dark-mode-home.color-2291A4 .talk-to-me Button {
+  background-image: linear-gradient(
+    90deg,
+    rgba(5, 99, 127, 1) 0%,
+    rgba(100, 212, 255, 1) 100%
+  );
+}
+
+.dark-mode-home.color-2291A4 .line-bout {
+  background-image: linear-gradient(
+    90deg,
+    rgba(5, 99, 127, 1) 0%,
+    rgba(100, 212, 255, 1) 100%
+  );
+}
+
+.dark-mode-home.color-2291A4 .line-section {
+  background-image: linear-gradient(
+    90deg,
+    rgba(5, 99, 127, 1) 0%,
+    rgba(100, 212, 255, 1) 100%
+  );
+}
+/*Dark mode Pink -----------------------------*/
+.dark-mode-home.color-F10091 .talk-to-me Button {
+  background-image: linear-gradient(
+    90deg,
+    rgba(241, 0, 145, 1) 0%,
+    rgba(246, 156, 210, 1) 100%
+  );
+}
+
+.dark-mode-home.color-F10091 .line-bout {
+  background-image: linear-gradient(
+    90deg,
+    rgba(241, 0, 145, 1) 0%,
+    rgba(246, 156, 210, 1) 100%
+  );
+}
+
+.dark-mode-home.color-F10091 .line-section {
+  background-image: linear-gradient(
+    90deg,
+    rgba(241, 0, 145, 1) 0%,
+    rgba(246, 156, 210, 1) 100%
+  );
 }
 
 /* Media Queries */
@@ -406,10 +616,13 @@ body {
 }
 
 /* Para dispositivos pequenos (mobile) */
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+}
 
 /* Para tablets */
-@media (max-width: 768px) {}
+@media (max-width: 768px) {
+}
 
 /* Para desktops */
-@media (min-width: 1025px) {}
+@media (min-width: 1025px) {
+}
