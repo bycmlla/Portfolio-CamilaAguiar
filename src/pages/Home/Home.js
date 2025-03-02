@@ -15,6 +15,10 @@ import { BiLogoGmail } from "react-icons/bi";
 import ScrollReveal from "scrollreveal";
 import ImageBlackPage from "../../assets/images/camilawhitepage.png";
 import ImageWhitePage from "../../assets/images/camilablackpage.png";
+import BlueLightTheme from "../../assets/images/BlueLightTheme.png";
+import BlueDarkTheme from "../../assets/images/BlueBlackTheme.png";
+import PinkLightTheme from "../../assets/images/PinkLightTheme.png";
+import PinkDarkTheme from "../../assets/images/PinkBlackTheme.png";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 import Skills from "../../components/Skills/Skills";
@@ -23,43 +27,37 @@ import "./Home.css";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import butterfly from "../../assets/images/butterfly.png";
 
-/**você não está entendendo. eu quero que se eu clicar na bolinha de cor roxa, eu possa setar no meu css que a cor que eu quero para meus elementos será roxa.
+const imageMap = {
+  "#9747FF": {
+    light: ImageWhitePage,
+    dark: ImageBlackPage,
+  },
+  "#2291A4": {
+    light: BlueLightTheme,
+    dark: BlueDarkTheme,
+  },
+  "#F10091": {
+    light: PinkLightTheme,
+    dark: PinkDarkTheme,
+  },
+};
 
-
-
-
-
-.dark-mode-home .cor-roxa button{ (cliquei na bolinha roxa e está no modo escuro, então a classe a ser utilizada será cor-roxa para dark mode)
-
-background-color: roxo;
-
-}
-
-
-
-.dark-mode-home .cor-rosa button{ (cliquei na bolinha rosa e está no modo escuro, então a classe a ser utilizada será cor-rosa para dark mode)
-
-background-color: rosa;
-
-}
-
-
-
-.cor rosa .button {
-
-background-color: rosa; (apenas vai mudar pro tom de rosa que eu escolher ai.)
-
-}
-
-
-
-igual como está sendo feito com o meu dark mode, onde eu escolho as cores para o meu modo escuro, mas eu quero escolher também baseado na cor que eu clicar na minha navbar. */
 const Home = () => {
   const [isActive, setIsActive] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
   );
   const [expand, setExpand] = useState(false);
+  const [selectedColor, setSelectedColor] = useState(
+    localStorage.getItem("selectedColor") || "9747FF"
+  );
+  const getImageSource = () => {
+    const colorImages = imageMap[selectedColor];
+    if (colorImages) {
+      return isDarkMode ? colorImages.dark : colorImages.light;
+    }
+    return isDarkMode ? ImageBlackPage : ImageWhitePage;
+  };
   const location = useLocation();
 
   useEffect(() => {
@@ -95,11 +93,17 @@ const Home = () => {
   };
 
   return (
-    <div className={`home-container ${isDarkMode ? "dark-mode-home" : ""}`}>
+    <div
+      className={`home-container ${
+        isDarkMode ? "dark-mode-home" : ""
+      } ${selectedColor}`}
+    >
       <NavBar
         className="reveal"
         toggleDarkMode={toggleDarkModeHome}
         isDarkMode={isDarkMode}
+        selectedColor={selectedColor}
+        setSelectedColor={setSelectedColor}
       />
 
       <section
@@ -173,7 +177,7 @@ const Home = () => {
           className={`image-container ${isActive ? "active" : ""}`}
         >
           <img
-            src={isDarkMode ? ImageBlackPage : ImageWhitePage}
+            src={getImageSource()}
             alt=""
             onClick={handleClick}
             className="reveal"
@@ -223,7 +227,7 @@ const Home = () => {
                 href="https://github.com/bycmlla"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => console.log('Link do GitHub clicado!')}
+                onClick={() => console.log("Link do GitHub clicado!")}
               >
                 <button type="button">
                   <FaGithubAlt />
@@ -239,7 +243,6 @@ const Home = () => {
                 rel="noopener noreferrer"
               >
                 <button type="button">
-
                   <FiLinkedin />
                 </button>
               </a>

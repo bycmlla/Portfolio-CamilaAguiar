@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 
 import NavBar from "../../../../components/NavBar/NavBar";
-import Footer from "../../../../components/Footer/Footer";
 
 const Angular = () => {
   const [isDarkMode, setIsDarkMode] = useState(
