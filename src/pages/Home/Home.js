@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { TypeWriter } from "../../components/TypeWriter/TypeWriter";
-import Button from "react-bootstrap/Button";
 import { MdEmail } from "react-icons/md";
 import {
   FaLinkedin,
@@ -28,6 +27,7 @@ import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import Butterfly from "../../assets/images/butterfly.png";
 import PinkButterfly from "../../assets/images/pinkbutterfly.png"
 import BlueButterfly from "../../assets/images/bluebutterfly.png"
+import Overlay from "../../components/Overlay/Overlay";
 
 const imageMap = {
   "#9747FF": {
@@ -45,7 +45,7 @@ const imageMap = {
 };
 
 const backgroundMap = {
-  "#9747FF": Butterfly, 
+  "#9747FF": Butterfly,
   "#F10091": PinkButterfly,
   "#2291A4": BlueButterfly,
 };
@@ -63,6 +63,16 @@ const Home = () => {
     localStorage.getItem("selectedColor") || "9747FF"
   );
 
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false)
+
+  const handleOpenOverlay = () => {
+    setIsOverlayOpen(true)
+  }
+
+  const handleCloseOverlay = () => {
+    setIsOverlayOpen(false)
+  }
+
   const getImageSource = () => {
     const colorImages = imageMap[selectedColor];
     if (colorImages) {
@@ -70,7 +80,7 @@ const Home = () => {
     }
     return isDarkMode ? ImageBlackPage : ImageWhitePage;
   };
-  
+
   const getBackgroundImage = () => {
     return backgroundMap[selectedColor] || Butterfly;
   }
@@ -111,9 +121,8 @@ const Home = () => {
 
   return (
     <div
-      className={`home-container ${
-        isDarkMode ? "dark-mode-home" : ""
-      } color-${selectedColor.replace("#", "")}`}
+      className={`home-container ${isDarkMode ? "dark-mode-home" : ""
+        } color-${selectedColor.replace("#", "")}`}
     >
       <NavBar
         className="reveal"
@@ -293,16 +302,12 @@ const Home = () => {
               <p>camilacarvalhoagui@gmail.com</p>
             </li>
           </ul>
-        </div>
-
+        </div> 
+    
         <div className="talk-to-me">
           <h2>Ou me envie um e-mail por aqui mesmo!</h2>
-          <Link to="/contact">
-            <Button type="button">Enviar e-mail</Button>
-          </Link>
-          <Link to="/contact">
-            <Button type="button">Ir para Contato</Button>
-          </Link>
+          <button onClick={handleOpenOverlay} type="button" className="open-overlay-send">Enviar e-mail</button>
+          {isOverlayOpen && <Overlay onClose={handleCloseOverlay} />}
         </div>
       </section>
 

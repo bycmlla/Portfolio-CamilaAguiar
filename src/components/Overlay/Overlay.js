@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Overlay.css";
 import axios from "axios";
+import { IoMdClose } from "react-icons/io";
+import HeaderPurple01 from "../../assets/images/headerPurpleBlackMode.png"
 
 
 const Overlay = ({ onClose }) => {
@@ -47,55 +49,65 @@ const Overlay = ({ onClose }) => {
     return (
         <div className="overlay">
             <div className="overlay-content">
-                <button onClick={onClose} className="close-button">
-                    Fechar
+                <div className="image-header">
+                    <img src={HeaderPurple01} alt="Header Purple 01" className="header-image" />
+                    <div className="image-text">Talk with me</div>
+                </div>
+
+                <button onClick={onClose} className="close-button-overlay">
+                    <IoMdClose />
                 </button>
-                <h2>Ou me envie um e-mail por aqui mesmo!</h2>
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <input
-                            type="text"
-                            className="input-subject"
-                            name="name"
-                            placeholder="Seu nome"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                        />
-                        <input
-                            type="email"
-                            className="input-subject"
-                            name="email"
-                            placeholder="Seu e-mail"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                        />
-                        <input
-                            type="text"
-                            className="input-subject"
-                            name="subject"
-                            placeholder="Assunto"
-                            value={formData.subject}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <textarea
-                        placeholder="Descrição"
-                        name="description"
-                        rows="10"
-                        className="textarea"
-                        value={formData.description}
-                        onChange={handleChange}
-                        required
-                    ></textarea>
-                    <div>
-                        <button type="submit" className="button-send">
-                            Enviar
-                        </button>
-                    </div>
-                </form>
+
+                <h2>Envie um e-mail</h2>
+                <div className="form-overlay">
+                    <form onSubmit={handleSubmit}>
+                        <div className="form-overlay-content">
+                            <div className="input-container">
+                                <input
+                                    type="text"
+                                    className="input-subject"
+                                    name="name"
+                                    placeholder="Seu nome"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
+                                />
+                                <input
+                                    type="email"
+                                    className="input-subject"
+                                    name="email"
+                                    placeholder="Seu e-mail"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                />
+                                <input
+                                    type="text"
+                                    className="input-subject"
+                                    name="subject"
+                                    placeholder="Assunto"
+                                    value={formData.subject}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                            <textarea
+                                placeholder="Descrição"
+                                name="description"
+                                rows="10"
+                                className="textarea"
+                                value={formData.description}
+                                onChange={handleChange}
+                                required
+                            ></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" className="button-send">
+                                Enviar
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     );

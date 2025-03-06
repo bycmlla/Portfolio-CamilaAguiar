@@ -217,7 +217,7 @@ body {
   color: black;
 }
 
-.talk-to-me Button {
+.talk-to-me .open-overlay-send {
   background-image: linear-gradient(
     90deg,
     rgba(64, 1, 145, 1) 0%,
@@ -364,7 +364,7 @@ body {
   color: white;
 }
 
-.home-container.color-F10091 .talk-to-me Button {
+.home-container.color-F10091 .talk-to-me .open-overlay-send {
   background-image: linear-gradient(
     90deg,
     rgba(88, 0, 53, 1) 0%,
@@ -374,6 +374,10 @@ body {
 
 /* Dark Mode */
 .dark-mode-home {
+  background-color: #13131f;
+}
+
+.dark-mode-home .overlay-content{
   background-color: #13131f;
 }
 
@@ -391,7 +395,7 @@ body {
   color: white;
 }
 
-.dark-mode-home .talk-to-me Button,
+.dark-mode-home .talk-to-me .open-overlay-send,
 .dark-mode-home .line-bout {
   background-image: linear-gradient(
     90deg,
@@ -415,7 +419,7 @@ body {
 }
 
 /*Dark mode Blue*/
-.dark-mode-home.color-2291A4 .talk-to-me Button {
+.dark-mode-home.color-2291A4 .talk-to-me .open-overlay-send {
   background-image: linear-gradient(
     90deg,
     rgba(5, 99, 127, 1) 0%,
@@ -438,8 +442,9 @@ body {
     rgba(100, 212, 255, 1) 100%
   );
 }
+
 /*Dark mode Pink -----------------------------*/
-.dark-mode-home.color-F10091 .talk-to-me Button {
+.dark-mode-home.color-F10091 .talk-to-me .open-overlay-send {
   background-image: linear-gradient(
     90deg,
     rgba(241, 0, 145, 1) 0%,

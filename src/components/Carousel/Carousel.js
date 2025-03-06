@@ -86,7 +86,7 @@ const Carousel = () => {
             {infiniteImages.map((img, index) => (
               <motion.div className="item" key={index}>
                 <img src={img.src} alt={`carousel-img-${index}`} />
-                <div className="overlay"></div>
+                <div className="overlay-carousel"></div>
                 <div className="text-overlay">{img.text}</div>
               </motion.div>
             ))}

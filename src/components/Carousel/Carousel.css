@@ -45,7 +45,7 @@
     object-fit: cover;
 }
 
-.overlay {
+.overlay-carousel {
     position: absolute;
     top: 0;
     left: 0;
@@ -57,7 +57,7 @@
     transition: opacity 0.3s ease;
 }
 
-.item:hover .overlay {
+.item:hover .overlay-carousel {
     opacity: 0;
     pointer-events: none;
     z-index: -1;
