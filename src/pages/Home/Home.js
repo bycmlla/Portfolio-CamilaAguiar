@@ -302,12 +302,12 @@ const Home = () => {
               <p>camilacarvalhoagui@gmail.com</p>
             </li>
           </ul>
-        </div> 
-    
+        </div>
+
         <div className="talk-to-me">
           <h2>Ou me envie um e-mail por aqui mesmo!</h2>
           <button onClick={handleOpenOverlay} type="button" className="open-overlay-send">Enviar e-mail</button>
-          {isOverlayOpen && <Overlay onClose={handleCloseOverlay} />}
+          {isOverlayOpen && <Overlay onClose={handleCloseOverlay} selectedColor={selectedColor} isDarkMode={isDarkMode}/>}
         </div>
       </section>
 

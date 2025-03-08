@@ -3,15 +3,53 @@ import "./Overlay.css";
 import axios from "axios";
 import { IoMdClose } from "react-icons/io";
 import HeaderPurple01 from "../../assets/images/headerPurpleBlackMode.png"
+import HeaderPurple02 from "../../assets/images/headerPurpleLightMode.png"
+import HeaderPink01 from "../../assets/images/headerPinkBlackMode.png"
+import HeaderPink02 from "../../assets/images/headerPinkLightMode.png"
+import HeaderBlue01 from "../../assets/images/headerBlueBlackMode.png"
+import HeaderBlue02 from "../../assets/images/headerBlueLightMode.png"
+import ButterflyPurple from "../../assets/images/2butterfly.png"
+import ButterflyPink from "../../assets/images/2pinkbutterfly.png"
+import ButterflyBlue from "../../assets/images/2bluebutterfly.png"
 
+const backgroundMapOverlay = {
+    "#9747FF": ButterflyPurple,
+    "#F10091": ButterflyPink,
+    "#2291A4": ButterflyBlue
+}
 
-const Overlay = ({ onClose }) => {
+const headerMap = {
+    "#9747FF": {
+        light: HeaderPurple02,
+        dark: HeaderPurple01
+    },
+    "#F10091": {
+        light: HeaderPink02,
+        dark: HeaderPink01
+    },
+    "#2291A4": {
+        light: HeaderBlue02,
+        dark: HeaderBlue01
+    }
+}
+
+const Overlay = ({ onClose, selectedColor, isDarkMode }) => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         subject: "",
         description: "",
     });
+
+    const getButterflyImage = () => {
+        const colorKey = selectedColor;
+        return backgroundMapOverlay[colorKey] || ButterflyPurple;
+    }
+    const getHeaderImage = () => {
+        const colorKey = selectedColor;
+        const mode = isDarkMode ? "dark" : "light";
+        return headerMap[colorKey][mode] || HeaderPurple02
+    }
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -50,18 +88,19 @@ const Overlay = ({ onClose }) => {
         <div className="overlay">
             <div className="overlay-content">
                 <div className="image-header">
-                    <img src={HeaderPurple01} alt="Header Purple 01" className="header-image" />
-                    <div className="image-text">Talk with me</div>
+                    <img src={getHeaderImage()} alt="Header Purple 01" className="header-image" />
+                    <div className="image-text">Talk with me!</div>
                 </div>
 
                 <button onClick={onClose} className="close-button-overlay">
                     <IoMdClose />
                 </button>
 
-                <h2>Envie um e-mail</h2>
+                <h2 className="send-me-email">Envie um e-mail</h2>
                 <div className="form-overlay">
                     <form onSubmit={handleSubmit}>
                         <div className="form-overlay-content">
+                            <img src={getButterflyImage()} alt="Butterfly" className="background-image-overlay" />
                             <div className="input-container">
                                 <input
                                     type="text"
