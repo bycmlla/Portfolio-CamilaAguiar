@@ -8,12 +8,22 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import "./AboutMe.css";
 import ScrollReveal from "scrollreveal";
-import Skills from "../../components/Skills/Skills";
+import MiniButterflyPurple from "../../assets/images/miniButterflyPurple.png";
+import MiniButterflyBlue from "../../assets/images/miniButterflyBkue.png";
+import MiniButterflyPink from "../../assets/images/miniButterflyPink.png";
 
-const AboutMe = () => {
+const butterflyMap = {
+  "#9747FF": MiniButterflyPurple,
+  "#2291A4": MiniButterflyBlue,
+  "#F10091": MiniButterflyPink,
+};
+
+const AboutMe = ({selectedColor}) => {
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
   );
+
+
 
   useEffect(() => {
     setIsDarkMode(localStorage.getItem("darkMode") === "true");
@@ -72,6 +82,13 @@ const AboutMe = () => {
         </div>
         <div className="about-me-content">
           <h1>About me.</h1>
+          <span className="line-section-about-me"></span>
+          <img
+            src={getBackgroundImage()}
+            alt="Butterfly"
+            className="background-image"
+          />
+
           <p>
             De Minas Gerais pro mundo, ingressei em Análise e Desenvolvimento de
             Sistemas aos 18 anos no Instituto Federal Baiano, onde comecei toda
@@ -96,14 +113,13 @@ const AboutMe = () => {
             <br />
             Valorizo a colaboração em equipe e a comunicação clara, aspectos que
             considero fundamentais para o sucesso de qualquer projeto. <br />
-            Amante de livros, música e gatos. Desenhista nos tempos livres. <br />
-            Confira minhas stacks abaixo, assim como meu cúrriculo. <br/><br/>
+            Amante de livros, música e gatos. Desenhista nos tempos livres.{" "}
+            <br />
+            Confira minhas stacks abaixo, assim como meu cúrriculo. <br />
+            <br />
             Cami.
           </p>
         </div>
-      </div>
-      <div className="skills-about">
-        <Skills />
       </div>
       <div className="curriculum-container">
         <img src={Curriculum} alt="" />

@@ -20,16 +20,16 @@ const backgroundMapOverlay = {
 
 const headerMap = {
     "#9747FF": {
-        light: HeaderPurple02,
-        dark: HeaderPurple01
+        light: HeaderPurple01,
+        dark: HeaderPurple02
     },
     "#F10091": {
-        light: HeaderPink02,
-        dark: HeaderPink01
+        light: HeaderPink01,
+        dark: HeaderPink02
     },
     "#2291A4": {
-        light: HeaderBlue02,
-        dark: HeaderBlue01
+        light: HeaderBlue01,
+        dark: HeaderBlue02
     }
 }
 

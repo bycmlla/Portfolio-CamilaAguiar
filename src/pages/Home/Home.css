@@ -292,7 +292,7 @@ body {
   color: white;
 }
 
-.home-container.color-2291A4 .talk-to-me Button {
+.home-container.color-2291A4 .open-overlay-send {
   background-image: linear-gradient(
     90deg,
     rgba(0, 70, 96, 1) 0%,
@@ -308,7 +308,13 @@ body {
     rgba(241, 0, 145, 1) 100%
   );
 }
-
+.home-container.color-F10091 .button-send {
+  background-image: linear-gradient(
+    90deg,
+    rgba(241, 0, 145, 1) 0%,
+    rgba(246, 156, 210, 1) 100%
+  );
+}
 .home-container.color-F10091 .ul-front-one li {
   border: solid 3px #f10091;
   background-color: #212121;
@@ -377,7 +383,7 @@ body {
   background-color: #13131f;
 }
 
-.dark-mode-home .overlay-content{
+.dark-mode-home .overlay-content {
   background-color: #13131f;
 }
 
@@ -427,6 +433,14 @@ body {
   );
 }
 
+.dark-mode-home.color-2291A4 .button-send {
+  background-image: linear-gradient(
+    90deg,
+    rgba(5, 99, 127, 1) 0%,
+    rgba(100, 212, 255, 1) 100%
+  );
+}
+
 .dark-mode-home.color-2291A4 .line-bout {
   background-image: linear-gradient(
     90deg,
@@ -453,6 +467,14 @@ body {
 }
 
 .dark-mode-home.color-F10091 .line-bout {
+  background-image: linear-gradient(
+    90deg,
+    rgba(241, 0, 145, 1) 0%,
+    rgba(246, 156, 210, 1) 100%
+  );
+}
+
+.dark-mode-home.color-F10091 .button-send {
   background-image: linear-gradient(
     90deg,
     rgba(241, 0, 145, 1) 0%,
