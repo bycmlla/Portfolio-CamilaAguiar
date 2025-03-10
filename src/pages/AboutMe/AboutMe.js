@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../../components/NavBar/NavBar";
+import { useColor } from "../../contexts/ColorContext";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin, FaWhatsapp, FaGithubSquare } from "react-icons/fa";
 import Curriculum from "../../assets/images/curriculumpng.jpg";
@@ -18,13 +19,12 @@ const butterflyMap = {
   "#F10091": MiniButterflyPink,
 };
 
-const AboutMe = ({selectedColor}) => {
+const AboutMe = () => {
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
   );
 
-
-
+  const { selectedColor } = useColor();
   useEffect(() => {
     setIsDarkMode(localStorage.getItem("darkMode") === "true");
   }, []);

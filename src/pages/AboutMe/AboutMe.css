@@ -26,6 +26,7 @@
   width: 10px;
   margin-left: 50px;
 }
+
 .icons-container-custom ul {
   list-style: none;
   padding: 0;
@@ -41,9 +42,11 @@
   text-decoration: none;
   color: rgb(0, 0, 0);
 }
-.icons-container-custom ul li:hover{
-  transform: scale(1.2); 
+
+.icons-container-custom ul li:hover {
+  transform: scale(1.2);
 }
+
 .about-me-content {
   max-width: 800px;
   margin: auto;
@@ -60,10 +63,12 @@
   align-items: center;
   margin-top: 35px;
 }
+
 .curriculum-container img {
   width: 50%;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.06), 0px -2px 2px rgba(0, 0, 0, 0.06);
 }
+
 .button-home {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -74,10 +79,12 @@
   padding: 10px 20px 10px 20px;
   cursor: pointer;
 }
+
 .button-home button:hover {
   background-color: rgb(237, 237, 237);
 }
-.skills-about{
+
+.skills-about {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,19 +93,22 @@
 .dark-mode-about {
   background-color: #141414;
 }
+
 .dark-mode-about .icons-container-custom ul li a {
   color: white;
 }
+
 .dark-mode-about .about-me-content {
   color: white;
 }
+
 @media (max-width: 768px) {
-  .about-me-content{
+  .about-me-content {
     font-size: 13px;
     margin: 40px 40px;
   }
 
-  .curriculum-container img{
+  .curriculum-container img {
     width: 100%;
 
   }

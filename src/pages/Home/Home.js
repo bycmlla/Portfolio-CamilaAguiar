@@ -28,6 +28,8 @@ import Butterfly from "../../assets/images/butterfly.png";
 import PinkButterfly from "../../assets/images/pinkbutterfly.png"
 import BlueButterfly from "../../assets/images/bluebutterfly.png"
 import Overlay from "../../components/Overlay/Overlay";
+import { useColor } from "../../contexts/ColorContext";
+import { useTheme } from "../../contexts/ThemeContext";
 
 const imageMap = {
   "#9747FF": {
@@ -52,16 +54,9 @@ const backgroundMap = {
 
 const Home = () => {
   const [isActive, setIsActive] = useState(false);
-
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("darkMode") === "true"
-  );
-
+  const { selectedColor, setSelectedColor } = useColor();
+  const { isDarkMode } = useTheme();
   const [expand, setExpand] = useState(false);
-
-  const [selectedColor, setSelectedColor] = useState(
-    localStorage.getItem("selectedColor") || "9747FF"
-  );
 
   const [isOverlayOpen, setIsOverlayOpen] = useState(false)
 
@@ -109,12 +104,6 @@ const Home = () => {
     return () => sr.destroy();
   }, [location.pathname]);
 
-  const toggleDarkModeHome = () => {
-    const newDarkModeState = !isDarkMode;
-    setIsDarkMode(newDarkModeState);
-    localStorage.setItem("darkMode", newDarkModeState.toString());
-  };
-
   const handleClick = () => {
     window.open("https://github.com/bycmlla", "_blank");
   };
@@ -126,10 +115,6 @@ const Home = () => {
     >
       <NavBar
         className="reveal"
-        toggleDarkMode={toggleDarkModeHome}
-        isDarkMode={isDarkMode}
-        selectedColor={selectedColor}
-        setSelectedColor={setSelectedColor}
       />
 
       <section
@@ -307,7 +292,7 @@ const Home = () => {
         <div className="talk-to-me">
           <h2>Ou me envie um e-mail por aqui mesmo!</h2>
           <button onClick={handleOpenOverlay} type="button" className="open-overlay-send">Enviar e-mail</button>
-          {isOverlayOpen && <Overlay onClose={handleCloseOverlay} selectedColor={selectedColor} isDarkMode={isDarkMode}/>}
+          {isOverlayOpen && <Overlay onClose={handleCloseOverlay} selectedColor={selectedColor} isDarkMode={isDarkMode} />}
         </div>
       </section>
 
