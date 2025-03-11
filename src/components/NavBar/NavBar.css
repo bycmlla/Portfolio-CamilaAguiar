@@ -1,3 +1,4 @@
+/* Estilos Gerais do NavBar */
 .my-navbar {
   opacity: 0;
   transition: opacity 1.2s ease-in-out, top 1s ease-in-out;
@@ -10,8 +11,56 @@
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
   border-bottom: #9D1EE5 1px solid;
   z-index: 1;
+  padding: 0; 
 }
 
+.my-navbar.active {
+  opacity: 1;
+}
+
+.my-navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.my-navbar .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  margin-left: 30px;
+}
+
+.my-navbar .logo img {
+  width: 80px;
+  max-height: 100%;
+  display: block;
+}
+
+.my-navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 30px;
+}
+
+.my-navbar .nav-links li a {
+  text-decoration: none;
+  color: #333; 
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.my-navbar .nav-links li a:hover {
+  color: #FFD700;
+}
+
+.my-navbar .dark-mode-icon {
+  cursor: pointer;
+}
+
+/* Estilos dos Botões de Cor */
 .color-button {
   width: 20px;
   height: 20px;
@@ -25,62 +74,20 @@
   transform: scale(1.2);
 }
 
-.my-navbar.active {
-  opacity: 1;
-}
-
-.my-navbar {
-  display: flex;
-  align-items: center;
-  padding: 0;
-}
-
-.my-navbar .navbar-brand {
-  display: flex;
-  align-items: center;
-  height: 100%; 
-}
-
-.my-navbar .logo {
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-  margin: 0;
-  margin-left: 30px; 
-}
-
-.my-navbar .logo img {
-  width: 80px; 
-  max-height: 100%;
-  display: block;
-}
-
-.my-navbar .dark-mode-icon {
-  cursor: pointer;
-}
-.my-navbar .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 40px;
-  margin: 30px;
-}
-.my-navbar .nav-links li a {
-  text-decoration: none;
-  color: #333;
-  font-size: 13px;
-  cursor: pointer;
-}
-.my-navbar.my-navbar .nav-links li a:hover {
-  color: #FFD700;
-}
+/* Estilos do Modo Escuro */
 .dark-mode {
   background-color: #13131F;
   color: #ffffff;
 }
-.dark-mode.my-navbar .nav-links li a {
-  color: #ffffff;
+
+.dark-mode.my-navbar {
+  background-color: #13131F; 
 }
 
-.dark-mode .dark-mode-icon:hover {
+.dark-mode.my-navbar .nav-links li a {
+  color: #ffffff; 
+}
+
+.dark-mode.my-navbar .dark-mode-icon:hover {
   color: #FFD700;
 }

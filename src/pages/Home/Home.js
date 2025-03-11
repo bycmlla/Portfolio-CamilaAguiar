@@ -54,7 +54,7 @@ const backgroundMap = {
 
 const Home = () => {
   const [isActive, setIsActive] = useState(false);
-  const { selectedColor, setSelectedColor } = useColor();
+  const { selectedColor } = useColor();
   const { isDarkMode } = useTheme();
   const [expand, setExpand] = useState(false);
 
@@ -109,42 +109,157 @@ const Home = () => {
   };
 
   return (
-    <div
-      className={`home-container ${isDarkMode ? "dark-mode-home" : ""
+    <>
+      <div
+        className={`home-container ${isDarkMode ? "dark-mode-home" : ""
         } color-${selectedColor.replace("#", "")}`}
-    >
-      <NavBar
-        className="reveal"
-      />
-
-      <section
-        aria-label="Informações Iniciais"
-        className="text-and-image-container reveal"
       >
-        <div className="content-container">
-          <div className="icons-container">
+        <NavBar
+          className="reveal"
+        />
+
+        <section
+          aria-label="Informações Iniciais"
+          className="text-and-image-container reveal"
+        >
+          <div className="content-container">
+            <div className="icons-container">
+              <ul>
+                <li>
+                  <a
+                    href="https://github.com/bycmlla"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button type="button">
+                      <FaGithubSquare />
+                    </button>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="www.linkedin.com/in/camilaaguiarr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button type="button">
+                      <FaLinkedin />
+                    </button>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://wa.me/5533998759437"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button type="button">
+                      <FaWhatsapp />
+                    </button>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:by.cmlla0107@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <button type="button">
+                      <MdEmail />
+                    </button>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="text-container">
+            <TypeWriter
+              textColor={isDarkMode ? "white" : "black"}
+              text="Olá, eu sou Camila Carvalho"
+            />
+            <p>
+              Desenvolvedora Full-Stack e<br />
+              Analista de Dados. <br /> <br />
+              Aplicando meus conhecimentos e<br />
+              sempre aprendendo mais. <br />
+            </p>
+          </div>
+          <div
+            aria-label="Imagem profissional"
+            className={`image-container ${isActive ? "active" : ""}`}
+          >
+            <img
+              src={getImageSource()}
+              alt=""
+              onClick={handleClick}
+              className="reveal"
+            />
+          </div>
+        </section>
+
+        <section aria-label="Sobre mim" className="about-me-home reveal">
+          <h2>Sobre mim</h2>
+          <span className={`line-bout ${expand ? "expand" : ""}`}></span>
+          <p>
+            Sou Analista de Dados e desenvolvedora full-stack, apaixonada por
+            tecnologia e inovação. Tenho experiência em front-end, back-end e
+            análise de dados, utilizando ferramentas como ReactJS, AngularJS,
+            NodeJS, Java + Spring Boot, SQL Server, MySQL e Power BI. Já atuei no
+            desenvolvimento mobile com React Native e em projetos de inteligência
+            artificial. Apaixonada por livros, música e gatos, também gosto de
+            desenhar no tempo livre.
+          </p>
+        </section>
+        <img src={getBackgroundImage()} alt="Butterfly" className="background-image" />
+
+        <section aria-label="Habilidades profissionais" className="text-projects">
+          <div>
+            <Skills />
+          </div>
+        </section>
+
+        <section
+          aria-label="Carrossel de apresentação de projetos"
+          className="text-projects"
+        >
+          <Carousel />
+        </section>
+
+        <section className="contact-container-home">
+          <SectionTitle
+            data={{
+              title: "Contatos",
+              text: "Fale comigo usando os contatos abaixo ou mande um e-mail.",
+            }}
+          />
+          <div className="inner-contact">
             <ul>
               <li>
                 <a
                   href="https://github.com/bycmlla"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => console.log("Link do GitHub clicado!")}
                 >
                   <button type="button">
-                    <FaGithubSquare />
+                    <FaGithubAlt />
                   </button>
                 </a>
+                <h5>Github</h5>
+                <p>@bycmlla</p>
               </li>
               <li>
                 <a
-                  href="www.linkedin.com/in/camilaaguiarr"
+                  href="https://www.linkedin.com/in/camilaaguiarr/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <button type="button">
-                    <FaLinkedin />
+                    <FiLinkedin />
                   </button>
                 </a>
+                <h5>LinkedIn</h5>
+                <p>@camilacarvalho</p>
               </li>
               <li>
                 <a
@@ -153,9 +268,11 @@ const Home = () => {
                   rel="noopener noreferrer"
                 >
                   <button type="button">
-                    <FaWhatsapp />
+                    <PiWhatsappLogoFill />
                   </button>
                 </a>
+                <h5>Whatsapp</h5>
+                <p>(33) 9 9875-9437</p>
               </li>
               <li>
                 <a
@@ -164,140 +281,25 @@ const Home = () => {
                   rel="noopener noreferrer"
                 >
                   <button type="button">
-                    <MdEmail />
+                    <BiLogoGmail />
                   </button>
                 </a>
+                <h5>E-mail</h5>
+                <p>camilacarvalhoagui@gmail.com</p>
               </li>
             </ul>
           </div>
-        </div>
-        <div className="text-container">
-          <TypeWriter
-            textColor={isDarkMode ? "white" : "black"}
-            text="Olá, eu sou Camila Carvalho"
-          />
-          <p>
-            Desenvolvedora Full-Stack e<br />
-            Analista de Dados. <br /> <br />
-            Aplicando meus conhecimentos e<br />
-            sempre aprendendo mais. <br />
-          </p>
-        </div>
-        <div
-          aria-label="Imagem profissional"
-          className={`image-container ${isActive ? "active" : ""}`}
-        >
-          <img
-            src={getImageSource()}
-            alt=""
-            onClick={handleClick}
-            className="reveal"
-          />
-        </div>
-      </section>
 
-      <section aria-label="Sobre mim" className="about-me-home reveal">
-        <h2>Sobre mim</h2>
-        <span className={`line-bout ${expand ? "expand" : ""}`}></span>
-        <p>
-          Sou Analista de Dados e desenvolvedora full-stack, apaixonada por
-          tecnologia e inovação. Tenho experiência em front-end, back-end e
-          análise de dados, utilizando ferramentas como ReactJS, AngularJS,
-          NodeJS, Java + Spring Boot, SQL Server, MySQL e Power BI. Já atuei no
-          desenvolvimento mobile com React Native e em projetos de inteligência
-          artificial. Apaixonada por livros, música e gatos, também gosto de
-          desenhar no tempo livre.
-        </p>
-      </section>
-      <img src={getBackgroundImage()} alt="Butterfly" className="background-image" />
+          <div className="talk-to-me">
+            <h2>Ou me envie um e-mail por aqui mesmo!</h2>
+            <button onClick={handleOpenOverlay} type="button" className="open-overlay-send">Enviar e-mail</button>
+            {isOverlayOpen && <Overlay onClose={handleCloseOverlay} selectedColor={selectedColor} isDarkMode={isDarkMode} />}
+          </div>
+        </section>
 
-      <section aria-label="Habilidades profissionais" className="text-projects">
-        <div>
-          <Skills />
-        </div>
-      </section>
-
-      <section
-        aria-label="Carrossel de apresentação de projetos"
-        className="text-projects"
-      >
-        <Carousel />
-      </section>
-
-      <section className="contact-container-home">
-        <SectionTitle
-          data={{
-            title: "Contatos",
-            text: "Fale comigo usando os contatos abaixo ou mande um e-mail.",
-          }}
-        />
-        <div className="inner-contact">
-          <ul>
-            <li>
-              <a
-                href="https://github.com/bycmlla"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => console.log("Link do GitHub clicado!")}
-              >
-                <button type="button">
-                  <FaGithubAlt />
-                </button>
-              </a>
-              <h5>Github</h5>
-              <p>@bycmlla</p>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/camilaaguiarr/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button type="button">
-                  <FiLinkedin />
-                </button>
-              </a>
-              <h5>LinkedIn</h5>
-              <p>@camilacarvalho</p>
-            </li>
-            <li>
-              <a
-                href="https://wa.me/5533998759437"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button type="button">
-                  <PiWhatsappLogoFill />
-                </button>
-              </a>
-              <h5>Whatsapp</h5>
-              <p>(33) 9 9875-9437</p>
-            </li>
-            <li>
-              <a
-                href="mailto:by.cmlla0107@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button type="button">
-                  <BiLogoGmail />
-                </button>
-              </a>
-              <h5>E-mail</h5>
-              <p>camilacarvalhoagui@gmail.com</p>
-            </li>
-          </ul>
-        </div>
-
-        <div className="talk-to-me">
-          <h2>Ou me envie um e-mail por aqui mesmo!</h2>
-          <button onClick={handleOpenOverlay} type="button" className="open-overlay-send">Enviar e-mail</button>
-          {isOverlayOpen && <Overlay onClose={handleCloseOverlay} selectedColor={selectedColor} isDarkMode={isDarkMode} />}
-        </div>
-      </section>
-
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import "./AboutMe.css";
 import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../components/Footer/Footer";
 import { useColor } from "../../contexts/ColorContext";
+import { useTheme } from "../../contexts/ThemeContext";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin, FaWhatsapp, FaGithubSquare } from "react-icons/fa";
-import Curriculum from "../../assets/images/curriculumpng.jpg";
-import Curriculum2 from "../../assets/images/curriculumpng2.jpg";
-import { Link } from "react-router-dom";
-import Footer from "../../components/Footer/Footer";
-import "./AboutMe.css";
 import ScrollReveal from "scrollreveal";
 import MiniButterflyPurple from "../../assets/images/miniButterflyPurple.png";
 import MiniButterflyBlue from "../../assets/images/miniButterflyBkue.png";
@@ -20,21 +18,11 @@ const butterflyMap = {
 };
 
 const AboutMe = () => {
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("darkMode") === "true"
-  );
-
   const { selectedColor } = useColor();
-  useEffect(() => {
-    setIsDarkMode(localStorage.getItem("darkMode") === "true");
-  }, []);
+  const { isDarkMode } = useTheme();
 
-  const toggleDarkMode = () => {
-    const newDarkModeState = !isDarkMode;
-    setIsDarkMode(newDarkModeState);
-    localStorage.setItem("darkMode", newDarkModeState.toString());
-
-    window.location.reload();
+  const getBackgroundImage = () => {
+    return butterflyMap[selectedColor] || MiniButterflyPurple;
   };
 
   ScrollReveal().reveal(".reveal-right", {
@@ -47,11 +35,10 @@ const AboutMe = () => {
   });
 
   return (
-    <div
-      className={`about-me-container ${isDarkMode ? "dark-mode-about" : ""}`}
-    >
-      <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
-      <div className="about-me-section">
+    <div className={`about-me-container ${isDarkMode ? "dark-mode-about" : ""}`}>
+      <NavBar isDarkMode={isDarkMode} />
+
+      <section className="about-me-section">
         <div className="icons-container-custom">
           <ul>
             <li>
@@ -80,56 +67,47 @@ const AboutMe = () => {
             </li>
           </ul>
         </div>
-        <div className="about-me-content">
-          <h1>About me.</h1>
-          <span className="line-section-about-me"></span>
-          <img
-            src={getBackgroundImage()}
-            alt="Butterfly"
-            className="background-image"
-          />
 
-          <p>
-            De Minas Gerais pro mundo, ingressei em Análise e Desenvolvimento de
-            Sistemas aos 18 anos no Instituto Federal Baiano, onde comecei toda
-            a minha tragetória na aréa da Técnologia da Informação. <br />
-            Sou Analista de Dados, desenvolvedora full-stack e finalizando no
-            curso de Análise e Desenvolvimento de Sistemas. <br />
-            Especializo-me em tecnologias tanto de front-end quanto de back-end,
-            com ampla experiência em diversos frameworks. Atualmente estou
-            atuando na área de análise de dados e desenvolvimento, com uso de
-            ferramentas e linguagens essenciais, como Power BI para criação de
-            dashboards e insights significativos, ReactJs e AngularJs no
-            desenvolvimento de interfaces de sistemas web amigáveis, NodeJS e
-            Java + Spring Boot na construção de aplicações robustas e
-            escaláveis, SQL Server e MySQL na gestão e manipulação de dados,
-            gerenciamento de bancos de dados em nuvem, permitindo a criação de
-            consultas complexas e relatórios precisos.
-            <br />
-            Já atuei no desenvolvimento de aplicativos móveis utilizando React
-            Native. Por 1 ano, estive imersa no mundo da IA, utilizando de
-            recursos como Hello AI World da NVidia e a linguagem Python para
-            classificação e reconhecimento de objetos para Técnologia Assistiva.{" "}
-            <br />
-            Valorizo a colaboração em equipe e a comunicação clara, aspectos que
-            considero fundamentais para o sucesso de qualquer projeto. <br />
-            Amante de livros, música e gatos. Desenhista nos tempos livres.{" "}
-            <br />
-            Confira minhas stacks abaixo, assim como meu cúrriculo. <br />
-            <br />
-            Cami.
-          </p>
+        <div className="about-me-content">
+          <div className="title-image-container">
+            <h1>About me.</h1>
+            <img
+              src={getBackgroundImage()}
+              alt="Butterfly"
+              className="background-image-about"
+            />
+          </div>
+          <span className="line-section-about-me"></span>
+
+          <section className="about-me-text">
+            <h4>Onde começou</h4>
+            <p>
+              Ingressei em Análise e Desenvolvimento de Sistemas aos 18 anos no Instituto Federal Baiano, onde comecei minha trajetória na área de Tecnologia da Informação.
+            </p>
+            <h4>Minha Atuação</h4>
+            <p>
+              Atualmente, sou Analista de Dados e Desenvolvedora Full-Stack, finalizando minha graduação em Análise e Desenvolvimento de Sistemas. Trabalho tanto com desenvolvimento de software quanto com análise de dados.
+            </p>
+            <h4>Meu Estilo de Trabalho</h4>
+            <p>
+              Acredito que o sucesso de qualquer projeto depende de uma boa comunicação e colaboração entre a equipe. Trabalho de forma organizada, sempre buscando as melhores soluções e compartilhando conhecimento para que todos cresçam juntos.
+            </p>
+            <h4>Além da Tecnologia</h4>
+            <p>
+              Sou apaixonada por livros, música e gatos, e, quando não estou programando ou analisando dados, gosto de desenhar. A criatividade sempre esteve presente na minha vida.
+            </p>
+            <h4>Confira Mais</h4>
+            <p>
+              Se quiser saber mais sobre minhas stacks e experiências, continue explorando a página. Ah, e se quiser dar uma olhada no meu currículo, ele está disponível logo abaixo!
+            </p>
+
+            <div>
+              <button>Baixar meu CV</button>
+            </div>
+          </section>
         </div>
-      </div>
-      <div className="curriculum-container">
-        <img src={Curriculum} alt="" />
-        <img src={Curriculum2} alt="" />
-        <div className="button-home">
-          <Link to="/">
-            <button>Home</button>
-          </Link>
-        </div>
-      </div>
+      </section>
+
       <Footer />
     </div>
   );
