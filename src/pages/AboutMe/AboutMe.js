@@ -10,12 +10,99 @@ import ScrollReveal from "scrollreveal";
 import MiniButterflyPurple from "../../assets/images/miniButterflyPurple.png";
 import MiniButterflyBlue from "../../assets/images/miniButterflyBkue.png";
 import MiniButterflyPink from "../../assets/images/miniButterflyPink.png";
+import MesaMulheresPurple from "../../assets/images/mesaMulheresNaCienciaRoxo.png"
+import MesaMulheresBlue from "../../assets/images/mesaMulheresNaCienciaAzul.png"
+import MesaMulheresPink from "../../assets/images/mesaMulheresNaCienciaRosa.png"
+import CongressoPurple from "../../assets/images/congresoBJLRoxo.png"
+import CongressoBlue from "../../assets/images/congresoBJLAzul.png"
+import CongressoPink from "../../assets/images/congresoBJLRosa.png"
+import NomofobiaPurple from "../../assets/images/nomofobiaIfBaianoRoxo.png"
+import NomofobiaBlue from "../../assets/images/nomofobiaIfBaianoAzul.png"
+import NomofobiaPink from "../../assets/images/nomofobiaIfBaianoRosa.png"
+import MostraCientificaPurple from "../../assets/images/mostraCientíficaRoxo.png"
+import MostraCientificaBlue from "../../assets/images/mostraCientíficaAzul.png"
+import MostraCientificaRosa from "../../assets/images/mostraCientíficaRosa.png"
 
 const butterflyMap = {
   "#9747FF": MiniButterflyPurple,
   "#2291A4": MiniButterflyBlue,
   "#F10091": MiniButterflyPink,
 };
+
+const imagesProjects = {
+  "#9747FF": [
+    {
+      src: MesaMulheresPurple,
+      text: "Mesa Mulheres na Ciência",
+      description: "FEMMIC - 2023 -Palestrante contando minha trajetória na área da pesquisa."
+    },
+    {
+      src: CongressoPurple,
+      text: "Congresso de Ensino e Pesquisa",
+      description: "IF Baiano Campus Bom Jesus da Lapa | 2023 | Apresentação de dois projetos de pesquisa realizados no ano de 2022 a 2023, e perspectivas de projetos futuros."
+    },
+    {
+      src: NomofobiaPurple,
+      text: "Nomofobia - O Vício no uso de smartphones entre os discentes do IF Baiano",
+      description: "FEMMIC | 2024 - Apresentando a pesquisa como palestrante representando o curso de ADS do Instituto Federal Baiano."
+    },
+    {
+      src: MostraCientificaPurple,
+      text: "Mostra Ciêntífica de Tecnologia e Informação",
+      description: "2024 - Apresentando o projeto Uma Interface de Visão Estereoscópica Binocular para Reconhecimento de Humanos e Objetos para Robôs Socialmente Assistivos"
+    }
+  ],
+  "#2291A4": [
+    {
+      src: MesaMulheresBlue,
+      text: "Mesa Mulheres na Ciência",
+      description: "FEMMIC - 2023 -Palestrante contando minha trajetória na área da pesquisa."
+    },
+    {
+      src: CongressoBlue,
+      text: "Congresso de Ensino e Pesquisa",
+      description: "IF Baiano Campus Bom Jesus da Lapa | 2023 | Apresentação de dois projetos de pesquisa realizados no ano de 2022 a 2023, e perspectivas de projetos futuros."
+    },
+    {
+      src: NomofobiaBlue,
+      text: "Nomofobia - O Vício no uso de smartphones entre os discentes do IF Baian",
+      description: "FEMMIC | 2024 - Apresentando a pesquisa como palestrante representando o curso de ADS do Instituto Federal Baiano."
+
+    },
+    {
+      src: MostraCientificaBlue,
+      text: "Mostra Científica - Azul",
+      description: "2024 - Apresentando o projeto Uma Interface de Visão Estereoscópica Binocular para Reconhecimento de Humanos e Objetos para Robôs Socialmente Assistivos"
+
+    }
+  ],
+  "#F10091": [
+    {
+      src: MesaMulheresPink,
+      text: "Mesa Mulheres na Ciência",
+      description: "FEMMIC - 2023 -Palestrante contando minha trajetória na área da pesquisa."
+    },
+    {
+      src: CongressoPink,
+      text: "Congresso de Ensino e Pesquisa",
+      description: "IF Baiano Campus Bom Jesus da Lapa | 2023 | Apresentação de dois projetos de pesquisa realizados no ano de 2022 a 2023, e perspectivas de projetos futuros."
+
+    },
+    {
+      src: NomofobiaPink,
+      text: "Nomofobia - O Vício no uso de smartphones entre os discentes do IF Baian",
+      description: "FEMMIC | 2024 - Apresentando a pesquisa como palestrante representando o curso de ADS do Instituto Federal Baiano."
+
+    },
+    {
+      src: MostraCientificaRosa,
+      text: "Mostra Ciêntífica de Tecnologia e Informação",
+      description: "2024 - Apresentando o projeto Uma Interface de Visão Estereoscópica Binocular para Reconhecimento de Humanos e Objetos para Robôs Socialmente Assistivos"
+
+    }
+  ]
+};
+
 
 const AboutMe = () => {
   const { selectedColor } = useColor();
@@ -102,9 +189,33 @@ const AboutMe = () => {
             </p>
 
             <div>
-              <button>Baixar meu CV</button>
+              <button className="CV_button">Baixar meu CV</button>
             </div>
           </section>
+          <span className="line-section-about-me"></span>
+
+          <section className="images-camila-container">
+            {imagesProjects[selectedColor]?.reduce((rows, item, index, array) => {
+              if (index % 2 === 0) {
+                rows.push(array.slice(index, index + 2));
+              }
+              return rows;
+            }, []).map((row, rowIndex) => (
+              <div key={rowIndex} className="image-row">
+                {row.map((item, index) => (
+                  <div key={index} className="image-item">
+                    <img className="img-item" src={item.src} alt={item.text} />
+                    <p className="image-text-info">{item.text}</p>
+                    <p className="image-text-description">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </section>
+
+
+
+
         </div>
       </section>
 
