@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Portfolio-CamilaAguiar/static/css/main.d767956e.css",
-    "main.js": "/Portfolio-CamilaAguiar/static/js/main.707a28b3.js",
+    "main.js": "/Portfolio-CamilaAguiar/static/js/main.d628bc24.js",
     "static/js/453.1b46eccd.chunk.js": "/Portfolio-CamilaAguiar/static/js/453.1b46eccd.chunk.js",
     "static/media/hunhihi.gif": "/Portfolio-CamilaAguiar/static/media/hunhihi.3e85d184394308f6ddf1.gif",
     "static/media/dashboard 15 background.png": "/Portfolio-CamilaAguiar/static/media/dashboard 15 background.fc4a12095634a660956d.png",
@@ -95,11 +95,11 @@
     "static/media/CamilaCarvalho-white.png": "/Portfolio-CamilaAguiar/static/media/CamilaCarvalho-white.1ed8d186eabea457381d.png",
     "index.html": "/Portfolio-CamilaAguiar/index.html",
     "main.d767956e.css.map": "/Portfolio-CamilaAguiar/static/css/main.d767956e.css.map",
-    "main.707a28b3.js.map": "/Portfolio-CamilaAguiar/static/js/main.707a28b3.js.map",
+    "main.d628bc24.js.map": "/Portfolio-CamilaAguiar/static/js/main.d628bc24.js.map",
     "453.1b46eccd.chunk.js.map": "/Portfolio-CamilaAguiar/static/js/453.1b46eccd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d767956e.css",
-    "static/js/main.707a28b3.js"
+    "static/js/main.d628bc24.js"
   ]
 }
