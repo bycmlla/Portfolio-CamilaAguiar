@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { ColorProvider } from "../contexts/ColorContext";
 import { ThemeProvider } from "../contexts/ThemeContext";
 import Home from "../pages/Home/Home";
@@ -23,7 +23,7 @@ const RoutesComponent = () => {
   return (
     <ColorProvider>
       <ThemeProvider>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutMe />} />
@@ -41,7 +41,7 @@ const RoutesComponent = () => {
             <Route path="/roomrover" element={<RoomRover />} />
             <Route path="/angular" element={<Angular />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </ThemeProvider>
     </ColorProvider>
   );

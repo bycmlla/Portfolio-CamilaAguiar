@@ -9,13 +9,37 @@
   background-color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
-  border-bottom: #9D1EE5 1px solid;
+  border-bottom: #9d1ee5 1px solid;
   z-index: 1;
-  padding: 0; 
+  padding: 0;
 }
 
 .my-navbar.active {
   opacity: 1;
+}
+
+.hamburger-icon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.hamburger-icon div {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  transition: transform 0.3s ease-in-out;
+}
+
+.my-navbar.active-menu .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 30px;
 }
 
 .my-navbar .navbar-brand {
@@ -47,13 +71,13 @@
 
 .my-navbar .nav-links li a {
   text-decoration: none;
-  color: #333; 
+  color: #333;
   font-size: 13px;
   cursor: pointer;
 }
 
 .my-navbar .nav-links li a:hover {
-  color: #FFD700;
+  color: #ffd700;
 }
 
 .my-navbar .dark-mode-icon {
@@ -76,18 +100,102 @@
 
 /* Estilos do Modo Escuro */
 .dark-mode {
-  background-color: #13131F;
+  background-color: #13131f;
   color: #ffffff;
 }
 
 .dark-mode.my-navbar {
-  background-color: #13131F; 
+  background-color: #13131f;
 }
 
 .dark-mode.my-navbar .nav-links li a {
-  color: #ffffff; 
+  color: #ffffff;
 }
 
 .dark-mode.my-navbar .dark-mode-icon:hover {
-  color: #FFD700;
+  color: #ffd700;
+}
+
+@media (max-width: 480px) {
+  .my-navbar {
+    flex-direction: column;
+    align-items: flex-start; /* Alinhar a logo e o botão de hambúrguer ao centro */
+    padding: 10px 15px;
+    position: relative;
+  }
+
+  .my-navbar .logo {
+    margin-left: 0;
+    margin-bottom: 20px; /* Aumentei um pouco a margem inferior para separação */
+  }
+
+  /* Oculta os links por padrão no mobile */
+  .my-navbar .nav-links {
+    display: none;
+  }
+
+  /* Mostra os links e os formata como coluna quando o menu está ativo */
+  .my-navbar.active-menu .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 10px 0;
+    padding: 0;
+    width: 100%;
+    align-items: center; /* Centraliza os itens horizontalmente */
+  }
+
+  /* Estilo para o container das bolinhas de cor */
+  .my-navbar.active-menu .nav-links > li.color-palette {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    justify-content: center; /* Centraliza as bolinhas horizontalmente */
+    align-items: center; /* Mantenha para alinhar verticalmente as bolinhas */
+  }
+
+  /* Estilo para o ícone de modo escuro */
+  .my-navbar.active-menu .nav-links > li:first-child:not(.color-palette) {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza o ícone horizontalmente */
+  }
+
+  .my-navbar.active-menu .nav-links li a {
+    font-size: 16px;
+    text-align: center; /* Centraliza o texto dos links */
+  }
+
+  .hamburger-icon {
+    display: flex;
+    order: -1;
+    width: auto;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .my-navbar.active-menu .logo {
+    order: -2;
+  }
+
+  .my-navbar.active-menu .nav-links {
+    order: 1;
+  }
+
+  .hamburger-icon.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5.1px, 5.1px);
+  }
+
+  .hamburger-icon.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-icon.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(5.1px, -5.1px);
+  }
 }

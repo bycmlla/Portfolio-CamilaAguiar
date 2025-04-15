@@ -16,6 +16,11 @@ const NavBar = () => {
 
   const { selectedColor, setSelectedColor } = useColor();
   const { isDarkMode, toggleDarkMode } = useTheme();
+  const [menuOpen, setMenuOpen] = useState(false); // Estado para controlar o menu de navegação
+
+  const handleHamburgerClick = () => {
+    setMenuOpen(!menuOpen); // Alterna o estado de abertura do menu
+  };
 
   useEffect(() => {
     setIsActive(true);
@@ -36,10 +41,10 @@ const NavBar = () => {
     <nav
       className={`my-navbar ${isActive ? "active" : ""} ${
         isDarkMode ? "dark-mode" : ""
-      } reveal-top`}
+      } reveal-top ${menuOpen ? "active-menu" : ""}`} // Adicionando a classe condicional
     >
       <div className="navbar-brand">
-        <a href="/" className="logo">
+        <a href="#/" className="logo">
           <img
             src={isDarkMode ? LogoLight : LogoDark}
             alt="Logo"
@@ -47,6 +52,15 @@ const NavBar = () => {
           />
         </a>
       </div>
+      <div
+        className={`hamburger-icon ${menuOpen ? "active" : ""}`}
+        onClick={handleHamburgerClick}
+      >
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
       <ul className="nav-links">
         <li>
           <MdDarkMode
@@ -55,18 +69,17 @@ const NavBar = () => {
             size={24}
           />
         </li>
-        {colors.map((color) => (
-          <li key={color}>
+        <li className="color-palette">
+          {" "}
+          {colors.map((color) => (
             <button
+              key={color}
               className="color-button"
-              style={{
-                backgroundColor: color,
-                border: selectedColor === color ? "2px solid white" : "none",
-              }}
+              style={{ backgroundColor: color }}
               onClick={() => setSelectedColor(color)}
             />
-          </li>
-        ))}
+          ))}
+        </li>
         <li>
           <Link to="/projects">Projetos</Link>
         </li>
