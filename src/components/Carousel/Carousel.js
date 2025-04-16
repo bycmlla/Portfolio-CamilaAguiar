@@ -23,10 +23,41 @@ const infiniteImages = [...images, ...images, ...images];
 
 const Carousel = () => {
   const carousel = useRef();
+  const itemRef = useRef();
   const x = useMotionValue(0);
-  const imageWidth = 450;
-  const loopLimit = imageWidth * images.length;
+  const [imageWidth, setImageWidth] = useState(450);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
+  const [mobileItemWidth, setMobileItemWidth] = useState(0); // Novo estado para a largura do item mobile
+
+  const loopLimit = imageWidth * images.length;
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (itemRef.current) {
+        const width = itemRef.current.getBoundingClientRect().width;
+        setImageWidth(width);
+      }
+    };
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile && itemRef.current) {
+      setMobileItemWidth(itemRef.current.getBoundingClientRect().width);
+    }
+  }, [isMobile]);
 
   useEffect(() => {
     let intervalId;
@@ -48,18 +79,41 @@ const Carousel = () => {
 
     const stopAutoScroll = () => clearInterval(intervalId);
 
-    startAutoScroll();
+    if (!isMobile) { // Executa o auto scroll apenas no modo desktop
+      startAutoScroll();
+      return () => stopAutoScroll();
+    }
+  }, [x, imageWidth, loopLimit, isMobile]);
 
-    return () => stopAutoScroll();
-  }, [x, imageWidth, loopLimit]);
+  useEffect(() => {
+    if (isMobile && carousel.current && mobileItemWidth > 0) {
+      const handleScroll = () => {
+        const scrollPosition = carousel.current.scrollLeft;
+        const newIndex = Math.round(scrollPosition / mobileItemWidth) % images.length;
+        if (newIndex !== currentIndex) {
+          setCurrentIndex(newIndex);
+        }
+      };
+
+      carousel.current.addEventListener("scroll", handleScroll);
+      return () => carousel.current.removeEventListener("scroll", handleScroll);
+    }
+  }, [isMobile, mobileItemWidth, currentIndex]);
 
   const handleIndicatorClick = (index) => {
     setCurrentIndex(index);
-    animate(x, -index * imageWidth, { duration: 0.5, ease: "easeOut" });
+    if (!isMobile) {
+      animate(x, -index * imageWidth, { duration: 0.5, ease: "easeOut" });
+    } else if (carousel.current && mobileItemWidth > 0) {
+      carousel.current.scrollTo({
+        left: index * mobileItemWidth,
+        behavior: 'smooth',
+      });
+    }
   };
 
   return (
-    <div className="reveal">
+    <div className={`reveal ${isMobile ? "carousel-mobile" : ""}`}>
       <SectionTitle
         data={{
           title: "Projetos",
@@ -78,13 +132,19 @@ const Carousel = () => {
         <motion.div
           ref={carousel}
           className="carousel"
-          style={{ x }}
-          drag="x"
-          dragConstraints={{ left: -loopLimit, right: 0 }}
+          style={!isMobile ? { x } : {}}
+          drag={!isMobile ? "x" : false}
+          dragConstraints={
+            !isMobile ? { left: -loopLimit, right: 0 } : undefined
+          }
         >
           <motion.div className="inner" style={{ display: "flex" }}>
             {infiniteImages.map((img, index) => (
-              <motion.div className="item" key={index}>
+              <motion.div
+                className="item"
+                key={index}
+                ref={index === 0 ? itemRef : null}
+              >
                 <img src={img.src} alt={`carousel-img-${index}`} />
                 <div className="overlay-carousel"></div>
                 <div className="text-overlay">{img.text}</div>

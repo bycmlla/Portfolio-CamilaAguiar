@@ -39,11 +39,15 @@
   opacity: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .projects-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: 0;
+  }
+
+  .text-projects{
+    margin: 30px 40px;
   }
 }

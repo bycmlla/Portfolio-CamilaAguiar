@@ -10,12 +10,3 @@
   min-height: 60px;
   white-space: pre-line;
 }
-
-@media screen and (max-width: 768px) {
-  .write-machine {
-    font-size: 40px;
-    text-align: start;
-    margin: 50px 0 10px 0;
-    min-height: 50px;
-  }
-}

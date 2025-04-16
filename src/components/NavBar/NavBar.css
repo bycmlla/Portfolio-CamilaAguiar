@@ -1,4 +1,3 @@
-/* Estilos Gerais do NavBar */
 .my-navbar {
   opacity: 0;
   transition: opacity 1.2s ease-in-out, top 1s ease-in-out;
@@ -26,6 +25,7 @@
   position: absolute;
   top: 20px;
   right: 20px;
+  padding-top: 10px;
 }
 
 .hamburger-icon div {
@@ -84,21 +84,25 @@
   cursor: pointer;
 }
 
-/* Estilos dos Botões de Cor */
 .color-button {
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  margin-left: 10px;
   border: none;
   cursor: pointer;
   transition: transform 0.2s ease;
+}
+
+.color-palette{
+  gap: 10px;
+
 }
 
 .color-button:hover {
   transform: scale(1.2);
 }
 
-/* Estilos do Modo Escuro */
 .dark-mode {
   background-color: #13131f;
   color: #ffffff;
@@ -119,22 +123,20 @@
 @media (max-width: 480px) {
   .my-navbar {
     flex-direction: column;
-    align-items: flex-start; /* Alinhar a logo e o botão de hambúrguer ao centro */
-    padding: 10px 15px;
+    align-items: flex-start;
+    padding: 15px 0 0 15px;
     position: relative;
   }
 
   .my-navbar .logo {
     margin-left: 0;
-    margin-bottom: 20px; /* Aumentei um pouco a margem inferior para separação */
+    margin-bottom: 20px;
   }
 
-  /* Oculta os links por padrão no mobile */
   .my-navbar .nav-links {
     display: none;
   }
 
-  /* Mostra os links e os formata como coluna quando o menu está ativo */
   .my-navbar.active-menu .nav-links {
     display: flex;
     flex-direction: column;
@@ -142,10 +144,9 @@
     margin: 10px 0;
     padding: 0;
     width: 100%;
-    align-items: center; /* Centraliza os itens horizontalmente */
+    align-items: center;
   }
 
-  /* Estilo para o container das bolinhas de cor */
   .my-navbar.active-menu .nav-links > li.color-palette {
     display: flex;
     flex-direction: row;
@@ -153,20 +154,29 @@
     margin-top: 10px;
     margin-bottom: 10px;
     width: 100%;
-    justify-content: center; /* Centraliza as bolinhas horizontalmente */
-    align-items: center; /* Mantenha para alinhar verticalmente as bolinhas */
+    justify-content: center;
+    align-items: center;
   }
 
-  /* Estilo para o ícone de modo escuro */
+  .my-navbar.active-menu .nav-links > li.color-palette .color-button {
+    width: 10px;
+    height: 10px;
+    min-width: 20px;
+    min-height: 20px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+
   .my-navbar.active-menu .nav-links > li:first-child:not(.color-palette) {
     width: 100%;
     display: flex;
-    justify-content: center; /* Centraliza o ícone horizontalmente */
+    justify-content: center;
   }
 
   .my-navbar.active-menu .nav-links li a {
     font-size: 16px;
-    text-align: center; /* Centraliza o texto dos links */
+    text-align: center;
   }
 
   .hamburger-icon {

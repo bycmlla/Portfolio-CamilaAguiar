@@ -16,10 +16,10 @@ const NavBar = () => {
 
   const { selectedColor, setSelectedColor } = useColor();
   const { isDarkMode, toggleDarkMode } = useTheme();
-  const [menuOpen, setMenuOpen] = useState(false); // Estado para controlar o menu de navegação
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleHamburgerClick = () => {
-    setMenuOpen(!menuOpen); // Alterna o estado de abertura do menu
+    setMenuOpen(!menuOpen);
   };
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const NavBar = () => {
     <nav
       className={`my-navbar ${isActive ? "active" : ""} ${
         isDarkMode ? "dark-mode" : ""
-      } reveal-top ${menuOpen ? "active-menu" : ""}`} // Adicionando a classe condicional
+      } reveal-top ${menuOpen ? "active-menu" : ""}`}
     >
       <div className="navbar-brand">
         <a href="#/" className="logo">

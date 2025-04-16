@@ -86,19 +86,21 @@ const Home = () => {
     setIsActive(true);
     setExpand(true);
 
+    const isMobile = window.innerWidth <= 480;
+
     const sr = ScrollReveal({
       distance: "80px",
       duration: 600,
       easing: "ease-out",
       reset: true,
-      viewFactor: 0.3,
+      viewFactor: isMobile ? 0 : 0.3,
     });
 
     sr.reveal(".reveal", {
       origin: "left",
       opacity: 0,
       scale: 1,
-      delay: 100,
+      delay: 70,
     });
 
     return () => sr.destroy();

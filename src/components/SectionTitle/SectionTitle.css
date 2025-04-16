@@ -1,30 +1,53 @@
 .section-title-container {
-    margin: 0;
+  margin: 0;
 }
 
 .section-title-content {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .resume-section-title {
-    color: black;
-    font-size: 20px;
-    margin-right: 20px;
+  color: black;
+  font-size: 20px;
+  margin-right: 20px;
 }
 
 .line-section {
-    height: 3px;
-    background-image: linear-gradient(90deg, rgba(64, 1, 145, 1) 0%, rgba(151, 71, 255, 1) 100%);
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: width 1s ease-in-out;
-    flex-grow: 1;
+  height: 3px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(64, 1, 145, 1) 0%,
+    rgba(151, 71, 255, 1) 100%
+  );
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: width 1s ease-in-out;
+  flex-grow: 1;
 }
 
-
 .dark-mode-section-title .line-section {
-    background-image: linear-gradient(90deg, rgba(151, 71, 255, 1) 0%, rgba(201, 159, 255, 1) 100%);
-    ;
+  background-image: linear-gradient(
+    90deg,
+    rgba(151, 71, 255, 1) 0%,
+    rgba(201, 159, 255, 1) 100%
+  );
+}
+
+@media (max-width: 480px) {
+  .section-title-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .resume-section-title {
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .line-section {
+    width: 100%;
+    margin-top: 20px;
+  }
 }

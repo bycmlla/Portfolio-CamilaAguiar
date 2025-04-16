@@ -99,3 +99,18 @@
     width: 100px;
   }
 }
+
+@media (max-width: 480px) {
+
+  .data-container {
+    margin-left: 10px;
+  }
+
+  .ul-front-one{
+    gap: 30px;
+  }
+
+  .front-line-one {
+    margin-top: 50px;
+  }
+ }
