@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Portfolio-CamilaAguiar/static/css/main.b356979c.css",
+    "main.css": "/Portfolio-CamilaAguiar/static/css/main.d9a30a75.css",
     "main.js": "/Portfolio-CamilaAguiar/static/js/main.b10b49c2.js",
     "static/js/453.1b46eccd.chunk.js": "/Portfolio-CamilaAguiar/static/js/453.1b46eccd.chunk.js",
     "static/media/hunhihi.gif": "/Portfolio-CamilaAguiar/static/media/hunhihi.3e85d184394308f6ddf1.gif",
@@ -94,12 +94,12 @@
     "static/media/PBI White 2.png": "/Portfolio-CamilaAguiar/static/media/PBI White 2.d56e4f6c7422a4d89529.png",
     "static/media/CamilaCarvalho-white.png": "/Portfolio-CamilaAguiar/static/media/CamilaCarvalho-white.1ed8d186eabea457381d.png",
     "index.html": "/Portfolio-CamilaAguiar/index.html",
-    "main.b356979c.css.map": "/Portfolio-CamilaAguiar/static/css/main.b356979c.css.map",
+    "main.d9a30a75.css.map": "/Portfolio-CamilaAguiar/static/css/main.d9a30a75.css.map",
     "main.b10b49c2.js.map": "/Portfolio-CamilaAguiar/static/js/main.b10b49c2.js.map",
     "453.1b46eccd.chunk.js.map": "/Portfolio-CamilaAguiar/static/js/453.1b46eccd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b356979c.css",
+    "static/css/main.d9a30a75.css",
     "static/js/main.b10b49c2.js"
   ]
 }
