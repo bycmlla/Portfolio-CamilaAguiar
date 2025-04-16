@@ -120,6 +120,10 @@
   color: #ffd700;
 }
 
+.dark-mode.my-navbar .hamburger-icon div{
+  background-color: white;
+}
+
 @media (max-width: 480px) {
   .my-navbar {
     flex-direction: column;

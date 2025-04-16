@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { TypeWriter } from "../../components/TypeWriter/TypeWriter";
 import { MdEmail } from "react-icons/md";
 import {
@@ -25,8 +25,8 @@ import Carousel from "../../components/Carousel/Carousel";
 import "./Home.css";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import Butterfly from "../../assets/images/butterfly.png";
-import PinkButterfly from "../../assets/images/pinkbutterfly.png"
-import BlueButterfly from "../../assets/images/bluebutterfly.png"
+import PinkButterfly from "../../assets/images/pinkbutterfly.png";
+import BlueButterfly from "../../assets/images/bluebutterfly.png";
 import Overlay from "../../components/Overlay/Overlay";
 import { useColor } from "../../contexts/ColorContext";
 import { useTheme } from "../../contexts/ThemeContext";
@@ -58,15 +58,15 @@ const Home = () => {
   const { isDarkMode } = useTheme();
   const [expand, setExpand] = useState(false);
 
-  const [isOverlayOpen, setIsOverlayOpen] = useState(false)
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
 
   const handleOpenOverlay = () => {
-    setIsOverlayOpen(true)
-  }
+    setIsOverlayOpen(true);
+  };
 
   const handleCloseOverlay = () => {
-    setIsOverlayOpen(false)
-  }
+    setIsOverlayOpen(false);
+  };
 
   const getImageSource = () => {
     const colorImages = imageMap[selectedColor];
@@ -78,7 +78,7 @@ const Home = () => {
 
   const getBackgroundImage = () => {
     return backgroundMap[selectedColor] || Butterfly;
-  }
+  };
 
   const location = useLocation();
 
@@ -113,12 +113,11 @@ const Home = () => {
   return (
     <>
       <div
-        className={`home-container ${isDarkMode ? "dark-mode-home" : ""
+        className={`home-container ${
+          isDarkMode ? "dark-mode-home" : ""
         } color-${selectedColor.replace("#", "")}`}
       >
-        <NavBar
-          className="reveal"
-        />
+        <NavBar className="reveal" />
 
         <section
           aria-label="Informações Iniciais"
@@ -181,10 +180,20 @@ const Home = () => {
             />
             <p>
               Desenvolvedora Full-Stack e<br />
-              Analista de Dados. <br /> <br />
-              Aplicando meus conhecimentos e<br />
-              sempre aprendendo mais. <br />
+              Analista de Dados.
             </p>
+            <div className="buttons-initial">
+              <a
+                href="/Currículo Camila de Carvalho.pdf"
+                download="CV - Camila Aguiar.pdf"
+                className="download-cv-button"
+              >
+                Download CV
+              </a>
+              <Link to="/projects">
+                <button className="see-projects-button">Ver projetos</button>
+              </Link>
+            </div>
           </div>
           <div
             aria-label="Imagem profissional"
@@ -206,15 +215,22 @@ const Home = () => {
             Sou Analista de Dados e desenvolvedora full-stack, apaixonada por
             tecnologia e inovação. Tenho experiência em front-end, back-end e
             análise de dados, utilizando ferramentas como ReactJS, AngularJS,
-            NodeJS, Java + Spring Boot, SQL Server, MySQL e Power BI. Já atuei no
-            desenvolvimento mobile com React Native e em projetos de inteligência
-            artificial. Apaixonada por livros, música e gatos, também gosto de
-            desenhar no tempo livre.
+            NodeJS, Java + Spring Boot, SQL Server, MySQL e Power BI. Já atuei
+            no desenvolvimento mobile com React Native e em projetos de
+            inteligência artificial. Apaixonada por livros, música e gatos,
+            também gosto de desenhar no tempo livre.
           </p>
         </section>
-        <img src={getBackgroundImage()} alt="Butterfly" className="background-image" />
+        <img
+          src={getBackgroundImage()}
+          alt="Butterfly"
+          className="background-image"
+        />
 
-        <section aria-label="Habilidades profissionais" className="text-projects">
+        <section
+          aria-label="Habilidades profissionais"
+          className="text-projects"
+        >
           <div>
             <Skills />
           </div>
@@ -294,8 +310,20 @@ const Home = () => {
 
           <div className="talk-to-me">
             <h2>Ou me envie um e-mail por aqui mesmo!</h2>
-            <button onClick={handleOpenOverlay} type="button" className="open-overlay-send">Enviar e-mail</button>
-            {isOverlayOpen && <Overlay onClose={handleCloseOverlay} selectedColor={selectedColor} isDarkMode={isDarkMode} />}
+            <button
+              onClick={handleOpenOverlay}
+              type="button"
+              className="open-overlay-send"
+            >
+              Enviar e-mail
+            </button>
+            {isOverlayOpen && (
+              <Overlay
+                onClose={handleCloseOverlay}
+                selectedColor={selectedColor}
+                isDarkMode={isDarkMode}
+              />
+            )}
           </div>
         </section>
 

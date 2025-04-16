@@ -45,7 +45,7 @@ const Automation = () => {
     >
       <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
       <div>
-        <Link to={"/python"} className="back-icon-automation">
+        <Link to={"/projects"} className="back-icon-automation">
           <FaArrowLeft />
         </Link>
       </div>

@@ -1,54 +1,31 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import DashBoard from "../../assets/images/dashboards/dashboard 1.jpeg";
-import DashBoard2 from "../../assets/images/dashboards/dashboard 2.jpeg";
-import DashBoard3 from "../../assets/images/dashboards/dashboard 3.png";
-import DashBoard4 from "../../assets/images/dashboards/dashboard 4.png";
 import "./Projects.css";
+import Dashboard1 from "../../assets/images/dashboards/dashboard 1.jpeg";
+import Dashboard3 from "../../assets/images/dashboards/dashboard 3.png";
+import Disparity from "../../assets/images/python/depthmaps.png";
+import Selenium from "../../assets/images/python/selenium.png";
+import PBI from "../../assets/images/python/pbi.png";
+import PowerBi from "../../assets/images/python/power-BI.png";
+import { useColor } from "../../contexts/ColorContext";
+import { useTheme } from "../../contexts/ThemeContext";
 
 const Projects = () => {
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("darkMode") === "true"
-  );
   const [hoveredCard, setHoveredCard] = useState(null);
-
-  const handleMouseEnter = (cardIndex) => {
-    setHoveredCard(cardIndex);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredCard(null);
-  };
-
-  useEffect(() => {
-    setIsDarkMode(localStorage.getItem("darkMode") === "true");
-  }, []);
-
-  const toggleDarkMode = () => {
-    const newDarkModeState = !isDarkMode;
-    setIsDarkMode(newDarkModeState);
-    localStorage.setItem("darkMode", newDarkModeState.toString());
-
-    window.location.reload();
-  };
+  const { selectedColor, setSelectedColor } = useColor();
+  const colorClass = `color-${selectedColor.replace("#", "")}`;
+  const { isDarkMode } = useTheme();
 
   const projects = [
     {
       id: 1,
       title: "Dashboards Power BI",
       text: "Aqui eu apresento os meus dashboards em Power BI. Todos projetos feitos e publicados por mim.",
-      images: [DashBoard, DashBoard2],
+      images: [Dashboard1],
       link: "/Dashboards",
-    },
-    {
-      id: 2,
-      title: "Transmitindo Conhecimentos - Power BI",
-      text: "Aprenda alguns assuntos sobre a ferramenta Power BI.",
-      images: [DashBoard3, DashBoard4],
     },
     {
       id: 3,
@@ -56,9 +33,8 @@ const Projects = () => {
       text: "Apresentação de projetos e tutoriais utilizando Python. Automações, integração com outras ferramentas, utilização para IA e etc.",
       images: [
         "https://w0.peakpx.com/wallpaper/266/297/HD-wallpaper-python-logo-python-code-computer-programming-logo.jpg",
-        "https://img3.wallspic.com/crops/0/9/2/3/6/163290/163290-python_logo-python-icon-programming_language-logo-3840x2160.png",
       ],
-      link: "/python"
+      link: "/angular",
     },
     {
       id: 4,
@@ -66,37 +42,8 @@ const Projects = () => {
       text: "Projetos que implementei com Angular e tutoriais sobre o framework que tem como base a linguagem TypeScript.",
       images: [
         "https://storage.googleapis.com/medium-feed.appspot.com/images%2F9353691196%2F0d870cf02afb1-Angular-para-negocios.png",
-        "https://www.ryadel.com/wp-content/uploads/2017/10/angular-logo.jpg",
       ],
-      link: "/angular"
-    },
-    {
-      id: 5,
-      title: "Projetos React JS",
-      text: "Aqui apresento os meus projetos realizados utilizando o framework React JS, que alias é o que estou utilizando aqui neste site :)!",
-      images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCcBfYByw_dZJa4wY12L8-CpMOCiiaHEjUxg&s",
-        "https://miro.medium.com/v2/resize:fit:1400/1*x0d41ns8PTQZz4a3VbMrBg.png",
-      ],
-    },
-    {
-      id: 6,
-      title: "Backend com NodeJS",
-      text: "Explore minhas soluções de backend desenvolvidas com Node.js. Encontre detalhes sobre os projetos que criei, destacando a arquitetura e as funcionalidades de cada um.",
-      images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtChA5REy88fmUBnnvxFo8iROkTrEzYfsXeQ&s",
-        "https://polidog.jp/images/covers/nodejs-logo.png",
-      ],
-    },
-    {
-      id: 7,
-      title: "Banco de Dados com MySQL e SQL",
-      text: "Nesta seção, você encontrará tutoriais e guias práticos sobre o uso de bancos de dados, abrangendo tanto MySQL quanto SQL.",
-      images: [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa-5LhP_Q8i_JBK8mMzn-ApcwLPH5UhTF76A&s",
-        "https://w3.cdn.cl9.cloud/wp-content/uploads/2020/03/quais-as-diferencas-entre-as-versoes-do-sql-server-p10dnfny4wpoh5oxcvtewb4ezm48eemcycsg2jvhl4.jpg",
-      ],
-      link: "/sqlpage",
+      link: "/angular",
     },
     {
       id: 8,
@@ -104,8 +51,8 @@ const Projects = () => {
       text: "Explore os projetos desenvolvidos por mim em Java, incluindo integrações com web services SOAP, criação e implementação de classes, e outras soluções robustas.",
       images: [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_CNWjYF4Oz87WfKqNTsvorNxQc4tdLSfvYQ&s",
-        "https://logolook.net/wp-content/uploads/2022/11/Java-Logo-1996.png",
       ],
+      link: "/angular",
     },
     {
       id: 9,
@@ -113,62 +60,143 @@ const Projects = () => {
       text: "Aqui mostro criações em desenvolvimento mobile utilizando React Native.",
       images: [
         "https://techmoran.com/wp-content/uploads/2023/06/all-about-react-native-apps-776x415-1.png",
-        "https://miro.medium.com/v2/1*AjesIvV-kkwk6LLvNf1t4A.png",
       ],
+      link: "/angular",
+    },
+    {
+      id: 6,
+      title: "Backend com NodeJS",
+      text: "Explore minhas soluções de backend desenvolvidas com Node.js. Encontre detalhes sobre os projetos que criei, destacando a arquitetura e as funcionalidades de cada um.",
+      images: [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtChA5REy88fmUBnnvxFo8iROkTrEzYfsXeQ&s",
+      ],
+      link: "/angular",
+    },
+    {
+      id: 5,
+      title: "Visão Computacional",
+      text: "Reconhecimento e a localização de pessoas e objetos em um cenário para robótica móvel",
+      images: [Disparity],
+      link: "/rosa",
+    },
+    {
+      id: 10,
+      title: "Automação de Mensagens Whatsapp",
+      images: [Selenium],
+      text: "Como enviar mensagens de maneira automática utilizando o Python.",
+      link: "/automation",
+    },
+    {
+      id: 11,
+      title: "Conexão da API do Power BI",
+      images: [PBI],
+      text: "Conectando-se a API do Power BI com Python.",
+      link: "/refresh",
+    },
+    {
+      id: 12,
+      title: "Atualização de Datasets Via API Power BI",
+      images: [PowerBi],
+      text: "Atualizando datasets automaticamente do Power BI via API com Python.",
+      link: "/refresh2",
     },
   ];
 
+  const tutorials = [
+    {
+      id: 2,
+      title: "Transmitindo Conhecimentos - Power BI",
+      text: "Aprenda alguns assuntos sobre a ferramenta Power BI.",
+      images: [Dashboard3],
+      link: "/angular",
+    },
+    {
+      id: 7,
+      title: "Banco de Dados com MySQL e SQL",
+      text: "Nesta seção, você encontrará tutoriais e guias práticos sobre o uso de bancos de dados, abrangendo tanto MySQL quanto SQL.",
+      images: [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa-5LhP_Q8i_JBK8mMzn-ApcwLPH5UhTF76A&s",
+      ],
+      link: "/sqlpage",
+    },
+  ];
+
+  useEffect(() => {
+    const handleResize = () => {
+      // lógica de redimensionamento
+    };
+  
+    window.addEventListener('resize', handleResize);
+  
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div
-      className={`projects-container ${isDarkMode ? "dark-mode-projects" : ""}`}
+      className={`projects-container ${
+        isDarkMode ? "dark-mode-projects" : ""
+      } ${colorClass}`}
     >
-      <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <NavBar />
       <div className="text-projects">
-        <h2>Meus Projetos</h2>
+        <h2>Projetos</h2>
         <p>Aqui apresento os meus projetos. Tudo aqui foi feito por mim.</p>
       </div>
       <div className="projects-content">
         {projects.map((project) => (
-          <Card
-            key={project.id}
-            className="card-projects"
-            style={{ width: "18rem" }}
-            onMouseEnter={() => handleMouseEnter(project.id)}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div style={{ position: "relative" }}>
-              <Card.Img
-                variant="top"
-                src={project.images[0]}
-                style={{ opacity: hoveredCard === project.id ? 0 : 1 }}
-              />
-              <Card.Img
-                variant="top"
-                src={project.images[1]}
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  opacity: hoveredCard === project.id ? 1 : 0,
-                  transition: "opacity 0.7s ease",
-                }}
-              />
+          <div key={project.id} className="card-projects">
+            <img src={project.images[0]} alt={project.title} />
+            <div className="card-overlay">
+              <h5>{project.title}</h5>
+              <p>{project.text}</p>
+              {project.link && (
+                <Link to={project.link}>
+                  <Button className="button-see" variant="primary">
+                    Ver
+                  </Button>
+                </Link>
+              )}
             </div>
-            <Card.Body>
-              <Card.Title>{project.title}</Card.Title>
-              <Card.Text>{project.text}</Card.Text>
-              <Link to={project.link}>
-                <Button className="button-see" variant="primary">
-                  Ver
-                </Button>
-              </Link>
-            </Card.Body>
-          </Card>
+          </div>
+        ))}
+      </div>
+
+      <div className="text-projects">
+        <h2>Aprenda Comigo</h2>
+        <p>Compartilhando conhecimento através de tutoriais e guias.</p>
+      </div>
+      <div className="projects-content">
+        {tutorials.map((tutorial) => (
+          <div key={tutorial.id} className="card-projects">
+            <img
+              src={tutorial.images[0]}
+              alt={tutorial.title}
+              className={`tutorial-image ${
+                hoveredCard === tutorial.id ? "hovered" : ""
+              }`}
+            />
+            <div
+              className={`card-overlay ${
+                hoveredCard === tutorial.id ? "hovered" : ""
+              }`}
+            >
+              <h5>{tutorial.title}</h5>
+              <p>{tutorial.text}</p>
+              {tutorial.link && (
+                <Link to={tutorial.link}>
+                  <Button className="button-see" variant="primary">
+                    Ver
+                  </Button>
+                </Link>
+              )}
+            </div>
+          </div>
         ))}
       </div>
     </div>
   );
 };
+
 export default Projects;

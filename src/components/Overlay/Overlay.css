@@ -1,151 +1,188 @@
+/* Importação das fontes */
 @import url("https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+/* Estilo da Overlay principal */
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
+/* Conteúdo interno da Overlay */
 .overlay-content {
-    background-color: #fff;
-    border-radius: 5px;
-    position: relative;
-    width: 80%;
-    max-width: 900px;
-    border-radius: 20px;
-    align-items: stretch;
+  background-color: #fff;
+  border-radius: 20px;
+  position: relative;
+  width: 50%;
+  max-width: 600px;
+  align-items: stretch;
 }
 
+/* Cabeçalho da imagem */
 .image-header {
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .header-image {
-    width: 100%;
-    display: block;
-    border-radius: 20px 20px 0 0;
-}
-
-.send-me-email {
-    margin-left: 30%;
+  width: 100%;
+  height: 100px;
+  display: block;
+  border-radius: 20px 20px 0 0;
 }
 
 .image-text {
-    position: absolute;
-    font-size: 40px;
-    bottom: 10px;
-    right: 10px;
-    color: white;
-    font-weight: bold;
-    padding: 20px 40px;
-    border-radius: 5px;
-    font-family: "Istok Web", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+  position: absolute;
+  font-size: 30px;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  font-weight: bold;
+  padding: 20px 40px;
+  border-radius: 5px;
+  font-family: "Istok Web", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
+/* Botão de fechamento */
 .close-button-overlay {
-    position: absolute;
-    color: #fff;
-    top: 10px;
-    right: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    background: transparent;
-    padding: 0;
-    margin: 0;
-    outline: none;
+  position: absolute;
+  color: #fff;
+  top: 10px;
+  right: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  outline: none;
 }
 
+/* Título do formulário */
+.send-me-email {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px !important;
+  color: black;
+}
+
+/* Estilo do formulário */
 .form-overlay {
-    padding: 40px;
-    margin: 20px 40px;
-    display: flex;
-    justify-content: flex-start;
-    border: 1px solid grey;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 600px;
+  padding: 20px;
+  margin: 20px 40px;
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid grey;
+  border-radius: 10px;
+  width: 80%;
 }
 
 .form-overlay-content {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    align-items: stretch;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: stretch;
+  gap: 20px;
 }
 
 .input-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    flex-grow: 1;
-    gap: 30px;
-}
-.background-image-overlay {
-    position: absolute;
-    margin-bottom: 10px;
-    padding: 0;
-    width: 400px;
-    height: 380px; 
-    bottom: 0;
-    right: 0;
-    z-index: 0;
-    object-fit: contain; 
-    opacity: 0.1;
-  }
-.form-overlay .input-subject {
-    background-color: transparent;
-    border: 1px solid grey;
-    border-radius: 5px;
-    padding: 8px;
-    flex-grow: 1;
-    height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  flex-grow: 1;
+  gap: 15px;
 }
 
-.form-overlay textarea.textarea {
-    resize: none;
-    width: 100%;
-    flex-grow: 1;
-    border: 1px solid grey;
-    border-radius: 5px;
-    padding: 10px 150px 0 10px;
-    height: calc(3 * 40px + 2 * 30px);
-    background-color: transparent;
-    align-self: stretch;
+.input-subject {
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding-left: 8px;
+  flex-grow: 1;
+  height: 30px;
+  font-size: 15px;
 }
 
-.input-container,
 .textarea {
-    width: 100%;
-    position: relative;
-    z-index: 1;
+  resize: none;
+  width: 80%;
+  flex-grow: 1;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 10px 100px 0 10px;
+  height: calc(3 * 20px + 2 * 30px);
+  background-color: transparent;
+  align-self: stretch;
 }
 
+/* Botão de envio */
 .button-send {
-    padding: 5px 50px;
-    border: none;
-    border-radius: 10px;
-    background-image: linear-gradient(90deg,
-            rgba(147, 0, 230, 1) 0%,
-            rgba(157, 30, 229, 1) 35%,
-            rgba(231, 188, 255, 1) 100%);
-    color: white;
-    cursor: pointer;
-    margin-top: 20px;
-    margin-left: 59%;
+  padding: 0 40px;
+  border: none;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(147, 0, 230, 1) 0%,
+    rgba(157, 30, 229, 1) 35%,
+    rgba(231, 188, 255, 1) 100%
+  );
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Imagem de fundo */
+.background-image-overlay {
+  position: absolute;
+  margin-bottom: 10px;
+  padding: 0;
+  width: 300px;
+  height: 280px;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  object-fit: contain;
+  opacity: 0.1;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .overlay-content {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .image-header {
+    margin-bottom: 10px;
+  }
+
+  .send-me-email {
+    font-size: 12px;
+  }
+
+  .form-overlay textarea.textarea {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .close-button-overlay {
+    font-size: 20px;
+    top: 5px;
+    right: 5px;
+  }
 }
