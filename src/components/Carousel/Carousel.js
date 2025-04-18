@@ -79,7 +79,7 @@ const Carousel = () => {
 
     const stopAutoScroll = () => clearInterval(intervalId);
 
-    if (!isMobile) { // Executa o auto scroll apenas no modo desktop
+    if (!isMobile) {
       startAutoScroll();
       return () => stopAutoScroll();
     }
@@ -87,16 +87,19 @@ const Carousel = () => {
 
   useEffect(() => {
     if (isMobile && carousel.current && mobileItemWidth > 0) {
+      const carouselEl = carousel.current;
+
       const handleScroll = () => {
-        const scrollPosition = carousel.current.scrollLeft;
-        const newIndex = Math.round(scrollPosition / mobileItemWidth) % images.length;
+        const scrollPosition = carouselEl.scrollLeft;
+        const newIndex =
+          Math.round(scrollPosition / mobileItemWidth) % images.length;
         if (newIndex !== currentIndex) {
           setCurrentIndex(newIndex);
         }
       };
 
-      carousel.current.addEventListener("scroll", handleScroll);
-      return () => carousel.current.removeEventListener("scroll", handleScroll);
+      carouselEl.addEventListener("scroll", handleScroll);
+      return () => carouselEl.removeEventListener("scroll", handleScroll);
     }
   }, [isMobile, mobileItemWidth, currentIndex]);
 
@@ -107,7 +110,7 @@ const Carousel = () => {
     } else if (carousel.current && mobileItemWidth > 0) {
       carousel.current.scrollTo({
         left: index * mobileItemWidth,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   };

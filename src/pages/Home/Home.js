@@ -184,7 +184,7 @@ const Home = () => {
             </p>
             <div className="buttons-initial">
               <a
-                href="/Currículo Camila de Carvalho.pdf"
+                href="/curriculo-camila-carvalho.pdf"
                 download="CV - Camila Aguiar.pdf"
                 className="download-cv-button"
               >
