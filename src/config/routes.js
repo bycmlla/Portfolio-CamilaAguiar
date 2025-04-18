@@ -15,8 +15,8 @@ import Refresh from "../pages/Projects/SubPages/Python/Refresh/Refresh";
 import { RefreshPartTwo } from "../pages/Projects/SubPages/Python/RefreshPartTwo/RefreshPartTwo";
 import Tutorial from "../pages/Projects/SubPages/Dashboards/Tutorial/Tutorial";
 import { RoomRover } from "../pages/Projects/SubPages/Angular/RoomRover/RoomRover";
-import Angular from "../pages/Projects/SubPages/Angular/Angular"
-
+import Angular from "../pages/Projects/SubPages/Angular/Angular";
+import { Blog } from "../pages/Blog/Blog";
 
 const RoutesComponent = () => {
   return (
@@ -38,6 +38,7 @@ const RoutesComponent = () => {
             <Route path="/tutorialpbi" element={<Tutorial />} />
             <Route path="/roomrover" element={<RoomRover />} />
             <Route path="/angular" element={<Angular />} />
+            <Route path="/blog" element={<Blog />} />
           </Routes>
         </HashRouter>
       </ThemeProvider>

@@ -2,15 +2,9 @@ import React, { useState } from "react";
 import "./SectionTitle.css";
 
 const SectionTitle = ({ data }) => {
-  const [isDarkMode, setIsDarkMode] = useState(
+  const [isDarkMode] = useState(
     localStorage.getItem("darkMode") === "true"
   );
-
-  const toggleDarkModeHome = () => {
-    const newDarkModeState = !isDarkMode;
-    setIsDarkMode(newDarkModeState);
-    localStorage.setItem("darkMode", newDarkModeState.toString());
-  };
 
   return (
     <div

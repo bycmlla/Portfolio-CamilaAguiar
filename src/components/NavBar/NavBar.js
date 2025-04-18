@@ -14,7 +14,7 @@ const NavBar = () => {
   const [isActive, setIsActive] = useState(false);
   const location = useLocation();
 
-  const { selectedColor, setSelectedColor } = useColor();
+  const { setSelectedColor } = useColor();
   const { isDarkMode, toggleDarkMode } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -82,6 +82,9 @@ const NavBar = () => {
         </li>
         <li>
           <Link to="/projects">Projetos</Link>
+        </li>
+        <li>
+          <Link to="/blog">Blog</Link>
         </li>
         <li>
           <Link to="/about">Sobre Mim</Link>

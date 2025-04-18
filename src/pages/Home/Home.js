@@ -30,6 +30,7 @@ import BlueButterfly from "../../assets/images/bluebutterfly.png";
 import Overlay from "../../components/Overlay/Overlay";
 import { useColor } from "../../contexts/ColorContext";
 import { useTheme } from "../../contexts/ThemeContext";
+import CVFile from "../../assets/files/curriculo-camila-carvalho.pdf"
 
 const imageMap = {
   "#9747FF": {
@@ -180,11 +181,11 @@ const Home = () => {
             />
             <p>
               Desenvolvedora Full-Stack e<br />
-              Analista de Dados.
+              Analista de Dados. 
             </p>
             <div className="buttons-initial">
               <a
-                href="/curriculo-camila-carvalho.pdf"
+                href={CVFile}
                 download="CV - Camila Aguiar.pdf"
                 className="download-cv-button"
               >
