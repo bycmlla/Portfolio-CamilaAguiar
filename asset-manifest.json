@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Portfolio-CamilaAguiar/static/css/main.12c70b90.css",
-    "main.js": "/Portfolio-CamilaAguiar/static/js/main.6d5bb150.js",
+    "main.js": "/Portfolio-CamilaAguiar/static/js/main.41275263.js",
     "static/js/453.1b46eccd.chunk.js": "/Portfolio-CamilaAguiar/static/js/453.1b46eccd.chunk.js",
     "static/media/hunhihi.gif": "/Portfolio-CamilaAguiar/static/media/hunhihi.3e85d184394308f6ddf1.gif",
     "static/media/dashboard 15 background.png": "/Portfolio-CamilaAguiar/static/media/dashboard 15 background.fc4a12095634a660956d.png",
@@ -55,6 +55,7 @@
     "static/media/dashboard 1.jpeg": "/Portfolio-CamilaAguiar/static/media/dashboard 1.35aa5c2353c4f60e9d08.jpeg",
     "static/media/sql-illustration.png": "/Portfolio-CamilaAguiar/static/media/sql-illustration.49bd147edcb41a2b45ee.png",
     "static/media/etapa 1.6.png": "/Portfolio-CamilaAguiar/static/media/etapa 1.6.1f0e0f10e871d8c1e70e.png",
+    "static/media/curriculo-camila-carvalho.pdf": "/Portfolio-CamilaAguiar/static/media/curriculo-camila-carvalho.cb7bad9ec0eb33d97397.pdf",
     "static/media/etapa 2.1.png": "/Portfolio-CamilaAguiar/static/media/etapa 2.1.2f915e3ea6c8b1bfbd37.png",
     "static/media/etapa 1.5.png": "/Portfolio-CamilaAguiar/static/media/etapa 1.5.a2f311afca77db2775f6.png",
     "static/media/image 2.png": "/Portfolio-CamilaAguiar/static/media/image 2.90c67a03f7946924cb1a.png",
@@ -93,11 +94,11 @@
     "static/media/CamilaCarvalho-white.png": "/Portfolio-CamilaAguiar/static/media/CamilaCarvalho-white.1ed8d186eabea457381d.png",
     "index.html": "/Portfolio-CamilaAguiar/index.html",
     "main.12c70b90.css.map": "/Portfolio-CamilaAguiar/static/css/main.12c70b90.css.map",
-    "main.6d5bb150.js.map": "/Portfolio-CamilaAguiar/static/js/main.6d5bb150.js.map",
+    "main.41275263.js.map": "/Portfolio-CamilaAguiar/static/js/main.41275263.js.map",
     "453.1b46eccd.chunk.js.map": "/Portfolio-CamilaAguiar/static/js/453.1b46eccd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.12c70b90.css",
-    "static/js/main.6d5bb150.js"
+    "static/js/main.41275263.js"
   ]
 }
