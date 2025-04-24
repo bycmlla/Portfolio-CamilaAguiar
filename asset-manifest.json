@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio-CamilaAguiar/static/css/main.12c70b90.css",
-    "main.js": "/Portfolio-CamilaAguiar/static/js/main.41275263.js",
+    "main.css": "/Portfolio-CamilaAguiar/static/css/main.c52603f0.css",
+    "main.js": "/Portfolio-CamilaAguiar/static/js/main.d6172b26.js",
     "static/js/453.1b46eccd.chunk.js": "/Portfolio-CamilaAguiar/static/js/453.1b46eccd.chunk.js",
     "static/media/hunhihi.gif": "/Portfolio-CamilaAguiar/static/media/hunhihi.3e85d184394308f6ddf1.gif",
     "static/media/dashboard 15 background.png": "/Portfolio-CamilaAguiar/static/media/dashboard 15 background.fc4a12095634a660956d.png",
@@ -92,13 +92,19 @@
     "static/media/PBI Black 2.png": "/Portfolio-CamilaAguiar/static/media/PBI Black 2.fbcf916b24d2cfb674e7.png",
     "static/media/PBI White 2.png": "/Portfolio-CamilaAguiar/static/media/PBI White 2.d56e4f6c7422a4d89529.png",
     "static/media/CamilaCarvalho-white.png": "/Portfolio-CamilaAguiar/static/media/CamilaCarvalho-white.1ed8d186eabea457381d.png",
+    "static/media/selenium.svg": "/Portfolio-CamilaAguiar/static/media/selenium.df610e4ce9d1a8350587ceef54694f52.svg",
+    "static/media/python.svg": "/Portfolio-CamilaAguiar/static/media/python.1b0b1c85f2775e45f3dd58e2b861c9ad.svg",
+    "static/media/icons8-selenium.svg": "/Portfolio-CamilaAguiar/static/media/icons8-selenium.6cbdda50dff322261040882db5340538.svg",
+    "static/media/icons8-python.svg": "/Portfolio-CamilaAguiar/static/media/icons8-python.691645261a4ecfafc0dd8a830b587275.svg",
+    "static/media/powerbi.svg": "/Portfolio-CamilaAguiar/static/media/powerbi.fa5202eaffd720146c2dcbf912198fb9.svg",
     "index.html": "/Portfolio-CamilaAguiar/index.html",
-    "main.12c70b90.css.map": "/Portfolio-CamilaAguiar/static/css/main.12c70b90.css.map",
-    "main.41275263.js.map": "/Portfolio-CamilaAguiar/static/js/main.41275263.js.map",
+    "static/media/blacpbi.svg": "/Portfolio-CamilaAguiar/static/media/blacpbi.1954f8b9c12f5ca656df13c46a81188a.svg",
+    "main.c52603f0.css.map": "/Portfolio-CamilaAguiar/static/css/main.c52603f0.css.map",
+    "main.d6172b26.js.map": "/Portfolio-CamilaAguiar/static/js/main.d6172b26.js.map",
     "453.1b46eccd.chunk.js.map": "/Portfolio-CamilaAguiar/static/js/453.1b46eccd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.12c70b90.css",
-    "static/js/main.41275263.js"
+    "static/css/main.c52603f0.css",
+    "static/js/main.d6172b26.js"
   ]
 }
