@@ -24,18 +24,13 @@ import Etp12 from "../../../../../assets/images/python/etapa 1.12.png";
 import Etp13 from "../../../../../assets/images/python/etapa 1.13.png";
 import unhinhin from "../../../../../assets/images/python/hunhihi.gif";
 
+import { useTheme } from "../../../../../contexts/ThemeContext";
+
 const Refresh = () => {
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("darkMode") === "true"
-  );
+
+  const isDarkMode = useTheme()
   const codeRef = useRef(null);
   const [showNotification, setShowNotification] = useState(false);
-
-  const toggleDarkMode = () => {
-    const newDarkModeState = !isDarkMode;
-    setIsDarkMode(newDarkModeState);
-    localStorage.setItem("darkMode", newDarkModeState.toString());
-  };
 
   const copyToClipboard = () => {
     if (codeRef.current) {
@@ -51,9 +46,9 @@ const Refresh = () => {
     <div
       className={`refresh-container ${isDarkMode ? "dark-mode-refresh" : ""}`}
     >
-      <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <NavBar isDarkMode={isDarkMode} />
       <div>
-        <Link to={"/python"} className="back-icon-refresh">
+        <Link to={"/projects"} className="back-icon-refresh">
           <FaArrowLeft />
         </Link>
       </div>

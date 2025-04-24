@@ -4,6 +4,7 @@ import "./ROSA.css";
 
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import { FaArrowLeft } from "react-icons/fa";
+import { useTheme } from "../../../../../contexts/ThemeContext";
 
 import NavBar from "../../../../../components/NavBar/NavBar";
 import Footer from "../../../../../components/Footer/Footer";
@@ -17,17 +18,10 @@ import ExempleDisparity from "../../../../../assets/images/python/image 3.png";
 
 const ROSA = () => {
   const [isCodeVisible, setIsCodeVisible] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("darkMode") === "true"
-  );
+  const {isDarkMode} = useTheme();
+
   const codeRef = useRef(null);
   const [showNotification, setShowNotification] = useState(false);
-
-  const toggleDarkMode = () => {
-    const newDarkModeState = !isDarkMode;
-    setIsDarkMode(newDarkModeState);
-    localStorage.setItem("darkMode", newDarkModeState.toString());
-  };
 
   const copyToClipboard = () => {
     if (codeRef.current) {
@@ -45,7 +39,7 @@ const ROSA = () => {
 
   return (
     <div className={`rosapage-container ${isDarkMode ? "dark-mode-rosa" : ""}`}>
-      <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <NavBar isDarkMode={isDarkMode} />
       <div>
         <Link to={"/projects"} className="back-icon" style={{color: 'white'}}>
           <FaArrowLeft />

@@ -1,31 +1,19 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import "./Automation.css";
 
 import NavBar from "../../../../../components/NavBar/NavBar";
 import Footer from "../../../../../components/Footer/Footer";
 import { FaArrowLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useTheme } from "../../../../../contexts/ThemeContext";
 
 import Python from "../../../../../assets/images/python/python.png";
 import PythonBlack from "../../../../../assets/images/python/python black.png";
 import Diretorio from "../../../../../assets/images/python/diretorio.png";
 import CMD from "../../../../../assets/images/python/cmd.png";
 
-
 const Automation = () => {
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("darkMode") === "true"
-  );
-
-  useEffect(() => {
-    setIsDarkMode(localStorage.getItem("darkMode") === "true");
-  }, []);
-
-  const toggleDarkMode = () => {
-    const newDarkModeState = !isDarkMode;
-    setIsDarkMode(newDarkModeState);
-    localStorage.setItem("darkMode", newDarkModeState.toString());
-  };
+  const { isDarkMode } = useTheme();
 
   const copyToClipboard = () => {
     if (codeRef.current) {
@@ -41,9 +29,9 @@ const Automation = () => {
 
   return (
     <div
-      className={`automation-container ${isDarkMode ? "dark-mode-sql" : ""}`}
+      className={`automation-container ${isDarkMode ? "dark-mode-automation" : ""}`}
     >
-      <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <NavBar isDarkMode={isDarkMode} />
       <div>
         <Link to={"/projects"} className="back-icon-automation">
           <FaArrowLeft />
@@ -55,11 +43,11 @@ const Automation = () => {
         alt="Logo da linguagem Python"
         width="100%"
       />
-      
+
       <div className="rosa-page">
         <p>
           <strong>IMPORTANTE</strong>: Esse procedimento que será ensinado tem
-          objetivo educacional. Então é muito importante estar ciente disso,
+          objetivo educacional. Então é muito importante estar ciente disso,
           pois o whatsapp não gosta de automações e pode dar problema. Pode ter
           seu número bloqueado dependendo da forma que for utilizado.  <br />{" "}
           <br />
@@ -311,7 +299,7 @@ driver.quit()
           <li>Fecha o WebDriver.</li>
         </ol>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

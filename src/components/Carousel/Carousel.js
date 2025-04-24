@@ -12,13 +12,14 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 import "./Carousel.css";
 
 const images = [
-  { src: Dashboard, text: "Dashboards Power BI" },
-  { src: Pay2Me, text: "Pay2Me" },
-  { src: Orion, text: "Orion Outlet" },
-  { src: RoomRover, text: "RoomRover" },
-  { src: WeatherUp, text: "Weather Up" },
-  { src: Agrovet, text: "Cardoso Agrovet" },
+  { src: Dashboard, text: "Dashboards Power BI", link: "/dashboards" },
+  { src: Pay2Me, text: "Pay2Me", link: "/breve" },
+  { src: Orion, text: "Orion Outlet", link: "/breve" },
+  { src: RoomRover, text: "RoomRover", link: "/breve" },
+  { src: WeatherUp, text: "Weather Up", link: "/breve" },
+  { src: Agrovet, text: "Cardoso Agrovet", link: "/breve" },
 ];
+
 const infiniteImages = [...images, ...images, ...images];
 
 const Carousel = () => {
@@ -28,7 +29,7 @@ const Carousel = () => {
   const [imageWidth, setImageWidth] = useState(450);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
-  const [mobileItemWidth, setMobileItemWidth] = useState(0); // Novo estado para a largura do item mobile
+  const [mobileItemWidth, setMobileItemWidth] = useState(0);
 
   const loopLimit = imageWidth * images.length;
 
@@ -148,9 +149,11 @@ const Carousel = () => {
                 key={index}
                 ref={index === 0 ? itemRef : null}
               >
-                <img src={img.src} alt={`carousel-img-${index}`} />
-                <div className="overlay-carousel"></div>
-                <div className="text-overlay">{img.text}</div>
+                <Link to={img.link}>
+                  <img src={img.src} alt={`carousel-img-${index}`} />
+                  <div className="overlay-carousel"></div>
+                  <div className="text-overlay">{img.text}</div>
+                </Link>
               </motion.div>
             ))}
           </motion.div>

@@ -1,25 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import NavBar from "../../../../../components/NavBar/NavBar";
 import "./DashboardPage.css";
 import Footer from "../../../../../components/Footer/Footer";
+import { useTheme } from "../../../../../contexts/ThemeContext";
 
 const DashboardPage = () => {
   const { id } = useParams();
+  const { isDarkMode, toggleDarkMode } = useTheme();
 
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("darkMode") === "true"
-  );
 
-  useEffect(() => {
-    setIsDarkMode(localStorage.getItem("darkMode") === "true");
-  }, []);
-  const toggleDarkMode = () => {
-    const newDarkModeState = !isDarkMode;
-    setIsDarkMode(newDarkModeState);
-    localStorage.setItem("darkMode", newDarkModeState.toString());
-  };
 
   const dashboards = {
     1: {

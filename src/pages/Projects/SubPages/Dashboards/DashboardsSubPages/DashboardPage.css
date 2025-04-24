@@ -7,11 +7,7 @@
   justify-content: center;
   min-height: 100vh;
   padding: 15px;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 34%,
-    rgba(226, 226, 226, 1) 69%
-  );
+  background-color: white;
 }
 .dashboard-title {
   margin-bottom: 20px;
@@ -19,10 +15,11 @@
   font-family: "Poppins", sans-serif;
   font-size: 35px;
 }
+
 .back-icon {
   cursor: pointer;
   position: absolute;
-  top: 70px;
+  top: 100px;
   left: 30px;
   color: black;
   font-size: 24px;
@@ -40,15 +37,23 @@
 }
 
 .dark-mode-dashboards .dashboard-page-container {
-  background: rgb(20, 20, 20);
-  background: linear-gradient(
-    90deg,
-    rgba(20, 20, 20, 1) 30%,
-    rgba(26, 26, 26, 1) 49%,
-    rgba(57, 54, 54, 1) 86%
-  );
+  background-color: #13131f;
 }
 
 .dark-mode-dashboards .dashboard-title {
   color: white;
+}
+
+@media (max-width: 480px) {
+  .dashboard-iframe {
+    width: 100%;
+    height: 29vh;
+  }
+
+  .dashboard-title {
+    font-size: 20px;
+    margin-bottom: 50px; 
+  }
+
+
 }

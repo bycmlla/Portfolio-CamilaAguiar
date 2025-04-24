@@ -1,3 +1,8 @@
+.rosapage-container{
+    color: black;
+    background-color: white;
+}
+
 .rosa-page {
     text-align: justify;
     margin: 0 auto;
@@ -34,7 +39,7 @@
 }
 
 .dark-mode-rosa {
-    background-color: #141414;
+    background-color: #13131f;
 }
 
 .dark-mode-rosa .rosa-page,
@@ -43,4 +48,10 @@
 .dark-mode-rosa .sub-sub-link,
 .dark-mode-rosa .nav-title-rosa {
     color: white; 
+}
+
+@media (max-width: 480px){
+    .rosa-page{
+        max-width: 300px;
+    }
 }

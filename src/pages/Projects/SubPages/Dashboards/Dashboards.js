@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Card, Col, Row } from "react-bootstrap";
 import "./Dashboards.css";
 
 import { FaArrowLeft } from "react-icons/fa";
+import PowerBIImage from "../../../../assets/images/dashboards/PoweBIFlamme.png"
 
 import NavBar from "../../../../components/NavBar/NavBar";
 import Footer from "../../../../components/Footer/Footer";
@@ -23,20 +24,10 @@ import DashboardProAge from "../../../../assets/images/dashboards/dashboard 13 b
 import DashboardIBGE from "../../../../assets/images/dashboards/dashboard 14 background.png";
 import DashboardNvidia from "../../../../assets/images/dashboards/dashboard 15 background.png";
 
-export const Dashboards = () => {
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("darkMode") === "true"
-  );
+import { useTheme } from "../../../../contexts/ThemeContext";
 
-  useEffect(() => {
-    setIsDarkMode(localStorage.getItem("darkMode") === "true");
-  }, []);
-  // alternar darkmode
-  const toggleDarkMode = () => {
-    const newDarkModeState = !isDarkMode;
-    setIsDarkMode(newDarkModeState);
-    localStorage.setItem("darkMode", newDarkModeState.toString());
-  };
+export const Dashboards = () => {
+  const { isDarkMode } = useTheme();
 
   const images = [
     {
@@ -125,13 +116,20 @@ export const Dashboards = () => {
         isDarkMode ? "dark-mode-dashboards" : ""
       }`}
     >
-      <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
+      <NavBar isDarkMode={isDarkMode} />
+      <img
+        className="image-opencv"
+        src={PowerBIImage}
+        alt="exemplo de disparidade de imagem"
+        width="100%"
+      />
       <p className="text-ini">
-        O <span>Power BI</span> é uma ferramenta de análise de dados e visualização da
-        Microsoft que oferece uma interface intuitiva para transformar dados em
-        informações acionáveis.
-        <br/><br/>
-       <span> Clique nos gráficos e veja alguns dos meus dasboards! </span>
+        O <span>Power BI</span> é uma ferramenta de análise de dados e
+        visualização da Microsoft que oferece uma interface intuitiva para
+        transformar dados em informações acionáveis.
+        <br />
+        <br />
+        <span> Clique nos gráficos e veja alguns dos meus dasboards! </span>
       </p>
       <div>
         <Link to={"/projects"} className="back-icon">
@@ -146,8 +144,10 @@ export const Dashboards = () => {
         </Row>
       </motion.div>
       <p className="text-ini">
-          Os dados utilizados acima são ficticios ou retirados de sites públicos, apenas para fins de visualização.
-        <br/><br/>
+        Os dados utilizados acima são ficticios ou retirados de sites públicos,
+        apenas para fins de visualização.
+        <br />
+        <br />
       </p>
       <Footer />
     </div>

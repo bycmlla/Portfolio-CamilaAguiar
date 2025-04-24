@@ -1,133 +1,52 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Projects.css";
 import Dashboard1 from "../../assets/images/dashboards/dashboard 1.jpeg";
-import Disparity from "../../assets/images/python/depthmaps.png";
 import Selenium from "../../assets/images/python/selenium.png";
-import PBI from "../../assets/images/python/pbi.png";
-import PowerBi from "../../assets/images/python/power-BI.png";
 import { useColor } from "../../contexts/ColorContext";
 import { useTheme } from "../../contexts/ThemeContext";
 import PowerBiIcon from "../../assets/icons/powerbi.svg";
-import OpenCVIcon from "../../assets/icons/opencv.svg";
-import NvidiaIcon from "../../assets/icons/nvidia.svg";
 import PythonIcon from "../../assets/icons/python.svg";
 import SeleniumIcon from "../../assets/icons/selenium.svg";
-import AzureIcon from "../../assets/icons/azure.svg";
+import Footer from "../../components/Footer/Footer";
+import BlackPBI from "../../assets/icons/blacpbi.svg";
+import BlackPython from "../../assets/icons/icons8-python.svg";
+import BlackSelenium from "../../assets/icons/icons8-selenium.svg";
 
 const Projects = () => {
   const { selectedColor } = useColor();
   const colorClass = `color-${selectedColor.replace("#", "")}`;
   const { isDarkMode } = useTheme();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 480);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const projects = [
     {
       id: 1,
       title: "Dashboards Power BI",
-      text: "Aqui eu apresento os meus dashboards em Power BI. Todos projetos feitos e publicados por mim.",
+      text: "Aqui apresento os meus dashboards em Power BI.",
       images: [Dashboard1],
       link: "/Dashboards",
-      technologies: [
-        <img
-          src={PowerBiIcon}
-          alt="Power BI"
-          style={{ width: 24, height: 24, marginBottom: 10 }}
-        />,
-      ],
+      icons: [PowerBiIcon],
+      iconsBlack: [BlackPBI],
     },
     {
-      id: 5,
-      title: "Interface de Visão Estereoscópica Binocular",
-      text: "Reconhecimento e a localização de pessoas e objetos em um cenário para robótica móvel",
-      images: [Disparity],
-      link: "/rosa",
-      technologies: [
-        <img
-          src={PythonIcon}
-          alt="Python"
-          style={{ width: 24, height: 24, marginBottom: 10, marginRight: 10 }}
-        />,
-        <img
-          src={OpenCVIcon}
-          alt="Open CV"
-          style={{ width: 24, height: 24, marginBottom: 10, marginRight: 10 }}
-        />,
-        <img
-          src={NvidiaIcon}
-          alt="Nvidia"
-          style={{ width: 24, height: 24, marginBottom: 10 }}
-        />,
-      ],
-    },
-    {
-      id: 10,
-      title: "Automação de Mensagens Whatsapp",
+      id: 2,
+      title: "Automação Whatsapp",
+      text: "Envio automático de mensagens com Python.",
       images: [Selenium],
-      text: "Como enviar mensagens de maneira automática utilizando o Python.",
       link: "/automation",
-      technologies: [
-        <img
-          src={SeleniumIcon}
-          alt="Selenium"
-          style={{ width: 24, height: 24, marginBottom: 10, marginRight: 10 }}
-        />,
-        <img
-          src={PythonIcon}
-          alt="Python"
-          style={{ width: 24, height: 24, marginBottom: 10 }}
-        />,
-      ],
-    },
-    {
-      id: 11,
-      title: "Conexão da API do Power BI",
-      images: [PBI],
-      text: "Conectando-se a API do Power BI com Python.",
-      link: "/refresh",
-      technologies: [
-        <img
-          src={PowerBiIcon}
-          alt="Power BI"
-          style={{ width: 24, height: 24, marginBottom: 10, marginRight: 10 }}
-        />,
-        <img
-          src={PythonIcon}
-          alt="Python"
-          style={{ width: 24, height: 24, marginBottom: 10, marginRight: 10 }}
-        />,
-        <img
-          src={AzureIcon}
-          alt="Azure"
-          style={{ width: 24, height: 24, marginBottom: 10 }}
-        />,
-      ],
-    },
-    {
-      id: 12,
-      title: "Atualização de Datasets Via API Power BI",
-      images: [PowerBi],
-      text: "Atualizando datasets automaticamente do Power BI via API com Python.",
-      link: "/refresh2",
-      technologies: [
-        <img
-          src={PowerBiIcon}
-          alt="Power BI"
-          style={{ width: 24, height: 24, marginBottom: 10, marginRight: 10 }}
-        />,
-        <img
-          src={PythonIcon}
-          alt="Python"
-          style={{ width: 24, height: 24, marginBottom: 10, marginRight: 10 }}
-        />,
-        <img
-          src={AzureIcon}
-          alt="Azure"
-          style={{ width: 24, height: 24, marginBottom: 10 }}
-        />,
-      ],
+      icons: [SeleniumIcon, PythonIcon],
+      iconsBlack: [BlackSelenium, BlackPython],
     },
   ];
 
@@ -140,34 +59,62 @@ const Projects = () => {
       <NavBar />
       <div className="text-projects">
         <h2>Projetos</h2>
-        <p>Aqui apresento os meus projetos. Tudo aqui foi feito por mim.</p>
+        <p>Mais projetos em breve!</p>
       </div>
 
       <div className="projects-content">
-        {projects.map((project) => (
-          <div key={project.id} className="card-projects">
-            <img src={project.images[0]} alt={project.title} />
-            <div className="card-overlay">
-              <h5>{project.title}</h5>
-              <p>{project.text}</p>
-              <div className="tech-icons">
-                {project.technologies?.map((tech, index) => (
-                  <span key={index} className="icon-tech">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              {project.link && (
-                <Link to={project.link}>
-                  <Button className="button-see" variant="primary">
-                    Ver
-                  </Button>
-                </Link>
+        {projects.map(
+          ({ id, title, text, images, link, icons, iconsBlack }) => (
+            <div key={id} className="card-projects">
+              <img src={images[0]} alt={title} />
+              {!isMobile ? (
+                <div className="card-overlay">
+                  <h5>{title}</h5>
+                  <p>{text}</p>
+                  <div className="tech-icons">
+                    {icons.map((icon, i) => (
+                      <img
+                        key={i}
+                        src={icon}
+                        alt="icon"
+                        style={{ width: 24, height: 24, margin: "0 5px" }}
+                        className="icons-projects"
+                      />
+                    ))}
+                  </div>
+                  <Link to={link} onClick={(e) => e.stopPropagation()}>
+                    <Button className="button-see">Ver</Button>
+                  </Link>
+                </div>
+              ) : (
+                <div className="card-caption">
+                  <h5>{title}</h5>
+                  <div className="tech-icons">
+                    {(isMobile ? iconsBlack : icons).map((icon, i) => (
+                      <img
+                        key={i}
+                        src={icon}
+                        alt="icon"
+                        style={{
+                          width: isMobile ? 20 : 24,
+                          height: isMobile ? 20 : 24,
+                          margin: isMobile ? "5px 6px" : "0 5px",
+                        }}
+                        className="icons-projects"
+                      />
+                    ))}
+                  </div>
+
+                  <Link to={link}>
+                    <Button className="button-see">Ver</Button>
+                  </Link>
+                </div>
               )}
             </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
+      <Footer />
     </div>
   );
 };
