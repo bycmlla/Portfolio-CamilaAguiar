@@ -17,6 +17,15 @@
   opacity: 1;
 }
 
+.button-contact-navbar {
+  background-color: transparent;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
 .hamburger-icon {
   display: none;
   cursor: pointer;
@@ -94,9 +103,8 @@
   transition: transform 0.2s ease;
 }
 
-.color-palette{
+.color-palette {
   gap: 10px;
-
 }
 
 .color-button:hover {
@@ -112,6 +120,10 @@
   background-color: #13131f;
 }
 
+.dark-mode.my-navbar .button-contact-navbar {
+  color: white;
+}
+
 .dark-mode.my-navbar .nav-links li a {
   color: #ffffff;
 }
@@ -120,8 +132,12 @@
   color: #ffd700;
 }
 
-.dark-mode.my-navbar .hamburger-icon div{
+.dark-mode.my-navbar .hamburger-icon div {
   background-color: white;
+}
+
+.dark-mode.my-navbar .contact-button-navbar {
+  color: white;
 }
 
 @media (max-width: 480px) {
@@ -170,7 +186,6 @@
     border-radius: 50%;
     flex-shrink: 0;
   }
-
 
   .my-navbar.active-menu .nav-links > li:first-child:not(.color-palette) {
     width: 100%;

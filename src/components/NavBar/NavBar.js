@@ -10,7 +10,7 @@ import { useTheme } from "../../contexts/ThemeContext";
 
 const colors = ["#9747FF", "#2291A4", "#F10091"];
 
-const NavBar = () => {
+const NavBar = ({ onOpenContact }) => {
   const [isActive, setIsActive] = useState(false);
   const location = useLocation();
 
@@ -90,7 +90,9 @@ const NavBar = () => {
           <Link to="/about">Sobre Mim</Link>
         </li>
         <li>
-          <Link to="/contact">Contato</Link>
+          <button className="button-contact-navbar" onClick={onOpenContact}>
+            Contato
+          </button>
         </li>
       </ul>
     </nav>

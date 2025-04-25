@@ -1,0 +1,153 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.611);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+}
+.overlay-content-contact {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.title-contatos {
+  margin-left: 10px;
+}
+
+.contact-container-overlay {
+  margin: 20px 0;
+}
+
+.inner-contact-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.inner-contact-overlay ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.inner-contact-overlay ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+}
+
+.inner-contact-overlay ul li a button {
+  color: #9d1ee5;
+  background-color: #202020;
+  font-size: 18px;
+  border-radius: 100px;
+  border: none;
+  margin-bottom: 5px;
+  padding: 8px 20px 10px;
+}
+
+.inner-contact-overlay ul li p {
+  font-size: 12px;
+  color: black;
+  text-align: center;
+  max-width: 160px;
+}
+
+.close-overlay {
+  background-color: transparent;
+  color: black;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.dark-mode .inner-contact-overlay ul li h5 {
+  color: white;
+}
+
+.dark-mode .close-overlay {
+  color: white;
+}
+
+.dark-mode .inner-contact-overlay ul li p {
+  color: grey;
+}
+
+.dark-mode .overlay-content-contact{
+  background-color: #262626;
+}
+
+.color-2291A4 .inner-contact-overlay ul li a button {
+  color: #2291a4;
+}
+
+.color-2291A4 .inner-contact-overlay ul li a button:hover {
+  background-image: linear-gradient(
+    90deg,
+    rgba(5, 99, 127, 1) 0%,
+    rgba(100, 212, 255, 1) 100%
+  );
+  color: white;
+}
+
+.color-F10091 .inner-contact-overlay ul li a button {
+  color: #f10091;
+}
+
+.color-F10091 .inner-contact-overlay ul li a button:hover {
+  background-image: linear-gradient(
+    90deg,
+    rgba(88, 0, 53, 1) 0%,
+    rgba(241, 0, 145, 1) 100%
+  );
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .inner-contact-overlay ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .inner-contact-overlay ul li {
+    width: 100%;
+    text-align: center;
+    height: 130px; /* força todos os cards a terem a MESMA altura */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .inner-contact-overlay ul li p {
+    font-size: 12px;
+    overflow-wrap: break-word; /* quebra palavras grandes */
+    word-break: break-word;
+  }
+  .linkedin{
+    margin: 0;
+    margin-left: 50px;
+  }
+}
+

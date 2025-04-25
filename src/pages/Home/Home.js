@@ -30,7 +30,8 @@ import BlueButterfly from "../../assets/images/bluebutterfly.png";
 import Overlay from "../../components/Overlay/Overlay";
 import { useColor } from "../../contexts/ColorContext";
 import { useTheme } from "../../contexts/ThemeContext";
-import CVFile from "../../assets/files/curriculo-camila-carvalho.pdf"
+import CVFile from "../../assets/files/curriculo-camila-carvalho.pdf";
+import { OverlayContact } from "../../components/OverlayContact/OverlayContact";
 
 const imageMap = {
   "#9747FF": {
@@ -59,15 +60,14 @@ const Home = () => {
   const { isDarkMode } = useTheme();
   const [expand, setExpand] = useState(false);
 
+  const [isOverlayContactOpen, setIsOverlayContactOpen] = useState(false);
+  const handleOpenContactOverlay = () => setIsOverlayContactOpen(true);
+  const handleCloseContactOverlay = () => setIsOverlayContactOpen(false);
+
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
 
-  const handleOpenOverlay = () => {
-    setIsOverlayOpen(true);
-  };
-
-  const handleCloseOverlay = () => {
-    setIsOverlayOpen(false);
-  };
+  const handleOpenOverlay = () => setIsOverlayOpen(true);
+  const handleCloseOverlay = () => setIsOverlayOpen(false);
 
   const getImageSource = () => {
     const colorImages = imageMap[selectedColor];
@@ -118,8 +118,7 @@ const Home = () => {
           isDarkMode ? "dark-mode-home" : ""
         } color-${selectedColor.replace("#", "")}`}
       >
-        <NavBar className="reveal" />
-
+        <NavBar className="reveal" onOpenContact={handleOpenContactOverlay} />
         <section
           aria-label="Informações Iniciais"
           className="text-and-image-container reveal"
@@ -181,7 +180,7 @@ const Home = () => {
             />
             <p>
               Desenvolvedora Full-Stack e<br />
-              Analista de Dados. 
+              Analista de Dados.
             </p>
             <div className="buttons-initial">
               <a
@@ -208,7 +207,6 @@ const Home = () => {
             />
           </div>
         </section>
-
         <section aria-label="Sobre mim" className="about-me-home reveal">
           <h2>Sobre mim</h2>
           <span className={`line-bout ${expand ? "expand" : ""}`}></span>
@@ -227,7 +225,6 @@ const Home = () => {
           alt="Butterfly"
           className="background-image"
         />
-
         <section
           aria-label="Habilidades profissionais"
           className="text-projects"
@@ -236,14 +233,12 @@ const Home = () => {
             <Skills />
           </div>
         </section>
-
         <section
           aria-label="Carrossel de apresentação de projetos"
           className="text-projects"
         >
           <Carousel />
         </section>
-
         <section className="contact-container-home">
           <SectionTitle
             data={{
@@ -327,7 +322,10 @@ const Home = () => {
             )}
           </div>
         </section>
-
+        <OverlayContact
+          isOverlayOpen={isOverlayContactOpen} 
+          handleCloseOverlay={handleCloseContactOverlay} 
+        />
         <Footer />
       </div>
     </>
