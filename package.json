@@ -1,7 +1,6 @@
 {
   "name": "camilacarvalho",
   "version": "0.1.0",
-  "homepage": "https://bycmlla.github.io/Portfolio-CamilaAguiar/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",
@@ -27,8 +26,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -55,7 +52,6 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.17.0",
     "cross-env": "^7.0.3",
-    "gh-pages": "^6.3.0",
     "sass": "^1.72.0"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
