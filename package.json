@@ -1,6 +1,7 @@
 {
   "name": "camilacarvalho",
   "version": "0.1.0",
+  "homepage": "https://bycmlla.github.io/Portfolio-CamilaAguiar",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",
@@ -12,6 +13,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "framer-motion": "^11.18.2",
+    "gh-pages": "^6.3.0",
     "gsap": "^3.12.5",
     "mailgen": "^2.0.28",
     "motion": "^12.4.4",
@@ -26,6 +28,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

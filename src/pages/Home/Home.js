@@ -27,7 +27,7 @@ import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import Butterfly from "../../assets/images/butterfly.png";
 import PinkButterfly from "../../assets/images/pinkbutterfly.png";
 import BlueButterfly from "../../assets/images/bluebutterfly.png";
-import Overlay from "../../components/Overlay/Overlay";
+// import Overlay from "../../components/Overlay/Overlay";
 import { useColor } from "../../contexts/ColorContext";
 import { useTheme } from "../../contexts/ThemeContext";
 import CVFile from "../../assets/files/curriculo-camila-carvalho.pdf";
@@ -64,10 +64,10 @@ const Home = () => {
   const handleOpenContactOverlay = () => setIsOverlayContactOpen(true);
   const handleCloseContactOverlay = () => setIsOverlayContactOpen(false);
 
-  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+  // const [isOverlayOpen, setIsOverlayOpen] = useState(false);
 
-  const handleOpenOverlay = () => setIsOverlayOpen(true);
-  const handleCloseOverlay = () => setIsOverlayOpen(false);
+  // const handleOpenOverlay = () => setIsOverlayOpen(true);
+  // const handleCloseOverlay = () => setIsOverlayOpen(false);
 
   const getImageSource = () => {
     const colorImages = imageMap[selectedColor];
@@ -139,7 +139,7 @@ const Home = () => {
                 </li>
                 <li>
                   <a
-                    href="www.linkedin.com/in/camilaaguiarr"
+                    href="https://www.linkedin.com/in/camila-de-aguiar-ti1808/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -304,7 +304,7 @@ const Home = () => {
             </ul>
           </div>
 
-          <div className="talk-to-me">
+          {/* <div className="talk-to-me">
             <h2>Ou me envie um e-mail por aqui mesmo!</h2>
             <button
               onClick={handleOpenOverlay}
@@ -320,7 +320,7 @@ const Home = () => {
                 isDarkMode={isDarkMode}
               />
             )}
-          </div>
+          </div>*/}
         </section>
         <OverlayContact
           isOverlayOpen={isOverlayContactOpen} 
