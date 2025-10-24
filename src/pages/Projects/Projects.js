@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../../components/NavBar/NavBar";
-import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Projects.css";
 import Dashboard1 from "../../assets/images/dashboards/dashboard 1.jpeg";
@@ -21,6 +19,7 @@ const Projects = () => {
   const colorClass = `color-${selectedColor.replace("#", "")}`;
   const { isDarkMode } = useTheme();
   const [isMobile, setIsMobile] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 480);
@@ -38,6 +37,12 @@ const Projects = () => {
       link: "/Dashboards",
       icons: [PowerBiIcon],
       iconsBlack: [BlackPBI],
+      l1: "DAX",
+      l2: "HTML",
+      l3: "CSS",
+      description:
+        "O Power BI é uma ferramenta de análise de dados e visualização da Microsoft que oferece uma interface intuitiva para transformar dados em informações acionáveis.",
+      buttonText: "Ver dashboards",
     },
     {
       id: 2,
@@ -47,6 +52,10 @@ const Projects = () => {
       link: "/automation",
       icons: [SeleniumIcon, PythonIcon],
       iconsBlack: [BlackSelenium, BlackPython],
+      l1: "Python",
+      description:
+        "realiza o envio de imagens a partir de um determinado diretório. Também é possível realizar o envio de mensagens de texto mudando alguns parâmetros.",
+      buttonText: "Ver detalhamento",
     },
   ];
 
@@ -63,57 +72,101 @@ const Projects = () => {
       </div>
 
       <div className="projects-content">
-        {projects.map(
-          ({ id, title, text, images, link, icons, iconsBlack }) => (
-            <div key={id} className="card-projects">
-              <img src={images[0]} alt={title} />
-              {!isMobile ? (
-                <div className="card-overlay">
-                  <h5>{title}</h5>
-                  <p>{text}</p>
-                  <div className="tech-icons">
-                    {icons.map((icon, i) => (
-                      <img
-                        key={i}
-                        src={icon}
-                        alt="icon"
-                        style={{ width: 24, height: 24, margin: "0 5px" }}
-                        className="icons-projects"
-                      />
-                    ))}
-                  </div>
-                  <Link to={link} onClick={(e) => e.stopPropagation()}>
-                    <Button className="button-see">Ver</Button>
-                  </Link>
+        {projects.map(({ id, title, text, images, icons, iconsBlack }) => (
+          <div
+            key={id}
+            className="card-projects"
+            onClick={() =>
+              setSelectedProject(projects.find((p) => p.id === id))
+            }
+          >
+            <img src={images[0]} alt={title} />
+            {!isMobile ? (
+              <div className="card-overlay">
+                <h5>{title}</h5>
+                <p>{text}</p>
+                <div className="tech-icons">
+                  {icons.map((icon, i) => (
+                    <img
+                      key={i}
+                      src={icon}
+                      alt="icon"
+                      style={{ width: 24, height: 24, margin: "0 5px" }}
+                      className="icons-projects"
+                    />
+                  ))}
                 </div>
-              ) : (
-                <div className="card-caption">
-                  <h5>{title}</h5>
-                  <div className="tech-icons">
-                    {(isMobile ? iconsBlack : icons).map((icon, i) => (
-                      <img
-                        key={i}
-                        src={icon}
-                        alt="icon"
-                        style={{
-                          width: isMobile ? 20 : 24,
-                          height: isMobile ? 20 : 24,
-                          margin: isMobile ? "5px 6px" : "0 5px",
-                        }}
-                        className="icons-projects"
-                      />
-                    ))}
-                  </div>
-
-                  <Link to={link}>
-                    <Button className="button-see">Ver</Button>
-                  </Link>
+              </div>
+            ) : (
+              <div className="card-caption">
+                <h5>{title}</h5>
+                <div className="tech-icons">
+                  {(isMobile ? iconsBlack : icons).map((icon, i) => (
+                    <img
+                      key={i}
+                      src={icon}
+                      alt="icon"
+                      style={{
+                        width: isMobile ? 20 : 24,
+                        height: isMobile ? 20 : 24,
+                        margin: isMobile ? "5px 6px" : "0 5px",
+                      }}
+                      className="icons-projects"
+                    />
+                  ))}
                 </div>
-              )}
-            </div>
-          )
-        )}
+              </div>
+            )}
+          </div>
+        ))}
       </div>
+
+      {selectedProject && (
+        <div
+          className="overlay-backdrop"
+          onClick={() => setSelectedProject(null)}
+        >
+          <div className="overlay-content" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="close-btn"
+              onClick={() => setSelectedProject(null)}
+            >
+              ×
+            </button>
+
+            <div className="overlay-body">
+              <div className="overlay-left">
+                <img
+                  src={selectedProject.images[0]}
+                  alt={selectedProject.title}
+                  className="overlay-image"
+                />
+                <div className="overlay-buttons">
+                  <button className="repo-btn">Repositório</button>
+                  {selectedProject.buttonText && (
+                    <button className="detail-btn">
+                      {selectedProject.buttonText}
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              <div className="overlay-right">
+                <h3>{selectedProject.title}</h3>
+                <div className="language-buttons">
+                  {selectedProject.l1 && <span>{selectedProject.l1}</span>}
+                  {selectedProject.l2 && <span>{selectedProject.l2}</span>}
+                  {selectedProject.l3 && <span>{selectedProject.l3}</span>}
+                </div>
+                <p className="overlay-description">
+                  {selectedProject.description}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <Footer />
     </div>
   );

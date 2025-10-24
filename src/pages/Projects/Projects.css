@@ -37,7 +37,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
   margin-bottom: 20px;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .card-projects img {
@@ -53,19 +53,17 @@
 
 .card-overlay {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.95) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.95) 100%);
   color: white;
   opacity: 0;
   transform: translateY(20px);
@@ -82,13 +80,13 @@
 
 .card-overlay h5 {
   margin-bottom: 0.5rem;
-  font-size: clamp(1rem, 2.5vw, 1.3rem); /* Alterado: responsivo */
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
   text-align: center;
 }
 
 .card-overlay p {
   margin-bottom: 1rem;
-  font-size: clamp(0.8rem, 2vw, 1rem); /* Alterado: responsivo */
+  font-size: clamp(0.8rem, 2vw, 1rem);
   text-align: center;
 }
 
@@ -102,22 +100,157 @@
   transition: background-color 0.3s, opacity 0.5s ease;
 }
 
-.projects-container.color-2291A4 .card-overlay .button-see {
-  background-color: #2291a4;
+
+.overlay-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 1rem;
 }
 
-.projects-container.color-F10091 .card-overlay .button-see {
-  background-color: #f10091;
+.overlay-content {
+  background: #fff;
+  color: #000;
+  border-radius: 12px;
+  max-width: 850px;
+  width: 95%;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease;
 }
 
-.projects-container.color-2291A4 .footer-container {
-  border-top: 1px solid #2291a4;
+.dark-mode-projects .overlay-content {
+  background: #1c1c2a;
+  color: #fff;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.8rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.overlay-body {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.overlay-left {
+  flex: 1;
+}
+
+.overlay-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.overlay-left h3 {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+.language-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.language-buttons span {
+  background: #9d1ee5;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+}
+
+.projects-container.color-2291A4 .language-buttons span {
+  background: #2291a4;
+}
+
+.projects-container.color-F10091 .language-buttons span {
+  background: #f10091;
+}
+
+.overlay-description {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.overlay-image {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.overlay-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+.repo-btn,
+.detail-btn {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  font-size: 13px;
+}
+
+.repo-btn {
+  background: #333;
+  color: #fff;
+}
+
+.detail-btn {
+  background: #9d1ee5;
+  color: #fff;
+}
+
+.projects-container.color-2291A4 .detail-btn {
+  background: #2291a4;
+}
+
+.projects-container.color-F10091 .detail-btn {
+  background: #f10091;
+}
+
+.repo-btn:hover,
+.detail-btn:hover {
+  transform: scale(0.95);
 }
 
 
-.projects-container.color-F10091 .footer-container {
-  border-top: 1px solid #f10091;
-}
+
+
+
+
+
+
+
+
 
 
 .card-overlay .button-see:hover {
@@ -135,6 +268,7 @@
   background: #f9f9f9;
   text-align: center;
 }
+
 .card-caption h5 {
   margin-bottom: 5px;
   font-size: 1rem;
@@ -157,6 +291,80 @@
     font-size: 0.7rem;
     padding: 6px 12px;
   }
+
+  overlay-content {
+    padding: 1.2rem;
+    max-width: 90%;
+  }
+
+  .overlay-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .overlay-content p {
+    font-size: 0.9rem;
+  }
+
+  .overlay-image {
+    border-radius: 6px;
+    margin-top: 0.8rem;
+  }
+
+  .close-btn {
+    font-size: 1.6rem;
+    top: 10px;
+    right: 12px;
+  }
+
+  .overlay-body {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .overlay-left,
+  .overlay-right {
+    width: 100%;
+  }
+
+  .overlay-image {
+    max-width: 90%;
+  }
+
+  .overlay-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .language-buttons {
+    justify-content: center;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.projects-container.color-2291A4 .card-overlay .button-see {
+  background-color: #2291a4;
+}
+
+.projects-container.color-F10091 .card-overlay .button-see {
+  background-color: #f10091;
+}
+
+.projects-container.color-2291A4 .footer-container {
+  border-top: 1px solid #2291a4;
 }
 
 
+.projects-container.color-F10091 .footer-container {
+  border-top: 1px solid #f10091;
+}

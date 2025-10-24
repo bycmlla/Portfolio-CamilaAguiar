@@ -1,11 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useMotionValue, animate } from "framer-motion";
 import Dashboard from "../../assets/images/projects/carousel images/dashboard.png";
-import Pay2Me from "../../assets/images/projects/carousel images/pay2me.png";
-import Orion from "../../assets/images/projects/carousel images/orion.png";
 import RoomRover from "../../assets/images/projects/carousel images/RoomRover.png";
 import WeatherUp from "../../assets/images/projects/carousel images/weatherup.png";
-import Agrovet from "../../assets/images/projects/carousel images/agrovet.png";
 import { Link } from "react-router-dom";
 import { GiButterfly } from "react-icons/gi";
 import SectionTitle from "../SectionTitle/SectionTitle";
@@ -13,11 +10,8 @@ import "./Carousel.css";
 
 const images = [
   { src: Dashboard, text: "Dashboards Power BI", link: "/dashboards" },
-  { src: Pay2Me, text: "Pay2Me", link: "/breve" },
-  { src: Orion, text: "Orion Outlet", link: "/breve" },
   { src: RoomRover, text: "RoomRover", link: "/breve" },
   { src: WeatherUp, text: "Weather Up", link: "/breve" },
-  { src: Agrovet, text: "Cardoso Agrovet", link: "/breve" },
 ];
 
 const infiniteImages = [...images, ...images, ...images];

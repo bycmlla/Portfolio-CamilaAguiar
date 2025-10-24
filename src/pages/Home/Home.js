@@ -27,7 +27,6 @@ import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import Butterfly from "../../assets/images/butterfly.png";
 import PinkButterfly from "../../assets/images/pinkbutterfly.png";
 import BlueButterfly from "../../assets/images/bluebutterfly.png";
-// import Overlay from "../../components/Overlay/Overlay";
 import { useColor } from "../../contexts/ColorContext";
 import { useTheme } from "../../contexts/ThemeContext";
 import CVFile from "../../assets/files/curriculo-camila-carvalho.pdf";
