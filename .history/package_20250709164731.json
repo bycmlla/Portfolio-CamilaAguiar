@@ -1,0 +1,66 @@
+{
+  "name": "camilacarvalho",
+  "version": "0.1.0",
+  "homepage": "https://camilacarvalho.site/Portfolio-CamilaAguiar",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.3",
+    "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "framer-motion": "^11.18.2",
+    "gh-pages": "^6.3.0",
+    "gsap": "^3.12.5",
+    "mailgen": "^2.0.28",
+    "motion": "^12.4.4",
+    "react": "^18.2.0",
+    "react-awesome-reveal": "^4.2.10",
+    "react-bootstrap": "^2.10.2",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "5.0.1",
+    "scrollreveal": "^4.0.9",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.17.0",
+    "cross-env": "^7.0.3",
+    "sass": "^1.72.0"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

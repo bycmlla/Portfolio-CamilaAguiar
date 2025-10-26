@@ -13,12 +13,17 @@ import Footer from "../../components/Footer/Footer";
 import BlackPBI from "../../assets/icons/blacpbi.svg";
 import BlackPython from "../../assets/icons/icons8-python.svg";
 import BlackSelenium from "../../assets/icons/icons8-selenium.svg";
+import PsyVideo from "../../assets/videos/psyrpgvideo.mov";
+import PsyRpg1 from "../../assets/images/projects/psy1.png";
+import PsyRpg2 from "../../assets/images/projects/psy2.png";
+import PsyRpg3 from "../../assets/images/projects/psy3.png";
 
 const Projects = () => {
   const { selectedColor } = useColor();
   const colorClass = `color-${selectedColor.replace("#", "")}`;
   const { isDarkMode } = useTheme();
   const [isMobile, setIsMobile] = useState(false);
+  const [selectedImageSrc, setSelectedImageSrc] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
@@ -31,10 +36,32 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "PsyRPG",
+      text: "Aplicativo de Gamificação de Rotinas com Integração ao Google Calendar.",
+      images: [Dashboard1],
+      otherimages: [
+        { type: "video", src: PsyVideo },
+        { type: "image", src: PsyRpg1 },
+        { type: "image", src: PsyRpg2 },
+        { type: "image", src: PsyRpg3 },
+      ],
+      repoLink: "https://github.com/seuusuario/repositorio-powerbi",
+      icons: [PowerBiIcon],
+      iconsBlack: [BlackPBI],
+      l1: "DAX",
+      l2: "HTML",
+      l3: "CSS",
+      description:
+        "O PsyRPG é um aplicativo de gamificação de rotinas que transforma tarefas do dia a dia em uma experiência envolvente. Nele, o usuário cria missões personalizadas — como estudar, fazer exercícios ou meditar — e, ao completá-las, ganha moedas virtuais que podem ser usadas dentro do app para comprar itens simbólicos ou recompensas. Além do sistema de recompensas, o PsyRPG se conecta diretamente ao Google Calendar: toda missão criada no app é automaticamente adicionada à agenda do usuário, promovendo organização e engajamento contínuo. O objetivo é aumentar a motivação e o comprometimento com as rotinas diárias, tornando o progresso pessoal mais divertido, visual e recompensador.",
+    },
+    {
+      id: 2,
       title: "Dashboards Power BI",
       text: "Aqui apresento os meus dashboards em Power BI.",
       images: [Dashboard1],
-      link: "/Dashboards",
+      otherimages: [{ type: "image", src: Dashboard1 }],
+      link: "#/dashboards",
+      repoLink: "https://github.com/seuusuario/repositorio-powerbi",
       icons: [PowerBiIcon],
       iconsBlack: [BlackPBI],
       l1: "DAX",
@@ -45,16 +72,18 @@ const Projects = () => {
       buttonText: "Ver dashboards",
     },
     {
-      id: 2,
+      id: 3,
       title: "Automação Whatsapp",
       text: "Envio automático de mensagens com Python.",
       images: [Selenium],
-      link: "/automation",
+      otherimages: [{ type: "image", src: Selenium }],
+      link: "#/automation",
+      repoLink: "https://github.com/seuusuario/repositorio-powerbi",
       icons: [SeleniumIcon, PythonIcon],
       iconsBlack: [BlackSelenium, BlackPython],
       l1: "Python",
       description:
-        "realiza o envio de imagens a partir de um determinado diretório. Também é possível realizar o envio de mensagens de texto mudando alguns parâmetros.",
+        "Realiza o envio de imagens a partir de um determinado diretório. Também é possível realizar o envio de mensagens de texto mudando alguns parâmetros.",
       buttonText: "Ver detalhamento",
     },
   ];
@@ -136,37 +165,82 @@ const Projects = () => {
 
             <div className="overlay-body">
               <div className="overlay-left">
-                <img
-                  src={selectedProject.images[0]}
-                  alt={selectedProject.title}
-                  className="overlay-image"
-                />
+                {selectedProject.otherimages?.length > 0 &&
+                selectedProject.otherimages[0].type === "video" ? (
+                  <video
+                    src={selectedProject.otherimages[0].src}
+                    controls
+                    muted
+                    loop
+                    className="overlay-video"
+                  />
+                ) : (
+                  selectedProject.otherimages?.length > 0 && (
+                    <img
+                      src={selectedProject.otherimages[0].src}
+                      alt={selectedProject.title}
+                      className="overlay-image"
+                    />
+                  )
+                )}
+
+                <div className="overlay-gallery">
+                  {selectedProject.otherimages?.slice(1).map((item, index) => (
+                    <img
+                      key={index}
+                      src={item.src}
+                      alt={`gallery-${index}`}
+                      className="gallery-img"
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <div className="overlay-right">
+                <div className="overlay-header">
+                  <h3>{selectedProject.title}</h3>
+                  <div className="language-buttons">
+                    {selectedProject.l1 && <span>{selectedProject.l1}</span>}
+                    {selectedProject.l2 && <span>{selectedProject.l2}</span>}
+                    {selectedProject.l3 && <span>{selectedProject.l3}</span>}
+                  </div>
+                </div>
+
+                <p className="overlay-description">
+                  {selectedProject.description}
+                </p>
                 <div className="overlay-buttons">
-                  <button className="repo-btn">Repositório</button>
+                  {/* Botão do repositório */}
+                  {selectedProject.repoLink && (
+                    <button
+                      className="repo-btn"
+                      onClick={() =>
+                        window.open(selectedProject.repoLink, "_blank")
+                      }
+                    >
+                      Repositório
+                    </button>
+                  )}
+
+                  {/* Botão de ação extra (usa buttonText) */}
                   {selectedProject.buttonText && (
-                    <button className="detail-btn">
+                    <button
+                      className="detail-btn"
+                      onClick={() => {
+                        if (selectedProject.link) {
+                          window.open(selectedProject.link, "_blank");
+                        }
+                      }}
+                    >
                       {selectedProject.buttonText}
                     </button>
                   )}
                 </div>
               </div>
-
-              <div className="overlay-right">
-                <h3>{selectedProject.title}</h3>
-                <div className="language-buttons">
-                  {selectedProject.l1 && <span>{selectedProject.l1}</span>}
-                  {selectedProject.l2 && <span>{selectedProject.l2}</span>}
-                  {selectedProject.l3 && <span>{selectedProject.l3}</span>}
-                </div>
-                <p className="overlay-description">
-                  {selectedProject.description}
-                </p>
-              </div>
             </div>
           </div>
         </div>
       )}
-
       <Footer />
     </div>
   );
