@@ -69,11 +69,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.95) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.95) 100%);
   color: white;
   opacity: 0;
   transform: translateY(20px);
@@ -162,10 +160,12 @@
 .overlay-content::-webkit-scrollbar {
   width: 3px;
 }
+
 .overlay-content::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.25);
   border-radius: 10px;
 }
+
 .overlay-content::-webkit-scrollbar-track {
   background: transparent;
 }
@@ -214,6 +214,7 @@
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .language-buttons span {
@@ -235,6 +236,7 @@
 .overlay-description {
   font-size: 1rem;
   line-height: 1.5;
+  white-space: pre-line;
 }
 
 .overlay-image {
@@ -268,6 +270,60 @@
   object-fit: cover;
   border-radius: 8px;
 }
+
+.image-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  animation: fadeIn 0.3s ease;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.image-overlay-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.image-full {
+  width: auto;
+  height: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  display: block;
+  margin: auto;
+}
+
+.image-close-btn {
+  position: absolute;
+  top: -35px;
+  right: 0;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  line-height: 1;
+  z-index: 10;
+}
+
+.image-close-btn:hover {
+  transform: scale(0.9);
+}
+
 
 .overlay-buttons {
   display: flex;
@@ -332,15 +388,16 @@
 
   .overlay-body {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 1.5rem;
   }
+
   .card-overlay .button-see {
     font-size: 0.7rem;
     padding: 6px 12px;
   }
 
-  overlay-content {
+  .overlay-content {
     padding: 1.2rem;
     max-width: 90%;
   }
@@ -358,7 +415,9 @@
   }
 
   .overlay-content p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    text-align: left;
+    hyphens: none;
   }
 
   .overlay-image {
@@ -387,12 +446,29 @@
   }
 
   .overlay-buttons {
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
+    margin: 0;
   }
 
   .language-buttons {
-    justify-content: center;
+    justify-content: flex-start;
+  }
+
+  .language-buttons span {
+    font-size: 0.65rem;
+  }
+
+  .overlay-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .repo-btn,
+  .detail-btn {
+    padding: 5px 10px;
+    font-size: 11px;
   }
 }
 

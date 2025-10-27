@@ -210,7 +210,7 @@ const Home = () => {
           <h2>Sobre mim</h2>
           <span className={`line-bout ${expand ? "expand" : ""}`}></span>
           <p>
-            Sou Analista de Dados e desenvolvedora full-stack, apaixonada por
+            Sou desenvolvedora full-stack, apaixonada por
             tecnologia e inovação. Tenho experiência em front-end, back-end e
             análise de dados, utilizando ferramentas como ReactJS, AngularJS,
             NodeJS, Java + Spring Boot, SQL Server, MySQL e Power BI. Já atuei

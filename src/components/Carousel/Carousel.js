@@ -10,8 +10,8 @@ import "./Carousel.css";
 
 const images = [
   { src: Dashboard, text: "Dashboards Power BI", link: "/dashboards" },
-  { src: RoomRover, text: "RoomRover", link: "/breve" },
-  { src: WeatherUp, text: "Weather Up", link: "/breve" },
+  { src: RoomRover, text: "RoomRover", link: "/projects" },
+  { src: WeatherUp, text: "Weather Up", link: "/projects" },
 ];
 
 const infiniteImages = [...images, ...images, ...images];

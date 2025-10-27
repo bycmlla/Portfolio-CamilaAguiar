@@ -14,8 +14,6 @@ import Automation from "../pages/Projects/SubPages/Python/Automation/Automation"
 import Refresh from "../pages/Projects/SubPages/Python/Refresh/Refresh";
 import { RefreshPartTwo } from "../pages/Projects/SubPages/Python/RefreshPartTwo/RefreshPartTwo";
 import Tutorial from "../pages/Projects/SubPages/Dashboards/Tutorial/Tutorial";
-import { RoomRover } from "../pages/Projects/SubPages/Angular/RoomRover/RoomRover";
-import Angular from "../pages/Projects/SubPages/Angular/Angular";
 import { Blog } from "../pages/Blog/Blog";
 import { Soon } from "../components/Soon/Soon";
 
@@ -37,8 +35,6 @@ const RoutesComponent = () => {
             <Route path="/refresh" element={<Refresh />} />
             <Route path="/refresh2" element={<RefreshPartTwo />} />
             <Route path="/tutorialpbi" element={<Tutorial />} />
-            <Route path="/roomrover" element={<RoomRover />} />
-            <Route path="/angular" element={<Angular />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/breve" element={<Soon />} />
           </Routes>
