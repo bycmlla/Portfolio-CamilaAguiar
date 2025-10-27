@@ -178,8 +178,7 @@ const Home = () => {
               text="Olá, eu sou Camila Carvalho"
             />
             <p>
-              Desenvolvedora Full-Stack e<br />
-              Analista de Dados.
+              Desenvolvedora <br/>Full-Stack
             </p>
             <div className="buttons-initial">
               <a

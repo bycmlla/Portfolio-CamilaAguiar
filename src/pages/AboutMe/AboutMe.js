@@ -186,7 +186,7 @@ const AboutMe = () => {
             </p>
             <h4>Minha Atuação</h4>
             <p>
-              Atualmente, sou Analista de Dados e Desenvolvedora Full-Stack,
+              Atualmente, sou Desenvolvedora Full-Stack,
               finalizando minha graduação em Análise e Desenvolvimento de
               Sistemas. Trabalho tanto com desenvolvimento de software quanto
               com análise de dados.

@@ -1,6 +1,5 @@
 import "./Blog.css";
 import NavBar from "../../components/NavBar/NavBar";
-import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dashboard3 from "../../assets/images/dashboards/dashboard 3.png";
@@ -74,14 +73,12 @@ export const Blog = () => {
               alt={tutorial.title}
               className="tutorial-image"
             />
-            <div className="card-overlay">
+            <div className="card-info">
               <h5>{tutorial.title}</h5>
               <p>{tutorial.text}</p>
               {tutorial.link && (
-                <Link to={tutorial.link}>
-                  <Button className="button-see" variant="primary">
-                    Ver
-                  </Button>
+                <Link to={tutorial.link} className="continue-link">
+                  Continue lendo →
                 </Link>
               )}
             </div>

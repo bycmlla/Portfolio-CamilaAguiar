@@ -84,7 +84,7 @@ const NavBar = ({ onOpenContact }) => {
           <Link to="/projects">Projetos</Link>
         </li>
         <li>
-          <Link to="/breve">Blog</Link>
+          <Link to="/blog">Blog</Link>
         </li>
         <li>
           <Link to="/about">Sobre Mim</Link>
