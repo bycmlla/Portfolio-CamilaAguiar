@@ -7,6 +7,8 @@ import { MdDarkMode } from "react-icons/md";
 import ScrollReveal from "scrollreveal";
 import { useColor } from "../../contexts/ColorContext";
 import { useTheme } from "../../contexts/ThemeContext";
+import TranslateWhite from "../../assets/icons/translatewhite.png"
+import TranslateBlack from "../../assets/icons/translate.png"
 
 const colors = ["#9747FF", "#2291A4", "#F10091"];
 

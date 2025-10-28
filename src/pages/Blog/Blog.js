@@ -9,7 +9,7 @@ import Disparity from "../../assets/images/python/depthmaps.png";
 import PBI from "../../assets/images/python/pbi.png";
 import Selenium from "../../assets/images/python/selenium.png";
 import PowerBi from "../../assets/images/python/power-BI.png";
-
+import Footer from "../../components/Footer/Footer";
 export const Blog = () => {
   const { selectedColor } = useColor();
   const colorClass = `color-${selectedColor.replace("#", "")}`;
@@ -70,8 +70,12 @@ export const Blog = () => {
     >
       <NavBar />
       <div className="text-blog">
-        <h2>Aprenda Comigo</h2>
-        <p>Compartilhando conhecimento através de tutoriais e guias.</p>
+        <h2>Knowledge Hub</h2>
+        <p>
+          Aqui eu compartilho o que aprendo no caminho: dicas, códigos, truques
+          e até aqueles “como é que eu fiz isso mesmo?”. Tudo pra ajudar (ou
+          lembrar) depois.😄
+        </p>
       </div>
       <div className="blog-content">
         {tutorials.map((tutorial) => (
@@ -93,6 +97,7 @@ export const Blog = () => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

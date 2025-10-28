@@ -1,12 +1,10 @@
-/* Skills.css */
-
 .skills-heading {
   display: inline-flex;
   align-items: center;
   font-size: 20px;
 }
 
-.div-container-skills .icon-size{
+.div-container-skills .icon-size {
   color: #9747FF;
 }
 
@@ -84,8 +82,8 @@
   color: white;
 }
 
-.dark-mode-skills .icon-size-data{
- color: white;
+.dark-mode-skills .icon-size-data {
+  color: white;
 }
 
 @media screen and (max-width: 768px) {
@@ -101,16 +99,29 @@
 }
 
 @media (max-width: 480px) {
-
-  .data-container {
-    margin-left: 10px;
+  .ul-front-one {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 30px;
+    padding: 0;
+    margin: 0 auto;
   }
 
-  .ul-front-one{
-    gap: 30px;
+  .ul-front-one li {
+    width: 80px;
+    height: 80px;
+  }
+
+  .ul-front-one li span {
+    font-size: 14px;
   }
 
   .front-line-one {
-    margin-top: 50px;
+    margin-top: 40px;
   }
- }
+
+  .data-container {
+    margin-left: 0;
+  }
+}

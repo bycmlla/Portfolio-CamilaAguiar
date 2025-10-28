@@ -16,7 +16,7 @@ import {
   FaDatabase,
 } from "react-icons/fa";
 import { TbBrandTypescript } from "react-icons/tb";
-import { SiOpencv, SiPostgresql, SiMysql } from "react-icons/si";
+import { SiOpencv, SiMysql } from "react-icons/si";
 import SectionTitle from "../SectionTitle/SectionTitle";
 
 const Skills = () => {
@@ -118,10 +118,6 @@ const Skills = () => {
                 <li>
                   <span>OpenCV</span>
                   <SiOpencv className="icon-size" />
-                </li>
-                <li>
-                  <span>PostGreSQL</span>
-                  <SiPostgresql className="icon-size-data" />
                 </li>
                 <li>
                   <span>Data Analytics</span>
