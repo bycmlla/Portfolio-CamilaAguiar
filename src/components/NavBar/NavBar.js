@@ -2,13 +2,14 @@ import { Link, useLocation } from "react-router-dom";
 import "./NavBar.css";
 import LogoDark from "../../assets/icons/CamilaCarvalho.png";
 import LogoLight from "../../assets/icons/CamilaCarvalho-white.png";
+import TranslateWhite from "../../assets/icons/translatewhite.png";
+import TranslateBlack from "../../assets/icons/translate.png";
 import { useState, useEffect } from "react";
 import { MdDarkMode } from "react-icons/md";
 import ScrollReveal from "scrollreveal";
 import { useColor } from "../../contexts/ColorContext";
 import { useTheme } from "../../contexts/ThemeContext";
-import TranslateWhite from "../../assets/icons/translatewhite.png"
-import TranslateBlack from "../../assets/icons/translate.png"
+import { useLanguage } from "../../contexts/LanguageContext";
 
 const colors = ["#9747FF", "#2291A4", "#F10091"];
 
@@ -19,6 +20,7 @@ const NavBar = ({ onOpenContact }) => {
   const { setSelectedColor } = useColor();
   const { isDarkMode, toggleDarkMode } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
 
   const handleHamburgerClick = () => {
     setMenuOpen(!menuOpen);
@@ -38,6 +40,21 @@ const NavBar = ({ onOpenContact }) => {
       reset: false,
     });
   }, []);
+
+  const texts = {
+    pt: {
+      projects: "Projetos",
+      blog: "Blog",
+      about: "Sobre Mim",
+      contact: "Contato",
+    },
+    en: {
+      projects: "Projects",
+      blog: "Blog",
+      about: "About Me",
+      contact: "Contact",
+    },
+  };
 
   return (
     <nav
@@ -71,6 +88,16 @@ const NavBar = ({ onOpenContact }) => {
             size={24}
           />
         </li>
+
+        <li>
+          <img
+            src={isDarkMode ? TranslateWhite : TranslateBlack}
+            alt="Translate"
+            className="translate-icon"
+            onClick={toggleLanguage}
+            style={{ width: 24, height: 24, cursor: "pointer" }}
+          />
+        </li>
         <li className="color-palette">
           {" "}
           {colors.map((color) => (
@@ -83,17 +110,17 @@ const NavBar = ({ onOpenContact }) => {
           ))}
         </li>
         <li>
-          <Link to="/projects">Projetos</Link>
+          <Link to="/projects">{texts[language].projects}</Link>
         </li>
         <li>
-          <Link to="/blog">Blog</Link>
+          <Link to="/blog">{texts[language].blog}</Link>
         </li>
         <li>
-          <Link to="/about">Sobre Mim</Link>
+          <Link to="/about">{texts[language].about}</Link>
         </li>
         <li>
           <button className="button-contact-navbar" onClick={onOpenContact}>
-            Contato
+            {texts[language].contact}
           </button>
         </li>
       </ul>

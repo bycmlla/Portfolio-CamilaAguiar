@@ -1,4 +1,3 @@
-import React from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { ColorProvider } from "../contexts/ColorContext";
 import { ThemeProvider } from "../contexts/ThemeContext";
@@ -16,31 +15,34 @@ import { RefreshPartTwo } from "../pages/Projects/SubPages/Python/RefreshPartTwo
 import Tutorial from "../pages/Projects/SubPages/Dashboards/Tutorial/Tutorial";
 import { Blog } from "../pages/Blog/Blog";
 import { Soon } from "../components/Soon/Soon";
+import { LanguageProvider } from "../contexts/LanguageContext";
 
 const RoutesComponent = () => {
   return (
-    <ColorProvider>
-      <ThemeProvider>
-        <HashRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutMe />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/sqlpage" element={<SQLPage />} />
-            <Route path="/dashboards" element={<Dashboards />} />
-            <Route path="/dashboard/:id" element={<DashboardPage />} />
-            <Route path="/rosa" element={<ROSA />} />
-            <Route path="/automation" element={<Automation />} />
-            <Route path="/refresh" element={<Refresh />} />
-            <Route path="/refresh2" element={<RefreshPartTwo />} />
-            <Route path="/tutorialpbi" element={<Tutorial />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/breve" element={<Soon />} />
-          </Routes>
-        </HashRouter>
-      </ThemeProvider>
-    </ColorProvider>
+    <LanguageProvider>
+      <ColorProvider>
+        <ThemeProvider>
+          <HashRouter>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<AboutMe />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/sqlpage" element={<SQLPage />} />
+              <Route path="/dashboards" element={<Dashboards />} />
+              <Route path="/dashboard/:id" element={<DashboardPage />} />
+              <Route path="/rosa" element={<ROSA />} />
+              <Route path="/automation" element={<Automation />} />
+              <Route path="/refresh" element={<Refresh />} />
+              <Route path="/refresh2" element={<RefreshPartTwo />} />
+              <Route path="/tutorialpbi" element={<Tutorial />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/breve" element={<Soon />} />
+            </Routes>
+          </HashRouter>
+        </ThemeProvider>
+      </ColorProvider>
+    </LanguageProvider>
   );
 };
 

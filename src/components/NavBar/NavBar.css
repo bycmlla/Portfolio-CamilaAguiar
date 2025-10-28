@@ -92,7 +92,6 @@
 .my-navbar .dark-mode-icon {
   cursor: pointer;
 }
-
 .color-button {
   width: 20px;
   height: 20px;
@@ -139,6 +138,16 @@
 .dark-mode.my-navbar .contact-button-navbar {
   color: white;
 }
+
+.translate-icon {
+  margin-left: 10px;
+  transition: transform 0.2s ease;
+}
+
+.translate-icon:hover {
+  transform: scale(1.1);
+}
+
 
 @media (max-width: 480px) {
   .my-navbar {
