@@ -7,6 +7,7 @@ import { useTheme } from "../../contexts/ThemeContext";
 import { useColor } from "../../contexts/ColorContext";
 import Disparity from "../../assets/images/python/depthmaps.png";
 import PBI from "../../assets/images/python/pbi.png";
+import Selenium from "../../assets/images/python/selenium.png";
 import PowerBi from "../../assets/images/python/power-BI.png";
 
 export const Blog = () => {
@@ -20,12 +21,12 @@ export const Blog = () => {
       title: "Transmitindo Conhecimentos - Power BI",
       text: "Aprenda alguns assuntos sobre a ferramenta Power BI.",
       images: [Dashboard3],
-      link: "/angular",
+      link: "/breve",
     },
     {
       id: 2,
       title: "Banco de Dados com MySQL e SQL",
-      text: "Nesta seção, você encontrará tutoriais e guias práticos sobre o uso de bancos de dados, abrangendo tanto MySQL quanto SQL.",
+      text: "Nesta seção, você encontrará tutoriais e guias práticos sobre o uso de bancos de dados, abrangendo tanto...",
       images: [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa-5LhP_Q8i_JBK8mMzn-ApcwLPH5UhTF76A&s",
       ],
@@ -34,7 +35,7 @@ export const Blog = () => {
     {
       id: 3,
       title: "Visão Estereoscópica para Robôs Socialmente Assistivos",
-      text: "Reconhecimento e localização para robótica.",
+      text: "O reconhecimento e a localização de pessoas e objetos em um cenário é essencial para a robótica móvel. Estas funcionalidades auxiliam no planejamento da execução de trajetórias desses dispositivos",
       images: [Disparity],
       link: "/rosa",
     },
@@ -52,28 +53,35 @@ export const Blog = () => {
       images: [PowerBi],
       link: "/refresh2",
     },
+    {
+      id: 6,
+      title: "Envio automático de mensagens via Whatsapp",
+      text: "Realiza o envio de imagens a partir de um determinado diretório. Também é possível realizar o envio de mensagens de texto mudando alguns parâmetros.",
+      images: [Selenium],
+      link: "#/automation",
+    },
   ];
 
   return (
     <div
-      className={`projects-container ${
-        isDarkMode ? "dark-mode-projects" : ""
+      className={`blog-container ${
+        isDarkMode ? "dark-mode-blog" : ""
       } ${colorClass}`}
     >
       <NavBar />
-      <div className="text-projects">
+      <div className="text-blog">
         <h2>Aprenda Comigo</h2>
         <p>Compartilhando conhecimento através de tutoriais e guias.</p>
       </div>
-      <div className="projects-content">
+      <div className="blog-content">
         {tutorials.map((tutorial) => (
-          <div key={tutorial.id} className="card-projects">
+          <div key={tutorial.id} className="card-blog">
             <img
               src={tutorial.images[0]}
               alt={tutorial.title}
               className="tutorial-image"
             />
-            <div className="card-info">
+            <div className="card-info-blog">
               <h5>{tutorial.title}</h5>
               <p>{tutorial.text}</p>
               {tutorial.link && (

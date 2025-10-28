@@ -3,16 +3,13 @@ import NavBar from "../../components/NavBar/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Projects.css";
 import Dashboard1 from "../../assets/images/dashboards/dashboard 1.jpeg";
-import Selenium from "../../assets/images/python/selenium.png";
 import { useColor } from "../../contexts/ColorContext";
 import { useTheme } from "../../contexts/ThemeContext";
 import PowerBiIcon from "../../assets/icons/powerbi.svg";
 import PythonIcon from "../../assets/icons/python.svg";
-import SeleniumIcon from "../../assets/icons/selenium.svg";
 import Footer from "../../components/Footer/Footer";
 import BlackPBI from "../../assets/icons/blacpbi.svg";
 import BlackPython from "../../assets/icons/icons8-python.svg";
-import BlackSelenium from "../../assets/icons/icons8-selenium.svg";
 import PsyVideo from "../../assets/videos/psyrpgvideo.mp4";
 import PsyRpg1 from "../../assets/images/projects/psy1.png";
 import PsyRpg2 from "../../assets/images/projects/psy2.png";
@@ -146,21 +143,6 @@ const Projects = () => {
     },
     {
       id: 5,
-      title: "Automação Whatsapp",
-      text: "Envio automático de mensagens com Python.",
-      images: [Selenium],
-      otherimages: [{ type: "image", src: Selenium }],
-      link: "#/automation",
-      repoLink: "https://github.com/seuusuario/repositorio-powerbi",
-      icons: [SeleniumIcon, PythonIcon],
-      iconsBlack: [BlackSelenium, BlackPython],
-      l1: "Python",
-      description:
-        "Realiza o envio de imagens a partir de um determinado diretório. Também é possível realizar o envio de mensagens de texto mudando alguns parâmetros.",
-      buttonText: "Ver detalhamento",
-    },
-    {
-      id: 6,
       title: "Visão Estereoscópica para Robôs Assistivos",
       text: "Uma Interface de Visão Estereoscópica Binocular para Reconhecimento de Humanos e Objetos para Robôs Socialmente Assistivos",
       images: [DepthImageCard],

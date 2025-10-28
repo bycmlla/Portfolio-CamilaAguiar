@@ -53,6 +53,8 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .card-projects:hover img {
@@ -79,9 +81,10 @@
   padding: 1rem;
   text-align: center;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
-.card-projects.clicked .card-overlay {
+.card-projects:hover .card-overlay {
   opacity: 1;
   transform: translateY(0);
 }
@@ -98,26 +101,6 @@
   text-align: center;
 }
 
-.card-overlay .button-see {
-  font-size: 0.85rem;
-  background-color: #9d1ee5;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: background-color 0.3s, opacity 0.5s ease;
-}
-
-.card-overlay .button-see:hover {
-  transform: scale(0.9);
-}
-
-.button-see {
-  border: none;
-  background-color: black;
-  color: white;
-}
-
 .card-caption {
   padding: 10px;
   background: #f9f9f9;
@@ -129,6 +112,7 @@
   font-size: 1rem;
 }
 
+/* MODAL / OVERLAY ABERTO AO CLICAR NO CARD */
 .overlay-backdrop {
   position: fixed;
   inset: 0;
@@ -204,9 +188,11 @@
   align-items: flex-start;
 }
 
-.overlay-left h3 {
-  margin-bottom: 1rem;
-  font-size: 1.6rem;
+/* você usa <div className="overlay-header"><h3>...</h3> */
+.overlay-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  white-space: pre-line;
 }
 
 .language-buttons {
@@ -231,12 +217,6 @@
 
 .projects-container.color-F10091 .language-buttons span {
   background: #f10091;
-}
-
-.overlay-description {
-  font-size: 1rem;
-  line-height: 1.5;
-  white-space: pre-line;
 }
 
 .overlay-image {
@@ -269,8 +249,10 @@
   height: auto;
   object-fit: cover;
   border-radius: 8px;
+  cursor: pointer;
 }
 
+/* ZOOM DE IMAGEM (selectedImage) */
 .image-overlay {
   position: fixed;
   inset: 0;
@@ -324,7 +306,6 @@
   transform: scale(0.9);
 }
 
-
 .overlay-buttons {
   display: flex;
   justify-content: flex-start;
@@ -365,14 +346,7 @@
   transform: scale(0.95);
 }
 
-.projects-container.color-2291A4 .card-overlay .button-see {
-  background-color: #2291a4;
-}
-
-.projects-container.color-F10091 .card-overlay .button-see {
-  background-color: #f10091;
-}
-
+/* RESPONSIVO */
 @media (max-width: 480px) {
   .projects-content {
     display: flex;
@@ -387,14 +361,8 @@
   }
 
   .overlay-body {
-    display: flex;
     flex-direction: column-reverse;
     gap: 1.5rem;
-  }
-
-  .card-overlay .button-see {
-    font-size: 0.7rem;
-    padding: 6px 12px;
   }
 
   .overlay-content {
@@ -429,14 +397,9 @@
   }
 
   .close-btn {
-    position: absolute;
     top: 12px;
     right: 16px;
-    background: none;
-    border: none;
-    color: inherit;
     font-size: 1.8rem;
-    cursor: pointer;
     z-index: 20;
   }
 
@@ -460,7 +423,6 @@
   }
 
   .overlay-gallery {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }

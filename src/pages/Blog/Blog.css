@@ -1,16 +1,20 @@
-.projects-container {
+.blog-container {
   min-height: 100vh;
   margin: 0;
 }
 
-.projects-content {
+.text-blog {
+  margin: 30px 40px;
+}
+
+.blog-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 20px 40px;
   gap: 2%;
 }
 
-.card-projects {
+.card-blog {
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -26,7 +30,7 @@
   background-color: white;
 }
 
-.card-projects img {
+.card-blog img {
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -35,50 +39,11 @@
   transition: transform 0.3s ease;
 }
 
-.card-projects:hover img {
-  transform: scale(1.1);
+.card-blog:hover img {
+  transform: scale(1.03);
 }
 
-.card-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.95) 100%);
-  color: white;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: transform 0.8s ease, opacity 0.6s ease;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
-
-.card-projects:hover .card-overlay {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card-overlay h5 {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-  text-align: center;
-  transition: opacity 0.5s ease;
-}
-
-.card-overlay p {
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  text-align: center;
-  transition: opacity 0.5s ease;
-}
-
-.card-info {
+.card-info-blog {
   background-color: #fff;
   padding: 1rem;
   text-align: center;
@@ -86,66 +51,34 @@
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.card-info p {
+.card-info-blog h5 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.card-info-blog p {
   font-size: 0.9rem;
   margin-bottom: 1rem;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   line-height: 1.3em;
   height: calc(1.3em * 3);
+  word-break: break-word;
 }
 
-.card-info h5 {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-}
 
-.text-projects {
-  margin: 30px 40px;
-}
-
-.card-projects:hover .card-info {
+.card-blog:hover .card-info-blog {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
-
-.card-projects img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.card-projects:hover img {
-  transform: scale(1.03);
-}
-
-@media (max-width: 480px) {
-  .projects-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .card-projects {
-    width: 90%;
-    max-width: 20rem;
-    margin: 0 auto;
-  }
-
-  .card-projects img {
-    width: 100%;
-    height: auto;
-  }
-
 }
 
 .continue-link {
@@ -155,6 +88,7 @@
   font-weight: 500;
   transition: color 0.3s ease;
   font-size: 0.95rem;
+  margin-top: auto;
 }
 
 .continue-link:hover {
@@ -162,41 +96,61 @@
   text-decoration-thickness: 2px;
 }
 
-.projects-container.color-2291A4 .continue-link {
+@media (max-width: 480px) {
+  .blog-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card-blog {
+    width: 90%;
+    max-width: 20rem;
+    margin: 0 auto;
+  }
+
+  .card-blog img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+.blog-container.color-2291A4 .continue-link {
   color: #2291a4;
 }
 
-.projects-container.color-F10091 .continue-link {
+.blog-container.color-F10091 .continue-link {
   color: #f10091;
 }
 
-.dark-mode-projects .continue-link {
-  color: #fff;
+.blog-container.color-2291A4 .my-navbar {
+  border-bottom: 1px solid #2291a4;
 }
 
-.dark-mode-projects .card-info {
+.blog-container.color-F10091 .my-navbar {
+  border-bottom: 1px solid #f10091;
+}
+
+.dark-mode-blog {
+  background-color: #13131f;
+}
+
+.dark-mode-blog .text-blog {
+  color: white;
+}
+
+.dark-mode-blog .card-blog {
+  box-shadow: 0 4px 6px rgba(33, 33, 33, 0.4);
+}
+
+.dark-mode-blog .card-info-blog {
   background-color: #1c1c28;
   color: white;
   box-shadow: 0 6px 16px rgba(255, 255, 255, 0.1);
 }
 
-.projects-container.color-2291A4 .my-navbar {
-  border-bottom: 1px solid #2291a4;
-}
-
-.projects-container.color-F10091 .my-navbar {
-  border-bottom: 1px solid #F10091;
-}
-
-.dark-mode-projects {
-  background-color: #13131f;
-}
-
-.dark-mode-projects .card-projects {
-  box-shadow: 0 4px 6px rgba(33, 33, 33, 0.4);
-}
-
-
-.dark-mode-projects .text-projects {
-  color: white;
+.dark-mode-blog .continue-link {
+  color: #fff;
 }
