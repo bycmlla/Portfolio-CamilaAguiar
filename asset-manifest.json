@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.278d61f4.css",
-    "main.js": "/static/js/main.2e368e65.js",
+    "main.css": "/static/css/main.5f01d5b8.css",
+    "main.js": "/static/js/main.c0fa4f75.js",
     "static/js/453.05eee51e.chunk.js": "/static/js/453.05eee51e.chunk.js",
     "static/media/psyrpgvideo.mp4": "/static/media/psyrpgvideo.fb4261bd1e8233a56139.mp4",
     "static/media/hunhihi.gif": "/static/media/hunhihi.3e85d184394308f6ddf1.gif",
@@ -111,12 +111,12 @@
     "static/media/powerbi.svg": "/static/media/powerbi.fa5202eaffd720146c2dcbf912198fb9.svg",
     "index.html": "/index.html",
     "static/media/blacpbi.svg": "/static/media/blacpbi.1954f8b9c12f5ca656df13c46a81188a.svg",
-    "main.278d61f4.css.map": "/static/css/main.278d61f4.css.map",
-    "main.2e368e65.js.map": "/static/js/main.2e368e65.js.map",
+    "main.5f01d5b8.css.map": "/static/css/main.5f01d5b8.css.map",
+    "main.c0fa4f75.js.map": "/static/js/main.c0fa4f75.js.map",
     "453.05eee51e.chunk.js.map": "/static/js/453.05eee51e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.278d61f4.css",
-    "static/js/main.2e368e65.js"
+    "static/css/main.5f01d5b8.css",
+    "static/js/main.c0fa4f75.js"
   ]
 }
