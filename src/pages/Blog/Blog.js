@@ -58,7 +58,7 @@ export const Blog = () => {
       title: "Envio automático de mensagens via Whatsapp",
       text: "Realiza o envio de imagens a partir de um determinado diretório. Também é possível realizar o envio de mensagens de texto mudando alguns parâmetros.",
       images: [Selenium],
-      link: "#/automation",
+      link: "/automation",
     },
   ];
 

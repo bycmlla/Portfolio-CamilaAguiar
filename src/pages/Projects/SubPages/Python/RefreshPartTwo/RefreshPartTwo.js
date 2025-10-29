@@ -44,7 +44,7 @@ export const RefreshPartTwo = () => {
     >
       <NavBar toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
       <div>
-        <Link to={"/python"} className="back-icon-refresh">
+        <Link to={"/blog"} className="back-icon-refresh">
           <FaArrowLeft />
         </Link>
       </div>

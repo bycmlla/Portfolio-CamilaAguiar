@@ -79,6 +79,14 @@
     margin: 5% 0 2.5%;
 }
 
+.back-icon-sql {
+    cursor: pointer;
+    position: absolute;
+    top: 95px;
+    left: 25px;
+    color: black;
+    font-size: 24px;
+}
 .licenciamento-custo {
     margin: 2.5% 0 5%;
 }
@@ -164,4 +172,11 @@
 .dark-mode-sql .sub-sub-link,
 .dark-mode-sql .nav-title {
     color: white; 
+}
+
+
+@media (max-width: 480px){
+    .SQLPage{
+        max-width: 300px;
+    }
 }

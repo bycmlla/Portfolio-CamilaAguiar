@@ -1,7 +1,7 @@
 {
   "name": "camilacarvalho",
   "version": "0.1.0",
-  "homepage": "https://camilacarvalho.site",
+  "homepage": "https://camilacarvalho.website",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",

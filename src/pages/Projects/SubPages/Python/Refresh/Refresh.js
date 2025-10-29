@@ -48,7 +48,7 @@ const Refresh = () => {
     >
       <NavBar isDarkMode={isDarkMode} />
       <div>
-        <Link to={"/projects"} className="back-icon-refresh">
+        <Link to={"/blog"} className="back-icon-refresh">
           <FaArrowLeft />
         </Link>
       </div>

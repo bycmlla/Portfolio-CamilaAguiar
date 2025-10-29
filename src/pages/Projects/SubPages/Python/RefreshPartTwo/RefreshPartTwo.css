@@ -1,4 +1,4 @@
-.refresh-page-2{
+.refresh-page-2 {
     text-align: justify;
     margin: 0 auto;
     max-width: 800px;
@@ -8,10 +8,26 @@
 .dark-mode-refreshparttwo {
     background-color: #141414;
 }
-.dark-mode-refreshparttwo .refresh-page-2{
+
+.dark-mode-refreshparttwo .refresh-page-2 {
     color: white;
 }
 
-.dark-mode-refreshparttwo .back-icon-refresh{
+.dark-mode-refreshparttwo .back-icon-refresh {
     color: rgb(0, 0, 0);
+}
+
+@media (max-width: 480px) {
+    .refresh-page-2 {
+        max-width: 300px;
+    }
+
+    .back-icon-refresh {
+        cursor: pointer;
+        position: absolute;
+        top: 90px;
+        left: 25px;
+        color: rgb(255, 255, 255);
+        font-size: 24px;
+    }
 }

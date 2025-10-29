@@ -33,7 +33,7 @@ const Automation = () => {
     >
       <NavBar isDarkMode={isDarkMode} />
       <div>
-        <Link to={"/projects"} className="back-icon-automation">
+        <Link to={"/blog"} className="back-icon-automation">
           <FaArrowLeft />
         </Link>
       </div>

@@ -41,7 +41,7 @@ const ROSA = () => {
     <div className={`rosapage-container ${isDarkMode ? "dark-mode-rosa" : ""}`}>
       <NavBar isDarkMode={isDarkMode} />
       <div>
-        <Link to={"/projects"} className="back-icon" style={{color: 'white'}}>
+        <Link to={"/blog"} className="back-icon" style={{color: 'white'}}>
           <FaArrowLeft />
         </Link>
       </div>
