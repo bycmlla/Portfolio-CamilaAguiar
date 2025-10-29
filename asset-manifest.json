@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.cdc6ce28.css",
-    "main.js": "/static/js/main.5107dded.js",
+    "main.css": "/static/css/main.278d61f4.css",
+    "main.js": "/static/js/main.2e368e65.js",
     "static/js/453.05eee51e.chunk.js": "/static/js/453.05eee51e.chunk.js",
     "static/media/psyrpgvideo.mp4": "/static/media/psyrpgvideo.fb4261bd1e8233a56139.mp4",
     "static/media/hunhihi.gif": "/static/media/hunhihi.3e85d184394308f6ddf1.gif",
@@ -54,13 +54,13 @@
     "static/media/weatherup2.png": "/static/media/weatherup2.9dbba010aae84199071d.png",
     "static/media/sql-illustration.png": "/static/media/sql-illustration.49bd147edcb41a2b45ee.png",
     "static/media/etapa 1.6.png": "/static/media/etapa 1.6.1f0e0f10e871d8c1e70e.png",
-    "static/media/curriculo-camila-carvalho.pdf": "/static/media/curriculo-camila-carvalho.cb7bad9ec0eb33d97397.pdf",
     "static/media/etapa 2.1.png": "/static/media/etapa 2.1.2f915e3ea6c8b1bfbd37.png",
     "static/media/etapa 1.5.png": "/static/media/etapa 1.5.a2f311afca77db2775f6.png",
     "static/media/image 2.png": "/static/media/image 2.90c67a03f7946924cb1a.png",
     "static/media/image.png": "/static/media/image.740bc00e2f33e5560365.png",
     "static/media/etapa 2.2.png": "/static/media/etapa 2.2.db0622fae2a0d1aeb642.png",
     "static/media/pbi.png": "/static/media/pbi.e9eeb2c857e62469731e.png",
+    "static/media/curriculo-camila-carvalho.pdf": "/static/media/curriculo-camila-carvalho.a1c97e3bab3cf0a5c217.pdf",
     "static/media/etapa 1.11.png": "/static/media/etapa 1.11.c81bf09ba823ece8c834.png",
     "static/media/weatherupcard.png": "/static/media/weatherupcard.f68362bfdfd499234f62.png",
     "static/media/power-BI.png": "/static/media/power-BI.09c9eee7be419f39e5fe.png",
@@ -100,24 +100,23 @@
     "static/media/PBI White 2.png": "/static/media/PBI White 2.d56e4f6c7422a4d89529.png",
     "static/media/react-native.png": "/static/media/react-native.9e42f4aa17b48ea3dae1.png",
     "static/media/CamilaCarvalho-white.png": "/static/media/CamilaCarvalho-white.1ed8d186eabea457381d.png",
+    "static/media/translatewhite.png": "/static/media/translatewhite.3eb3bf7f8c3140ad16dd.png",
     "static/media/angularjsblack.png": "/static/media/angularjsblack.80e2cdc8026d3283f279.png",
     "static/media/react-native-black.png": "/static/media/react-native-black.41b4fd82db1a0150d1b2.png",
     "static/media/nvidia.svg": "/static/media/nvidia.d6277a3d425b694dfed4ee8a862c10ca.svg",
-    "static/media/selenium.svg": "/static/media/selenium.df610e4ce9d1a8350587ceef54694f52.svg",
     "static/media/opencv.svg": "/static/media/opencv.e72cdf126d8b5d1cc85ec01210a9d33f.svg",
     "static/media/python.svg": "/static/media/python.1b0b1c85f2775e45f3dd58e2b861c9ad.svg",
     "static/media/angular.svg": "/static/media/angular.3b10e71809380b906e8a74ffe5a10771.svg",
-    "static/media/icons8-selenium.svg": "/static/media/icons8-selenium.6cbdda50dff322261040882db5340538.svg",
     "static/media/icons8-python.svg": "/static/media/icons8-python.691645261a4ecfafc0dd8a830b587275.svg",
     "static/media/powerbi.svg": "/static/media/powerbi.fa5202eaffd720146c2dcbf912198fb9.svg",
     "index.html": "/index.html",
     "static/media/blacpbi.svg": "/static/media/blacpbi.1954f8b9c12f5ca656df13c46a81188a.svg",
-    "main.cdc6ce28.css.map": "/static/css/main.cdc6ce28.css.map",
-    "main.5107dded.js.map": "/static/js/main.5107dded.js.map",
+    "main.278d61f4.css.map": "/static/css/main.278d61f4.css.map",
+    "main.2e368e65.js.map": "/static/js/main.2e368e65.js.map",
     "453.05eee51e.chunk.js.map": "/static/js/453.05eee51e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cdc6ce28.css",
-    "static/js/main.5107dded.js"
+    "static/css/main.278d61f4.css",
+    "static/js/main.2e368e65.js"
   ]
 }
