@@ -92,26 +92,6 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "JTD Transportes - WebSite",
-      text: "Website corporativo desenvolvido para a JTD Transportes, com foco em apresentação institucional, serviços e contato com clientes.",
-      images: [JtdtransportesCard],
-      otherimages: [
-        { type: "image", src: Jtdtransportes1 },
-        { type: "image", src: Jtdtransportes4 },
-        { type: "image", src: Jtdtransportes3 },
-        { type: "image", src: Jtdtransportes2 },
-      ],
-      link: "https://www.jtdtransportes.com.br",
-      icons: [ReactNativeIcon, NodeJsIcon],
-      iconsBlack: [ReactNativeIconBlack, NodeJsIconBlack],
-      l1: "ReactJS",
-      l2: "NodeJS",
-      description:
-        "Este projeto consiste no desenvolvimento do website institucional da JTD Transportes, criado para fortalecer a presença digital da empresa e facilitar a comunicação com clientes e parceiros.\n\nO site apresenta informações sobre a empresa, serviços oferecidos, áreas de atuação e canais de contato, com layout moderno, responsivo e otimizado para diferentes dispositivos. A estrutura foi pensada para oferecer navegação simples, rápida e objetiva, destacando credibilidade e profissionalismo da marca.",
-      buttonText: "Ir para o site",
-    },
-    {
-      id: 3,
       title: "Weather Up",
       text: "Aplicativo de Previsão do Tempo",
       images: [WeatherUpCard],
@@ -131,7 +111,7 @@ const Projects = () => {
         "O Weather Up é um aplicativo de previsão do tempo que fornece informações meteorológicas precisas e em tempo real para qualquer local do mundo.\n\nO usuário pode buscar manualmente uma cidade ou utilizar sua localização atual para visualizar as condições climáticas do momento.\n\nA aplicação consome dados de uma API de previsão do tempo, exibindo informações detalhadas como:\n\n▸ Temperatura atual, máxima e mínima\n\n▸ Sensação térmica\n\n▸ Condições climáticas (sol, chuva, nublado etc.)\n\n▸ Velocidade e direção do vento\n\n▸ Unidades configuráveis em Celsius ou Fahrenheit",
     },
     {
-      id: 4,
+      id: 3,
       title: "RoomRover",
       text: "Sistema de Reserva de Hotéis",
       images: [RoomRoverCard],
@@ -151,7 +131,7 @@ const Projects = () => {
         "O RoomRover é um site de reserva de hotéis desenvolvido para tornar o processo de busca, seleção e locação de acomodações simples e intuitivo.\n\nA plataforma permite que o usuário visualize, em tempo real, os hotéis disponíveis para hospedagem, com informações detalhadas sobre preços, localização, avaliações, comodidades e fotos.\n\nO visitante pode criar uma conta ou realizar login para gerenciar suas reservas, salvar preferências de viagem e acompanhar o histórico de estadias.\n\n Durante o processo de reserva, o usuário escolhe as datas de entrada e saída, quantidade de hóspedes, tipo de quarto e opções adicionais, recebendo sempre o valor atualizado e a disponibilidade instantânea.",
     },
     {
-      id: 5,
+      id: 4,
       title: "Dashboards Power BI",
       text: "Aqui apresento os meus dashboards em Power BI.",
       images: [Dashboard1],
@@ -167,7 +147,7 @@ const Projects = () => {
       buttonText: "Ver dashboards",
     },
     {
-      id: 6,
+      id: 5,
       title: "Visão Estereoscópica para Robôs Assistivos",
       text: "Uma Interface de Visão Estereoscópica Binocular para Reconhecimento de Humanos e Objetos para Robôs Socialmente Assistivos",
       images: [DepthImageCard],
@@ -181,6 +161,26 @@ const Projects = () => {
       description:
         "O projeto tem como objetivo o desenvolvimento de uma interface de visão estereoscópica binocular capaz de reconhecer e localizar pessoas e objetos em um ambiente real.\n\nA partir do uso de duas câmeras sincronizadas, o sistema realiza o processamento de imagens em estéreo para extrair informações de profundidade e distância, permitindo a estimativa precisa da posição dos elementos presentes no cenário.",
       buttonText: "Ver detalhamento",
+    },
+    {
+      id: 6,
+      title: "JTD Transportes - WebSite",
+      text: "Website corporativo desenvolvido para a JTD Transportes, com foco em apresentação institucional, serviços e contato com clientes.",
+      images: [JtdtransportesCard],
+      otherimages: [
+        { type: "image", src: Jtdtransportes1 },
+        { type: "image", src: Jtdtransportes4 },
+        { type: "image", src: Jtdtransportes3 },
+        { type: "image", src: Jtdtransportes2 },
+      ],
+      repoLink: "https://github.com/bycmlla/StereocopicVision.git",
+      icons: [ReactNativeIcon, NodeJsIcon],
+      iconsBlack: [ReactNativeIconBlack, NodeJsIconBlack],
+      l1: "ReactJS",
+      l2: "NodeJS",
+      description:
+        "Este projeto consiste no desenvolvimento do website institucional da JTD Transportes, criado para fortalecer a presença digital da empresa e facilitar a comunicação com clientes e parceiros.\n\nO site apresenta informações sobre a empresa, serviços oferecidos, áreas de atuação e canais de contato, com layout moderno, responsivo e otimizado para diferentes dispositivos. A estrutura foi pensada para oferecer navegação simples, rápida e objetiva, destacando credibilidade e profissionalismo da marca.",
+buttonText: "Ver detalhamento",
     },
   ];
   const iconSizes = {

@@ -91,26 +91,6 @@ const Projects = () => {
         "O PsyRPG é um aplicativo de gamificação de rotinas que transforma tarefas do dia a dia em uma experiência envolvente.\n\nNele, o usuário cria missões personalizadas — como estudar, fazer exercícios ou meditar — e, ao completá-las, ganha moedas virtuais que podem ser usadas dentro do app para comprar itens simbólicos ou recompensas.\n\nAlém do sistema de recompensas, o PsyRPG se conecta diretamente ao Google Calendar: toda missão criada no app é automaticamente adicionada à agenda do usuário, promovendo organização e engajamento contínuo.\n\nO objetivo é aumentar a motivação e o comprometimento com as rotinas diárias, tornando o progresso pessoal mais divertido, visual e recompensador.",
     },
     {
-      id: 2,
-      title: "JTD Transportes - WebSite",
-      text: "Website corporativo desenvolvido para a JTD Transportes, com foco em apresentação institucional, serviços e contato com clientes.",
-      images: [JtdtransportesCard],
-      otherimages: [
-        { type: "image", src: Jtdtransportes1 },
-        { type: "image", src: Jtdtransportes4 },
-        { type: "image", src: Jtdtransportes3 },
-        { type: "image", src: Jtdtransportes2 },
-      ],
-      link: "https://www.jtdtransportes.com.br",
-      icons: [ReactNativeIcon, NodeJsIcon],
-      iconsBlack: [ReactNativeIconBlack, NodeJsIconBlack],
-      l1: "ReactJS",
-      l2: "NodeJS",
-      description:
-        "Este projeto consiste no desenvolvimento do website institucional da JTD Transportes, criado para fortalecer a presença digital da empresa e facilitar a comunicação com clientes e parceiros.\n\nO site apresenta informações sobre a empresa, serviços oferecidos, áreas de atuação e canais de contato, com layout moderno, responsivo e otimizado para diferentes dispositivos. A estrutura foi pensada para oferecer navegação simples, rápida e objetiva, destacando credibilidade e profissionalismo da marca.",
-      buttonText: "Ir para o site",
-    },
-    {
       id: 3,
       title: "Weather Up",
       text: "Aplicativo de Previsão do Tempo",
@@ -181,6 +161,26 @@ const Projects = () => {
       description:
         "O projeto tem como objetivo o desenvolvimento de uma interface de visão estereoscópica binocular capaz de reconhecer e localizar pessoas e objetos em um ambiente real.\n\nA partir do uso de duas câmeras sincronizadas, o sistema realiza o processamento de imagens em estéreo para extrair informações de profundidade e distância, permitindo a estimativa precisa da posição dos elementos presentes no cenário.",
       buttonText: "Ver detalhamento",
+    },
+    {
+      id: 6,
+      title: "JTD Transportes - WebSite",
+      text: "Website corporativo desenvolvido para a JTD Transportes, com foco em apresentação institucional, serviços e contato com clientes.",
+      images: [JtdtransportesCard],
+      otherimages: [
+        { type: "image", src: Jtdtransportes1 },
+        { type: "image", src: Jtdtransportes4 },
+        { type: "image", src: Jtdtransportes3 },
+        { type: "image", src: Jtdtransportes2 },
+      ],
+      link: "https://www.jtdtransportes.com.br", 
+      icons: [ReactNativeIcon, NodeJsIcon],
+      iconsBlack: [ReactNativeIconBlack, NodeJsIconBlack],
+      l1: "ReactJS",
+      l2: "NodeJS",
+      description:
+        "Este projeto consiste no desenvolvimento do website institucional da JTD Transportes, criado para fortalecer a presença digital da empresa e facilitar a comunicação com clientes e parceiros.\n\nO site apresenta informações sobre a empresa, serviços oferecidos, áreas de atuação e canais de contato, com layout moderno, responsivo e otimizado para diferentes dispositivos. A estrutura foi pensada para oferecer navegação simples, rápida e objetiva, destacando credibilidade e profissionalismo da marca.",
+      buttonText: "Ir para o site",
     },
   ];
   const iconSizes = {
