@@ -1,0 +1,87 @@
+.plans-container{
+  font-family: Arial;
+  text-align: justify;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: black;
+  background-color: white;
+  margin: 0;
+}
+
+.plans-section {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.title-image-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+
+.background-image-plans {
+  width: 200px;
+  opacity: 0.1;
+  position: absolute;
+  top: -80px;
+  right: -130px;
+  z-index: 1;
+}
+
+
+.icons-container-custom {
+  display: flex;
+  flex-direction: column;
+  width: 10px;
+  margin-left: 50px;
+  margin-top: 40px;
+}
+
+.icons-container-custom ul {
+  list-style: none;
+  padding: 0;
+}
+
+.icons-container-custom ul li {
+  font-size: 30px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.icons-container-custom ul li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.icons-container-custom ul li:hover {
+  transform: scale(1.2);
+}
+
+.plans-container.color-2291A4 .my-navbar {
+  border-bottom: 1px solid #2291a4;
+}
+
+.plans-container.color-F10091 .my-navbar {
+  border-bottom: 1px solid #f10091;
+}
+
+
+.plans-container.color-2291A4 .footer-container {
+  border-top: 1px solid #2291a4;
+}
+
+.plans-container.color-F10091 .footer-container {
+  border-top: 1px solid #f10091;
+}
+
+.dark-mode-plans {
+  background-color: #13131f;
+  color: white;
+}
+
+.dark-mode-about .icons-container-custom ul li a {
+  color: white;
+}
