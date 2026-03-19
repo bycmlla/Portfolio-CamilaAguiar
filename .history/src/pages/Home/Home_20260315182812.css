@@ -622,9 +622,7 @@ body {
     width: 60vw;
   }
 
-  .services-projects-button{
-     width: 60vw;
-  }
+  services-projects-button
   .icons-container ul {
     list-style: none;
     padding: 0;

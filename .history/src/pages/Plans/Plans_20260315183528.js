@@ -41,7 +41,7 @@ const plansData = [
     title: "STANDARD",
     className: "standard featured",
     badge: Star,
-    price: "R$ 2.400",
+    price: "R$ 2.500",
     whatsappLink:
       "https://wa.me/5533998759437?text=Olá! Tenho interesse no plano STANDARD.",
     features: [
