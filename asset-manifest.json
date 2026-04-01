@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.afefd9b9.css",
-    "main.js": "/static/js/main.e764a0e4.js",
+    "main.js": "/static/js/main.ef75ecd8.js",
     "static/js/453.05eee51e.chunk.js": "/static/js/453.05eee51e.chunk.js",
     "static/media/psyrpgvideo.mp4": "/static/media/psyrpgvideo.fb4261bd1e8233a56139.mp4",
     "static/media/hunhihi.gif": "/static/media/hunhihi.3e85d184394308f6ddf1.gif",
@@ -117,11 +117,11 @@
     "index.html": "/index.html",
     "static/media/blacpbi.svg": "/static/media/blacpbi.1954f8b9c12f5ca656df13c46a81188a.svg",
     "main.afefd9b9.css.map": "/static/css/main.afefd9b9.css.map",
-    "main.e764a0e4.js.map": "/static/js/main.e764a0e4.js.map",
+    "main.ef75ecd8.js.map": "/static/js/main.ef75ecd8.js.map",
     "453.05eee51e.chunk.js.map": "/static/js/453.05eee51e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.afefd9b9.css",
-    "static/js/main.e764a0e4.js"
+    "static/js/main.ef75ecd8.js"
   ]
 }
