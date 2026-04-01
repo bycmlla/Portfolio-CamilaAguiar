@@ -21,7 +21,7 @@ const plansData = [
   {
     title: "STARTER",
     className: "starter",
-    price: "R$ 950,00",
+    price: "R$ 900,00",
     whatsappLink:
       "https://wa.me/5533998759437?text=Olá! Tenho interesse no plano STARTER.",
     features: [

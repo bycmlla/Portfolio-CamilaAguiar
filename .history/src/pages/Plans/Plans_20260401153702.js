@@ -21,7 +21,7 @@ const plansData = [
   {
     title: "STARTER",
     className: "starter",
-    price: "R$ 950,00",
+    price: "R$ ",
     whatsappLink:
       "https://wa.me/5533998759437?text=Olá! Tenho interesse no plano STARTER.",
     features: [
@@ -41,7 +41,7 @@ const plansData = [
     title: "STANDARD",
     className: "standard featured",
     badge: Star,
-    price: "R$ 2.100",
+    price: "R$ 2.400",
     whatsappLink:
       "https://wa.me/5533998759437?text=Olá! Tenho interesse no plano STANDARD.",
     features: [
@@ -60,7 +60,7 @@ const plansData = [
   {
     title: "PREMIUM",
     className: "premium",
-    price: "A partir de R$ 3.200",
+    price: "A partir de R$ 3.500",
     whatsappLink:
       "https://wa.me/5533998759437?text=Olá! Tenho interesse no plano PREMIUM.",
     features: [
