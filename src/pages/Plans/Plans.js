@@ -21,7 +21,6 @@ const plansData = [
   {
     title: "STARTER",
     className: "starter",
-    price: "R$ 950,00",
     whatsappLink:
       "https://wa.me/5533998759437?text=Olá! Tenho interesse no plano STARTER.",
     features: [
@@ -41,7 +40,6 @@ const plansData = [
     title: "STANDARD",
     className: "standard featured",
     badge: Star,
-    price: "R$ 2.100",
     whatsappLink:
       "https://wa.me/5533998759437?text=Olá! Tenho interesse no plano STANDARD.",
     features: [
@@ -60,7 +58,6 @@ const plansData = [
   {
     title: "PREMIUM",
     className: "premium",
-    price: "A partir de R$ 3.200",
     whatsappLink:
       "https://wa.me/5533998759437?text=Olá! Tenho interesse no plano PREMIUM.",
     features: [
@@ -162,8 +159,6 @@ const Plans = () => {
                     <h2>{plan.title}</h2>
                   </div>
 
-                  <p className="plan-price">{plan.price}</p>
-
                   <ul className="plan-features">
                     {plan.features.map((feature, i) => (
                       <li
@@ -195,7 +190,6 @@ const Plans = () => {
                 <h3>🌐 Domínio</h3>
                 <p>O domínio é o endereço do site (ex: empresa.com.br).</p>
                 <p>Deve ser adquirido pelo cliente.</p>
-                <p>Valor médio: R$40 — R$70 por ano</p>
               </div>
 
               <div className="info-item">
@@ -209,7 +203,6 @@ const Plans = () => {
                   provedores de sua preferência. Caso necessário, posso auxiliar
                   na escolha e configuração.
                 </p>
-                <p>Valor médio: R$20 a R$80 / mês</p>
               </div>
 
               <div className="info-item">

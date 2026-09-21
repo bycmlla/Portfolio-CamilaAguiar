@@ -166,7 +166,7 @@ body {
 }
 
 .image-container img {
-  width: 38vw;
+  width: clamp(200px, 28vw, 540px);
   max-width: 100%;
   max-height: calc(100vh - 20%);
   object-fit: contain;
