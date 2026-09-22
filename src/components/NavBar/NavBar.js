@@ -17,7 +17,7 @@ const NavBar = ({ onOpenContact }) => {
   const [isActive, setIsActive] = useState(false);
   const location = useLocation();
 
-  const { setSelectedColor } = useColor();
+  const { selectedColor, setSelectedColor } = useColor();
   const { isDarkMode, toggleDarkMode } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
   const { language, toggleLanguage } = useLanguage();
@@ -62,7 +62,9 @@ const NavBar = ({ onOpenContact }) => {
     <nav
       className={`my-navbar ${isActive ? "active" : ""} ${
         isDarkMode ? "dark-mode" : ""
-      } reveal-top ${menuOpen ? "active-menu" : ""}`}
+      } color-${selectedColor.replace("#", "")} reveal-top ${
+        menuOpen ? "active-menu" : ""
+      }`}
     >
       <div className="navbar-brand">
         <a href="#/" className="logo">

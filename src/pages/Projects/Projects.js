@@ -48,6 +48,34 @@ import Jtdtransportes1 from "../../assets/images/projects/jtdtransportes.png";
 import Jtdtransportes2 from "../../assets/images/projects/jtdtransportes2.png";
 import Jtdtransportes3 from "../../assets/images/projects/jtdtransportes3.png";
 import Jtdtransportes4 from "../../assets/images/projects/jtdtransportes4.png";
+import DioneMenezes1 from "../../assets/images/projects/dionemenezes1.png";
+import DioneMenezes2 from "../../assets/images/projects/dionemenezes2.png";
+import DioneMenezes3 from "../../assets/images/projects/dionemenezes3.png";
+import DioneMenezes4 from "../../assets/images/projects/dionemenezes4.png";
+import DioneMenezes5 from "../../assets/images/projects/dionemenezes5.png";
+import DioneMenezes6 from "../../assets/images/projects/dionemenezes6.png";
+import DioneMenezes7 from "../../assets/images/projects/dionemenezes7.png";
+import DioneMenezes8 from "../../assets/images/projects/dionemenezes8.png";
+import DioneMenezes9 from "../../assets/images/projects/dionemenezes9.png";
+import Ems1 from "../../assets/images/projects/ems1.png";
+import Ems2 from "../../assets/images/projects/ems2.png";
+import Ems3 from "../../assets/images/projects/ems3.png";
+import Ems4 from "../../assets/images/projects/ems4.png";
+import Ems5 from "../../assets/images/projects/ems5.png";
+import Gmac1 from "../../assets/images/projects/gmac1.png";
+import Gmac2 from "../../assets/images/projects/gmac2.png";
+import Gmac3 from "../../assets/images/projects/gmac3.png";
+import Gmac4 from "../../assets/images/projects/gmac4.png";
+import Gmac5 from "../../assets/images/projects/gmac5.png";
+import Deskio1 from "../../assets/images/projects/deskio1.png";
+import Deskio2 from "../../assets/images/projects/deskio2.png";
+import Deskio3 from "../../assets/images/projects/deskio3.png";
+import Deskio4 from "../../assets/images/projects/deskio4.png";
+import Uva1 from "../../assets/images/projects/uva1.png";
+import Uva2 from "../../assets/images/projects/uva2.png";
+import Uva3 from "../../assets/images/projects/uva3.png";
+import Uva4 from "../../assets/images/projects/uva4.png";
+import Uva5 from "../../assets/images/projects/uva5.png";
 
 const Projects = () => {
   const { selectedColor } = useColor();
@@ -65,6 +93,112 @@ const Projects = () => {
   }, []);
 
   const projects = [
+    {
+      id: 11,
+      title: "Uva Moda Fitness - E-commerce",
+      text: "Ideia de e-commerce para uma loja de roupas fitness de Feira de Santana, com foco em estilo, praticidade e experiência de compra online.",
+      images: [Uva1],
+      otherimages: [
+        { type: "image", src: Uva1 },
+        { type: "image", src: Uva2 },
+        { type: "image", src: Uva3 },
+        { type: "image", src: Uva4 },
+        { type: "image", src: Uva5 },
+      ],
+      icons: [ReactNativeIcon, NodeJsIcon],
+      iconsBlack: [ReactNativeIconBlack, NodeJsIconBlack],
+      l1: "React JS",
+      l2: "Node JS",
+      description:
+        "Este projeto é uma proposta de e-commerce para a Uva Moda Fitness, uma nova ideia de loja de roupas fitness em Feira de Santana. O site foi pensado para apresentar as coleções, destacar os produtos e oferecer uma experiência de compra online moderna e intuitiva.\n\nA interface valoriza a identidade da marca e foi estruturada para permitir futuras expansões, como catálogo completo, carrinho, pagamentos e gestão de pedidos. Por enquanto, o projeto está em fase de exploração e ainda não possui domínio ou link público.",
+    },
+    {
+      id: 10,
+      title: "Deskio - Sistema Helpdesk",
+      text: "Sistema helpdesk para abertura de chamados, acompanhamento de solicitações e controle de estoque, desenvolvido para a JTD Transportes e adaptável a outras empresas.",
+      images: [Deskio1],
+      otherimages: [
+        { type: "image", src: Deskio1 },
+        { type: "image", src: Deskio2 },
+        { type: "image", src: Deskio3 },
+        { type: "image", src: Deskio4 },
+      ],
+      icons: [ReactNativeIcon, NodeJsIcon],
+      iconsBlack: [ReactNativeIconBlack, NodeJsIconBlack],
+      l1: "React JS",
+      l2: "Node JS",
+      link: "https://deskio.site/admin",
+      buttonText: "Ir para o site",
+      description:
+        "O Deskio é um sistema helpdesk desenvolvido para organizar o atendimento interno e a gestão de recursos de empresas como a JTD Transportes. A plataforma permite abrir, acompanhar e administrar chamados, centralizando as solicitações em um único ambiente.\n\nO sistema também conta com controle de estoque, ajudando a equipe a acompanhar materiais, movimentações e necessidades operacionais com mais agilidade. Sua estrutura pode ser adaptada para diferentes empresas e fluxos de trabalho.",
+    },
+    {
+      id: 9,
+      title: "GMAC Metalúrgica - Website",
+      text: "Site profissional desenvolvido para uma metalúrgica de Feira de Santana, com foco em apresentar a empresa, seus serviços e sua atuação no mercado.",
+      images: [Gmac1],
+      otherimages: [
+        { type: "image", src: Gmac1 },
+        { type: "image", src: Gmac2 },
+        { type: "image", src: Gmac3 },
+        { type: "image", src: Gmac4 },
+        { type: "image", src: Gmac5 },
+      ],
+      icons: [ReactNativeIcon, NodeJsIcon],
+      iconsBlack: [ReactNativeIconBlack, NodeJsIconBlack],
+      l1: "React JS",
+      l2: "Node JS",
+      link: "https://gustavoassuncao02.github.io/GMAC/",
+      buttonText: "Ir para o site",
+      description:
+        "Este projeto é um site profissional desenvolvido para a GMAC Metalúrgica, empresa localizada em Feira de Santana. A página foi criada para apresentar a metalúrgica, destacar seus serviços e fortalecer sua presença digital.\n\nCom uma estrutura responsiva e uma comunicação clara, o site facilita o contato com clientes e transmite a experiência, a qualidade e a confiança da empresa.",
+    },
+    {
+      id: 8,
+      title: "EMS Consultoria - Website",
+      text: "Site profissional desenvolvido para uma nova transportadora em criação pelo consultor EMS, especializada em serviços de transporte.",
+      images: [Ems1],
+      otherimages: [
+        { type: "image", src: Ems1 },
+        { type: "image", src: Ems2 },
+        { type: "image", src: Ems3 },
+        { type: "image", src: Ems4 },
+        { type: "image", src: Ems5 },
+      ],
+      icons: [ReactNativeIcon, NodeJsIcon],
+      iconsBlack: [ReactNativeIconBlack, NodeJsIconBlack],
+      l1: "React JS",
+      l2: "Node JS",
+      link: "https://gustavoassuncao02.github.io/EMS-Consultoria/",
+      buttonText: "Ir para o site",
+      description:
+        "Este projeto é um site profissional desenvolvido para a EMS Consultoria, uma nova transportadora em criação pelo consultor EMS. A página apresenta a empresa, seus serviços de transporte e sua proposta de atuação no mercado.\n\nCom uma identidade visual profissional e navegação responsiva, o site foi estruturado para transmitir confiança, facilitar o contato com clientes e apoiar o lançamento da nova operação.",
+    },
+    {
+      id: 7,
+      title: "Dione Menezes - Website",
+      text: "Site profissional desenvolvido para a especialista de vendas Dione Menezes, com foco em credibilidade, apresentação profissional e contato com clientes.",
+      images: [DioneMenezes1],
+      otherimages: [
+        { type: "image", src: DioneMenezes1 },
+        { type: "image", src: DioneMenezes2 },
+        { type: "image", src: DioneMenezes3 },
+        { type: "image", src: DioneMenezes4 },
+        { type: "image", src: DioneMenezes5 },
+        { type: "image", src: DioneMenezes6 },
+        { type: "image", src: DioneMenezes7 },
+        { type: "image", src: DioneMenezes8 },
+        { type: "image", src: DioneMenezes9 },
+      ],
+      icons: [ReactNativeIcon, NodeJsIcon],
+      iconsBlack: [ReactNativeIconBlack, NodeJsIconBlack],
+      l1: "React JS",
+      l2: "Node JS",
+      link: "https://dionemenezes-mouradubeux.com.br",
+      buttonText: "Ir para o site",
+      description:
+        "Este projeto é um site profissional desenvolvido para Dione Menezes, especialista de vendas. A página foi criada para fortalecer sua presença digital, apresentar sua trajetória e destacar seu trabalho de forma clara, elegante e confiável.\n\nCom uma navegação responsiva e uma comunicação objetiva, o site facilita o contato com clientes e valoriza a experiência profissional da especialista.",
+    },
     {
       id: 1,
       title: "PsyRPG",

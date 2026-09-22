@@ -562,7 +562,14 @@ body {
 
 /* Medium devices (>=768px) */
 @media (min-width: 768px) {
-  /* ajustes para tablets */
+  .text-and-image-container {
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .image-container {
+    margin-left: auto;
+  }
 }
 
 /* Large devices (>=992px) */

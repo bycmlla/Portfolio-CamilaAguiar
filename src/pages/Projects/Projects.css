@@ -36,7 +36,8 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 25rem;
+  max-width: 31rem;
+  height: 280px;
   border: none;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
@@ -357,7 +358,12 @@
 
   .card-projects img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-projects {
+    height: 230px;
   }
 
   .overlay-body {

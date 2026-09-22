@@ -17,6 +17,18 @@
   opacity: 1;
 }
 
+.my-navbar.color-9747FF {
+  border-bottom-color: #9747ff;
+}
+
+.my-navbar.color-2291A4 {
+  border-bottom-color: #2291a4;
+}
+
+.my-navbar.color-F10091 {
+  border-bottom-color: #f10091;
+}
+
 .button-contact-navbar {
   background-color: transparent;
   text-decoration: none;
