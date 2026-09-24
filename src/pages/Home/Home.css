@@ -286,6 +286,13 @@ body {
   text-align: center;
 }
 
+/* Aproxima o bloco de E-mail do bloco de WhatsApp em telas maiores. */
+@media (min-width: 481px) {
+  .inner-contact ul .email-contact-home {
+    margin-left: clamp(-50px, -3vw, -25px);
+  }
+}
+
 .talk-to-me {
   display: flex;
   justify-content: center;

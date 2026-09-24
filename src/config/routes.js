@@ -15,6 +15,7 @@ import Refresh from "../pages/Projects/SubPages/Python/Refresh/Refresh";
 import { RefreshPartTwo } from "../pages/Projects/SubPages/Python/RefreshPartTwo/RefreshPartTwo";
 import Tutorial from "../pages/Projects/SubPages/Dashboards/Tutorial/Tutorial";
 import { Blog } from "../pages/Blog/Blog";
+import SendEmails from "../pages/Blog/SendEmails";
 import { Soon } from "../components/Soon/Soon";
 import { LanguageProvider } from "../contexts/LanguageContext";
 import Plans from "../pages/Plans/Plans";
@@ -50,6 +51,7 @@ const RoutesComponent = () => {
               <Route path="/refresh2" element={<RefreshPartTwo />} />
               <Route path="/tutorialpbi" element={<Tutorial />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/send-emails" element={<SendEmails />} />
               <Route path="/breve" element={<Soon />} />
               <Route path="/planos" element={<Plans />} />
             </Routes>

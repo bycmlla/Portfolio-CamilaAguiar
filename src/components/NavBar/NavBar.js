@@ -44,14 +44,14 @@ const NavBar = ({ onOpenContact }) => {
   const texts = {
     pt: {
       projects: "Projetos",
-      blog: "Blog",
+      blog: "Knowledge Hub",
       about: "Sobre Mim",
       contact: "Contato",
       service: "Serviços",
     },
     en: {
       projects: "Projects",
-      blog: "Blog",
+      blog: "Knowledge Hub",
       about: "About Me",
       contact: "Contact",
       service: "Services",

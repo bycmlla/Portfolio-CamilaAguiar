@@ -290,7 +290,7 @@ const Home = () => {
                 <h5>Whatsapp</h5>
                 <p>(33) 9 9875-9437</p>
               </li>
-              <li>
+              <li className="email-contact-home">
                 <a
                   href="mailto:by.cmlla0107@gmail.com"
                   target="_blank"
