@@ -184,25 +184,57 @@
   }
 
   .my-navbar.active-menu .nav-links {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    align-items: center;
+    column-gap: 16px;
     gap: 13px;
     margin: 0;
     margin-bottom: 15px;
     padding: 0;
     width: 100%;
-    align-items: center;
   }
 
   .my-navbar.active-menu .nav-links>li.color-palette {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 100%;
+    margin: 0;
+    width: auto;
+    grid-column: 2;
+    grid-row: 1;
     justify-content: center;
     align-items: center;
+  }
+
+  .my-navbar.active-menu .nav-links > li:nth-child(1),
+  .my-navbar.active-menu .nav-links > li:nth-child(2) {
+    display: flex;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .my-navbar.active-menu .nav-links > li:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .my-navbar.active-menu .nav-links > li:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .my-navbar.active-menu .translate-icon {
+    margin-left: 0;
+  }
+
+  .my-navbar.active-menu .nav-links > li:nth-child(n + 4) {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   .my-navbar.active-menu .nav-links>li.color-palette .color-button {
@@ -219,7 +251,7 @@
   }
 
   .my-navbar.active-menu .nav-links>li:first-child:not(.color-palette) {
-    width: 100%;
+    width: auto;
     display: flex;
     justify-content: center;
   }
@@ -227,6 +259,10 @@
   .my-navbar.active-menu .nav-links li a {
     font-size: 16px;
     text-align: center;
+  }
+
+  .my-navbar.active-menu .nav-links li .button-contact-navbar {
+    font-size: 16px;
   }
 
   .hamburger-icon {

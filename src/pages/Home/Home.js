@@ -92,7 +92,7 @@ const Home = () => {
       distance: "80px",
       duration: 600,
       easing: "ease-out",
-      reset: true,
+      reset: !isMobile,
       viewFactor: isMobile ? 0 : 0.3,
     });
 

@@ -1,4 +1,5 @@
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { ColorProvider } from "../contexts/ColorContext";
 import { ThemeProvider } from "../contexts/ThemeContext";
 import Home from "../pages/Home/Home";
@@ -18,12 +19,23 @@ import { Soon } from "../components/Soon/Soon";
 import { LanguageProvider } from "../contexts/LanguageContext";
 import Plans from "../pages/Plans/Plans";
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 const RoutesComponent = () => {
   return (
     <LanguageProvider>
       <ColorProvider>
         <ThemeProvider>
           <HashRouter>
+            <ScrollToTop />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<AboutMe />} />

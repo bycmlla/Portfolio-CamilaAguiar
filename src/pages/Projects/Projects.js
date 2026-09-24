@@ -194,7 +194,7 @@ const Projects = () => {
       iconsBlack: [ReactNativeIconBlack, NodeJsIconBlack],
       l1: "React JS",
       l2: "Node JS",
-      link: "https://dionemenezes-mouradubeux.com.br",
+      link: "https://mdioneimoveis.com.br",
       buttonText: "Ir para o site",
       description:
         "Este projeto é um site profissional desenvolvido para Dione Menezes, especialista de vendas. A página foi criada para fortalecer sua presença digital, apresentar sua trajetória e destacar seu trabalho de forma clara, elegante e confiável.\n\nCom uma navegação responsiva e uma comunicação objetiva, o site facilita o contato com clientes e valoriza a experiência profissional da especialista.",

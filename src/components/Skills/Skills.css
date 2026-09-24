@@ -103,18 +103,20 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    gap: 30px;
+    gap: 20px;
     padding: 0;
     margin: 0 auto;
   }
 
   .ul-front-one li {
-    width: 80px;
-    height: 80px;
+    width: 88px;
+    height: 88px;
   }
 
   .ul-front-one li span {
-    font-size: 14px;
+    max-width: 78px;
+    font-size: 13px !important;
+    line-height: 1.1;
   }
 
   .front-line-one {

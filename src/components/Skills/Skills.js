@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import ScrollReveal from "scrollreveal";
 import "./Skills.css";
@@ -18,17 +18,13 @@ import {
 import { TbBrandTypescript } from "react-icons/tb";
 import { SiOpencv, SiMysql } from "react-icons/si";
 import SectionTitle from "../SectionTitle/SectionTitle";
+import PowerBIBlack from "../../assets/icons/powerbi-black.svg";
+import PowerBIWhite from "../../assets/icons/powerbi-white.png";
+import { useTheme } from "../../contexts/ThemeContext";
 
 const Skills = () => {
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("darkMode") === "true"
-  );
+  const { isDarkMode } = useTheme();
   const location = useLocation();
-
-  useEffect(() => {
-    const currentDarkMode = localStorage.getItem("darkMode") === "true";
-    setIsDarkMode(currentDarkMode);
-  }, [isDarkMode]);
 
   useEffect(() => {
     const sr = ScrollReveal({
@@ -69,7 +65,7 @@ const Skills = () => {
                   <RiReactjsFill className="icon-size" />
                 </li>
                 <li>
-                  <span style={{ fontSize: 15 }}>JavaScript</span>
+                  <span>JavaScript</span>
                   <IoLogoJavascript
                     className="icon-size"
                     style={{ width: 36 }}
@@ -125,6 +121,11 @@ const Skills = () => {
                 </li>
                 <li>
                   <span>Power BI</span>
+                  <img
+                    src={isDarkMode ? PowerBIWhite : PowerBIBlack}
+                    alt="Power BI"
+                    className="icon-size"
+                  />
                 </li>
                 <li>
                   <span>MySQL</span>

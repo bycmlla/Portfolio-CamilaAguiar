@@ -46,7 +46,7 @@ export const OverlayContact = ({ isOverlayOpen, handleCloseOverlay }) => {
               </div>
               <div className="inner-contact-overlay">
                 <ul>
-                  <li style={{ marginRight: 30 }} className="github">
+                  <li className="github">
                     <a
                       href="https://github.com/bycmlla"
                       target="_blank"
@@ -72,7 +72,7 @@ export const OverlayContact = ({ isOverlayOpen, handleCloseOverlay }) => {
                     <h5>LinkedIn</h5>
                     <p>@camilacarvalho</p>
                   </li>
-                  <li style={{ marginRight: 20 }}>
+                  <li>
                     <a
                       href="https://wa.me/5533998759437"
                       target="_blank"
