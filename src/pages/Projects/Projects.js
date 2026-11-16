@@ -67,6 +67,16 @@ import Gmac2 from "../../assets/images/projects/gmac2.png";
 import Gmac3 from "../../assets/images/projects/gmac3.png";
 import Gmac4 from "../../assets/images/projects/gmac4.png";
 import Gmac5 from "../../assets/images/projects/gmac5.png";
+import GmacPortalCover from "../../assets/images/projects/gmac-capa.png";
+import GmacPortalVideo from "../../assets/images/projects/gmac_video.mp4";
+import GmacPortalHome from "../../assets/images/projects/gmac-inicio.webp";
+import GmacPortalPlanning from "../../assets/images/projects/gmac-planejamento.png";
+import GmacPortalPlanningDetails from "../../assets/images/projects/gmac-planejamento2.webp";
+import GmacPortalServices from "../../assets/images/projects/gmac-serviços.webp";
+import GmacPortalMachines from "../../assets/images/projects/gmac-maquinas1.webp";
+import GmacPortalMachineDetails from "../../assets/images/projects/gmaic-maquinas2.webp";
+import GmacPortalStock from "../../assets/images/projects/gmac-estoque.png";
+import GmacPortalCalculator from "../../assets/images/projects/gmac-calculadora.png";
 import Deskio1 from "../../assets/images/projects/deskio1.png";
 import Deskio2 from "../../assets/images/projects/deskio2.png";
 import Deskio3 from "../../assets/images/projects/deskio3.png";
@@ -93,6 +103,27 @@ const Projects = () => {
   }, []);
 
   const projects = [
+    {
+      id: 12,
+      title: "Portal GMAC | ERP Industrial Personalizado",
+      text: "ERP web sob medida para a GMAC Metalúrgica, integrando gestão comercial, produção, estoque e finanças.",
+      images: [GmacPortalCover],
+      otherimages: [
+        { type: "video", src: GmacPortalVideo },
+        { type: "image", src: GmacPortalHome },
+        { type: "image", src: GmacPortalPlanning },
+        { type: "image", src: GmacPortalPlanningDetails },
+        { type: "image", src: GmacPortalServices },
+        { type: "image", src: GmacPortalMachines },
+        { type: "image", src: GmacPortalMachineDetails },
+        { type: "image", src: GmacPortalStock },
+        { type: "image", src: GmacPortalCalculator },
+      ],
+      icons: [],
+      iconsBlack: [],
+      description:
+        "Desenvolvimento de um sistema ERP web sob medida para a GMAC Metalúrgica, integrando gestão comercial, produção, estoque e finanças. A plataforma permite acompanhar ordens de serviço e etapas de fabricação, monitorar máquinas e operadores, calcular pesos e medidas de materiais, gerenciar propostas comerciais e visualizar indicadores gerenciais em um único ambiente.",
+    },
     {
       id: 11,
       title: "Uva Moda Fitness - E-commerce",

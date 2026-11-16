@@ -5,6 +5,7 @@ import DioneMenezes from "../../assets/images/projects/dionemenezes1.png";
 import PsyRPG from "../../assets/images/projects/psy1tela1.png";
 import EmsConsultoria from "../../assets/images/projects/ems1.png";
 import JtdTransportes from "../../assets/images/projects/jtdtransportes - Copia.png";
+import GmacPortal from "../../assets/images/projects/gmac-capa.png";
 import ReactNativeIcon from "../../assets/icons/react-native.png";
 import NodeJsIcon from "../../assets/icons/nodejs.png";
 import GoogleIcon from "../../assets/icons/google.png";
@@ -17,6 +18,13 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 import "./Carousel.css";
 
 const images = [
+  {
+    src: GmacPortal,
+    title: "Portal GMAC | ERP Industrial Personalizado",
+    text: "ERP web sob medida para a GMAC Metalúrgica, integrando gestão comercial, produção, estoque e finanças.",
+    icons: [],
+    link: "/projects",
+  },
   {
     src: DioneMenezes,
     title: "Dione Menezes - Website",
