@@ -102,7 +102,10 @@ const Projects = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const projects = [
+  // Ordem de exibição dos projetos (por id)
+  const projectOrder = [7, 9, 12, 1, 2, 10, 8, 6, 4, 3, 5, 11];
+
+  const projectList = [
     {
       id: 12,
       title: "Portal GMAC | ERP Industrial Personalizado",
@@ -348,6 +351,9 @@ const Projects = () => {
       buttonText: "Ver detalhamento",
     },
   ];
+  const projects = [...projectList].sort(
+    (a, b) => projectOrder.indexOf(a.id) - projectOrder.indexOf(b.id),
+  );
   const iconSizes = {
     [GoogleIcon]: { width: 20, height: 20 },
     [GoogleIconBlack]: { width: 18, height: 18 },
